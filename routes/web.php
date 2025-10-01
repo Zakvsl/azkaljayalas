@@ -4,6 +4,7 @@ use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Auth\PasswordResetController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\SurveyController;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -14,6 +15,12 @@ require __DIR__ . '/web/ml.php';
 
 Route::get('/', function () {
     return view('welcome');
+})->name('home');
+
+// Survey Routes
+Route::prefix('survey')->group(function () {
+    Route::get('/create', [SurveyController::class, 'create'])->name('survey.create');
+    Route::post('/store', [SurveyController::class, 'store'])->name('survey.store');
 });
 
 // Authentication Routes

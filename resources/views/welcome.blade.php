@@ -28,13 +28,14 @@
             <div class="flex items-center justify-between">
                 <a href="/" class="text-xl font-bold text-blue-700">AZKAL JAYA LAS</a>
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="#home" class="text-gray-600 hover:text-blue-700">Home</a>
+                    <a href="/" class="text-gray-600 hover:text-blue-700">Home</a>
                     <a href="#layanan" class="text-gray-600 hover:text-blue-700">Layanan</a>
                     <a href="#tentang" class="text-gray-600 hover:text-blue-700">Tentang</a>
+                    <a href="#kontak" class="text-gray-600 hover:text-blue-700">Kontak</a>
                 </div>
                 <div class="flex items-center space-x-4">
                     <a href="/login" class="text-gray-600 hover:text-blue-700">Log in</a>
-                    <a href="/signup" class="bg-blue-700 text-white px-6 py-2 rounded-lg hover:bg-blue-800">Sign Up</a>
+                    <a href="/register" class="bg-blue-700 text-white px-6 py-2 rounded-lg hover:bg-blue-800">Sign Up</a>
                 </div>
             </div>
         </div>
@@ -108,7 +109,7 @@
     </section>
 
     <!-- Kenapa Harus Section -->
-    <section class="py-20 bg-white">
+    <section id="tentang" class="py-20 bg-white">
         <div class="container mx-auto px-6">
             <h2 class="text-3xl font-bold text-center mb-4">Kenapa Harus <span class="text-blue-700">Azkal Jaya Las</span>?</h2>
             <p class="text-center text-gray-600 mb-12">Lebih dari Sekedar Bengkel Las. Kami Bangun dengan Kualitas, Kami Rawat dengan Kepercayaan.</p>
@@ -252,7 +253,7 @@
         <div class="container mx-auto px-6 text-center">
             <h2 class="text-3xl font-bold text-white mb-4">Siap Memulai Proyek Anda?</h2>
             <p class="text-blue-100 mb-8">Diskusikan ide Anda dengan tim ahli kami atau langsung jadwalkan survei ke lokasi Anda sekarang juga!</p>
-            <a href="https://wa.me/6285292674783" target="_blank" 
+            <a href="/survey" 
                class="inline-block bg-white text-blue-700 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors">
                 JADWALKAN SURVEI SEKARANG
             </a>
