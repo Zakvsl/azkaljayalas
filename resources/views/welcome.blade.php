@@ -13,103 +13,181 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
     
     <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: 'Poppins', sans-serif;
         }
         .swiper-pagination-bullet-active {
             background-color: #1d4ed8 !important;
         }
+        @keyframes spin-slow {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        .animate-spin-slow {
+            animation: spin-slow 15s linear infinite;
+        }
+        .hero-glossy-bg::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 45% 50%, rgba(246, 224, 94, 0.4) 0%, transparent 50%),
+                        radial-gradient(circle at 55% 50%, rgba(49, 130, 206, 0.5) 0%, transparent 50%);
+            filter: blur(120px);
+            z-index: 0;
+        }
+        .hero-glossy-bg::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 40%);
+            z-index: 0;
+        }
     </style>
 </head>
-<body class="bg-gray-50" x-data="{ navOpen: false, activeFilter: 'semua' }">
+<body class="bg-gray-50" x-data="{ activeFilter: 'semua' }">
     <!-- Navbar -->
-    <nav class="bg-white shadow-sm fixed w-full z-10">
+    <nav class="bg-white shadow-sm fixed w-full z-20" x-data="{ navOpen: false }">
         <div class="container mx-auto px-6 py-4">
             <div class="flex items-center justify-between">
                 <a href="/" class="text-xl font-bold text-blue-700">AZKAL JAYA LAS</a>
-                <div class="hidden md:flex items-center space-x-8">
+
+                <!-- Centered Desktop Links -->
+                <div class="hidden md:flex space-x-8">
                     <a href="/" class="text-gray-600 hover:text-blue-700">Home</a>
                     <a href="#layanan" class="text-gray-600 hover:text-blue-700">Layanan</a>
                     <a href="#tentang" class="text-gray-600 hover:text-blue-700">Tentang</a>
-                    <a href="#kontak" class="text-gray-600 hover:text-blue-700">Kontak</a>
+                    <a href="https://wa.me/6285292674783" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-blue-700">Kontak</a>
                 </div>
-                <div class="flex items-center space-x-4">
-                    <a href="/login" class="text-gray-600 hover:text-blue-700">Log in</a>
-                    <a href="/register" class="bg-blue-700 text-white px-6 py-2 rounded-lg hover:bg-blue-800">Sign Up</a>
+
+                <!-- Right-side Auth Links -->
+                <div class="hidden md:flex items-center space-x-4">
+                    @auth
+                        <a href="{{ route('admin.dashboard') }}" class="text-gray-600 hover:text-blue-700">Dashboard</a>
+                        <form method="POST" action="{{ route('logout') }}">
+                            @csrf
+                            <button type="submit" class="text-gray-600 hover:text-blue-700">Log Out</button>
+                        </form>
+                    @else
+                        <a href="{{ route('login') }}" class="text-gray-600 hover:text-blue-700">Log in</a>
+                        <a href="{{ route('register') }}" class="bg-blue-700 text-white px-6 py-2 rounded-lg hover:bg-blue-800">Sign Up</a>
+                    @endauth
+                </div>
+
+                <!-- Mobile Hamburger Button -->
+                <div class="md:hidden">
+                    <button @click="navOpen = !navOpen" class="text-gray-600 hover:text-blue-700 focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                             <path :class="{'hidden': navOpen, 'inline-flex': !navOpen }" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                             <path :class="{'hidden': !navOpen, 'inline-flex': navOpen }" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div :class="{'block': navOpen, 'hidden': !navOpen}" class="md:hidden bg-white border-t border-gray-200">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="/" class="block text-gray-600 hover:bg-gray-100 hover:text-blue-700 px-3 py-2 rounded-md">Home</a>
+                <a href="#layanan" class="block text-gray-600 hover:bg-gray-100 hover:text-blue-700 px-3 py-2 rounded-md">Layanan</a>
+                <a href="#tentang" class="block text-gray-600 hover:bg-gray-100 hover:text-blue-700 px-3 py-2 rounded-md">Tentang</a>
+                <a href="#kontak" class="block text-gray-600 hover:bg-gray-100 hover:text-blue-700 px-3 py-2 rounded-md">Kontak</a>
+            </div>
+            <!-- Mobile Auth Links -->
+            <div class="pt-4 pb-3 border-t border-gray-200">
+                <div class="px-5 space-y-3">
+                @auth
+                    <a href="{{ route('admin.dashboard') }}" class="block text-gray-600 hover:bg-gray-100 hover:text-blue-700 px-3 py-2 rounded-md">Dashboard</a>
+                    <form method="POST" action="{{ route('logout') }}">
+                        @csrf
+                        <button type="submit" class="w-full text-left text-gray-600 hover:bg-gray-100 hover:text-blue-700 px-3 py-2 rounded-md">Log Out</button>
+                    </form>
+                @else
+                    <a href="{{ route('login') }}" class="block bg-blue-700 text-white text-center px-6 py-2 rounded-lg hover:bg-blue-800">Log in</a>
+                    <a href="{{ route('register') }}" class="block bg-gray-200 text-gray-700 text-center px-6 py-2 rounded-lg hover:bg-gray-300 mt-2">Sign Up</a>
+                @endauth
                 </div>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="bg-gradient-to-br from-blue-50 to-white pt-24 pb-12">
-        <div class="container mx-auto px-6">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <div>
-                    <h1 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+    <section id="home" class="relative hero-glossy-bg bg-blue-50 pt-32 pb-24 overflow-hidden">
+        <div class="container mx-auto px-6 z-10 relative">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                <div class="text-center lg:text-left">
+                    <h1 class="text-4xl sm:text-5xl font-bold text-gray-900 mb-6 leading-tight">
                         Bikin Konstruksi Besi Jadi <span class="text-blue-700">Mudah & Terjangkau</span>
                     </h1>
-                    <p class="text-gray-600 text-lg mb-8">
+                    <p class="text-gray-600 text-lg mb-10">
                         Dapatkan estimasi harga akurat langsung dari sistem kami. Cukup masukkan ukuran & kebutuhan Anda, kami urus sisanya.
                     </p>
-
-                    <!-- Estimasi Form -->
-                    <div class="bg-white p-6 rounded-xl shadow-lg mb-8">
-                        <h2 class="text-2xl font-semibold mb-6">Hitung Estimasi Harga Proyek Anda!</h2>
-                        <form class="space-y-6" action="/estimate" method="POST">
-                            @csrf
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                <div>
-                                    <label class="block text-gray-700 mb-2 font-medium">Material</label>
-                                    <select name="material" class="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
-                                        <option value="pagar">Pagar Besi Minimalis</option>
-                                        <option value="kanopi">Kanopi Minimalis</option>
-                                        <option value="railing">Railing Tangga</option>
-                                    </select>
-                                </div>
-                                <div>
-                                    <label class="block text-gray-700 mb-2 font-medium">Finishing</label>
-                                    <select name="finishing" class="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
-                                        <option value="duco">Cat Duco</option>
-                                        <option value="epoxy">Cat Epoxy</option>
-                                    </select>
-                                </div>
-                                <div>
-                                    <label class="block text-gray-700 mb-2 font-medium">Ukuran (m²)</label>
-                                    <input type="number" name="size" step="0.1" class="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-blue-500 focus:border-blue-500" placeholder="5.5">
-                                </div>
-                                <div>
-                                    <label class="block text-gray-700 mb-2 font-medium">Ketebalan Material</label>
-                                    <select name="thickness" class="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
-                                        <option value="1.2">1.2 mm (standard)</option>
-                                        <option value="1.4">1.4 mm (medium)</option>
-                                        <option value="1.6">1.6 mm (tebal)</option>
-                                    </select>
-                                </div>
-                                <div>
-                                    <label class="block text-gray-700 mb-2 font-medium">Kerumitan Desain</label>
-                                    <select name="complexity" class="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
-                                        <option value="simple">Simple</option>
-                                        <option value="medium">Medium</option>
-                                        <option value="complex">Complex</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <button type="submit" class="w-full bg-blue-700 text-white py-3 px-6 rounded-lg font-medium hover:bg-blue-800 transition-colors">
-                                Hitung Estimasi!
-                            </button>
-                        </form>
+                    <div class="flex flex-col sm:flex-row justify-center lg:justify-start space-y-4 sm:space-y-0 sm:space-x-4">
+                        @auth
+                            <a href="{{ route('survey.create') }}" class="bg-white text-blue-700 px-8 py-3 rounded-full font-semibold shadow-md hover:bg-gray-100 transition-all transform hover:scale-105">
+                                Booking Jadwal Survei
+                            </a>
+                        @else
+                            <a href="{{ route('login') }}" class="bg-white text-blue-700 px-8 py-3 rounded-full font-semibold shadow-md hover:bg-gray-100 transition-all transform hover:scale-105">
+                                Booking Jadwal Survei
+                            </a>
+                        @endauth
+                        <a href="{{ route('estimates.create') }}" class="bg-blue-700 text-white px-8 py-3 rounded-full font-semibold shadow-md hover:bg-blue-800 transition-all transform hover:scale-105 flex items-center justify-center">
+                            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v3.586L7.707 12.293a1 1 0 001.414 1.414l2.5-2.5A1 1 0 0011 10.5V7z"></path></svg>
+                            Estimasi Harga
+                        </a>
                     </div>
                 </div>
-                <div class="hidden lg:block">
-                    <img src="/img/hero-image.jpg" alt="Bengkel Las Professional" class="rounded-xl shadow-lg">
+                <div class="flex justify-center items-center relative h-80 lg:h-96 mt-12 lg:mt-0">
+                    <!-- Decorative Shapes -->
+                     <div class="absolute top-8 left-10 w-12 h-12 border-4 border-blue-500 rounded-md animate-spin-slow"></div>
+                    <div class="absolute top-10 right-2 w-20 h-20 border-4 border-yellow-400 rounded-lg animate-spin-slow"></div>
+                    <div class="absolute bottom-8 left-10 w-12 h-12 border-4 border-blue-300 rounded-md animate-spin-slow" style="animation-direction: reverse;"></div>
+                    <div class="absolute bottom-2 right-16 w-8 h-8 border-2 border-gray-800 rounded-full animate-spin-slow"></div>
+
+                    <!-- Images -->
+                     <img src="{{ asset('build/assets/img/img2.png') }}" alt="Welding sparks" class="absolute w-5/12 lg:w-4/12 h-auto rounded-xl shadow-lg transform rotate-6 hover:rotate-0 transition-transform duration-300" style="right: 15%; bottom: 20%;">
+                    <img src="{{ asset('build/assets/img/img1.png') }}" alt="Welder working on metal" class="absolute w-6/12 lg:w-5/12 h-auto rounded-xl shadow-2xl transform -rotate-6 hover:rotate-0 transition-transform duration-300" style="left: 15%; top: 20%;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Info Card Section -->
+    <section class="relative z-10">
+        <div class="container mx-auto px-6">
+            <div class="bg-white rounded-xl shadow-2xl p-6 md:p-8 -mt-16">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                    <div>
+                        <p class="text-gray-500 text-sm">Sejak 2019 Melayani</p>
+                    </div>
+                    <div>
+                        <p class="text-3xl font-bold text-blue-700">100+</p>
+                        <p class="text-gray-500">Orang</p>
+                    </div>
+                    <div>
+                        <p class="text-3xl font-bold text-blue-700">56</p>
+                        <p class="text-gray-500">Kab/Kota</p>
+                    </div>
+                    <div>
+                        <p class="text-3xl font-bold text-blue-700">3</p>
+                        <p class="text-gray-500">Provinsi</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Kenapa Harus Section -->
-    <section id="tentang" class="py-20 bg-white">
+    <section id="tentang" class="py-20 bg-white pt-28">
         <div class="container mx-auto px-6">
             <h2 class="text-3xl font-bold text-center mb-4">Kenapa Harus <span class="text-blue-700">Azkal Jaya Las</span>?</h2>
             <p class="text-center text-gray-600 mb-12">Lebih dari Sekedar Bengkel Las. Kami Bangun dengan Kualitas, Kami Rawat dengan Kepercayaan.</p>

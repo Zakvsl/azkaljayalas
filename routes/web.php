@@ -5,6 +5,8 @@ use App\Http\Controllers\Auth\PasswordResetController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\SurveyController;
+use App\Http\Controllers\PriceEstimateController;
+use App\Models\PriceEstimate;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -21,6 +23,11 @@ Route::get('/', function () {
 Route::prefix('survey')->group(function () {
     Route::get('/create', [SurveyController::class, 'create'])->name('survey.create');
     Route::post('/store', [SurveyController::class, 'store'])->name('survey.store');
+});
+// Estimate Routes
+Route::prefix('estimates')->group(function () {
+    Route::get('/create', [PriceEstimateController::class, 'create'])->name('estimates.create');
+    Route::post('/store', [PriceEstimateController::class, 'store'])->name('estimates.store');
 });
 
 // Authentication Routes
