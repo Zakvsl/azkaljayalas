@@ -54,7 +54,7 @@ class AuthController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'confirmed', Password::defaults()],
-            'phone' => ['required', 'string', 'regex:/^[0-9]{10,13}$/'],
+            'phone_number' => ['required', 'string', 'regex:/^[0-9]{10,13}$/'],
             'address' => ['required', 'string', 'max:500'],
         ]);
 
@@ -68,7 +68,7 @@ class AuthController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
-            'phone' => $request->phone,
+            'phone_number' => $request->phone_number,
             'address' => $request->address,
             'role' => 'customer',
         ]);

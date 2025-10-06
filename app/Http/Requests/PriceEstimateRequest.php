@@ -21,17 +21,33 @@ class PriceEstimateRequest extends FormRequest
      */
     public function rules(): array
     {
-        return [
-            'project_type' => ['required', 'string', 'in:canopy,fence,gate,railing,stairs,truss'],
-            'material_type' => ['required', 'string', 'in:stainless_steel,mild_steel,galvanized_steel,aluminum'],
-            'dimensions' => ['required', 'array'],
-            'dimensions.length' => ['required', 'numeric', 'min:0.1', 'max:100'],
-            'dimensions.width' => ['required', 'numeric', 'min:0.1', 'max:100'],
-            'dimensions.thickness' => ['required', 'numeric', 'min:0.1', 'max:500'],
-            'additional_features' => ['sometimes', 'array'],
-            'additional_features.*' => ['string', 'in:painting,welding,installation,polishing,design'],
-            'notes' => ['nullable', 'string', 'max:500'],
+        $rules = [
+            'jenis_produk' => ['required', 'string', 'in:Pagar,Kanopi,Railing,Teralis,Pintu,Tangga'],
+            'jumlah_unit' => ['required', 'integer', 'min:1'],
+            'jenis_material' => ['required', 'string', 'in:hollow,besi_siku,aluminium,stainless,plat'],
+            'ketebalan_mm' => ['required', 'numeric', 'min:0.1', 'max:100'],
+            'finishing' => ['required', 'string', 'in:cat_biasa,cat_epoxy,powder_coating,galvanis'],
+            'kerumitan_desain' => ['required', 'integer', 'in:1,2,3'],
+            'notes' => ['nullable', 'string', 'max:1000'],
+            'harga_akhir' => ['sometimes', 'numeric', 'min:0'], // untuk simpan setelah calculate
         ];
+
+        // Conditional: Jumlah lubang hanya untuk Teralis
+        if ($this->input('jenis_produk') === 'Teralis') {
+            $rules['jumlah_lubang'] = ['required', 'integer', 'min:1'];
+        }
+
+        // Conditional: Ukuran m² untuk non-Teralis
+        if ($this->input('jenis_produk') && $this->input('jenis_produk') !== 'Teralis') {
+            $rules['ukuran_m2'] = ['required', 'numeric', 'min:0.1', 'max:1000'];
+        }
+
+        // Conditional: Profile size tidak untuk plat
+        if ($this->input('jenis_material') && $this->input('jenis_material') !== 'plat') {
+            $rules['profile_size'] = ['required', 'string', 'max:50'];
+        }
+
+        return $rules;
     }
 
     /**
@@ -42,10 +58,16 @@ class PriceEstimateRequest extends FormRequest
     public function attributes(): array
     {
         return [
-            'dimensions.length' => 'length',
-            'dimensions.width' => 'width',
-            'dimensions.thickness' => 'thickness',
-            'additional_features.*' => 'additional feature',
+            'jenis_produk' => 'jenis produk',
+            'jumlah_unit' => 'jumlah unit',
+            'jumlah_lubang' => 'jumlah lubang',
+            'ukuran_m2' => 'ukuran',
+            'jenis_material' => 'jenis material',
+            'profile_size' => 'ukuran profile',
+            'ketebalan_mm' => 'ketebalan',
+            'finishing' => 'jenis finishing',
+            'kerumitan_desain' => 'tingkat kerumitan desain',
+            'harga_akhir' => 'harga estimasi',
         ];
     }
 
@@ -57,10 +79,12 @@ class PriceEstimateRequest extends FormRequest
     public function messages(): array
     {
         return [
-            'dimensions.length.max' => 'The length cannot exceed 100 meters.',
-            'dimensions.width.max' => 'The width cannot exceed 100 meters.',
-            'dimensions.thickness.max' => 'The thickness cannot exceed 500 millimeters.',
-            'additional_features.*.in' => 'The selected additional feature is invalid.',
+            'jenis_produk.required' => 'Silakan pilih jenis produk.',
+            'jumlah_lubang.required' => 'Jumlah lubang wajib diisi untuk produk Teralis.',
+            'ukuran_m2.required' => 'Ukuran dalam m² wajib diisi untuk produk ini.',
+            'profile_size.required' => 'Ukuran profile wajib diisi untuk material ini.',
+            'ketebalan_mm.max' => 'Ketebalan tidak boleh melebihi 100mm.',
+            'ukuran_m2.max' => 'Ukuran tidak boleh melebihi 1000 m².',
         ];
     }
 }

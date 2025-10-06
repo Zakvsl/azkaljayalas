@@ -35,7 +35,7 @@ class PriceEstimateController extends BaseController
     public function index(): View
     {
         $estimates = PriceEstimate::query()
-            ->when(!Auth::user()->isAdmin(), function ($query) {
+            ->when(!(bool) (Auth::user()->is_admin ?? false) && (Auth::user()->role ?? null) !== 'admin', function ($query) {
                 $query->where('user_id', Auth::id());
             })
             ->latest()
@@ -55,33 +55,44 @@ class PriceEstimateController extends BaseController
     /**
      * Get instant price estimate.
      */
-    public function estimate(PriceEstimateRequest $request): JsonResponse
+    public function estimate(Request $request): JsonResponse
     {
         try {
-            $validated = $request->validated();
+            // Validasi manual tanpa PriceEstimateRequest (karena tidak perlu harga_akhir)
+            $validated = $request->validate([
+                'jenis_produk' => ['required', 'string', 'in:Pagar,Kanopi,Railing,Teralis,Pintu,Tangga'],
+                'jumlah_unit' => ['required', 'integer', 'min:1'],
+                'jumlah_lubang' => ['required_if:jenis_produk,Teralis', 'nullable', 'integer', 'min:1'],
+                'ukuran_m2' => ['required_unless:jenis_produk,Teralis', 'nullable', 'numeric', 'min:0.1'],
+                'jenis_material' => ['required', 'string', 'in:hollow,besi_siku,aluminium,stainless,plat'],
+                'profile_size' => ['required_unless:jenis_material,plat', 'nullable', 'string', 'max:50'],
+                'ketebalan_mm' => ['required', 'numeric', 'min:0.1'],
+                'finishing' => ['required', 'string', 'in:cat_biasa,cat_epoxy,powder_coating,galvanis'],
+                'kerumitan_desain' => ['required', 'integer', 'in:1,2,3'],
+            ]);
+
             $estimatedPrice = $this->estimationService->predictPrice($validated);
 
             Log::info('Price estimate generated', [
-                'user_id' => Auth::id(),
                 'input' => $validated,
                 'estimated_price' => $estimatedPrice
             ]);
 
             return response()->json([
                 'success' => true,
-                'estimated_price' => $estimatedPrice,
+                'harga_akhir' => $estimatedPrice,
                 'formatted_price' => 'Rp ' . number_format($estimatedPrice, 0, ',', '.'),
             ]);
         } catch (\Exception $e) {
             Log::error('Price estimation failed', [
-                'user_id' => Auth::id(),
-                'input' => $request->validated(),
-                'error' => $e->getMessage()
+                'input' => $request->all(),
+                'error' => $e->getMessage(),
+                'trace' => $e->getTraceAsString()
             ]);
 
             return response()->json([
                 'success' => false,
-                'message' => 'Failed to generate price estimate. Please try again later.',
+                'message' => 'Gagal menghitung estimasi: ' . $e->getMessage(),
             ], 500);
         }
     }
@@ -93,39 +104,43 @@ class PriceEstimateController extends BaseController
     {
         try {
             $validated = $request->validated();
-            $estimatedPrice = $this->estimationService->predictPrice($validated);
 
             $estimate = PriceEstimate::create([
                 'user_id' => Auth::id(),
-                'project_type' => $validated['project_type'],
-                'material_type' => $validated['material_type'],
-                'dimensions' => $validated['dimensions'],
-                'additional_features' => $validated['additional_features'] ?? [],
-                'estimated_price' => $estimatedPrice,
+                'jenis_produk' => $validated['jenis_produk'],
+                'jumlah_unit' => $validated['jumlah_unit'],
+                'jumlah_lubang' => $validated['jumlah_lubang'] ?? null,
+                'ukuran_m2' => $validated['ukuran_m2'] ?? null,
+                'jenis_material' => $validated['jenis_material'],
+                'profile_size' => $validated['profile_size'] ?? null,
+                'ketebalan_mm' => $validated['ketebalan_mm'],
+                'finishing' => $validated['finishing'],
+                'kerumitan_desain' => $validated['kerumitan_desain'],
+                'harga_akhir' => $validated['harga_akhir'],
                 'notes' => $validated['notes'] ?? null,
             ]);
 
             Log::info('Price estimate stored', [
                 'user_id' => Auth::id(),
                 'estimate_id' => $estimate->id,
-                'estimated_price' => $estimatedPrice
+                'harga_akhir' => $validated['harga_akhir']
             ]);
 
             return response()->json([
                 'success' => true,
-                'message' => 'Price estimate created successfully.',
+                'message' => 'Estimasi berhasil disimpan.',
                 'estimate' => $estimate,
             ], 201);
         } catch (\Exception $e) {
             Log::error('Failed to store price estimate', [
                 'user_id' => Auth::id(),
-                'input' => $request->validated(),
+                'input' => $request->all(),
                 'error' => $e->getMessage()
             ]);
 
             return response()->json([
                 'success' => false,
-                'message' => 'Failed to store price estimate. Please try again later.',
+                'message' => 'Gagal menyimpan estimasi: ' . $e->getMessage(),
             ], 500);
         }
     }

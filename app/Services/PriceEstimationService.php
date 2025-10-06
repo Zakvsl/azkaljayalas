@@ -19,34 +19,69 @@ class PriceEstimationService
 
     public function predictPrice(array $data)
     {
+        // Untuk sementara gunakan formula sederhana
+        // Nanti akan diganti dengan ML model FastAPI
         try {
-            $process = new Process([
-                $this->pythonPath,
-                base_path('python/predict.py'),
-                json_encode([
-                    'project_type' => $data['project_type'],
-                    'material_type' => $data['material_type'],
-                    'dimensions' => [
-                        'length' => (float) $data['dimensions']['length'],
-                        'width' => (float) $data['dimensions']['width'],
-                        'thickness' => (float) $data['dimensions']['thickness'],
-                    ],
-                    'additional_features' => $data['additional_features'] ?? [],
-                ]),
-                $this->modelPath
-            ]);
+            // Base price per jenis material (Rp/kg atau Rp/unit)
+            $materialPrices = [
+                'hollow' => 15000,
+                'besi_siku' => 12000,
+                'aluminium' => 35000,
+                'stainless' => 55000,
+                'plat' => 18000,
+            ];
 
-            $process->setTimeout(30);
-            $process->run();
+            // Finishing cost multiplier
+            $finishingMultiplier = [
+                'cat_biasa' => 1.1,
+                'cat_epoxy' => 1.25,
+                'powder_coating' => 1.4,
+                'galvanis' => 1.3,
+            ];
 
-            if (!$process->isSuccessful()) {
-                throw new ProcessFailedException($process);
+            // Design complexity multiplier
+            $complexityMultiplier = [
+                1 => 1.0,    // Sederhana
+                2 => 1.3,    // Menengah
+                3 => 1.7,    // Kompleks
+            ];
+
+            $baseMaterialPrice = $materialPrices[$data['jenis_material']];
+            $jumlah_unit = $data['jumlah_unit'];
+
+            // Hitung berdasarkan jenis produk
+            if ($data['jenis_produk'] === 'Teralis') {
+                // Untuk Teralis: hitung per lubang
+                $jumlah_lubang = $data['jumlah_lubang'];
+                $hargaPerLubang = 50000; // Base price per lubang
+                $basePrice = $jumlah_lubang * $hargaPerLubang * $jumlah_unit;
+            } else {
+                // Untuk produk lain: hitung per m²
+                $ukuran_m2 = $data['ukuran_m2'];
+                $hargaPerM2 = $baseMaterialPrice * ($data['ketebalan_mm'] / 10); // Adjust by thickness
+                $basePrice = $ukuran_m2 * $hargaPerM2 * $jumlah_unit;
             }
 
-            $result = json_decode($process->getOutput(), true);
-            return floatval($result['predicted_price']);
+            // Apply finishing multiplier
+            $basePrice *= $finishingMultiplier[$data['finishing']];
+
+            // Apply complexity multiplier
+            $basePrice *= $complexityMultiplier[$data['kerumitan_desain']];
+
+            // Add labor cost (40% of base price)
+            $totalPrice = $basePrice * 1.4;
+
+            // Round to nearest 1000
+            $totalPrice = round($totalPrice / 1000) * 1000;
+
+            return $totalPrice;
+
         } catch (\Exception $e) {
-            throw new \Exception('Failed to generate price prediction: ' . $e->getMessage());
+            \Illuminate\Support\Facades\Log::error('Price prediction failed', [
+                'error' => $e->getMessage(),
+                'data' => $data
+            ]);
+            throw new \Exception('Gagal menghitung harga: ' . $e->getMessage());
         }
     }
 

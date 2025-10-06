@@ -4,6 +4,8 @@ use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Auth\PasswordResetController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\SurveyBookingController;
+use App\Http\Controllers\Admin\MLModelController;
 use App\Http\Controllers\SurveyController;
 use App\Http\Controllers\PriceEstimateController;
 use App\Models\PriceEstimate;
@@ -24,11 +26,8 @@ Route::prefix('survey')->group(function () {
     Route::get('/create', [SurveyController::class, 'create'])->name('survey.create');
     Route::post('/store', [SurveyController::class, 'store'])->name('survey.store');
 });
-// Estimate Routes
-Route::prefix('estimates')->group(function () {
-    Route::get('/create', [PriceEstimateController::class, 'create'])->name('estimates.create');
-    Route::post('/store', [PriceEstimateController::class, 'store'])->name('estimates.store');
-});
+
+// Estimate routes are defined in routes/web/price-estimates.php
 
 // Authentication Routes
 Route::middleware('guest')->group(function () {
@@ -86,5 +85,20 @@ Route::middleware('auth')->group(function () {
     Route::middleware('admin')->group(function () {
         Route::get('/admin/dashboard', [DashboardController::class, 'index'])
             ->name('admin.dashboard');
+        
+        // Survey Bookings Management
+        Route::prefix('admin/survey-bookings')->name('admin.survey-bookings.')->group(function () {
+            Route::get('/', [SurveyBookingController::class, 'index'])->name('index');
+            Route::get('/{surveyBooking}', [SurveyBookingController::class, 'show'])->name('show');
+            Route::patch('/{surveyBooking}/status', [SurveyBookingController::class, 'updateStatus'])->name('update-status');
+            Route::delete('/{surveyBooking}', [SurveyBookingController::class, 'destroy'])->name('destroy');
+        });
+
+        // ML Model Management
+        Route::prefix('admin/ml')->name('admin.ml.')->group(function () {
+            Route::get('/', [MLModelController::class, 'index'])->name('index');
+            Route::post('/train', [MLModelController::class, 'train'])->name('train');
+            Route::post('/predict', [MLModelController::class, 'testPrediction'])->name('predict');
+        });
     });
 });

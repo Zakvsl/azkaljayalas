@@ -4,8 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\SurveyBooking;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Controller as BaseController;
 
-class SurveyController extends Controller
+class SurveyController extends BaseController
 {
     public function __construct()
     {
@@ -28,14 +29,13 @@ class SurveyController extends Controller
             'preferred_date' => 'required|date|after:today',
             'notes' => 'nullable|string'
         ]);
-
         $survey = SurveyBooking::create([
-            'user_id' => auth()->id(),
+            'user_id' => $request->user()->id,
             'project_type' => $validated['project_type'],
             'project_description' => $validated['project_description'],
             'location' => $validated['location'],
             'preferred_date' => $validated['preferred_date'],
-            'notes' => $validated['notes'],
+            'notes' => $validated['notes'] ?? null,
             'status' => 'pending'
         ]);
 

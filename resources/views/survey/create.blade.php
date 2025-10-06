@@ -19,42 +19,59 @@
             @csrf
             
             <div>
-                <label for="tanggal" class="block text-sm font-medium text-gray-700">Tanggal Survei</label>
+                <label for="project_type" class="block text-sm font-medium text-gray-700">Jenis Proyek <span class="text-red-500">*</span></label>
+                <select name="project_type" 
+                        id="project_type" 
+                        required 
+                        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                    <option value="">Pilih Jenis Proyek</option>
+                    <option value="pagar" {{ old('project_type') == 'pagar' ? 'selected' : '' }}>Pagar</option>
+                    <option value="kanopi" {{ old('project_type') == 'kanopi' ? 'selected' : '' }}>Kanopi</option>
+                    <option value="railing" {{ old('project_type') == 'railing' ? 'selected' : '' }}>Railing</option>
+                    <option value="pintu" {{ old('project_type') == 'pintu' ? 'selected' : '' }}>Pintu</option>
+                    <option value="teralis" {{ old('project_type') == 'teralis' ? 'selected' : '' }}>Teralis</option>
+                    <option value="lainnya" {{ old('project_type') == 'lainnya' ? 'selected' : '' }}>Lainnya</option>
+                </select>
+            </div>
+            
+            <div>
+                <label for="project_description" class="block text-sm font-medium text-gray-700">Deskripsi Proyek <span class="text-red-500">*</span></label>
+                <textarea name="project_description" 
+                          id="project_description" 
+                          rows="3" 
+                          required 
+                          placeholder="Jelaskan detail proyek yang Anda inginkan..."
+                          class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">{{ old('project_description') }}</textarea>
+            </div>
+            
+            <div>
+                <label for="location" class="block text-sm font-medium text-gray-700">Lokasi Survei <span class="text-red-500">*</span></label>
+                <textarea name="location" 
+                          id="location" 
+                          rows="2" 
+                          required 
+                          placeholder="Alamat lengkap lokasi survei..."
+                          class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">{{ old('location') }}</textarea>
+            </div>
+            
+            <div>
+                <label for="preferred_date" class="block text-sm font-medium text-gray-700">Tanggal yang Diinginkan <span class="text-red-500">*</span></label>
                 <input type="date" 
-                       name="tanggal" 
-                       id="tanggal" 
-                       value="{{ old('tanggal') }}"
+                       name="preferred_date" 
+                       id="preferred_date" 
+                       value="{{ old('preferred_date') }}"
                        required 
                        min="{{ date('Y-m-d', strtotime('+1 day')) }}"
                        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
             </div>
             
             <div>
-                <label for="waktu" class="block text-sm font-medium text-gray-700">Waktu</label>
-                <select name="waktu" 
-                        id="waktu" 
-                        required 
-                        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
-                    <option value="pagi" {{ old('waktu') == 'pagi' ? 'selected' : '' }}>Pagi (08.00 - 11.00)</option>
-                    <option value="siang" {{ old('waktu') == 'siang' ? 'selected' : '' }}>Siang (13.00 - 16.00)</option>
-                </select>
-            </div>
-            
-            <div>
-                <label for="alamat" class="block text-sm font-medium text-gray-700">Alamat Lengkap</label>
-                <textarea name="alamat" 
-                          id="alamat" 
-                          rows="3" 
-                          required 
-                          class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">{{ old('alamat') }}</textarea>
-            </div>
-            
-            <div>
-                <label for="catatan" class="block text-sm font-medium text-gray-700">Catatan Tambahan (Opsional)</label>
-                <textarea name="catatan" 
-                          id="catatan" 
+                <label for="notes" class="block text-sm font-medium text-gray-700">Catatan Tambahan (Opsional)</label>
+                <textarea name="notes" 
+                          id="notes" 
                           rows="2" 
-                          class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">{{ old('catatan') }}</textarea>
+                          placeholder="Catatan atau permintaan khusus..."
+                          class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">{{ old('notes') }}</textarea>
             </div>
             
             <div>
