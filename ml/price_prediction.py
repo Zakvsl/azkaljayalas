@@ -54,7 +54,7 @@ class PricePredictionModel:
         # Prepare data
         df = self.prepare_data(df)
         
-        # Define features (adjust sesuai dengan kolom dataset Anda)
+        # Define features (adjust sesuai dengan kolom dataset)
         feature_columns = [
             'jenis_proyek_encoded', 
             'panjang', 

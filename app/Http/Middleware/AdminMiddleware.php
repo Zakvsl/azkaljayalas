@@ -18,7 +18,9 @@ class AdminMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if (!Auth::check() || !data_get(Auth::user(), 'is_admin', false)) {
+        $user = Auth::user();
+        
+        if (!$user || !($user->role === 'admin' || (bool) data_get($user, 'is_admin', false))) {
             return redirect('/')->with('error', 'Unauthorized access.');
         }
 

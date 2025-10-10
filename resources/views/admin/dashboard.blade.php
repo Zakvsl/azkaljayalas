@@ -1,196 +1,184 @@
-@extends('layouts.app')
+@extends('layouts.admin')
+
+@section('title', 'Dashboard')
+@section('page-title', 'Dashboard')
 
 @section('content')
-<div class="min-h-screen bg-gray-50 p-6">
-    <div class="max-w-7xl mx-auto">
-        <h1 class="text-3xl font-semibold text-gray-900 mb-6">Admin Dashboard</h1>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <!-- Statistics Cards -->
-            <div class="bg-white p-6 rounded-lg shadow-sm">
-                <h3 class="text-lg font-medium text-gray-900">Total Users</h3>
-                <p class="text-3xl font-bold text-blue-600 mt-2">{{ $totalUsers ?? 0 }}</p>
+<div class="space-y-6">
+    
+    <!-- Statistics Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Total Users -->
+        <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+            <div class="flex items-center justify-between">
+                <div>
+                    <p class="text-sm font-medium text-gray-600">Total Users</p>
+                    <p class="text-3xl font-bold text-blue-600 mt-2">{{ $totalUsers ?? 0 }}</p>
+                    <p class="text-xs text-gray-500 mt-1">Registered accounts</p>
+                </div>
+                <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+                    <i class="fas fa-users text-blue-600 text-xl"></i>
+                </div>
             </div>
+        </div>
 
-            <div class="bg-white p-6 rounded-lg shadow-sm">
-                <h3 class="text-lg font-medium text-gray-900">Total Estimates</h3>
-                <p class="text-3xl font-bold text-blue-600 mt-2">{{ $totalEstimates ?? 0 }}</p>
+        <!-- Total Estimates -->
+        <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+            <div class="flex items-center justify-between">
+                <div>
+                    <p class="text-sm font-medium text-gray-600">Total Estimates</p>
+                    <p class="text-3xl font-bold text-green-600 mt-2">{{ $totalEstimates ?? 0 }}</p>
+                    <p class="text-xs text-gray-500 mt-1">Price requests</p>
+                </div>
+                <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
+                    <i class="fas fa-calculator text-green-600 text-xl"></i>
+                </div>
             </div>
+        </div>
 
-            <div class="bg-white p-6 rounded-lg shadow-sm">
-                <h3 class="text-lg font-medium text-gray-900">Pending Bookings</h3>
-                <p class="text-3xl font-bold text-blue-600 mt-2">{{ $pendingBookings ?? 0 }}</p>
+        <!-- Pending Bookings -->
+        <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+            <div class="flex items-center justify-between">
+                <div>
+                    <p class="text-sm font-medium text-gray-600">Pending Bookings</p>
+                    <p class="text-3xl font-bold text-yellow-600 mt-2">{{ $pendingBookings ?? 0 }}</p>
+                    <p class="text-xs text-gray-500 mt-1">Survey appointments</p>
+                </div>
+                <div class="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center">
+                    <i class="fas fa-calendar-check text-yellow-600 text-xl"></i>
+                </div>
             </div>
+        </div>
 
-            <div class="bg-white p-6 rounded-lg shadow-sm">
-                <h3 class="text-lg font-medium text-gray-900">Completed Projects</h3>
-                <p class="text-3xl font-bold text-blue-600 mt-2">{{ $completedProjects ?? 0 }}</p>
+        <!-- Completed Projects -->
+        <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+            <div class="flex items-center justify-between">
+                <div>
+                    <p class="text-sm font-medium text-gray-600">Completed</p>
+                    <p class="text-3xl font-bold text-purple-600 mt-2">{{ $completedProjects ?? 0 }}</p>
+                    <p class="text-xs text-gray-500 mt-1">Finished projects</p>
+                </div>
+                <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center">
+                    <i class="fas fa-check-circle text-purple-600 text-xl"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quick Actions & Recent Activity -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        
+        <!-- Quick Actions -->
+        <div class="bg-white rounded-lg shadow-sm p-6">
+            <h2 class="text-xl font-semibold text-gray-900 mb-4 flex items-center">
+                <i class="fas fa-bolt text-yellow-500 mr-2"></i>
+                Quick Actions
+            </h2>
+            
+            <div class="space-y-3">
+                <a href="{{ route('admin.users.create') }}" class="flex items-center p-3 bg-blue-50 hover:bg-blue-100 rounded-lg transition-colors group">
+                    <div class="w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center mr-3 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-user-plus text-white"></i>
+                    </div>
+                    <div>
+                        <p class="font-medium text-gray-900">Add New User</p>
+                        <p class="text-xs text-gray-600">Create new account</p>
+                    </div>
+                </a>
+
+                <a href="{{ route('admin.survey-bookings.index') }}" class="flex items-center p-3 bg-green-50 hover:bg-green-100 rounded-lg transition-colors group">
+                    <div class="w-10 h-10 bg-green-500 rounded-lg flex items-center justify-center mr-3 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-calendar text-white"></i>
+                    </div>
+                    <div>
+                        <p class="font-medium text-gray-900">View Bookings</p>
+                        <p class="text-xs text-gray-600">Manage survey schedules</p>
+                    </div>
+                </a>
+
+                <a href="{{ route('admin.ml.index') }}" class="flex items-center p-3 bg-purple-50 hover:bg-purple-100 rounded-lg transition-colors group">
+                    <div class="w-10 h-10 bg-purple-500 rounded-lg flex items-center justify-center mr-3 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-brain text-white"></i>
+                    </div>
+                    <div>
+                        <p class="font-medium text-gray-900">Train ML Model</p>
+                        <p class="text-xs text-gray-600">Update prediction model</p>
+                    </div>
+                </a>
+
+                <a href="{{ route('estimates.index') }}" class="flex items-center p-3 bg-orange-50 hover:bg-orange-100 rounded-lg transition-colors group">
+                    <div class="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center mr-3 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-file-invoice text-white"></i>
+                    </div>
+                    <div>
+                        <p class="font-medium text-gray-900">View Estimates</p>
+                        <p class="text-xs text-gray-600">Check price requests</p>
+                    </div>
+                </a>
             </div>
         </div>
 
         <!-- Recent Activity -->
-        <div class="mt-8 bg-white rounded-lg shadow-sm">
-            <div class="p-6">
-                <h2 class="text-xl font-semibold text-gray-900">Recent Activity</h2>
-                
-                <div class="mt-6">
-                                    </div>
-            </div>
-        </div>
-
-        @push('scripts')
-        <script>
-            function retrainModel() {
-                const button = document.getElementById('retrainButton');
-                const statusDiv = document.getElementById('trainingStatus');
-                const resultsDiv = document.getElementById('trainingResults');
-                const metricsOutput = document.getElementById('metricsOutput');
-                const errorDiv = document.getElementById('errorMessage');
-                const errorText = document.getElementById('errorText');
-
-                // Reset UI
-                button.disabled = true;
-                statusDiv.classList.remove('hidden');
-                resultsDiv.classList.add('hidden');
-                errorDiv.classList.add('hidden');
-
-                // Make API request
-                fetch('/api/ml/retrain', {
-                    method: 'POST',
-                    headers: {
-                        'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content,
-                        'Accept': 'application/json'
-                    }
-                })
-                .then(response => response.json())
-                .then(data => {
-                    statusDiv.classList.add('hidden');
-                    
-                    if (data.status === 'success') {
-                        resultsDiv.classList.remove('hidden');
-                        metricsOutput.textContent = JSON.stringify(data.metrics, null, 2);
-                    } else {
-                        throw new Error(data.message || 'Unknown error occurred');
-                    }
-                })
-                .catch(error => {
-                    statusDiv.classList.add('hidden');
-                    errorDiv.classList.remove('hidden');
-                    errorText.textContent = error.message;
-                })
-                .finally(() => {
-                    button.disabled = false;
-                });
-            }
-        </script>
-        @endpush
-
-        @if(isset($recentActivities) && count($recentActivities) > 0)
-                        <div class="space-y-4">
-                            @foreach($recentActivities as $activity)
-                                <div class="flex items-start space-x-4">
-                                    <div class="flex-1">
-                                        <p class="text-sm font-medium text-gray-900">{{ $activity->description }}</p>
-                                        <p class="text-sm text-gray-500">{{ $activity->created_at->diffForHumans() }}</p>
-                                    </div>
-                                </div>
-                            @endforeach
+        <div class="bg-white rounded-lg shadow-sm p-6">
+            <h2 class="text-xl font-semibold text-gray-900 mb-4 flex items-center">
+                <i class="fas fa-history text-blue-500 mr-2"></i>
+                Recent Activity
+            </h2>
+            
+            <div class="space-y-4">
+                @if(isset($recentActivities) && count($recentActivities) > 0)
+                    @foreach($recentActivities as $activity)
+                    <div class="flex items-start space-x-3 pb-3 border-b border-gray-100 last:border-0">
+                        <div class="w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-{{ $activity['icon'] ?? 'circle' }} text-gray-600 text-sm"></i>
                         </div>
-                    @else
-                        <p class="text-gray-500">No recent activity.</p>
-                    @endif
-                </div>
-            </div>
-        </div>
-
-        <!-- ML Model Management -->
-        <div class="mt-8 bg-white rounded-lg shadow-sm">
-            <div class="p-6">
-                <div class="flex items-center justify-between">
-                    <h2 class="text-xl font-semibold text-gray-900">Price Estimation Model</h2>
-                    <button 
-                        onclick="retrainModel()"
-                        class="inline-flex items-center px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-50"
-                        id="retrainButton"
-                    >
-                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
-                        </svg>
-                        Retrain Model
-                    </button>
-                </div>
-                
-                <!-- Training Status -->
-                <div id="trainingStatus" class="mt-4 hidden">
-                    <div class="flex items-center text-blue-600">
-                        <svg class="w-5 h-5 mr-2 animate-spin" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-                            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                        </svg>
-                        <span>Training in progress...</span>
-                    </div>
-                </div>
-
-                <!-- Training Results -->
-                <div id="trainingResults" class="mt-4 hidden">
-                    <h3 class="text-lg font-medium text-gray-900 mb-2">Training Results</h3>
-                    <div class="bg-gray-50 p-4 rounded-md">
-                        <pre id="metricsOutput" class="text-sm text-gray-700 whitespace-pre-wrap"></pre>
-                    </div>
-                </div>
-
-                <!-- Error Message -->
-                <div id="errorMessage" class="mt-4 hidden">
-                    <div class="bg-red-50 text-red-700 p-4 rounded-md">
-                        <div class="flex">
-                            <div class="flex-shrink-0">
-                                <svg class="h-5 w-5 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                </svg>
-                            </div>
-                            <div class="ml-3">
-                                <h3 class="text-sm font-medium">Error</h3>
-                                <div class="mt-2 text-sm" id="errorText"></div>
-                            </div>
+                        <div class="flex-1">
+                            <p class="text-sm text-gray-800">{{ $activity['message'] }}</p>
+                            <p class="text-xs text-gray-500 mt-1">{{ $activity['time'] }}</p>
                         </div>
                     </div>
-                </div>
-                </div>
+                    @endforeach
+                @else
+                    <div class="text-center py-8 text-gray-500">
+                        <i class="fas fa-inbox text-4xl mb-3"></i>
+                        <p>No recent activity</p>
+                    </div>
+                @endif
             </div>
-        </div>
-
-        <!-- Quick Actions -->
-        <div class="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <a href="{{ route('admin.users.index') }}" class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
-                <h3 class="text-lg font-medium text-gray-900">Manage Users</h3>
-                <p class="text-gray-500 mt-2">View and manage user accounts</p>
-            </a>
-
-            <a href="{{ route('admin.estimates.index') }}" class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
-                <h3 class="text-lg font-medium text-gray-900">Price Estimates</h3>
-                <p class="text-gray-500 mt-2">Review and manage price estimates</p>
-            </a>
-
-            <a href="{{ route('admin.bookings.index') }}" class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
-                <h3 class="text-lg font-medium text-gray-900">Survey Bookings</h3>
-                <p class="text-gray-500 mt-2">Manage survey appointments</p>
-            </a>
-
-            <a href="{{ route('admin.ml.index') }}" class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
-                <h3 class="text-lg font-medium text-gray-900">ML Model Management</h3>
-                <p class="text-gray-500 mt-2">Train and update the estimation model</p>
-            </a>
-
-            <a href="{{ route('admin.settings') }}" class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
-                <h3 class="text-lg font-medium text-gray-900">Settings</h3>
-                <p class="text-gray-500 mt-2">Configure system settings</p>
-            </a>
-
-            <a href="{{ route('admin.reports') }}" class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
-                <h3 class="text-lg font-medium text-gray-900">Reports</h3>
-                <p class="text-gray-500 mt-2">Generate and view reports</p>
-            </a>
         </div>
     </div>
+
+    <!-- Charts Section -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        
+        <!-- Monthly Statistics -->
+        <div class="bg-white rounded-lg shadow-sm p-6">
+            <h2 class="text-xl font-semibold text-gray-900 mb-4 flex items-center">
+                <i class="fas fa-chart-line text-green-500 mr-2"></i>
+                Monthly Overview
+            </h2>
+            <div class="h-64 flex items-center justify-center text-gray-400">
+                <div class="text-center">
+                    <i class="fas fa-chart-bar text-6xl mb-3"></i>
+                    <p>Chart will be displayed here</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Status Distribution -->
+        <div class="bg-white rounded-lg shadow-sm p-6">
+            <h2 class="text-xl font-semibold text-gray-900 mb-4 flex items-center">
+                <i class="fas fa-chart-pie text-purple-500 mr-2"></i>
+                Status Distribution
+            </h2>
+            <div class="h-64 flex items-center justify-center text-gray-400">
+                <div class="text-center">
+                    <i class="fas fa-chart-pie text-6xl mb-3"></i>
+                    <p>Chart will be displayed here</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </div>
 @endsection
