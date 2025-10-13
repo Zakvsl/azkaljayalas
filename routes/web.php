@@ -7,6 +7,8 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\SurveyBookingController;
 use App\Http\Controllers\Admin\MLModelController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Admin\PriceEstimateController as AdminPriceEstimateController;
+use App\Http\Controllers\Admin\ProfileController as AdminProfileController;
 use App\Http\Controllers\SurveyController;
 use App\Http\Controllers\PriceEstimateController;
 use App\Models\PriceEstimate;
@@ -75,10 +77,10 @@ Route::middleware('auth')->group(function () {
         return back()->with('status', 'verification-link-sent');
     })->middleware(['throttle:6,1'])->name('verification.send');
 
-    // Profile Routes
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::put('/profile/password', [ProfileController::class, 'updatePassword'])->name('profile.password.update');
+    // Profile Routes (untuk customer/user biasa)
+    Route::get('profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::put('profile/password', [ProfileController::class, 'updatePassword'])->name('profile.password.update');
     
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
@@ -86,6 +88,21 @@ Route::middleware('auth')->group(function () {
     Route::middleware('admin')->group(function () {
         Route::get('/admin/dashboard', [DashboardController::class, 'index'])
             ->name('admin.dashboard');
+        
+        // Admin Price Estimates Management
+        Route::prefix('admin/estimates')->name('admin.estimates.')->group(function () {
+            Route::get('/', [AdminPriceEstimateController::class, 'index'])->name('index');
+            Route::get('/{estimate}', [AdminPriceEstimateController::class, 'show'])->name('show');
+            Route::patch('/{estimate}', [AdminPriceEstimateController::class, 'update'])->name('update');
+            Route::delete('/{estimate}', [AdminPriceEstimateController::class, 'destroy'])->name('destroy');
+        });
+        
+        // Admin Profile Management
+        Route::prefix('admin/profile')->name('admin.profile.')->group(function () {
+            Route::get('/', [AdminProfileController::class, 'edit'])->name('edit');
+            Route::patch('/', [AdminProfileController::class, 'update'])->name('update');
+            Route::put('/password', [AdminProfileController::class, 'updatePassword'])->name('password.update');
+        });
         
         // Survey Bookings Management
         Route::prefix('admin/survey-bookings')->name('admin.survey-bookings.')->group(function () {

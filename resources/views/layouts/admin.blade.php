@@ -46,8 +46,8 @@
                 </a>
 
                 <!-- Price Estimates -->
-                <a href="{{ route('estimates.index') }}" 
-                   class="flex items-center px-3 py-2.5 rounded-lg hover:bg-blue-800 transition-colors {{ request()->routeIs('estimates.*') ? 'bg-blue-800' : '' }}">
+                <a href="{{ route('admin.estimates.index') }}" 
+                   class="flex items-center px-3 py-2.5 rounded-lg hover:bg-blue-800 transition-colors {{ request()->routeIs('admin.estimates.*') ? 'bg-blue-800' : '' }}">
                     <i class="fas fa-calculator text-lg w-6"></i>
                     <span x-show="sidebarOpen" class="ml-3 whitespace-nowrap">Price Estimates</span>
                 </a>
@@ -67,8 +67,8 @@
                 </a>
 
                 <!-- Profile Settings -->
-                <a href="{{ route('profile.edit') }}" 
-                   class="flex items-center px-3 py-2.5 rounded-lg hover:bg-blue-800 transition-colors {{ request()->routeIs('profile.*') ? 'bg-blue-800' : '' }}">
+                <a href="{{ route('admin.profile.edit') }}" 
+                   class="flex items-center px-3 py-2.5 rounded-lg hover:bg-blue-800 transition-colors {{ request()->routeIs('admin.profile.*') ? 'bg-blue-800' : '' }}">
                     <i class="fas fa-user-cog text-lg w-6"></i>
                     <span x-show="sidebarOpen" class="ml-3 whitespace-nowrap">Profile Settings</span>
                 </a>
@@ -153,8 +153,8 @@
                 </a>
 
                 <!-- Price Estimates -->
-                <a href="{{ route('estimates.index') }}" 
-                   class="flex items-center px-3 py-2.5 rounded-lg hover:bg-blue-800 transition-colors {{ request()->routeIs('estimates.*') ? 'bg-blue-800' : '' }}">
+                <a href="{{ route('admin.estimates.index') }}" 
+                   class="flex items-center px-3 py-2.5 rounded-lg hover:bg-blue-800 transition-colors {{ request()->routeIs('admin.estimates.*') ? 'bg-blue-800' : '' }}">
                     <i class="fas fa-calculator text-lg w-6"></i>
                     <span class="ml-3">Price Estimates</span>
                 </a>
@@ -174,8 +174,8 @@
                 </a>
 
                 <!-- Profile Settings -->
-                <a href="{{ route('profile.edit') }}" 
-                   class="flex items-center px-3 py-2.5 rounded-lg hover:bg-blue-800 transition-colors {{ request()->routeIs('profile.*') ? 'bg-blue-800' : '' }}">
+                <a href="{{ route('admin.profile.edit') }}" 
+                   class="flex items-center px-3 py-2.5 rounded-lg hover:bg-blue-800 transition-colors {{ request()->routeIs('admin.profile.*') ? 'bg-blue-800' : '' }}">
                     <i class="fas fa-user-cog text-lg w-6"></i>
                     <span class="ml-3">Profile Settings</span>
                 </a>

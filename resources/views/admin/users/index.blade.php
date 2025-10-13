@@ -1,28 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manage Users - AZKAL JAYA LAS</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-</head>
-<body class="bg-gray-50">
-    <!-- Navbar -->
-    <nav class="bg-white shadow-sm">
-        <div class="container mx-auto px-6 py-4">
-            <div class="flex items-center justify-between">
-                <a href="{{ route('admin.dashboard') }}" class="text-xl font-bold text-blue-700">AZKAL JAYA LAS - Admin</a>
-                <div class="flex items-center space-x-4">
-                    <a href="{{ route('admin.dashboard') }}" class="text-gray-600 hover:text-blue-700">Dashboard</a>
-                    <form method="POST" action="{{ route('logout') }}" class="inline">
-                        @csrf
-                        <button type="submit" class="text-gray-600 hover:text-blue-700">Logout</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </nav>
+
+@extends('layouts.admin')
+
+@section('content')
 
     <div class="container mx-auto px-6 py-8">
         <div class="flex justify-between items-center mb-6">
@@ -109,5 +88,4 @@
             @endif
         </div>
     </div>
-</body>
-</html>
+@endsection

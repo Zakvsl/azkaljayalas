@@ -1,25 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Details - AZKAL JAYA LAS</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-gray-50">
-    <!-- Navbar -->
-    <nav class="bg-white shadow-sm">
-        <div class="container mx-auto px-6 py-4">
-            <div class="flex items-center justify-between">
-                <a href="{{ route('admin.dashboard') }}" class="text-xl font-bold text-blue-700">AZKAL JAYA LAS - Admin</a>
-                <div class="flex items-center space-x-4">
-                    <a href="{{ route('admin.dashboard') }}" class="text-gray-600 hover:text-blue-700">Dashboard</a>
-                    <a href="{{ route('admin.users.index') }}" class="text-gray-600 hover:text-blue-700">Users</a>
-                </div>
-            </div>
-        </div>
-    </nav>
 
+@extends('layouts.admin')
+
+@section('content')
     <div class="container mx-auto px-6 py-8">
         <div class="mb-6">
             <a href="{{ route('admin.users.index') }}" class="text-blue-600 hover:text-blue-800">
@@ -123,5 +105,4 @@
             </div>
         </div>
     </div>
-</body>
-</html>
+@endsection
