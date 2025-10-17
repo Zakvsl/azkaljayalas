@@ -1,0 +1,123 @@
+﻿ID Transaksi,Produk,Jumlah Unit,Jumlah Lubang,Ukuran (m²),Jenis Material,Ketebalan (mm),Finishing,Kerumitan Desain,Metode Hitung,Harga Akhir (Rp)
+1,Teralis,1,7,0,Hollow,1,Powder Coating,Menengah,Per Lubang,3578000
+2,Pintu Gerbang,1,,11.2,Besi Siku,2.3,Tanpa Cat,Sederhana,Per Unit,16100000
+3,Teralis,1,,4.3,Plat,1,Cat Duco,Sederhana,Per Lubang,100000
+4,Pagar,1,,19.3,Besi Siku,2,Cat Semprot,Menengah,Per m²,32277140
+5,Teralis,1,7,0,Aluminium,1.5,Cat Duco,Sederhana,Per Lubang,3239500
+6,Pagar,1,,18.4,Besi Siku,1.6,Cat Duco,Kompleks,Per m²,33050900
+7,Pagar,1,,23.2,Plat,1.2,Tanpa Cat,Sederhana,Per m²,19488000
+8,Kanopi,1,,22.5,Hollow,0.8,Cat Duco,Menengah,Per m²,15675000
+9,Pintu Gerbang,1,,15.6,Besi Siku,2,Cat Semprot,Sederhana,Per Unit,21707400
+10,Pagar,1,,30.6,Hollow,0.8,Cat Duco,Menengah,Per m²,21264000
+11,Pintu Gerbang,1,,7.6,Plat,1.2,Cat Semprot,Sederhana,Per Unit,7022400
+12,Kanopi,1,,32.1,Plat,1.5,Cat Duco,Menengah,Per m²,45333960
+13,Kanopi,1,,18.6,Hollow,0.9,Tanpa Cat,Sederhana,Per m²,10230000
+14,Teralis,1,8,0,Hollow,0.9,Tanpa Cat,Sederhana,Per Lubang,2400000
+15,Kanopi,1,,26.3,Plat,1.2,Cat Duco,Menengah,Per m²,30636960
+16,Pagar,1,,22.8,Hollow,1.2,Tanpa Cat,Menengah,Per m²,19202000
+17,Pagar,1,,22.3,Plat,1,Tanpa Cat,Menengah,Per m²,19317200
+18,Pagar,1,,11.8,Plat,1.2,Cat Semprot,Sederhana,Per m²,10903200
+19,Teralis,1,8,0,Aluminium,1.2,Cat Duco,Sederhana,Per Lubang,3688000
+20,Pintu Gerbang,1,,18.6,Hollow,1.2,Cat Semprot,Sederhana,Per Unit,14322000
+21,Kanopi,1,,17.1,Hollow,0.9,Cat Semprot,Menengah,Per m²,12464600
+22,Pintu Gerbang,1,,14.2,Besi Siku,2.3,Cat Semprot,Menengah,Per Unit,26994500
+23,Kanopi,1,,29.8,Hollow,0.8,Cat Semprot,Sederhana,Per m²,16390000
+24,Pagar,1,,37.6,Hollow,0.9,Cat Semprot,Sederhana,Per m²,22748000
+25,Kanopi,1,,48.3,Hollow,0.9,Cat Semprot,Sederhana,Per m²,29221500
+26,Pintu Gerbang,1,,19.1,Hollow,0.9,Cat Semprot,Sederhana,Per Unit,11555500
+27,Kanopi,1,,30.8,Plat,2,Cat Semprot,Sederhana,Per m²,44721600
+28,Pagar,1,,25.7,Besi Siku,2,Powder Coating,Sederhana,Per m²,45514700
+29,Pagar,1,,31.3,Besi Siku,2.3,Cat Semprot,Menengah,Per m²,59441750
+30,Pagar,1,,25.8,Aluminium,1.8,Cat Semprot,Sederhana,Per m²,36894000
+31,Pagar,1,,38.5,Besi Siku,2,Cat Duco,Sederhana,Per m²,56107875
+32,Kanopi,1,,11.8,Hollow,0.9,Powder Coating,Sederhana,Per m²,9086000
+33,Kanopi,1,,45.6,Stainless,0.8,Powder Coating,Menengah,Per m²,68997200
+34,Kanopi,1,,24.9,Hollow,1.2,Cat Duco,Menengah,Per m²,24203400
+35,Pagar,1,,15.7,Besi Siku,1.6,Cat Semprot,Kompleks,Per m²,26911675
+36,Pintu Gerbang,1,,18.2,Hollow,0.8,Tanpa Cat,Menengah,Per Unit,10970000
+37,Pagar,1,,24,Hollow,0.9,Cat Duco,Kompleks,Per m²,22970000
+38,Pagar,1,,11.9,Hollow,0.8,Tanpa Cat,Menengah,Per m²,7190000
+39,Kanopi,1,,42.2,Besi Siku,1.6,Cat Semprot,Sederhana,Per m²,48044700
+40,Pintu Gerbang,1,,11.6,Hollow,1,Tanpa Cat,Kompleks,Per Unit,10540000
+41,Pagar,1,,17.2,Plat,2,Cat Duco,Kompleks,Per m²,39364400
+42,Pagar,1,,12.5,Plat,2,Cat Semprot,Sederhana,Per m²,18150000
+43,Kanopi,1,,42.2,Stainless,1,Cat Semprot,Kompleks,Per m²,75300400
+44,Pintu Gerbang,1,,17.2,Hollow,0.9,Tanpa Cat,Menengah,Per Unit,11402000
+45,Pagar,1,,27.3,Plat,1.2,Cat Semprot,Kompleks,Per m²,37937800
+46,Pagar,1,,22.5,Hollow,0.9,Cat Duco,Kompleks,Per m²,21546875
+47,Pagar,1,,11.4,Hollow,1.2,Cat Duco,Menengah,Per m²,11162400
+48,Kanopi,1,,15.8,Hollow,0.8,Cat Duco,Sederhana,Per m²,9185000
+49,Teralis,1,7,0,Hollow,1,Cat Semprot,Sederhana,Per Lubang,2310000
+50,Pagar,1,,29.8,Hollow,0.8,Tanpa Cat,Menengah,Per m²,17930000
+51,Pagar,1,,35.2,Hollow,1,Cat Semprot,Kompleks,Per m²,34948000
+52,Pagar,1,,21.3,Hollow,0.8,Cat Semprot,Menengah,Per m²,14108000
+53,Pagar,1,,34.7,Hollow,0.8,Cat Semprot,Sederhana,Per m²,19085000
+54,Teralis,1,,11.8,Hollow,0.8,Cat Duco,Kompleks,Per Lubang,200000
+55,Pintu Gerbang,1,,7.9,Besi Siku,2.3,Cat Semprot,Menengah,Per Unit,15040250
+56,Kanopi,1,,35.6,Aluminium,1.5,Cat Semprot,Sederhana,Per m²,43271800
+57,Pagar,1,,15.4,Hollow,0.9,Cat Semprot,Sederhana,Per m²,9317000
+58,Pagar,1,,17.5,Hollow,0.9,Cat Semprot,Menengah,Per m²,12755000
+59,Teralis,1,8,0,Aluminium,1.8,Cat Semprot,Sederhana,Per Lubang,3432000
+60,Kanopi,1,,21.5,Besi Siku,2.3,Cat Semprot,Menengah,Per m²,40846250
+61,Pintu Gerbang,1,,7.8,Hollow,1.2,Cat Duco,Kompleks,Per Unit,9618500
+62,Pagar,1,,12.4,Besi Siku,2,Tanpa Cat,Kompleks,Per m²,23629000
+63,Teralis,1,,10,Besi Siku,2.3,Cat Semprot,Menengah,Per Lubang,50000
+64,Pagar,1,,13.5,Plat,2,Tanpa Cat,Menengah,Per m²,21434000
+65,Kanopi,1,,40.6,Plat,2,Cat Semprot,Sederhana,Per m²,58951200
+66,Kanopi,1,,14.7,Plat,2,Powder Coating,Sederhana,Per m²,27165600
+67,Pagar,1,,29.5,Besi Siku,2.3,Cat Semprot,Menengah,Per m²,56026250
+68,Teralis,1,8,0,Besi Siku,2,Cat Semprot,Sederhana,Per Lubang,3036000
+69,Pagar,1,,20.3,Hollow,0.8,Powder Coating,Sederhana,Per m²,14210000
+70,Kanopi,1,,25.1,Aluminium,1.8,Cat Duco,Sederhana,Per m²,37624500
+71,Teralis,1,8,0,Besi Siku,2.3,Powder Coating,Sederhana,Per Lubang,3864000
+72,Pagar,1,,22.5,Plat,1.5,Cat Duco,Sederhana,Per m²,26492500
+73,Pintu Gerbang,1,,10.2,Hollow,1,Cat Semprot,Sederhana,Per Unit,6732000
+74,Pintu Gerbang,1,,10,Hollow,1.2,Powder Coating,Kompleks,Per Unit,14800000
+75,Pintu Gerbang,1,,15.1,Hollow,1,Powder Coating,Menengah,Per Unit,15270800
+76,Teralis,1,8,0,Hollow,0.8,Cat Semprot,Sederhana,Per Lubang,2640000
+77,Pagar,1,,8.2,Aluminium,1.2,Cat Duco,Sederhana,Per m²,8681300
+78,Kanopi,1,,12.3,Besi Siku,1.6,Cat Semprot,Menengah,Per m²,16854260
+79,Pintu Gerbang,1,,17.7,Aluminium,1.5,Cat Duco,Menengah,Per Unit,27140730
+80,Pagar,1,,28.2,Hollow,0.8,Cat Semprot,Menengah,Per m²,18662000
+81,Teralis,1,8,0,Hollow,0.8,Cat Duco,Sederhana,Per Lubang,2860000
+82,Teralis,1,8,0,Plat,1.5,Tanpa Cat,Menengah,Per Lubang,3506000
+83,Teralis,1,8,0,Besi Siku,2,Tanpa Cat,Sederhana,Per Lubang,2760000
+84,Kanopi,1,,15.8,Besi Siku,2.3,Cat Semprot,Menengah,Per m²,30030500
+85,Teralis,1,8,0,Hollow,0.9,Cat Semprot,Menengah,Per Lubang,3218000
+86,Pagar,1,,11.8,Plat,2,Cat Semprot,Sederhana,Per m²,17133600
+87,Pagar,1,,27.6,Hollow,0.9,Cat Semprot,Sederhana,Per m²,16698000
+88,Kanopi,1,,22.7,Hollow,1,Cat Semprot,Menengah,Per m²,18028400
+89,Pagar,1,,26.3,Hollow,0.9,Cat Semprot,Sederhana,Per m²,15911500
+90,Pintu Gerbang,1,,17,Plat,1.5,Cat Duco,Sederhana,Per Unit,20041000
+91,Kanopi,1,,30.5,Hollow,1.2,Cat Semprot,Sederhana,Per m²,23485000
+92,Teralis,1,8,0,Aluminium,1.8,Cat Semprot,Sederhana,Per Lubang,3432000
+93,Pagar,1,,10.3,Besi Siku,2.3,Cat Semprot,Sederhana,Per m²,16286875
+94,Pagar,1,,18,Hollow,1.2,Cat Semprot,Sederhana,Per m²,13860000
+95,Pintu Gerbang,1,,11.2,Hollow,1,Cat Duco,Kompleks,Per Unit,11792000
+96,Kanopi,1,,49.8,Hollow,0.8,Cat Semprot,Kompleks,Per m²,41185000
+97,Pintu Gerbang,1,,11.4,Hollow,1.2,Cat Duco,Menengah,Per Unit,11162400
+98,Pagar,1,,13.3,Hollow,1,Cat Semprot,Sederhana,Per m²,8778000
+99,Pintu Gerbang,1,,19.9,Stainless,1,Cat Semprot,Menengah,Per Unit,28419440
+100,Kanopi,1,,27.4,Hollow,0.8,Tanpa Cat,Menengah,Per m²,16490000
+101,Kanopi,1,,11.8,Hollow,1,Tanpa Cat,Kompleks,Per m²,10720000
+102,Pagar,1,,10.7,Plat,1,Cat Semprot,Sederhana,Per m²,8474400
+103,Pagar,1,,29.4,Besi Siku,2.3,Cat Semprot,Menengah,Per m²,55836500
+104,Pagar,1,,35,Hollow,1.2,Cat Semprot,Sederhana,Per m²,26950000
+105,Kanopi,1,,46.4,Besi Siku,1.6,Powder Coating,Sederhana,Per m²,67233600
+106,Teralis,1,8,0,Hollow,1,Cat Semprot,Sederhana,Per Lubang,2640000
+107,Pagar,1,,18.8,Aluminium,1.2,Cat Semprot,Sederhana,Per m²,18818800
+108,Pagar,1,,27.2,Aluminium,1.2,Cat Semprot,Sederhana,Per m²,27227200
+109,Pagar,1,,39.4,Hollow,1.2,Cat Duco,Menengah,Per m²,38210400
+110,Kanopi,1,,48.5,Besi Siku,2,Powder Coating,Menengah,Per m²,103122200
+111,Pintu Gerbang,1,,12.2,Aluminium,1.5,Tanpa Cat,Menengah,Per Unit,16227200
+112,Kanopi,1,,39.4,Stainless,1,Powder Coating,Sederhana,Per m²,59572800
+113,Pintu Gerbang,1,,16.9,Hollow,1.2,Tanpa Cat,Sederhana,Per Unit,11830000
+114,Teralis,1,8,0,Plat,1.2,Powder Coating,Sederhana,Per Lubang,4032000
+115,Pagar,1,,34.3,Plat,1,Cat Duco,Kompleks,Per m²,42800600
+116,Pagar,1,,30.8,Hollow,0.8,Tanpa Cat,Menengah,Per m²,18530000
+117,Pintu Gerbang,1,,6.7,Aluminium,1.8,Cat Duco,Menengah,Per Unit,12169800
+118,Kanopi,1,,37.1,Aluminium,1.2,Tanpa Cat,Sederhana,Per m²,33761000
+119,Pagar,1,,15.6,Hollow,0.9,Powder Coating,Menengah,Per m²,14464400
+120,Pagar,1,,20.7,Aluminium,1.8,Cat Semprot,Menengah,Per m²,35571200
+121,Pagar,1,,27,Hollow,0.8,Tanpa Cat,Sederhana,Per m²,13500000
+,,,,,,,,,,

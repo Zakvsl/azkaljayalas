@@ -18,16 +18,19 @@ class PriceEstimate extends Model
      */
     protected $fillable = [
         'user_id',
-        'jenis_produk',
-        'jumlah_unit',
-        'jumlah_lubang',      // nullable - hanya untuk Teralis
-        'ukuran_m2',          // nullable - untuk non-Teralis
-        'jenis_material',
-        'profile_size',       // nullable - tidak untuk plat
-        'ketebalan_mm',
-        'finishing',
-        'kerumitan_desain',
-        'harga_akhir',
+        'produk',             // ML field: Pagar, Kanopi, Railing, Teralis, Pintu
+        'jenis_produk',       // Legacy field (keep for compatibility)
+        'jumlah_unit',        // ML field: Jumlah_Unit
+        'jumlah_lubang',      // ML field: Jumlah_Lubang (nullable)
+        'ukuran_m2',          // ML field: Ukuran_m2 (nullable)
+        'jenis_material',     // ML field: Jenis_Material (Hollow, Besi, Stainless)
+        'profile_size',       // Legacy field (keep for compatibility)
+        'ketebalan_mm',       // ML field: Ketebalan_mm
+        'finishing',          // ML field: Finishing (Cat, Powder Coating, Tanpa Finishing)
+        'kerumitan_desain',   // ML field: Kerumitan_Desain (Sederhana, Menengah, Kompleks)
+        'metode_hitung',      // ML field: Metode_Hitung (Per m², Per Lubang)
+        'harga_akhir',        // ML prediction result
+        'estimated_price',    // ML field: same as harga_akhir
         'status',
         'notes',
     ];
@@ -39,35 +42,51 @@ class PriceEstimate extends Model
      */
     protected $casts = [
         'jumlah_unit' => 'integer',
-        'jumlah_lubang' => 'integer',
-        'ukuran_m2' => 'decimal:2',
-        'ketebalan_mm' => 'decimal:2',
-        'kerumitan_desain' => 'integer',
+        'jumlah_lubang' => 'float',
+        'ukuran_m2' => 'float',
+        'ketebalan_mm' => 'float',
         'harga_akhir' => 'decimal:2',
+        'estimated_price' => 'decimal:2',
     ];
 
     /**
-     * Jenis produk yang tersedia
+     * Jenis produk yang tersedia (ML Format)
      */
     public static function jenisProduk(): array
     {
-        return ['Pagar', 'Kanopi', 'Railing', 'Teralis', 'Pintu', 'Tangga'];
+        return ['Pagar', 'Kanopi', 'Railing', 'Teralis', 'Pintu'];
     }
 
     /**
-     * Jenis material yang tersedia
+     * Jenis material yang tersedia (ML Format)
      */
     public static function jenisMaterial(): array
     {
-        return ['hollow', 'besi_siku', 'aluminium', 'stainless', 'plat'];
+        return ['Hollow', 'Besi', 'Stainless'];
     }
 
     /**
-     * Jenis finishing yang tersedia
+     * Jenis finishing yang tersedia (ML Format)
      */
     public static function finishingOptions(): array
     {
-        return ['cat_biasa', 'cat_epoxy', 'powder_coating', 'galvanis'];
+        return ['Cat', 'Powder Coating', 'Tanpa Finishing'];
+    }
+
+    /**
+     * Kerumitan desain options (ML Format)
+     */
+    public static function kerumitanDesainOptions(): array
+    {
+        return ['Sederhana', 'Menengah', 'Kompleks'];
+    }
+
+    /**
+     * Metode hitung options (ML Format)
+     */
+    public static function metodeHitungOptions(): array
+    {
+        return ['Per m²', 'Per Lubang'];
     }
 
     /**

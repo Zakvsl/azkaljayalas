@@ -6,6 +6,7 @@ use App\Http\Requests\PriceEstimateRequest;
 use App\Http\Resources\PriceEstimateResource;
 use App\Models\PriceEstimate;
 use App\Services\PriceEstimationService;
+use App\Services\MLPredictionService;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
@@ -22,11 +23,16 @@ class PriceEstimateController extends BaseController
     use AuthorizesRequests, ValidatesRequests;
     
     protected PriceEstimationService $estimationService;
+    protected MLPredictionService $mlService;
 
-    public function __construct(PriceEstimationService $estimationService)
-    {
+    public function __construct(
+        PriceEstimationService $estimationService,
+        MLPredictionService $mlService
+    ) {
         $this->estimationService = $estimationService;
-        $this->middleware('auth');
+        $this->mlService = $mlService;
+        // Only require auth for index, store, show, update methods
+        $this->middleware('auth')->except(['create', 'estimate']);
     }
 
     /**
@@ -62,10 +68,10 @@ class PriceEstimateController extends BaseController
             $validated = $request->validate([
                 'jenis_produk' => ['required', 'string', 'in:Pagar,Kanopi,Railing,Teralis,Pintu,Tangga'],
                 'jumlah_unit' => ['required', 'integer', 'min:1'],
-                'jumlah_lubang' => ['required_if:jenis_produk,Teralis', 'nullable', 'integer', 'min:1'],
+                'jumlah_lubang' => ['required_if:jenis_produk,Teralis', 'nullable', 'integer', 'min:0'],
                 'ukuran_m2' => ['required_unless:jenis_produk,Teralis', 'nullable', 'numeric', 'min:0.1'],
                 'jenis_material' => ['required', 'string', 'in:hollow,besi_siku,aluminium,stainless,plat'],
-                'profile_size' => ['required_unless:jenis_material,plat', 'nullable', 'string', 'max:50'],
+                'profile_size' => ['nullable', 'string', 'max:50'],
                 'ketebalan_mm' => ['required', 'numeric', 'min:0.1'],
                 'finishing' => ['required', 'string', 'in:cat_biasa,cat_epoxy,powder_coating,galvanis'],
                 'kerumitan_desain' => ['required', 'integer', 'in:1,2,3'],
@@ -98,39 +104,71 @@ class PriceEstimateController extends BaseController
     }
 
     /**
-     * Store a new price estimate.
+     * Store a new price estimate with ML prediction.
      */
-    public function store(PriceEstimateRequest $request): JsonResponse
+    public function store(Request $request): JsonResponse
     {
         try {
-            $validated = $request->validated();
+            // Validate input - accept lowercase format from form
+            $validated = $request->validate([
+                'jenis_produk' => 'required|in:Pagar,Kanopi,Railing,Teralis,Pintu,Tangga',
+                'produk' => 'nullable|in:Pagar,Kanopi,Railing,Teralis,Pintu,Tangga', // Alias
+                'jumlah_unit' => 'required|integer|min:1',
+                'jumlah_lubang' => 'nullable|numeric|min:0',
+                'ukuran_m2' => 'nullable|numeric|min:0',
+                'jenis_material' => 'required|in:hollow,besi_siku,aluminium,stainless,plat',
+                'profile_size' => 'nullable|string',
+                'ketebalan_mm' => 'required|numeric|min:0',
+                'finishing' => 'required|in:cat_biasa,cat_epoxy,powder_coating,galvanis',
+                'kerumitan_desain' => 'required|integer|in:1,2,3',
+                'metode_hitung' => 'nullable|in:Per m²,Per Lubang',
+                'harga_akhir' => 'required|numeric|min:0',
+                'notes' => 'nullable|string'
+            ]);
+            
+            // Use produk field if jenis_produk not provided (backward compat)
+            $produk = $validated['jenis_produk'] ?? $validated['produk'] ?? null;
+            
+            // Map form data to ML format for storage
+            $mlData = $this->estimationService->mapFormDataToMLFormat($validated);
+            $metodeHitung = $validated['metode_hitung'] ?? $mlData['metode_hitung'];
+            
+            // Use harga_akhir from request (already calculated by estimate endpoint)
+            $estimatedPrice = $validated['harga_akhir'];
 
+            // Store estimate using ML format
             $estimate = PriceEstimate::create([
                 'user_id' => Auth::id(),
-                'jenis_produk' => $validated['jenis_produk'],
-                'jumlah_unit' => $validated['jumlah_unit'],
-                'jumlah_lubang' => $validated['jumlah_lubang'] ?? null,
-                'ukuran_m2' => $validated['ukuran_m2'] ?? null,
-                'jenis_material' => $validated['jenis_material'],
+                'produk' => $produk,
+                'jenis_produk' => $produk, // Legacy field
+                'jumlah_unit' => $mlData['jumlah_unit'],
+                'jumlah_lubang' => $mlData['jumlah_lubang'],
+                'ukuran_m2' => $mlData['ukuran_m2'],
+                'jenis_material' => $mlData['jenis_material'], // ML format: Hollow, Besi, etc
                 'profile_size' => $validated['profile_size'] ?? null,
-                'ketebalan_mm' => $validated['ketebalan_mm'],
-                'finishing' => $validated['finishing'],
-                'kerumitan_desain' => $validated['kerumitan_desain'],
-                'harga_akhir' => $validated['harga_akhir'],
+                'ketebalan_mm' => $mlData['ketebalan_mm'],
+                'finishing' => $mlData['finishing'], // ML format: Cat, Powder Coating, etc
+                'kerumitan_desain' => $mlData['kerumitan_desain'], // ML format: Sederhana, Menengah, etc
+                'metode_hitung' => $metodeHitung,
+                'harga_akhir' => $estimatedPrice,
+                'estimated_price' => $estimatedPrice,
+                'status' => 'pending',
                 'notes' => $validated['notes'] ?? null,
             ]);
 
-            Log::info('Price estimate stored', [
+            Log::info('Price estimate stored with ML prediction', [
                 'user_id' => Auth::id(),
-                'estimate_id' => $estimate->id,
-                'harga_akhir' => $validated['harga_akhir']
+                'estimate_id' => $estimate->id(),
+                'predicted_price' => $estimatedPrice
             ]);
 
             return response()->json([
                 'success' => true,
                 'message' => 'Estimasi berhasil disimpan.',
                 'estimate' => $estimate,
+                'predicted_price' => number_format($estimatedPrice, 0, ',', '.'),
             ], 201);
+            
         } catch (\Exception $e) {
             Log::error('Failed to store price estimate', [
                 'user_id' => Auth::id(),
@@ -143,6 +181,52 @@ class PriceEstimateController extends BaseController
                 'message' => 'Gagal menyimpan estimasi: ' . $e->getMessage(),
             ], 500);
         }
+    }
+
+    /**
+     * Fallback price calculation if ML prediction fails
+     */
+    private function calculateFallbackPrice(array $data): float
+    {
+        $basePrice = 150000; // Base price per m² or per lubang
+        
+        // Material multiplier
+        $materialMultiplier = [
+            'Hollow' => 1.0,
+            'Besi' => 1.2,
+            'Stainless' => 1.8,
+        ];
+        
+        // Finishing multiplier
+        $finishingMultiplier = [
+            'Tanpa Finishing' => 1.0,
+            'Cat' => 1.15,
+            'Powder Coating' => 1.3,
+        ];
+        
+        // Complexity multiplier
+        $complexityMultiplier = [
+            'Sederhana' => 1.0,
+            'Menengah' => 1.25,
+            'Kompleks' => 1.5,
+        ];
+        
+        $material = $data['jenis_material'] ?? 'Hollow';
+        $finishing = $data['finishing'] ?? 'Tanpa Finishing';
+        $complexity = $data['kerumitan_desain'] ?? 'Sederhana';
+        
+        // Calculate size factor
+        $sizeFactor = ($data['metode_hitung'] === 'Per m²') 
+            ? ($data['ukuran_m2'] ?? 1) 
+            : ($data['jumlah_lubang'] ?? 1);
+        
+        $price = $basePrice * $sizeFactor
+            * ($materialMultiplier[$material] ?? 1)
+            * ($finishingMultiplier[$finishing] ?? 1)
+            * ($complexityMultiplier[$complexity] ?? 1)
+            * ($data['jumlah_unit'] ?? 1);
+        
+        return round($price, 2);
     }
 
     /**

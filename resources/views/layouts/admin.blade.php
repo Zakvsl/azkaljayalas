@@ -52,6 +52,20 @@
                     <span x-show="sidebarOpen" class="ml-3 whitespace-nowrap">Price Estimates</span>
                 </a>
 
+                <!-- Orders -->
+                <a href="{{ route('admin.orders.index') }}" 
+                   class="flex items-center px-3 py-2.5 rounded-lg hover:bg-blue-800 transition-colors {{ request()->routeIs('admin.orders.*') ? 'bg-blue-800' : '' }}">
+                    <i class="fas fa-clipboard-list text-lg w-6"></i>
+                    <span x-show="sidebarOpen" class="ml-3 whitespace-nowrap">Pencatatan Pesanan</span>
+                </a>
+
+                <!-- Training Data -->
+                <a href="{{ route('admin.training-data.index') }}" 
+                   class="flex items-center px-3 py-2.5 rounded-lg hover:bg-blue-800 transition-colors {{ request()->routeIs('admin.training-data.*') ? 'bg-blue-800' : '' }}">
+                    <i class="fas fa-database text-lg w-6"></i>
+                    <span x-show="sidebarOpen" class="ml-3 whitespace-nowrap">Data Training ML</span>
+                </a>
+
                 <!-- Survey Bookings -->
                 <a href="{{ route('admin.survey-bookings.index') }}" 
                    class="flex items-center px-3 py-2.5 rounded-lg hover:bg-blue-800 transition-colors {{ request()->routeIs('admin.survey-bookings.*') ? 'bg-blue-800' : '' }}">

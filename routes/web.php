@@ -9,6 +9,8 @@ use App\Http\Controllers\Admin\MLModelController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\PriceEstimateController as AdminPriceEstimateController;
 use App\Http\Controllers\Admin\ProfileController as AdminProfileController;
+use App\Http\Controllers\Admin\OrderController as AdminOrderController;
+use App\Http\Controllers\Admin\TrainingDataController as AdminTrainingDataController;
 use App\Http\Controllers\SurveyController;
 use App\Http\Controllers\PriceEstimateController;
 use App\Models\PriceEstimate;
@@ -104,6 +106,31 @@ Route::middleware('auth')->group(function () {
             Route::put('/password', [AdminProfileController::class, 'updatePassword'])->name('password.update');
         });
         
+        // Orders Management
+        Route::prefix('admin/orders')->name('admin.orders.')->group(function () {
+            Route::get('/', [AdminOrderController::class, 'index'])->name('index');
+            Route::get('/create', [AdminOrderController::class, 'create'])->name('create');
+            Route::post('/', [AdminOrderController::class, 'store'])->name('store');
+            Route::get('/{order}', [AdminOrderController::class, 'show'])->name('show');
+            Route::get('/{order}/edit', [AdminOrderController::class, 'edit'])->name('edit');
+            Route::patch('/{order}', [AdminOrderController::class, 'update'])->name('update');
+            Route::delete('/{order}', [AdminOrderController::class, 'destroy'])->name('destroy');
+        });
+
+        // Training Data Management
+        Route::prefix('admin/training-data')->name('admin.training-data.')->group(function () {
+            Route::get('/', [AdminTrainingDataController::class, 'index'])->name('index');
+            Route::get('/create', [AdminTrainingDataController::class, 'create'])->name('create');
+            Route::get('/export/csv', [AdminTrainingDataController::class, 'export'])->name('export');
+            Route::get('/import', [AdminTrainingDataController::class, 'importForm'])->name('import-form');
+            Route::post('/import', [AdminTrainingDataController::class, 'import'])->name('import');
+            Route::post('/', [AdminTrainingDataController::class, 'store'])->name('store');
+            Route::get('/{trainingDatum}', [AdminTrainingDataController::class, 'show'])->name('show');
+            Route::get('/{trainingDatum}/edit', [AdminTrainingDataController::class, 'edit'])->name('edit');
+            Route::patch('/{trainingDatum}', [AdminTrainingDataController::class, 'update'])->name('update');
+            Route::delete('/{trainingDatum}', [AdminTrainingDataController::class, 'destroy'])->name('destroy');
+        });
+        
         // Survey Bookings Management
         Route::prefix('admin/survey-bookings')->name('admin.survey-bookings.')->group(function () {
             Route::get('/', [SurveyBookingController::class, 'index'])->name('index');
@@ -116,7 +143,10 @@ Route::middleware('auth')->group(function () {
         Route::prefix('admin/ml')->name('admin.ml.')->group(function () {
             Route::get('/', [MLModelController::class, 'index'])->name('index');
             Route::post('/train', [MLModelController::class, 'train'])->name('train');
+            Route::post('/retrain', [MLModelController::class, 'retrain'])->name('retrain');
             Route::post('/predict', [MLModelController::class, 'testPrediction'])->name('predict');
+            Route::get('/download-metrics', [MLModelController::class, 'downloadMetrics'])->name('download-metrics');
+            Route::get('/download-features', [MLModelController::class, 'downloadFeatureImportances'])->name('download-features');
         });
 
         // User Management

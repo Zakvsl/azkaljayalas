@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Test Estimasi API</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                padding: 20px;
+            }
+            .result {
+                margin-top: 20px;
+                padding: 10px;
+                background: #f0f0f0;
+                border-radius: 5px;
+            }
+            .error {
+                background: #ffe0e0;
+                color: #d00;
+            }
+            .success {
+                background: #e0ffe0;
+                color: #0a0;
+            }
+            pre {
+                background: #333;
+                color: #fff;
+                padding: 10px;
+                border-radius: 5px;
+                overflow: auto;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Test Estimasi API</h1>
+
+        <button onclick="testEstimate()">Test Estimasi</button>
+
+        <div id="result"></div>
+
+        <script>
+            async function testEstimate() {
+                const resultDiv = document.getElementById("result");
+                resultDiv.innerHTML = "<p>Loading...</p>";
+
+                const testData = {
+                    jenis_produk: "Pagar",
+                    jumlah_unit: 1,
+                    jumlah_lubang: 0,
+                    ukuran_m2: 10,
+                    jenis_material: "hollow",
+                    profile_size: "40x40",
+                    ketebalan_mm: 2,
+                    finishing: "cat_biasa",
+                    kerumitan_desain: 1,
+                };
+
+                try {
+                    const response = await fetch(
+                        "/azkaljayav2/azkaljayalas2/public/estimates/calculate",
+                        {
+                            method: "POST",
+                            headers: {
+                                "Content-Type": "application/json",
+                                Accept: "application/json",
+                                "X-CSRF-TOKEN": "{{ csrf_token() }}",
+                            },
+                            body: JSON.stringify(testData),
+                        }
+                    );
+
+                    console.log("Status:", response.status);
+                    const result = await response.json();
+                    console.log("Result:", result);
+
+                    if (result.success) {
+                        resultDiv.className = "result success";
+                        resultDiv.innerHTML = `
+                        <h3>✅ Success!</h3>
+                        <p><strong>Harga:</strong> ${result.formatted_price}</p>
+                        <h4>Request:</h4>
+                        <pre>${JSON.stringify(testData, null, 2)}</pre>
+                        <h4>Response:</h4>
+                        <pre>${JSON.stringify(result, null, 2)}</pre>
+                    `;
+                    } else {
+                        resultDiv.className = "result error";
+                        resultDiv.innerHTML = `
+                        <h3>❌ Error!</h3>
+                        <p>${result.message || "Unknown error"}</p>
+                        <h4>Request:</h4>
+                        <pre>${JSON.stringify(testData, null, 2)}</pre>
+                        <h4>Response:</h4>
+                        <pre>${JSON.stringify(result, null, 2)}</pre>
+                    `;
+                    }
+                } catch (error) {
+                    console.error("Error:", error);
+                    resultDiv.className = "result error";
+                    resultDiv.innerHTML = `
+                    <h3>❌ Exception!</h3>
+                    <p>${error.message}</p>
+                    <h4>Request:</h4>
+                    <pre>${JSON.stringify(testData, null, 2)}</pre>
+                `;
+                }
+            }
+        </script>
+    </body>
+</html>
