@@ -1,6 +1,7 @@
 @extends('layouts.admin')
 
 @section('title', 'ML Model Management')
+@section('page-title', 'ML Model Management')
 
 @section('content')
 <div class="container mx-auto px-4 py-6">

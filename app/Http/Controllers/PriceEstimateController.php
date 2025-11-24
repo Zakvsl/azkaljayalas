@@ -64,18 +64,36 @@ class PriceEstimateController extends BaseController
     public function estimate(Request $request): JsonResponse
     {
         try {
-            // Validasi manual tanpa PriceEstimateRequest (karena tidak perlu harga_akhir)
-            $validated = $request->validate([
-                'jenis_produk' => ['required', 'string', 'in:Pagar,Kanopi,Railing,Teralis,Pintu,Tangga'],
+            // Determine validation rules based on product type
+            $jenisProduk = $request->input('jenis_produk');
+            
+            $rules = [
+                'jenis_produk' => ['required', 'string', 'in:Pagar,Kanopi,Railing,Teralis,Pintu Handerson,Pintu Gerbang'],
                 'jumlah_unit' => ['required', 'integer', 'min:1'],
-                'jumlah_lubang' => ['required_if:jenis_produk,Teralis', 'nullable', 'integer', 'min:0'],
-                'ukuran_m2' => ['required_unless:jenis_produk,Teralis', 'nullable', 'numeric', 'min:0.1'],
-                'jenis_material' => ['required', 'string', 'in:hollow,besi_siku,aluminium,stainless,plat'],
-                'profile_size' => ['nullable', 'string', 'max:50'],
+                'jenis_material' => ['required', 'string', 'in:Hollow,Hollow Stainless,Pipa Stainless'],
+                'profile_size' => ['required', 'string', 'in:4x4,4x6,4x8'],
                 'ketebalan_mm' => ['required', 'numeric', 'min:0.1'],
-                'finishing' => ['required', 'string', 'in:cat_biasa,cat_epoxy,powder_coating,galvanis'],
-                'kerumitan_desain' => ['required', 'integer', 'in:1,2,3'],
-            ]);
+                'finishing' => ['required', 'string', 'in:Tanpa Cat,Cat Dasar,Cat Biasa,Cat Duco'],
+                'kerumitan_desain' => ['required', 'string', 'in:Sederhana,Menengah,Kompleks'],
+            ];
+            
+            // Conditional validation based on product type
+            if ($jenisProduk === 'Teralis') {
+                // Teralis: per lubang
+                $rules['jumlah_lubang'] = ['required', 'integer', 'min:1'];
+                $rules['ukuran_m2'] = ['nullable', 'numeric', 'min:0'];
+            } elseif ($jenisProduk === 'Railing') {
+                // Railing: per meter (PER-M)
+                $rules['jumlah_lubang'] = ['nullable', 'integer', 'min:0'];
+                $rules['ukuran_m'] = ['required', 'numeric', 'min:0.1'];
+                $rules['ukuran_m2'] = ['nullable', 'numeric', 'min:0'];
+            } else {
+                // Others: per m²
+                $rules['jumlah_lubang'] = ['nullable', 'integer', 'min:0'];
+                $rules['ukuran_m2'] = ['required', 'numeric', 'min:0.1'];
+            }
+            
+            $validated = $request->validate($rules);
 
             $estimatedPrice = $this->estimationService->predictPrice($validated);
 

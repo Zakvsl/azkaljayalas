@@ -1,6 +1,8 @@
 
 @extends('layouts.admin')
 
+@section('title', 'Manage Users')
+@section('page-title', 'Manage Users')
 @section('content')
 
     <div class="container mx-auto px-6 py-8">

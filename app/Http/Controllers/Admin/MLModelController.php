@@ -127,15 +127,15 @@ class MLModelController extends BaseController
         // Header row - MUST match Python train_model.py expectations (with spaces!)
         fputcsv($file, [
             'Produk',
-            'Jumlah Unit',        // Space, not underscore!
-            'Jumlah Lubang',      // Space, not underscore!
-            'Ukuran_m2',          // Keep underscore for this one
-            'Jenis Material',     // Space, not underscore!
-            'Ketebalan_mm',       // Keep underscore
+            'Jumlah Unit',        
+            'Jumlah Lubang',      
+            'Ukuran_m2',
+            'Jenis Material',     
+            'Ketebalan_mm',       
             'Finishing',
-            'Kerumitan Desain',   // Space, not underscore!
-            'Metode Hitung',      // Space, not underscore!
-            'Harga_Akhir_Rp'      // Match Python target column name
+            'Kerumitan Desain',
+            'Metode Hitung',      
+            'Harga_Akhir_Rp'      
         ]);
 
         // Data rows

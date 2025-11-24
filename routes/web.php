@@ -13,6 +13,7 @@ use App\Http\Controllers\Admin\OrderController as AdminOrderController;
 use App\Http\Controllers\Admin\TrainingDataController as AdminTrainingDataController;
 use App\Http\Controllers\SurveyController;
 use App\Http\Controllers\PriceEstimateController;
+use App\Http\Controllers\PortfolioController;
 use App\Models\PriceEstimate;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Http\Request;
@@ -25,6 +26,9 @@ require __DIR__ . '/web/ml.php';
 Route::get('/', function () {
     return view('welcome');
 })->name('home');
+
+// Portfolio Routes
+Route::get('/portfolio/{category?}', [PortfolioController::class, 'index'])->name('portfolio.index');
 
 // Survey Routes
 Route::prefix('survey')->group(function () {
@@ -124,6 +128,7 @@ Route::middleware('auth')->group(function () {
             Route::get('/export/csv', [AdminTrainingDataController::class, 'export'])->name('export');
             Route::get('/import', [AdminTrainingDataController::class, 'importForm'])->name('import-form');
             Route::post('/import', [AdminTrainingDataController::class, 'import'])->name('import');
+            Route::delete('/delete-all', [AdminTrainingDataController::class, 'deleteAll'])->name('delete-all');
             Route::post('/', [AdminTrainingDataController::class, 'store'])->name('store');
             Route::get('/{trainingDatum}', [AdminTrainingDataController::class, 'show'])->name('show');
             Route::get('/{trainingDatum}/edit', [AdminTrainingDataController::class, 'edit'])->name('edit');

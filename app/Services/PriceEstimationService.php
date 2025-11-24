@@ -49,46 +49,56 @@ class PriceEstimationService
      */
     public function mapFormDataToMLFormat(array $data): array
     {
-        // Map jenis_material dari form format (lowercase underscore) ke ML format (title case)
+        // Map jenis_material (keep exact dataset values)
         $materialMap = [
-            'hollow' => 'Hollow',
-            'besi_siku' => 'Besi',
-            'aluminium' => 'Besi', // Map aluminium ke Besi karena model tidak punya kategori ini
-            'stainless' => 'Stainless',
-            'plat' => 'Besi',
+            'Hollow' => 'Hollow',
+            'Hollow Stainless' => 'Hollow Stainless',
+            'Pipa Stainless' => 'Pipa Stainless',
         ];
 
-        // Map finishing dari form format ke ML format
+        // Map finishing (keep exact dataset values)
         $finishingMap = [
-            'cat_biasa' => 'Cat',
-            'cat_epoxy' => 'Cat',
-            'powder_coating' => 'Powder Coating',
-            'galvanis' => 'Tanpa Finishing',
-        ];
-
-        // Map kerumitan_desain dari angka ke text
-        $complexityMap = [
-            1 => 'Sederhana',
-            2 => 'Menengah',
-            3 => 'Kompleks',
+            'Tanpa Cat' => 'Tanpa Cat',
+            'Cat Dasar' => 'Cat Dasar',
+            'Cat Biasa' => 'Cat Biasa',
+            'Cat Duco' => 'Cat Duco',
         ];
 
         // Support both jenis_produk and produk (backward compat)
         $produk = $data['jenis_produk'] ?? $data['produk'] ?? 'Pagar';
         
-        // Tentukan metode_hitung berdasarkan jenis_produk
-        $metodeHitung = ($produk === 'Teralis') ? 'Per Lubang' : 'Per m²';
+        // Determine ukuran based on product type
+        if ($produk === 'Railing') {
+            // Railing uses ukuran_m (PER-M)
+            $ukuran = (float)($data['ukuran_m'] ?? 0);
+            $metodeHitung = 'PER-M';
+        } elseif ($produk === 'Teralis') {
+            // Teralis uses jumlah_lubang (PER-LUBANG)
+            $ukuran = 0;
+            $metodeHitung = 'PER-LUBANG';
+        } else {
+            // Others use ukuran_m2 (PER-M2)
+            $ukuran = (float)($data['ukuran_m2'] ?? 0);
+            $metodeHitung = 'PER-M2';
+        }
+
+        // Calculate upah_tenaga_ahli (Stainless = 200k/m2, Hollow = 100k/m2)
+        $material = $data['jenis_material'];
+        $upahRate = (str_contains($material, 'Stainless')) ? 200000 : 100000;
+        $upahTenagaAhli = $upahRate * $ukuran;
 
         return [
             'produk' => $produk,
             'jumlah_unit' => (int)$data['jumlah_unit'],
             'jumlah_lubang' => (float)($data['jumlah_lubang'] ?? 0),
-            'ukuran_m2' => (float)($data['ukuran_m2'] ?? 0),
+            'ukuran' => $ukuran,
             'jenis_material' => $materialMap[$data['jenis_material']] ?? 'Hollow',
             'ketebalan_mm' => (float)$data['ketebalan_mm'],
-            'finishing' => $finishingMap[$data['finishing']] ?? 'Cat',
-            'kerumitan_desain' => $complexityMap[$data['kerumitan_desain']] ?? 'Sederhana',
+            'finishing' => $finishingMap[$data['finishing']] ?? 'Cat Biasa',
+            'kerumitan_desain' => $data['kerumitan_desain'] ?? 'Sederhana',
+            'profile_size' => $data['profile_size'] ?? '4x4',
             'metode_hitung' => $metodeHitung,
+            'upah_tenaga_ahli' => $upahTenagaAhli,
         ];
     }
 

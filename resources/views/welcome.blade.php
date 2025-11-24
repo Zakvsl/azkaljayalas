@@ -9,301 +9,276 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
     
     <style>
         html {
             scroll-behavior: smooth;
         }
-
         body {
             font-family: 'Poppins', sans-serif;
         }
-        .swiper-pagination-bullet-active {
-            background-color: #1d4ed8 !important;
+        h2 {
+            font-size: 1.875rem;
+            font-weight: 700;
         }
-        @keyframes spin-slow {
-            from {
-                transform: rotate(0deg);
-            }
-            to {
-                transform: rotate(360deg);
-            }
-        }
-        .animate-spin-slow {
-            animation: spin-slow 15s linear infinite;
-        }
-        .hero-glossy-bg::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(circle at 45% 50%, rgba(246, 224, 94, 0.4) 0%, transparent 50%),
-                        radial-gradient(circle at 55% 50%, rgba(49, 130, 206, 0.5) 0%, transparent 50%);
-            filter: blur(120px);
-            z-index: 0;
-        }
-        .hero-glossy-bg::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(180deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 40%);
-            z-index: 0;
+        h3 {
+            font-size: 1.125rem;
+            font-weight: 600;
         }
     </style>
 </head>
-<body class="bg-gray-50">
+<body class="min-h-screen bg-gray-100">
     <!-- Navbar -->
     @include('components.navbar')
 
-    <!-- Hero Section -->
-    <section id="home" class="relative hero-glossy-bg bg-blue-50 pt-32 pb-24 overflow-hidden">
-        <div class="container mx-auto px-6 z-10 relative">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-                <div class="text-center lg:text-left">
-                    <h1 class="text-4xl sm:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-                        Bikin Konstruksi Besi Jadi <span class="text-blue-700">Mudah & Terjangkau</span>
-                    </h1>
-                    <p class="text-gray-600 text-lg mb-10">
-                        Dapatkan estimasi harga akurat langsung dari sistem kami. Cukup masukkan ukuran & kebutuhan Anda, kami urus sisanya.
-                    </p>
-                    <div class="flex flex-col sm:flex-row justify-center lg:justify-start space-y-4 sm:space-y-0 sm:space-x-4">
-                        @auth
-                            <a href="{{ route('survey.create') }}" class="bg-white text-blue-700 px-8 py-3 rounded-full font-semibold shadow-md hover:bg-gray-100 transition-all transform hover:scale-105">
-                                Booking Jadwal Survei
-                            </a>
-                        @else
-                            <a href="{{ route('login') }}" class="bg-white text-blue-700 px-8 py-3 rounded-full font-semibold shadow-md hover:bg-gray-100 transition-all transform hover:scale-105">
-                                Booking Jadwal Survei
-                            </a>
-                        @endauth
-                        <a href="{{ route('estimates.create') }}" class="bg-blue-700 text-white px-8 py-3 rounded-full font-semibold shadow-md hover:bg-blue-800 transition-all transform hover:scale-105 flex items-center justify-center">
-                            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v3.586L7.707 12.293a1 1 0 001.414 1.414l2.5-2.5A1 1 0 0011 10.5V7z"></path></svg>
-                            Estimasi Harga
-                        </a>
+    <!-- Hero Banner Carousel -->
+    <section class="bg-white pt-18">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <div x-data="{ 
+                currentSlide: 0,
+                slides: [
+                    {
+                        image: 'https://images.unsplash.com/photo-1681399577093-e57cea722a9c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080',
+                        title: 'Estimasi Harga Otomatis dengan Machine Learning',
+                        subtitle: 'Hitung biaya proyek konstruksi besi Anda dalam hitungan detik',
+                        cta: 'Hitung Estimasi'
+                    },
+                    {
+                        image: 'https://images.unsplash.com/photo-1601119462363-721d8e4f676e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080',
+                        title: 'Jadwalkan Survey Gratis',
+                        subtitle: 'Survey lapangan gratis untuk perhitungan detail proyek Anda',
+                        cta: 'Jadwalkan Survey'
+                    },
+                    {
+                        image: 'https://images.unsplash.com/photo-1609293241092-8c4e5cf64af8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080',
+                        title: 'Konstruksi Besi Berkualitas Tinggi',
+                        subtitle: 'Pengalaman 15+ tahun melayani proyek residential & komersial',
+                        cta: 'Lihat Portfolio'
+                    }
+                ],
+                autoplay: null,
+                init() {
+                    this.autoplay = setInterval(() => {
+                        this.currentSlide = (this.currentSlide + 1) % this.slides.length;
+                    }, 4000);
+                },
+                destroy() {
+                    clearInterval(this.autoplay);
+                },
+                nextSlide() {
+                    this.currentSlide = (this.currentSlide + 1) % this.slides.length;
+                },
+                prevSlide() {
+                    this.currentSlide = (this.currentSlide - 1 + this.slides.length) % this.slides.length;
+                }
+            }" class="relative h-96 rounded-lg overflow-hidden group">
+                <!-- Slides -->
+                <template x-for="(slide, index) in slides" :key="index">
+                    <div x-show="index === currentSlide" 
+                         x-transition:enter="transition-opacity duration-500"
+                         x-transition:enter-start="opacity-0"
+                         x-transition:enter-end="opacity-100"
+                         class="absolute inset-0">
+                        <img :src="slide.image" :alt="slide.title" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-r from-black/70 to-black/30 flex items-center">
+                            <div class="max-w-xl px-8 md:px-16">
+                                <h2 class="text-white mb-3" x-text="slide.title"></h2>
+                                <p class="text-white text-lg mb-6" x-text="slide.subtitle"></p>
+                                <a :href="index === 0 ? '{{ route('estimates.create') }}' : (index === 1 ? '{{ route('survey.create') }}' : '{{ route('portfolio.index', ['category' => 'semua']) }}')" 
+                                   class="bg-orange-500 hover:bg-orange-600 text-white px-6 py-2.5 rounded-lg transition-colors inline-flex items-center gap-2">
+                                    <span x-text="slide.cta"></span>
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="flex justify-center items-center relative h-80 lg:h-96 mt-12 lg:mt-0">
-                    <!-- Decorative Shapes -->
-                     <div class="absolute top-8 left-10 w-12 h-12 border-4 border-blue-500 rounded-md animate-spin-slow"></div>
-                    <div class="absolute top-10 right-2 w-20 h-20 border-4 border-yellow-400 rounded-lg animate-spin-slow"></div>
-                    <div class="absolute bottom-8 left-10 w-12 h-12 border-4 border-blue-300 rounded-md animate-spin-slow" style="animation-direction: reverse;"></div>
-                    <div class="absolute bottom-2 right-16 w-8 h-8 border-2 border-gray-800 rounded-full animate-spin-slow"></div>
-
-                    <!-- Images -->
-                     <img src="{{ asset('build/assets/img/img2.png') }}" alt="Welding sparks" class="absolute w-5/12 lg:w-4/12 h-auto rounded-xl shadow-lg transform rotate-6 hover:rotate-0 transition-transform duration-300" style="right: 15%; bottom: 20%;">
-                    <img src="{{ asset('build/assets/img/img1.png') }}" alt="Welder working on metal" class="absolute w-6/12 lg:w-5/12 h-auto rounded-xl shadow-2xl transform -rotate-6 hover:rotate-0 transition-transform duration-300" style="left: 15%; top: 20%;">
+                </template>
+                
+                <!-- Navigation Arrows -->
+                <button @click="prevSlide()" 
+                        class="absolute left-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/30 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                    </svg>
+                </button>
+                <button @click="nextSlide()" 
+                        class="absolute right-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/30 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                    </svg>
+                </button>
+                
+                <!-- Dots -->
+                <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+                    <template x-for="(slide, index) in slides" :key="index">
+                        <button @click="currentSlide = index"
+                                :class="index === currentSlide ? 'bg-white w-8' : 'bg-white/50 hover:bg-white/75'"
+                                class="w-2 h-2 rounded-full transition-all"></button>
+                    </template>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Info Card Section -->
-    <section class="relative z-10">
-        <div class="container mx-auto px-6">
-            <div class="bg-white rounded-xl shadow-2xl p-6 md:p-8 -mt-16">
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-                    <div>
-                        <p class="text-gray-500 text-sm">Sejak 2019 Melayani</p>
+    <!-- Categories Section -->
+    <section id="categories" class="py-8 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between mb-6">
+                <h2 class="text-gray-900">Kategori Populer</h2>
+                <a href="{{ route('portfolio.index', ['category' => 'semua']) }}" class="text-orange-500 hover:text-orange-600 flex items-center gap-1">
+                    Lihat Semua
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                    </svg>
+                </a>
+            </div>
+            <div class="grid grid-cols-3 md:grid-cols-6 gap-4">
+                @php
+                    $categories = [
+                        ['image' => 'https://images.unsplash.com/photo-1762591692143-38b23bf99e6d?w=400', 'title' => 'Kanopi'],
+                        ['image' => 'https://images.unsplash.com/photo-1609513811584-eb7e4b6e0ce5?w=400', 'title' => 'Pagar'],
+                        ['image' => 'https://images.unsplash.com/photo-1560005360-6522fe681d14?w=400', 'title' => 'Railing'],
+                        ['image' => 'https://images.unsplash.com/photo-1655936072893-921e69ae9038?w=400', 'title' => 'Tralis'],
+                        ['image' => 'https://images.unsplash.com/photo-1745449562896-71ba57d1e2b3?w=400', 'title' => 'Balkon'],
+                        ['image' => 'https://images.unsplash.com/photo-1681399577093-e57cea722a9c?w=400', 'title' => 'Custom']
+                    ];
+                @endphp
+                @foreach($categories as $category)
+                <a href="{{ route('portfolio.index', ['category' => strtolower($category['title'])]) }}" class="group relative overflow-hidden rounded-lg bg-white shadow-sm hover:shadow-md transition-all duration-300 aspect-square">
+                    <img src="{{ $category['image'] }}" alt="{{ $category['title'] }}" 
+                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end">
+                        <div class="p-4 w-full">
+                            <h3 class="text-white text-center">{{ $category['title'] }}</h3>
+                        </div>
                     </div>
-                    <div>
-                        <p class="text-3xl font-bold text-blue-700">100+</p>
-                        <p class="text-gray-500">Orang</p>
-                    </div>
-                    <div>
-                        <p class="text-3xl font-bold text-blue-700">56</p>
-                        <p class="text-gray-500">Kab/Kota</p>
-                    </div>
-                    <div>
-                        <p class="text-3xl font-bold text-blue-700">3</p>
-                        <p class="text-gray-500">Provinsi</p>
-                    </div>
-                </div>
+                </a>
+                @endforeach
             </div>
         </div>
     </section>
 
-    <!-- Kenapa Harus Section -->
-    <section id="tentang" class="py-20 bg-white pt-28">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center mb-4">Kenapa Harus <span class="text-blue-700">Azkal Jaya Las</span>?</h2>
-            <p class="text-center text-gray-600 mb-12">Lebih dari Sekedar Bengkel Las. Kami Bangun dengan Kualitas, Kami Rawat dengan Kepercayaan.</p>
+    <!-- Estimation Form Section -->
+    <section id="estimation-form" class="py-12 bg-gray-100">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-8">
+                <h2 class="text-gray-900 mb-3">Form Estimasi Harga</h2>
+                <p class="text-gray-600">
+                    Masukkan data proyek Anda dan dapatkan perkiraan harga instan
+                </p>
+            </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- Feature 1 -->
-                <div class="bg-white p-6 rounded-xl border border-gray-100 hover:shadow-lg transition-shadow">
-                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <svg class="w-8 h-8 text-blue-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-semibold text-center mb-2">Estimasi Transparan</h3>
-                    <p class="text-gray-600 text-center">Harga dan layanan transparan sejak awal.</p>
-                </div>
-
-                <!-- Feature 2 -->
-                <div class="bg-white p-6 rounded-xl border border-gray-100 hover:shadow-lg transition-shadow">
-                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <svg class="w-8 h-8 text-blue-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-semibold text-center mb-2">Material Berkualitas</h3>
-                    <p class="text-gray-600 text-center">Bahan baku pilihan berkualitas tinggi.</p>
-                </div>
-
-                <!-- Feature 3 -->
-                <div class="bg-white p-6 rounded-xl border border-gray-100 hover:shadow-lg transition-shadow">
-                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <svg class="w-8 h-8 text-blue-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-semibold text-center mb-2">Booking Jadwal</h3>
-                    <p class="text-gray-600 text-center">Sistem booking online mudah dan cepat.</p>
-                </div>
-
-                <!-- Feature 4 -->
-                <div class="bg-white p-6 rounded-xl border border-gray-100 hover:shadow-lg transition-shadow">
-                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <svg class="w-8 h-8 text-blue-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-semibold text-center mb-2">Tim Profesional</h3>
-                    <p class="text-gray-600 text-center">Pengerjaan oleh tim ahli berpengalaman.</p>
-                </div>
+            <!-- Redirect ke halaman estimasi yang sudah ada -->
+            <div class="bg-white p-6 md:p-8 rounded-lg shadow-md text-center">
+                <svg class="w-16 h-16 text-orange-500 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/>
+                </svg>
+                <h3 class="text-xl font-semibold text-gray-900 mb-2">Siap Menghitung Estimasi?</h3>
+                <p class="text-gray-600 mb-6">Klik tombol di bawah untuk mulai menghitung estimasi harga proyek Anda</p>
+                <a href="{{ route('estimates.create') }}" 
+                   class="inline-flex items-center gap-2 bg-white border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-8 py-3 rounded-lg transition-colors">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/>
+                    </svg>
+                    Mulai Hitung Estimasi
+                </a>
             </div>
         </div>
     </section>
+        </div>
+    </section>
 
-    <!-- Layanan Section -->
-    <section id="layanan" class="py-20">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center mb-4">Layanan Profesional Kami</h2>
-            <p class="text-center text-gray-600 mb-12">Solusi Lengkap untuk Kebutuhan Konstruksi Besi Anda</p>
+    <!-- Services Catalog -->
+    <section id="layanan" class="py-12 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between mb-8">
+                <div>
+                    <h2 class="text-gray-900 mb-2">Semua Layanan</h2>
+                    <p class="text-gray-600">Pilih layanan yang sesuai dengan kebutuhan proyek Anda</p>
+                </div>
+            </div>
 
-            <div class="swiper serviceSwiper">
-                <div class="swiper-wrapper">
-                    <!-- Service 1 -->
-                    <div class="swiper-slide">
-                        <div class="bg-white rounded-xl overflow-hidden shadow-lg">
-                            <img src="/img/kanopi.jpg" alt="Kanopi Modern" class="w-full h-48 object-cover">
-                            <div class="p-6">
-                                <h3 class="text-xl font-semibold mb-2">Kanopi Modern</h3>
-                                <p class="text-gray-600 mb-4">Desain kanopi modern dengan material berkualitas tinggi.</p>
-                                <a href="#" class="text-blue-700 font-medium hover:text-blue-800">Selengkapnya →</a>
-                            </div>
-                        </div>
+            @php
+                $services = [
+                    ['image' => 'https://images.unsplash.com/photo-1762591692143-38b23bf99e6d?w=400', 'title' => 'Kanopi Minimalis', 'description' => 'Kanopi besi modern dengan berbagai pilihan material dan finishing'],
+                    ['image' => 'https://images.unsplash.com/photo-1609513811584-eb7e4b6e0ce5?w=400', 'title' => 'Pagar Besi Premium', 'description' => 'Pagar besi kokoh dan estetis dengan desain custom'],
+                    ['image' => 'https://images.unsplash.com/photo-1560005360-6522fe681d14?w=400', 'title' => 'Railing Tangga & Balkon', 'description' => 'Railing dengan standar keamanan tinggi berbagai model'],
+                    ['image' => 'https://images.unsplash.com/photo-1655936072893-921e69ae9038?w=400', 'title' => 'Konstruksi Besi', 'description' => 'Konstruksi rangka besi untuk bangunan dan gudang'],
+                    ['image' => 'https://images.unsplash.com/photo-1745449562896-71ba57d1e2b3?w=400', 'title' => 'Fabrikasi Custom', 'description' => 'Layanan fabrikasi custom untuk industri dan komersial'],
+                    ['image' => 'https://images.unsplash.com/photo-1681399577093-e57cea722a9c?w=400', 'title' => 'Perbaikan & Modifikasi', 'description' => 'Layanan perbaikan dan modifikasi konstruksi besi existing'],
+                    ['image' => 'https://images.unsplash.com/photo-1601119462363-721d8e4f676e?w=400', 'title' => 'Tralis Jendela', 'description' => 'Tralis jendela kokoh untuk keamanan rumah Anda'],
+                    ['image' => 'https://images.unsplash.com/photo-1609293241092-8c4e5cf64af8?w=400', 'title' => 'Pergola & Gazebo', 'description' => 'Pergola dan gazebo besi untuk taman dan outdoor area']
+                ];
+            @endphp
+
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-6">
+                @foreach($services as $service)
+                <div class="bg-white rounded-lg shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col group">
+                    <div class="relative overflow-hidden" style="padding-bottom: 100%;">
+                        <img src="{{ $service['image'] }}" alt="{{ $service['title'] }}" 
+                             class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                     </div>
-
-                    <!-- Service 2 -->
-                    <div class="swiper-slide">
-                        <div class="bg-white rounded-xl overflow-hidden shadow-lg">
-                            <img src="/img/pagar.jpg" alt="Pagar Minimalis" class="w-full h-48 object-cover">
-                            <div class="p-6">
-                                <h3 class="text-xl font-semibold mb-2">Pagar Minimalis</h3>
-                                <p class="text-gray-600 mb-4">Pagar besi dengan desain minimalis dan elegan.</p>
-                                <a href="#" class="text-blue-700 font-medium hover:text-blue-800">Selengkapnya →</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Service 3 -->
-                    <div class="swiper-slide">
-                        <div class="bg-white rounded-xl overflow-hidden shadow-lg">
-                            <img src="/img/railing.jpg" alt="Railing Tangga" class="w-full h-48 object-cover">
-                            <div class="p-6">
-                                <h3 class="text-xl font-semibold mb-2">Railing Tangga</h3>
-                                <p class="text-gray-600 mb-4">Railing tangga custom dengan desain modern.</p>
-                                <a href="#" class="text-blue-700 font-medium hover:text-blue-800">Selengkapnya →</a>
-                            </div>
+                    <div class="p-3 sm:p-4 flex flex-col flex-grow">
+                        <h3 class="text-gray-900 mb-1.5 sm:mb-2 text-sm sm:text-base font-semibold line-clamp-1">{{ $service['title'] }}</h3>
+                        <p class="text-gray-600 text-xs sm:text-sm mb-3 sm:mb-4 flex-grow line-clamp-2">{{ $service['description'] }}</p>
+                        <div class="space-y-2">
+                            <a href="{{ route('estimates.create') }}"
+                               class="w-full bg-white border-2 border-blue-600 text-blue-600 hover:bg-blue-50 py-2 px-3 sm:px-4 rounded text-xs sm:text-sm font-medium transition-colors duration-200 text-center block">
+                                Estimasi Harga
+                            </a>
+                            @auth
+                                <a href="{{ route('survey.create') }}"
+                                   class="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 px-3 sm:px-4 rounded text-xs sm:text-sm font-medium transition-colors duration-200 text-center block">
+                                    Jadwalkan Survey
+                                </a>
+                            @else
+                                <a href="{{ route('login') }}"
+                                   class="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 px-3 sm:px-4 rounded text-xs sm:text-sm font-medium transition-colors duration-200 text-center block">
+                                    Jadwalkan Survey
+                                </a>
+                            @endauth
                         </div>
                     </div>
                 </div>
-                <div class="swiper-pagination"></div>
+                @endforeach
             </div>
         </div>
     </section>
 
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="py-20 bg-white" x-data="{ activeFilter: 'semua' }">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center mb-4">Proyek Yang Telah Kami Kerjakan</h2>
-            <p class="text-center text-gray-600 mb-8">Lihat hasil karya kami yang telah memuaskan pelanggan kami di berbagai lokasi.</p>
-
-            <!-- Portfolio Filter -->
-            <div class="flex justify-center space-x-4 mb-8">
-                <button @click="activeFilter = 'semua'" 
-                        :class="{ 'bg-blue-700 text-white': activeFilter === 'semua', 'bg-gray-100 text-gray-600 hover:bg-gray-200': activeFilter !== 'semua' }"
-                        class="px-6 py-2 rounded-full font-medium transition-colors">
-                    Semua
-                </button>
-                <button @click="activeFilter = 'pagar'"
-                        :class="{ 'bg-blue-700 text-white': activeFilter === 'pagar', 'bg-gray-100 text-gray-600 hover:bg-gray-200': activeFilter !== 'pagar' }"
-                        class="px-6 py-2 rounded-full font-medium transition-colors">
-                    Pagar
-                </button>
-                <button @click="activeFilter = 'kanopi'"
-                        :class="{ 'bg-blue-700 text-white': activeFilter === 'kanopi', 'bg-gray-100 text-gray-600 hover:bg-gray-200': activeFilter !== 'kanopi' }"
-                        class="px-6 py-2 rounded-full font-medium transition-colors">
-                    Kanopi
-                </button>
-                <button @click="activeFilter = 'railing'"
-                        :class="{ 'bg-blue-700 text-white': activeFilter === 'railing', 'bg-gray-100 text-gray-600 hover:bg-gray-200': activeFilter !== 'railing' }"
-                        class="px-6 py-2 rounded-full font-medium transition-colors">
-                    Railing
-                </button>
-            </div>
-
-            <!-- Portfolio Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Portfolio items will be added dynamically -->
+    <!-- CTA Survey Section -->
+    <section class="py-12 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-gradient-to-r from-blue-900 to-blue-800 rounded-lg p-8 md:p-12 text-center text-white">
+                <h2 class="text-white mb-4">Sudah Punya Gambaran Proyek Anda?</h2>
+                <p class="text-white/90 text-lg mb-8 max-w-2xl mx-auto">
+                    Jadwalkan survey lapangan gratis untuk perhitungan detail dan konsultasi langsung dengan tim ahli kami
+                </p>
+                @auth
+                    <a href="{{ route('survey.create') }}" 
+                       class="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-lg transition-colors">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                        </svg>
+                        Jadwalkan Survey Lapangan
+                    </a>
+                @else
+                    <a href="{{ route('login') }}" 
+                       class="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-lg transition-colors">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                        </svg>
+                        Login untuk Jadwalkan Survey
+                    </a>
+                @endauth
             </div>
         </div>
     </section>
-
-    <!-- CTA Section -->
-    <section class="py-20 bg-blue-700">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-3xl font-bold text-white mb-4">Siap Memulai Proyek Anda?</h2>
-            <p class="text-blue-100 mb-8">Diskusikan ide Anda dengan tim ahli kami atau langsung jadwalkan survei ke lokasi Anda sekarang juga!</p>
-            @auth
-            <a href="{{ route('survey.create') }}" 
-               class="inline-block bg-white text-blue-700 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors">
-                JADWALKAN SURVEI SEKARANG
-            </a>
-            @else
-            <a href="{{ route('login') }}" 
-               class="inline-block bg-white text-blue-700 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors">
-                JADWALKAN SURVEI SEKARANG
-            </a>
-            @endauth
-        </div>
-    </section>
-
     <!-- Footer -->
-    @include('components.footer')
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            new Swiper('.serviceSwiper', {
-                slidesPerView: 1,
-                spaceBetween: 30,
-                pagination: {
-                    el: '.swiper-pagination',
-                    clickable: true,
-                },
-                breakpoints: {
-                    640: {
-                        slidesPerView: 2,
-                    },
-                    1024: {
-                        slidesPerView: 3,
-                    },
-                },
-            });
-        });
+ @include('components.footer')
+</body>
+</html>
     </script>
 </body>
 </html>

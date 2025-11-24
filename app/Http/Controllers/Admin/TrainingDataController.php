@@ -104,6 +104,18 @@ class TrainingDataController extends Controller
     }
 
     /**
+     * Delete ALL training data
+     */
+    public function deleteAll()
+    {
+        $count = TrainingData::count();
+        TrainingData::truncate();
+
+        return redirect()->route('admin.training-data.index')
+            ->with('success', "Semua data training ({$count} rows) berhasil dihapus!");
+    }
+
+    /**
      * Export training data to CSV for model retraining
      */
     public function export()
@@ -158,11 +170,13 @@ class TrainingDataController extends Controller
 
     /**
      * Import training data from CSV/Excel
+     * Will DELETE all existing data and replace with new data
      */
     public function import(Request $request)
     {
         $request->validate([
             'file' => 'required|file|mimes:csv,xlsx,xls|max:10240', // Max 10MB
+            'replace_data' => 'nullable|boolean', // Checkbox to confirm deletion
         ]);
 
         try {
@@ -176,6 +190,10 @@ class TrainingDataController extends Controller
                 // For Excel files, need PhpSpreadsheet library
                 return back()->with('error', 'Excel import belum didukung. Gunakan CSV.');
             }
+
+            // DELETE ALL existing data before import (auto-replace)
+            $oldCount = TrainingData::count();
+            TrainingData::truncate(); // Fast delete all rows
 
             // Validate and insert data
             $imported = 0;
@@ -193,7 +211,7 @@ class TrainingDataController extends Controller
                 }
             }
 
-            $message = "Berhasil import {$imported} data.";
+            $message = "Data lama ({$oldCount} rows) dihapus. Berhasil import {$imported} data baru.";
             if (count($errors) > 0) {
                 $message .= " " . count($errors) . " baris gagal.";
             }
@@ -241,18 +259,18 @@ class TrainingDataController extends Controller
     private function validateImportRow(array $row, int $lineNumber): array
     {
         // Map CSV columns to database fields with multiple possible column names
-        // Support both underscore and space formats
+        // Support both underscore and space formats + NEW dataset format (501 rows)
         $columnAlternatives = [
             'produk' => ['Produk', 'produk', 'PRODUK'],
             'jumlah_unit' => ['Jumlah_Unit', 'Jumlah Unit', 'jumlah_unit', 'JUMLAH UNIT'],
             'jumlah_lubang' => ['Jumlah_Lubang', 'Jumlah Lubang', 'jumlah_lubang', 'JUMLAH LUBANG'],
-            'ukuran_m2' => ['Ukuran_m2', 'Ukuran (m²)', 'Ukuran_m²', 'ukuran_m2', 'UKURAN (M²)'],
+            'ukuran_m2' => ['Ukuran_m2', 'Ukuran (m²)', 'Ukuran_m²', 'ukuran_m2', 'UKURAN (M²)', 'ukuran'], // Added 'ukuran' from new dataset
             'jenis_material' => ['Jenis_Material', 'Jenis Material', 'jenis_material', 'JENIS MATERIAL'],
-            'ketebalan_mm' => ['Ketebalan_mm', 'Ketebalan (mm)', 'Ketebalan_mm', 'ketebalan_mm', 'KETEBALAN (MM)'],
+            'ketebalan_mm' => ['Ketebalan_mm', 'Ketebalan (mm)', 'Ketebalan_mm', 'ketebalan_mm', 'KETEBALAN (MM)', 'ketebalan_material'], // Added 'ketebalan_material' from new dataset
             'finishing' => ['Finishing', 'finishing', 'FINISHING'],
             'kerumitan_desain' => ['Kerumitan_Desain', 'Kerumitan Desain', 'kerumitan_desain', 'KERUMITAN DESAIN'],
             'metode_hitung' => ['Metode_Hitung', 'Metode Hitung', 'metode_hitung', 'METODE HITUNG'],
-            'harga_akhir' => ['Harga_Akhir', 'Harga Akhir (Rp)', 'Harga Akhir', 'harga_akhir', 'HARGA AKHIR'],
+            'harga_akhir' => ['Harga_Akhir', 'Harga Akhir (Rp)', 'Harga Akhir', 'harga_akhir', 'HARGA AKHIR', 'harga_final'], // Added 'harga_final' from new dataset
         ];
 
         // Extract only required columns, ignore extra columns
@@ -295,18 +313,36 @@ class TrainingDataController extends Controller
             throw new \Exception("Kolom yang diperlukan tidak ditemukan: " . implode(', ', $missingColumns));
         }
         
-        // Normalize material names
+        // Normalize material names - support NEW dataset format (501 rows)
+        // IMPORTANT: Database only accepts 3 types: Hollow, Besi, Stainless
         $materialMapping = [
+            // Old format
             'Besi Siku' => 'Besi',
             'Plat' => 'Besi',
             'Aluminium' => 'Stainless',
             'Stainless' => 'Stainless',
             'Hollow' => 'Hollow',
             'Besi' => 'Besi',
+            // New dataset format (501 rows) - simplify to 3 main types
+            'Hollow Stainless' => 'Stainless',
+            'Pipa Stainless' => 'Stainless',
         ];
         
-        if (isset($data['jenis_material']) && isset($materialMapping[$data['jenis_material']])) {
-            $data['jenis_material'] = $materialMapping[$data['jenis_material']];
+        if (isset($data['jenis_material'])) {
+            // Direct match first
+            if (isset($materialMapping[$data['jenis_material']])) {
+                $data['jenis_material'] = $materialMapping[$data['jenis_material']];
+            }
+            // If not in mapping, try to detect keyword
+            elseif (stripos($data['jenis_material'], 'stainless') !== false || stripos($data['jenis_material'], 'stainlis') !== false) {
+                $data['jenis_material'] = 'Stainless';
+            }
+            elseif (stripos($data['jenis_material'], 'hollow') !== false || stripos($data['jenis_material'], 'pipa') !== false) {
+                $data['jenis_material'] = 'Hollow';
+            }
+            elseif (stripos($data['jenis_material'], 'besi') !== false) {
+                $data['jenis_material'] = 'Besi';
+            }
         }
         
         // Normalize finishing names
@@ -314,6 +350,8 @@ class TrainingDataController extends Controller
             'Cat Duco' => 'Cat',
             'Cat Semprot' => 'Cat',
             'Cat' => 'Cat',
+            'Cat Biasa' => 'Cat', // New dataset format
+            'Cat Dasar' => 'Cat', // New dataset format
             'Powder Coating' => 'Powder Coating',
             'Tanpa Cat' => 'Tanpa Finishing',
             'Tanpa Finishing' => 'Tanpa Finishing',
@@ -323,20 +361,24 @@ class TrainingDataController extends Controller
             $data['finishing'] = $finishingMapping[$data['finishing']];
         }
         
-        // Normalize metode hitung
+        // Normalize metode hitung - NEW dataset uses PER-M2, PER-M, PER-LUBANG
         $metodeMapping = [
-            'Per Unit' => 'Per m²', // Assume Per Unit as Per m²
+            'Per Unit' => 'Per m²',
             'Per m²' => 'Per m²',
             'Per Lubang' => 'Per Lubang',
+            'PER-M2' => 'Per m²', // New dataset format
+            'PER-M' => 'Per m²', // New dataset format (treat as per m²)
+            'PER-LUBANG' => 'Per Lubang', // New dataset format
         ];
         
         if (isset($data['metode_hitung']) && isset($metodeMapping[$data['metode_hitung']])) {
             $data['metode_hitung'] = $metodeMapping[$data['metode_hitung']];
         }
         
-        // Normalize produk names
+        // Normalize produk names - NEW dataset has more specific names
         $produkMapping = [
             'Pintu Gerbang' => 'Pintu',
+            'Pintu Handerson' => 'Pintu', // New dataset format
             'Pintu' => 'Pintu',
             'Pagar' => 'Pagar',
             'Kanopi' => 'Kanopi',

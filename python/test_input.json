@@ -1,0 +1,12 @@
+{
+    "produk": "Pagar",
+    "ukuran": 27,
+    "jenis_material": "Hollow",
+    "ketebalan_material": 0.8,
+    "finishing": "Cat Biasa",
+    "kerumitan_desain": "Sederhana",
+    "profile_size": "4x4",
+    "jumlah_unit": 1,
+    "jumlah_lubang": 0,
+    "metode_hitung": "PER-M2"
+}

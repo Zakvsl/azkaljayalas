@@ -1,6 +1,7 @@
 @extends('layouts.admin')
 
 @section('title', 'Data Training ML')
+@section('page-title', 'Data Training ML')
 
 @section('content')
 <div class="container mx-auto px-4 py-6">
@@ -21,6 +22,11 @@
                 <i class="fas fa-download mr-2"></i>
                 Export CSV
             </a>
+            <button onclick="confirmDeleteAll()" 
+                    class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg flex items-center">
+                <i class="fas fa-trash-alt mr-2"></i>
+                Hapus Semua
+            </button>
             <a href="{{ route('admin.training-data.create') }}" 
                class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg flex items-center">
                 <i class="fas fa-plus mr-2"></i>
@@ -28,6 +34,12 @@
             </a>
         </div>
     </div>
+
+    <!-- Delete All Form (Hidden) -->
+    <form id="deleteAllForm" action="{{ route('admin.training-data.delete-all') }}" method="POST" style="display: none;">
+        @csrf
+        @method('DELETE')
+    </form>
 
     <!-- Success Message -->
     @if(session('success'))
@@ -201,4 +213,14 @@
         @endif
     </div>
 </div>
+
+<script>
+function confirmDeleteAll() {
+    const totalData = {{ $trainingData->total() }};
+    
+    if (confirm(`PERINGATAN!\n\nAnda akan menghapus SEMUA ${totalData} data training!\nProses ini tidak bisa dibatalkan.\n\nApakah Anda yakin?`)) {
+        document.getElementById('deleteAllForm').submit();
+    }
+}
+</script>
 @endsection

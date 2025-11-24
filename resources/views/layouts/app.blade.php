@@ -18,14 +18,10 @@
 
     @yield('styles')
 </head>
-<body class="bg-gray-50 pt-20">
-    <!-- Navbar -->
-    @include('components.navbar')
-
+<body class="bg-gray-50">
     <main>
         @yield('content')
     </main>
-
     @if(session('success'))
         <div x-data="{ show: true }"
             x-show="show"

@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+@include('components.navbar')
 @section('content')
 <div class="min-h-screen py-12 bg-gray-50">
     <div class="max-w-4xl mx-auto sm:px-6 lg:px-8">
@@ -22,21 +22,44 @@
                         <div>
                             <h3 class="font-semibold text-green-900">Estimasi Harga</h3>
                             <p class="text-2xl font-bold text-green-700 mt-1" id="predictedPrice"></p>
-                            <p class="text-sm text-green-600 mt-1">Estimasi ini dihitung menggunakan Machine Learning</p>
+                            <p class="text-sm text-green-600 mt-1">Harga yang ditampilkan adalah harga prediksi awal. Harap diperhatikan bahwa harga dapat berubah sesuai dengan kondisi aktual di lapangan.</p>
                         </div>
                     </div>
                 </div>
 
                 <form id="estimationForm" class="space-y-6" 
                     x-data="{
-                        metode_hitung: '',
-                        showUkuranM2: false,
+                        produk: '',
+                        material: '',
+                        showUkuranM2: true,
+                        showUkuranM: false,
                         showJumlahLubang: false,
-                        isSubmitting: false,
+                        finishingDisabled: false,
                         
-                        handleMetodeChange() {
-                            this.showUkuranM2 = this.metode_hitung === 'Per m²';
-                            this.showJumlahLubang = this.metode_hitung === 'Per Lubang';
+                        handleProdukChange() {
+                            if (this.produk === 'Teralis') {
+                                this.showUkuranM2 = false;
+                                this.showUkuranM = false;
+                                this.showJumlahLubang = true;
+                            } else if (this.produk === 'Railing') {
+                                this.showUkuranM2 = false;
+                                this.showUkuranM = true;
+                                this.showJumlahLubang = false;
+                            } else {
+                                this.showUkuranM2 = true;
+                                this.showUkuranM = false;
+                                this.showJumlahLubang = false;
+                            }
+                        },
+                        
+                        handleMaterialChange() {
+                            const finishingSelect = document.getElementById('finishing');
+                            if (this.material.includes('Stainless')) {
+                                this.finishingDisabled = true;
+                                finishingSelect.value = 'Tanpa Cat';
+                            } else {
+                                this.finishingDisabled = false;
+                            }
                         }
                     }"
                 >
@@ -48,17 +71,20 @@
                             Jenis Produk <span class="text-red-500">*</span>
                         </label>
                         <select 
-                            id="produk" 
-                            name="produk" 
+                            id="jenis_produk" 
+                            name="jenis_produk" 
                             required
+                            x-model="produk"
+                            x-on:change="handleProdukChange()"
                             class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200"
                         >
                             <option value="">-- Pilih Jenis Produk --</option>
                             <option value="Pagar">Pagar</option>
                             <option value="Kanopi">Kanopi</option>
                             <option value="Railing">Railing</option>
-                            <option value="Teralis">Teralis</option>
-                            <option value="Pintu">Pintu</option>
+                            <option value="Teralis">Teralis (per lubang)</option>
+                            <option value="Pintu Handerson">Pintu Handerson</option>
+                            <option value="Pintu Gerbang">Pintu Gerbang</option>
                         </select>
                         <p class="text-xs text-gray-500 mt-1">Pilih jenis produk las yang Anda butuhkan</p>
                     </div>
@@ -80,30 +106,10 @@
                         <p class="text-xs text-gray-500 mt-1">Berapa unit/set produk yang ingin dibuat?</p>
                     </div>
 
-                    <!-- Metode Hitung -->
-                    <div>
-                        <label for="metode_hitung" class="block text-sm font-medium text-gray-700 mb-1">
-                            Metode Perhitungan <span class="text-red-500">*</span>
-                        </label>
-                        <select 
-                            id="metode_hitung" 
-                            name="metode_hitung" 
-                            required
-                            x-model="metode_hitung"
-                            x-on:change="handleMetodeChange()"
-                            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200"
-                        >
-                            <option value="">-- Pilih Metode --</option>
-                            <option value="Per m²">Per m² (Meter Persegi)</option>
-                            <option value="Per Lubang">Per Lubang</option>
-                        </select>
-                        <p class="text-xs text-gray-500 mt-1">Pilih metode perhitungan harga</p>
-                    </div>
-
-                    <!-- Ukuran m² (Conditional) -->
+                    <!-- Ukuran m² (Conditional - untuk Pagar, Kanopi, Pintu) -->
                     <div x-show="showUkuranM2" x-cloak>
                         <label for="ukuran_m2" class="block text-sm font-medium text-gray-700 mb-1">
-                            Ukuran (m²) <span class="text-red-500">*</span>
+                            Ukuran (m²) <span class="text-red-500" x-show="showUkuranM2">*</span>
                         </label>
                         <input 
                             type="number" 
@@ -117,21 +123,38 @@
                         <p class="text-xs text-gray-500 mt-1">Masukkan total luas dalam meter persegi</p>
                     </div>
 
-                    <!-- Jumlah Lubang (Conditional) -->
+                    <!-- Ukuran m (Conditional - untuk Railing) -->
+                    <div x-show="showUkuranM" x-cloak>
+                        <label for="ukuran_m" class="block text-sm font-medium text-gray-700 mb-1">
+                            Ukuran (m) <span class="text-red-500" x-show="showUkuranM">*</span>
+                        </label>
+                        <input 
+                            type="number" 
+                            id="ukuran_m" 
+                            name="ukuran_m" 
+                            step="0.01" 
+                            min="0.1"
+                            :required="showUkuranM"
+                            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200"
+                        >
+                        <p class="text-xs text-gray-500 mt-1">Masukkan panjang railing dalam meter</p>
+                    </div>
+
+                    <!-- Jumlah Lubang (Conditional - untuk Teralis) -->
                     <div x-show="showJumlahLubang" x-cloak>
                         <label for="jumlah_lubang" class="block text-sm font-medium text-gray-700 mb-1">
-                            Jumlah Lubang <span class="text-red-500">*</span>
+                            Jumlah Lubang <span class="text-red-500" x-show="showJumlahLubang">*</span>
                         </label>
                         <input 
                             type="number" 
                             id="jumlah_lubang" 
                             name="jumlah_lubang" 
-                            step="0.1"
+                            step="1"
                             min="1"
                             :required="showJumlahLubang"
                             class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-200"
                         >
-                        <p class="text-xs text-gray-500 mt-1">Masukkan jumlah lubang (biasanya untuk teralis)</p>
+                        <p class="text-xs text-gray-500 mt-1">Masukkan jumlah lubang untuk teralis</p>
                     </div>
 
                     <!-- Jenis Material -->
@@ -143,31 +166,35 @@
                             id="jenis_material" 
                             name="jenis_material" 
                             required
+                            x-model="material"
+                            x-on:change="handleMaterialChange()"
                             class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200"
                         >
                             <option value="">-- Pilih Material --</option>
-                            <option value="hollow">Hollow</option>
-                            <option value="besi_siku">Besi Siku</option>
-                            <option value="aluminium">Aluminium</option>
-                            <option value="stainless">Stainless</option>
-                            <option value="plat">Plat</option>
+                            <option value="Hollow">Hollow</option>
+                            <option value="Hollow Stainless">Hollow Stainless</option>
+                            <option value="Pipa Stainless">Pipa Stainless</option>
                         </select>
                         <p class="text-xs text-gray-500 mt-1">Pilih jenis material yang akan digunakan</p>
                     </div>
 
-                    <!-- Profile Size (optional, hidden for plat) -->
-                    <div x-show="document.getElementById('jenis_material')?.value !== 'plat'">
+                    <!-- Profile Size (REQUIRED) -->
+                    <div>
                         <label for="profile_size" class="block text-sm font-medium text-gray-700 mb-1">
-                            Ukuran Profile
+                            Ukuran Profile <span class="text-red-500">*</span>
                         </label>
-                        <input 
-                            type="text" 
+                        <select 
                             id="profile_size" 
                             name="profile_size" 
-                            placeholder="Contoh: 40x40, 50x50"
+                            required
                             class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200"
                         >
-                        <p class="text-xs text-gray-500 mt-1">Ukuran profile material (opsional)</p>
+                            <option value="">-- Pilih Ukuran Profile --</option>
+                            <option value="4x4">4x4 cm</option>
+                            <option value="4x6">4x6 cm</option>
+                            <option value="4x8">4x8 cm</option>
+                        </select>
+                        <p class="text-xs text-gray-500 mt-1">Ukuran profile material (max 4x6 untuk Railing)</p>
                     </div>
 
                     <!-- Ketebalan -->
@@ -196,15 +223,16 @@
                             id="finishing" 
                             name="finishing" 
                             required
-                            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200"
+                            :disabled="finishingDisabled"
+                            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 disabled:bg-gray-100 disabled:cursor-not-allowed"
                         >
                             <option value="">-- Pilih Finishing --</option>
-                            <option value="cat_biasa">Cat Biasa</option>
-                            <option value="cat_epoxy">Cat Epoxy</option>
-                            <option value="powder_coating">Powder Coating</option>
-                            <option value="galvanis">Galvanis</option>
+                            <option value="Tanpa Cat">Tanpa Cat</option>
+                            <option value="Cat Dasar">Cat Dasar</option>
+                            <option value="Cat Biasa">Cat Biasa</option>
+                            <option value="Cat Duco">Cat Duco</option>
                         </select>
-                        <p class="text-xs text-gray-500 mt-1">Pilih jenis finishing yang diinginkan</p>
+                        <p class="text-xs text-gray-500 mt-1" x-text="finishingDisabled ? 'Material Stainless otomatis tanpa cat' : 'Pilih jenis finishing yang diinginkan'"></p>
                     </div>
 
                     <!-- Kerumitan Desain -->
@@ -219,25 +247,11 @@
                             class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200"
                         >
                             <option value="">-- Pilih Kerumitan --</option>
-                            <option value="1">Sederhana</option>
-                            <option value="2">Menengah</option>
-                            <option value="3">Kompleks</option>
+                            <option value="Sederhana">Sederhana</option>
+                            <option value="Menengah">Menengah</option>
+                            <option value="Kompleks">Kompleks</option>
                         </select>
                         <p class="text-xs text-gray-500 mt-1">Tingkat kerumitan desain produk</p>
-                    </div>
-
-                    <!-- Notes -->
-                    <div>
-                        <label for="notes" class="block text-sm font-medium text-gray-700 mb-1">
-                            Catatan Tambahan (Opsional)
-                        </label>
-                        <textarea 
-                            id="notes" 
-                            name="notes" 
-                            rows="3"
-                            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200"
-                            placeholder="Tambahkan catatan atau spesifikasi khusus..."
-                        ></textarea>
                     </div>
 
                     <!-- Submit Button -->
@@ -292,15 +306,16 @@ document.addEventListener('DOMContentLoaded', function() {
         try {
             // Prepare request data dengan format yang sesuai
             const requestData = {
-                jenis_produk: data.produk,
+                jenis_produk: data.jenis_produk,
                 jumlah_unit: parseInt(data.jumlah_unit) || 1,
                 jumlah_lubang: data.jumlah_lubang ? parseInt(data.jumlah_lubang) : 0,
                 ukuran_m2: data.ukuran_m2 ? parseFloat(data.ukuran_m2) : 0,
+                ukuran_m: data.ukuran_m ? parseFloat(data.ukuran_m) : 0,
                 jenis_material: data.jenis_material,
-                profile_size: data.profile_size || '',
-                ketebalan_mm: parseFloat(data.ketebalan_mm) || 1,
+                profile_size: data.profile_size || '4x4',
+                ketebalan_mm: parseFloat(data.ketebalan_mm) || 0.8,
                 finishing: data.finishing,
-                kerumitan_desain: parseInt(data.kerumitan_desain) || 1
+                kerumitan_desain: data.kerumitan_desain
             };
 
             console.log('Sending request:', requestData); // Debug log
@@ -343,9 +358,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             },
                             body: JSON.stringify({
                                 ...requestData,
-                                produk: data.produk,
-                                harga_akhir: result.harga_akhir,
-                                metode_hitung: data.metode_hitung
+                                harga_akhir: result.harga_akhir
                             })
                         });
                         

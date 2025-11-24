@@ -18,8 +18,8 @@ if len(sys.argv) > 1:
     dataset_path = sys.argv[1]
     print(f"Using dataset from: {dataset_path}")
 else:
-    dataset_path = 'dataset_bengkel_las2.xlsx'
-    print("Using default dataset: dataset_bengkel_las2.xlsx")
+    dataset_path = 'dataset_azkal_jaya_2019_2025.csv'
+    print("Using default dataset: dataset_azkal_jaya_2019_2025.csv")
 
 # Load the dataset
 print("Loading dataset...")
@@ -27,7 +27,11 @@ print("Loading dataset...")
 if dataset_path.endswith('.csv'):
     df = pd.read_csv(dataset_path)
 elif dataset_path.endswith('.xlsx') or dataset_path.endswith('.xls'):
-    df = pd.read_excel(dataset_path, sheet_name='Dataset Transaksi')
+    # Try common sheet names
+    try:
+        df = pd.read_excel(dataset_path, sheet_name='Data Order Bengkel')
+    except:
+        df = pd.read_excel(dataset_path, sheet_name='Dataset Transaksi')
 else:
     raise ValueError("Unsupported file format. Please use .csv or .xlsx")
 
@@ -39,106 +43,287 @@ print("Column names in dataset:")
 for col in df.columns:
     print(f"- {col}")
 
-# Standardize column names - handle both Excel format and CSV export format
+# Standardize column names - handle both old and new format
 column_mapping = {
-    # Excel format (old)
-    'Ukuran (m²)': 'Ukuran_m2',
-    'Ketebalan (mm)': 'Ketebalan_mm',
-    'Harga Akhir (Rp)': 'Harga_Akhir_Rp',
-    # CSV export format (new) - already has underscores but need to match exactly
-    'Jumlah_Unit': 'Jumlah Unit',
-    'Jumlah_Lubang': 'Jumlah Lubang',
-    'Jenis_Material': 'Jenis Material',
-    'Ketebalan_mm': 'Ketebalan_mm',
-    'Kerumitan_Desain': 'Kerumitan Desain',
-    'Metode_Hitung': 'Metode Hitung',
-    'Harga_Akhir': 'Harga_Akhir_Rp'
+    # New format (dataset_bengkel_las2.csv)
+    'ID Transaksi': 'order_id',
+    'Produk': 'produk',
+    'Jumlah Unit': 'jumlah_unit',
+    'Jumlah Lubang': 'jumlah_lubang',
+    'Ukuran (m²)': 'ukuran',
+    'Jenis Material': 'jenis_material',
+    'Ketebalan (mm)': 'ketebalan_material',
+    'Finishing': 'finishing',
+    'Kerumitan Desain': 'kerumitan_desain',
+    'Metode Hitung': 'metode_hitung',
+    'Harga Akhir (Rp)': 'harga_final',
+    # Old format variations & Admin export format
+    'Jumlah_Unit': 'jumlah_unit',
+    'Jumlah_Lubang': 'jumlah_lubang',
+    'Ukuran_m2': 'ukuran',  # From admin export
+    'Jenis_Material': 'jenis_material',
+    'Ketebalan_mm': 'ketebalan_material',
+    'Kerumitan_Desain': 'kerumitan_desain',
+    'Metode_Hitung': 'metode_hitung',
+    'Harga_Akhir': 'harga_final',
+    'Harga_Akhir_Rp': 'harga_final',  # From admin export (if with underscore)
+    'Profile_Size': 'profile_size',
+    'Upah_Tenaga_Ahli': 'upah_tenaga_ahli'
 }
 
 # Apply column mapping
 df = df.rename(columns=column_mapping)
 
-# Drop rows with missing target
-target_column = 'Harga_Akhir_Rp' if 'Harga_Akhir_Rp' in df.columns else 'Harga Akhir (Rp)'
-df = df.dropna(subset=[target_column])
+# Generate missing columns for new dataset
+if 'profile_size' not in df.columns:
+    # Default profile size based on material thickness
+    df['profile_size'] = df['ketebalan_material'].apply(lambda x: '4x4' if x <= 1.0 else ('4x6' if x <= 1.5 else '4x8'))
+    print("Generated 'profile_size' column based on material thickness")
 
-# Ensure target column is named consistently
-if target_column != 'Harga_Akhir_Rp':
-    df = df.rename(columns={target_column: 'Harga_Akhir_Rp'})
+if 'upah_tenaga_ahli' not in df.columns:
+    # Calculate upah based on material type and area
+    def calculate_upah(row):
+        material = str(row.get('jenis_material', '')).lower()
+        ukuran = float(row.get('ukuran', 0))
+        
+        if 'stainless' in material or 'stainlis' in material:
+            return ukuran * 200000  # Rp 200k per m²
+        else:
+            return ukuran * 100000  # Rp 100k per m²
+    
+    df['upah_tenaga_ahli'] = df.apply(calculate_upah, axis=1)
+    print("Generated 'upah_tenaga_ahli' column based on material and size")
+
+# Check if target column exists after mapping
+target_column = 'harga_final'
+if target_column not in df.columns:
+    print(f"ERROR: Target column '{target_column}' not found after mapping!")
+    print(f"Available columns: {list(df.columns)}")
+    sys.exit(1)
+
+# Drop rows with missing target
+df = df.dropna(subset=[target_column])
 
 print(f"Dataset loaded with {len(df)} rows")
 
 # Fill missing values in numeric columns with median
-numeric_columns = ['Jumlah Lubang', 'Ukuran_m2', 'Ketebalan_mm']
+numeric_columns = ['jumlah_lubang', 'ukuran', 'ketebalan_material', 'upah_tenaga_ahli']
 for col in numeric_columns:
     if col in df.columns:
         df[col] = df[col].fillna(df[col].median())
 
 # Fill missing values in categorical columns with "UNKNOWN"
-categorical_columns = ['Produk', 'Jenis Material', 'Finishing', 'Kerumitan Desain', 'Metode Hitung']
+categorical_columns = ['produk', 'jenis_material', 'finishing', 'kerumitan_desain', 'metode_hitung', 'profile_size']
 for col in categorical_columns:
     if col in df.columns:
         df[col] = df[col].fillna("UNKNOWN")
 
 # Feature engineering
 print("Engineering features...")
-# Derived features
-df['total_area'] = df['Jumlah Unit'] * df['Ukuran_m2']
-df['total_lubang'] = df['Jumlah Unit'] * df['Jumlah Lubang']
+
+# ========== PRICE TABLE BASED FEATURES ==========
+# 1. Material Base Price Lookup (from price table with YEAR-BASED pricing)
+# Format: (produk, tahun, jenis_material) -> base price
+material_base_price_map = {
+    # Pagar
+    ('Pagar', 2019, 'Hollow'): 500000, ('Pagar', 2019, 'Hollow Stainless'): 1000000, ('Pagar', 2019, 'Pipa Stainless'): 850000,
+    ('Pagar', 2020, 'Hollow'): 500000, ('Pagar', 2020, 'Hollow Stainless'): 1050000, ('Pagar', 2020, 'Pipa Stainless'): 880000,
+    ('Pagar', 2021, 'Hollow'): 500000, ('Pagar', 2021, 'Hollow Stainless'): 1100000, ('Pagar', 2021, 'Pipa Stainless'): 900000,
+    ('Pagar', 2022, 'Hollow'): 530000, ('Pagar', 2022, 'Hollow Stainless'): 1130000, ('Pagar', 2022, 'Pipa Stainless'): 920000,
+    ('Pagar', 2023, 'Hollow'): 550000, ('Pagar', 2023, 'Hollow Stainless'): 1150000, ('Pagar', 2023, 'Pipa Stainless'): 940000,
+    ('Pagar', 2024, 'Hollow'): 550000, ('Pagar', 2024, 'Hollow Stainless'): 1180000, ('Pagar', 2024, 'Pipa Stainless'): 960000,
+    ('Pagar', 2025, 'Hollow'): 600000, ('Pagar', 2025, 'Hollow Stainless'): 1200000, ('Pagar', 2025, 'Pipa Stainless'): 1000000,
+    
+    # Kanopi
+    ('Kanopi', 2019, 'Hollow'): 350000, ('Kanopi', 2019, 'Hollow Stainless'): 650000, ('Kanopi', 2019, 'Pipa Stainless'): 600000,
+    ('Kanopi', 2020, 'Hollow'): 350000, ('Kanopi', 2020, 'Hollow Stainless'): 700000, ('Kanopi', 2020, 'Pipa Stainless'): 630000,
+    ('Kanopi', 2021, 'Hollow'): 350000, ('Kanopi', 2021, 'Hollow Stainless'): 750000, ('Kanopi', 2021, 'Pipa Stainless'): 660000,
+    ('Kanopi', 2022, 'Hollow'): 350000, ('Kanopi', 2022, 'Hollow Stainless'): 780000, ('Kanopi', 2022, 'Pipa Stainless'): 680000,
+    ('Kanopi', 2023, 'Hollow'): 420000, ('Kanopi', 2023, 'Hollow Stainless'): 800000, ('Kanopi', 2023, 'Pipa Stainless'): 700000,
+    ('Kanopi', 2024, 'Hollow'): 450000, ('Kanopi', 2024, 'Hollow Stainless'): 800000, ('Kanopi', 2024, 'Pipa Stainless'): 700000,
+    ('Kanopi', 2025, 'Hollow'): 450000, ('Kanopi', 2025, 'Hollow Stainless'): 800000, ('Kanopi', 2025, 'Pipa Stainless'): 700000,
+    
+    # Pintu Gerbang
+    ('Pintu Gerbang', 2019, 'Hollow'): 550000, ('Pintu Gerbang', 2019, 'Hollow Stainless'): 1100000, ('Pintu Gerbang', 2019, 'Pipa Stainless'): 950000,
+    ('Pintu Gerbang', 2020, 'Hollow'): 600000, ('Pintu Gerbang', 2020, 'Hollow Stainless'): 1150000, ('Pintu Gerbang', 2020, 'Pipa Stainless'): 1000000,
+    ('Pintu Gerbang', 2021, 'Hollow'): 600000, ('Pintu Gerbang', 2021, 'Hollow Stainless'): 1200000, ('Pintu Gerbang', 2021, 'Pipa Stainless'): 1050000,
+    ('Pintu Gerbang', 2022, 'Hollow'): 650000, ('Pintu Gerbang', 2022, 'Hollow Stainless'): 1250000, ('Pintu Gerbang', 2022, 'Pipa Stainless'): 1100000,
+    ('Pintu Gerbang', 2023, 'Hollow'): 700000, ('Pintu Gerbang', 2023, 'Hollow Stainless'): 1300000, ('Pintu Gerbang', 2023, 'Pipa Stainless'): 1150000,
+    ('Pintu Gerbang', 2024, 'Hollow'): 750000, ('Pintu Gerbang', 2024, 'Hollow Stainless'): 1420000, ('Pintu Gerbang', 2024, 'Pipa Stainless'): 1180000,
+    ('Pintu Gerbang', 2025, 'Hollow'): 750000, ('Pintu Gerbang', 2025, 'Hollow Stainless'): 1500000, ('Pintu Gerbang', 2025, 'Pipa Stainless'): 1200000,
+    
+    # Teralis
+    ('Teralis', 2019, 'Hollow'): 300000, ('Teralis', 2019, 'Hollow Stainless'): 650000, ('Teralis', 2019, 'Pipa Stainless'): 600000,
+    ('Teralis', 2020, 'Hollow'): 300000, ('Teralis', 2020, 'Hollow Stainless'): 700000, ('Teralis', 2020, 'Pipa Stainless'): 620000,
+    ('Teralis', 2021, 'Hollow'): 300000, ('Teralis', 2021, 'Hollow Stainless'): 750000, ('Teralis', 2021, 'Pipa Stainless'): 640000,
+    ('Teralis', 2022, 'Hollow'): 300000, ('Teralis', 2022, 'Hollow Stainless'): 780000, ('Teralis', 2022, 'Pipa Stainless'): 660000,
+    ('Teralis', 2023, 'Hollow'): 350000, ('Teralis', 2023, 'Hollow Stainless'): 800000, ('Teralis', 2023, 'Pipa Stainless'): 680000,
+    ('Teralis', 2024, 'Hollow'): 350000, ('Teralis', 2024, 'Hollow Stainless'): 800000, ('Teralis', 2024, 'Pipa Stainless'): 700000,
+    ('Teralis', 2025, 'Hollow'): 350000, ('Teralis', 2025, 'Hollow Stainless'): 800000, ('Teralis', 2025, 'Pipa Stainless'): 700000,
+    
+    # Railing
+    ('Railing', 2019, 'Hollow'): 400000, ('Railing', 2019, 'Hollow Stainless'): 1000000, ('Railing', 2019, 'Pipa Stainless'): 850000,
+    ('Railing', 2020, 'Hollow'): 400000, ('Railing', 2020, 'Hollow Stainless'): 1050000, ('Railing', 2020, 'Pipa Stainless'): 880000,
+    ('Railing', 2021, 'Hollow'): 450000, ('Railing', 2021, 'Hollow Stainless'): 1100000, ('Railing', 2021, 'Pipa Stainless'): 900000,
+    ('Railing', 2022, 'Hollow'): 450000, ('Railing', 2022, 'Hollow Stainless'): 1120000, ('Railing', 2022, 'Pipa Stainless'): 920000,
+    ('Railing', 2023, 'Hollow'): 500000, ('Railing', 2023, 'Hollow Stainless'): 1150000, ('Railing', 2023, 'Pipa Stainless'): 950000,
+    ('Railing', 2024, 'Hollow'): 500000, ('Railing', 2024, 'Hollow Stainless'): 1180000, ('Railing', 2024, 'Pipa Stainless'): 1000000,
+    ('Railing', 2025, 'Hollow'): 500000, ('Railing', 2025, 'Hollow Stainless'): 1200000, ('Railing', 2025, 'Pipa Stainless'): 1000000,
+    
+    # Pintu Handerson
+    ('Pintu Handerson', 2019, 'Hollow'): 750000, ('Pintu Handerson', 2019, 'Hollow Stainless'): 1300000, ('Pintu Handerson', 2019, 'Pipa Stainless'): 1200000,
+    ('Pintu Handerson', 2020, 'Hollow'): 800000, ('Pintu Handerson', 2020, 'Hollow Stainless'): 1350000, ('Pintu Handerson', 2020, 'Pipa Stainless'): 1250000,
+    ('Pintu Handerson', 2021, 'Hollow'): 800000, ('Pintu Handerson', 2021, 'Hollow Stainless'): 1420000, ('Pintu Handerson', 2021, 'Pipa Stainless'): 1300000,
+    ('Pintu Handerson', 2022, 'Hollow'): 800000, ('Pintu Handerson', 2022, 'Hollow Stainless'): 1460000, ('Pintu Handerson', 2022, 'Pipa Stainless'): 1350000,
+    ('Pintu Handerson', 2023, 'Hollow'): 850000, ('Pintu Handerson', 2023, 'Hollow Stainless'): 1500000, ('Pintu Handerson', 2023, 'Pipa Stainless'): 1400000,
+    ('Pintu Handerson', 2024, 'Hollow'): 900000, ('Pintu Handerson', 2024, 'Hollow Stainless'): 1600000, ('Pintu Handerson', 2024, 'Pipa Stainless'): 1450000,
+    ('Pintu Handerson', 2025, 'Hollow'): 900000, ('Pintu Handerson', 2025, 'Hollow Stainless'): 1700000, ('Pintu Handerson', 2025, 'Pipa Stainless'): 1500000,
+}
+
+def get_material_base_price(row):
+    # Get tahun - handle if missing
+    tahun = row.get('tahun', 2025)  # Default to latest year if missing
+    if pd.isna(tahun):
+        tahun = 2025
+    
+    # Try exact match first
+    key = (row['produk'], int(tahun), row['jenis_material'])
+    if key in material_base_price_map:
+        return material_base_price_map[key]
+    
+    # Fallback: try nearest year (2019-2025 range)
+    for year in [2025, 2024, 2023, 2022, 2021, 2020, 2019]:
+        key = (row['produk'], year, row['jenis_material'])
+        if key in material_base_price_map:
+            return material_base_price_map[key]
+    
+    # Ultimate fallback
+    return 500000
+
+df['material_base_price'] = df.apply(get_material_base_price, axis=1)
+
+# 2. Thickness Premium (from table)
+thickness_premium_map = {0.8: 0, 1.0: 50000, 1.2: 100000}
+df['thickness_premium'] = df['ketebalan_material'].map(thickness_premium_map).fillna(0)
+
+# 3. Profile Size Premium
+profile_premium_map = {
+    '4x4': 0, '4x6': 50000, '4x8': 100000,
+    '2x2': 0, '1x3': 0, '1.5inch': 0, '2inch': 100000
+}
+df['profile_premium'] = df['profile_size'].map(profile_premium_map).fillna(0)
+
+# 4. Finishing Premium
+finishing_premium_map = {
+    'Cat Dasar': 0, 'Cat Biasa': 0, 'Cat': 0,
+    'Cat Duco': 150000, 'Tanpa Cat': 0, 'Tanpa Finishing': 0,
+    'Powder Coating': 100000
+}
+df['finishing_premium'] = df['finishing'].map(finishing_premium_map).fillna(0)
+
+# 5. Complexity Premium
+complexity_premium_map = {'Sederhana': 0, 'Menengah': 100000, 'Kompleks': 150000}
+df['complexity_premium'] = df['kerumitan_desain'].map(complexity_premium_map).fillna(0)
+
+# ========== DERIVED FEATURES ==========
+df['total_area'] = df['jumlah_unit'] * df['ukuran']
+df['total_lubang'] = df['jumlah_unit'] * df['jumlah_lubang']
+
+# 7. Complexity Score (multi-factor)
+df['kerumitan_numeric'] = df['kerumitan_desain'].map({'Sederhana': 1, 'Menengah': 2, 'Kompleks': 3}).fillna(1)
+df['complexity_score'] = (df['kerumitan_numeric'] * df['ketebalan_material'] * 
+                          (df['ukuran'] + 0.1) * (df['jumlah_lubang'] + 1))
+
+# 8. Labor Intensity (holes per area)
+df['labor_intensity'] = df['jumlah_lubang'] / (df['ukuran'] + 0.1)
+
+# 9. Cost Per Unit
+df['cost_per_unit'] = df['ukuran'] / df['jumlah_unit']
+
+# 10. Material-Thickness Interaction
+df['material_premium_index'] = df['jenis_material'].map({
+    'Hollow': 1, 'Hollow Stainless': 2, 'Pipa Stainless': 2, 'Stainless': 2, 'Besi': 1
+}).fillna(1)
+df['material_thickness_interaction'] = df['material_premium_index'] * df['ketebalan_material']
+
+# 11. Area-Complexity Interaction
+df['area_complexity'] = df['total_area'] * df['kerumitan_numeric']
+
+# 12. Upah Ratio (normalized, not absolute)
+df['upah_ratio'] = df['upah_tenaga_ahli'] / (df['total_area'] + 1)
 
 # One-hot encoded features for Metode Hitung
-df['is_per_lubang'] = (df['Metode Hitung'] == 'Per Lubang').astype(int)
-df['is_per_m2'] = (df['Metode Hitung'] == 'Per m²').astype(int)
+df['is_per_lubang'] = (df['metode_hitung'].str.upper() == 'PER-LUBANG').astype(int)
+df['is_per_m2'] = (df['metode_hitung'].str.upper() == 'PER-M2').astype(int)
 
 # Thickness delta feature
-df['thickness_delta'] = np.maximum(0, df['Ketebalan_mm'] - 0.8)
+df['thickness_delta'] = np.maximum(0, df['ketebalan_material'] - 0.8)
+
+# Profile size encoding (4x4=1, 4x6=2, 4x8=3)
+df['profile_numeric'] = df['profile_size'].map({'4x4': 1, '4x6': 2, '4x8': 3}).fillna(1)
+
+# Material quality encoding (Hollow=1, Stainless=2)
+df['material_quality'] = df['jenis_material'].map({'Hollow': 1, 'Stainless': 2}).fillna(1)
 
 # Handling product-specific rules
-df.loc[df['Metode Hitung'] == 'Per Lubang', 'total_area'] = 0
-df.loc[df['Metode Hitung'] == 'Per m²', 'total_lubang'] = 0
+df.loc[df['metode_hitung'].str.upper() == 'PER-LUBANG', 'total_area'] = 0
+df.loc[df['metode_hitung'].str.upper() == 'PER-M2', 'total_lubang'] = 0
 
 # Handle edge cases
 # If Metode_Hitung is missing: infer from Produk (e.g., Teralis → Per Lubang, others → Per m²)
-df.loc[(df['Metode Hitung'] == "UNKNOWN") & (df['Produk'] == 'Teralis'), 'Metode Hitung'] = 'Per Lubang'
-df.loc[(df['Metode Hitung'] == "UNKNOWN") & (df['Produk'] != 'Teralis'), 'Metode Hitung'] = 'Per m²'
+df.loc[(df['metode_hitung'] == "UNKNOWN") & (df['produk'] == 'Teralis'), 'metode_hitung'] = 'PER-LUBANG'
+df.loc[(df['metode_hitung'] == "UNKNOWN") & (df['produk'] != 'Teralis'), 'metode_hitung'] = 'PER-M2'
 
 # If Jumlah Lubang is missing for non-teralis products → fill with 0
-df.loc[(df['Jumlah Lubang'].isnull()) & (df['Produk'] != 'Teralis'), 'Jumlah Lubang'] = 0
+df.loc[(df['jumlah_lubang'].isnull()) & (df['produk'] != 'Teralis'), 'jumlah_lubang'] = 0
 
-# If Ukuran_m2 is missing for per_lubang products → fill with 0
-df.loc[(df['Ukuran_m2'].isnull()) & (df['Metode Hitung'] == 'Per Lubang'), 'Ukuran_m2'] = 0
+# If ukuran is missing for per_lubang products → fill with 0
+df.loc[(df['ukuran'].isnull()) & (df['metode_hitung'].str.upper() == 'PER-LUBANG'), 'ukuran'] = 0
 
 # If Jumlah Unit missing → default = 1
-df['Jumlah Unit'] = df['Jumlah Unit'].fillna(1)
+df['jumlah_unit'] = df['jumlah_unit'].fillna(1)
 
 # Prepare features and target
 print("Preparing features and target...")
+# SIMPLIFIED VERSION FOR THESIS - Only 15 core features with clear business justification
 feature_columns = [
-    'Produk', 'Jumlah Unit', 'Jumlah Lubang', 'Ukuran_m2', 'Jenis Material', 
-    'Ketebalan_mm', 'Finishing', 'Kerumitan Desain', 'Metode Hitung',
-    'total_area', 'total_lubang', 'is_per_lubang', 'is_per_m2', 'thickness_delta'
+    # Original features (categorical) - 6 features
+    'produk', 'jenis_material', 'finishing', 'kerumitan_desain', 'metode_hitung', 'profile_size',
+    # Original features (numeric) - 4 features
+    'jumlah_unit', 'jumlah_lubang', 'ukuran', 'ketebalan_material',
+    # Price table based features (from bengkel price list) - 3 features
+    'material_base_price', 'thickness_premium', 'profile_premium', 
+    # Derived features (clear business logic) - 2 features
+    'total_area', 'total_lubang'
 ]
 
 # Check which columns actually exist
 existing_feature_columns = [col for col in feature_columns if col in df.columns]
-print(f"Existing feature columns: {existing_feature_columns}")
+print(f"Existing feature columns ({len(existing_feature_columns)}): {existing_feature_columns}")
 
 X = df[existing_feature_columns]
-y = df['Harga_Akhir_Rp']
+y = df['harga_final']
 
 # Define preprocessing steps
 print("Setting up preprocessing pipeline...")
 # Numeric preprocessing
-numeric_features = ['Jumlah Unit', 'Jumlah Lubang', 'Ukuran_m2', 'Ketebalan_mm', 
-                   'total_area', 'total_lubang', 'thickness_delta']
+numeric_features = [
+    'jumlah_unit', 'jumlah_lubang', 'ukuran', 'ketebalan_material',
+    'material_base_price', 'thickness_premium', 'profile_premium', 
+    'finishing_premium', 'complexity_premium',
+    'total_area', 'total_lubang', 'complexity_score', 'labor_intensity',
+    'cost_per_unit', 'material_thickness_interaction', 'area_complexity', 'upah_ratio',
+    'thickness_delta', 'profile_numeric', 'material_quality', 
+    'material_premium_index', 'kerumitan_numeric'
+]
 numeric_features = [col for col in numeric_features if col in X.columns]
 
 # Categorical preprocessing
-categorical_features = ['Produk', 'Jenis Material', 'Finishing', 'Metode Hitung']
+categorical_features = ['produk', 'jenis_material', 'finishing', 'metode_hitung', 'profile_size']
 categorical_features = [col for col in categorical_features if col in X.columns]
 
 # Ordinal preprocessing for Kerumitan Desain
-ordinal_features = ['Kerumitan Desain']
+ordinal_features = ['kerumitan_desain']
 ordinal_features = [col for col in ordinal_features if col in X.columns]
 
 # Create transformers based on what features we actually have
@@ -160,7 +345,7 @@ if categorical_features:
 if ordinal_features:
     ordinal_transformer = Pipeline(steps=[
         ('imputer', SimpleImputer(strategy='constant', fill_value='UNKNOWN')),
-        ('ordinal', OrdinalEncoder(categories=[['UNKNOWN', 'Simple', 'Medium', 'Complex']], 
+        ('ordinal', OrdinalEncoder(categories=[['UNKNOWN', 'Sederhana', 'Menengah', 'Kompleks']], 
                                   handle_unknown='use_encoded_value', unknown_value=-1))
     ])
     transformers.append(('ord', ordinal_transformer, ordinal_features))
