@@ -64,7 +64,7 @@
                     </tr>
                 </thead>
                 <tbody class="bg-white divide-y divide-gray-200">
-                    @forelse($surveys as $survey)
+                    @forelse($pendingBookings as $survey)
                     <tr class="hover:bg-gray-50">
                         <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
                             {{ $survey->preferred_date->format('d/m/Y') }}
@@ -89,11 +89,11 @@
                                 <select name="status" 
                                         class="text-sm rounded-full px-3 py-1 font-semibold focus:outline-none focus:ring-2 focus:ring-blue-500
                                         {{ $survey->status === 'pending' ? 'bg-yellow-100 text-yellow-800 border-yellow-300' : '' }}
-                                        {{ $survey->status === 'approved' ? 'bg-green-100 text-green-800 border-green-300' : '' }}
+                                        {{ $survey->status === 'confirmed' ? 'bg-green-100 text-green-800 border-green-300' : '' }}
                                         {{ $survey->status === 'completed' ? 'bg-blue-100 text-blue-800 border-blue-300' : '' }}
                                         {{ $survey->status === 'cancelled' ? 'bg-red-100 text-red-800 border-red-300' : '' }}">
                                     <option value="pending" {{ $survey->status === 'pending' ? 'selected' : '' }}>Pending</option>
-                                    <option value="approved" {{ $survey->status === 'approved' ? 'selected' : '' }}>Approved</option>
+                                    <option value="confirmed" {{ $survey->status === 'confirmed' ? 'selected' : '' }}>Confirmed</option>
                                     <option value="completed" {{ $survey->status === 'completed' ? 'selected' : '' }}>Completed</option>
                                     <option value="cancelled" {{ $survey->status === 'cancelled' ? 'selected' : '' }}>Cancelled</option>
                                 </select>
@@ -124,9 +124,9 @@
         </div>
 
         <!-- Pagination -->
-        @if($surveys->hasPages())
+        @if($pendingBookings->hasPages())
         <div class="px-6 py-4 border-t border-gray-200">
-            {{ $surveys->links() }}
+            {{ $pendingBookings->links() }}
         </div>
         @endif
     </div>

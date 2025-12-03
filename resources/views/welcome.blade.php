@@ -84,7 +84,7 @@
                             <div class="max-w-xl px-8 md:px-16">
                                 <h2 class="text-white mb-3" x-text="slide.title"></h2>
                                 <p class="text-white text-lg mb-6" x-text="slide.subtitle"></p>
-                                <a :href="index === 0 ? '{{ route('estimates.create') }}' : (index === 1 ? '{{ route('survey.create') }}' : '{{ route('portfolio.index', ['category' => 'semua']) }}')" 
+                                <a :href="index === 0 ? '{{ route('estimates.create') }}' : (index === 1 ? '{{ route('survey-booking.create') }}' : '{{ route('portfolio.index', ['category' => 'semua']) }}')"
                                    class="bg-orange-500 hover:bg-orange-600 text-white px-6 py-2.5 rounded-lg transition-colors inline-flex items-center gap-2">
                                     <span x-text="slide.cta"></span>
                                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -229,7 +229,7 @@
                                 Estimasi Harga
                             </a>
                             @auth
-                                <a href="{{ route('survey.create') }}"
+                                <a href="{{ route('survey-booking.create') }}"
                                    class="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 px-3 sm:px-4 rounded text-xs sm:text-sm font-medium transition-colors duration-200 text-center block">
                                     Jadwalkan Survey
                                 </a>
@@ -256,7 +256,7 @@
                     Jadwalkan survey lapangan gratis untuk perhitungan detail dan konsultasi langsung dengan tim ahli kami
                 </p>
                 @auth
-                    <a href="{{ route('survey.create') }}" 
+                    <a href="{{ route('survey-booking.create') }}" 
                        class="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-lg transition-colors">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>

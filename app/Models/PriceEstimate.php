@@ -30,7 +30,6 @@ class PriceEstimate extends Model
         'kerumitan_desain',   // ML field: Kerumitan_Desain (Sederhana, Menengah, Kompleks)
         'metode_hitung',      // ML field: Metode_Hitung (Per m², Per Lubang)
         'harga_akhir',        // ML prediction result
-        'estimated_price',    // ML field: same as harga_akhir
         'status',
         'notes',
     ];
@@ -46,7 +45,6 @@ class PriceEstimate extends Model
         'ukuran_m2' => 'float',
         'ketebalan_mm' => 'float',
         'harga_akhir' => 'decimal:2',
-        'estimated_price' => 'decimal:2',
     ];
 
     /**

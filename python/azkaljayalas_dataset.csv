@@ -1,492 +1,492 @@
 order_id,tanggal,tahun,pelanggan,lokasi,produk,jenis_material,profile_size,ketebalan_material,ukuran,jumlah_unit,jumlah_lubang,metode_hitung,harga_per_m2,harga_per_m,harga_per_lubang,upah_tenaga_ahli,finishing,kerumitan_desain,harga_final
 ORD-00001,3/29/2020,2020,Sukirman Wicaksono,Suradadi,Pintu Handerson,Hollow,4x4,0.8,4.73,1,0,PER-M2,800000,0,0,473000,Cat Biasa,Sederhana,3850000
 ORD-00002,7/24/2024,2024,Bu Marni Sulastri,Balapulang,Railing,Hollow,4x4,0.8,2.7,3,0,PER-M,0,500000,0,810000,Cat Biasa,Kompleks,4250000
-ORD-00003,3/19/2021,2021,Pak Darsono Hidayat,Margasari,Pagar,Hollow Stainless,4x8,1.2,12.85,1,0,PER-M2,1300000,0,0,1927500,Tanpa Cat,Sederhana,16700000
-ORD-00004,8/22/2023,2023,Lilis Mariyam,Slawi,Pintu Gerbang,Hollow Stainless,4x4,0.8,6.03,1,0,PER-M2,1300000,0,0,904500,Tanpa Cat,Kompleks,8000000
+ORD-00003,3/19/2021,2021,Pak Darsono Hidayat,Margasari,Pagar,Hollow Stainless,4x8,1.2,12.8,1,0,PER-M2,1200000,0,0,1920000,Tanpa Cat,Sederhana,15350000
+ORD-00004,8/22/2023,2023,Lilis Mariyam,Slawi,Pintu Gerbang,Hollow Stainless,4x4,0.8,6,1,0,PER-M2,1300000,0,0,900000,Tanpa Cat,Kompleks,7950000
 ORD-00005,12/10/2021,2021,Dimas Ramadhan,Tegal,Pintu Handerson,Hollow,4x8,1.2,2.7,2,0,PER-M2,1000000,0,0,540000,Cat Biasa,Menengah,5550000
-ORD-00006,7/30/2022,2022,Asep Pratama,Kramat,Pintu Gerbang,Hollow Stainless,4x8,0.8,12.93,1,0,PER-M2,1350000,0,0,1939500,Tanpa Cat,Menengah,17550000
-ORD-00007,6/21/2025,2025,Rina Andini,Talang,Railing,Hollow Stainless,4x6,1.2,14,2,0,PER-M,0,1350000,0,4200000,Tanpa Cat,Sederhana,37800000
-ORD-00008,1/23/2020,2020,Ponijah Sarmini,Pagerbarang,Railing,Hollow,4x6,0.8,5.6,3,0,PER-M,0,450000,0,1680000,Cat Biasa,Sederhana,7600000
+ORD-00006,7/30/2022,2022,Asep Pratama,Kramat,Pintu Gerbang,Hollow Stainless,4x8,0.8,13,1,0,PER-M2,1400000,0,0,1950000,Tanpa Cat,Menengah,18300000
+ORD-00007,6/21/2025,2025,Rina Andini,Talang,Railing,Hollow Stainless,4x6,1.2,14.2,1,0,PER-M,0,1350000,0,2130000,Tanpa Cat,Sederhana,19150000
+ORD-00008,1/23/2020,2020,Ponijah Sarmini,Pagerbarang,Railing,Hollow,4x6,0.8,5.6,1,0,PER-M,0,450000,0,560000,Cat Biasa,Sederhana,2550000
 ORD-00009,5/29/2024,2024,Andi Prasetyo,Lebaksiu,Teralis,Pipa Stainless,1x3,1.2,0,1,18,PER-LUBANG,0,0,800000,2700000,Tanpa Cat,Menengah,14500000
-ORD-00010,9/11/2022,2022,Fajar Nugroho,Suradadi,Pagar,Hollow,4x6,0.8,26.03,1,0,PER-M2,580000,0,0,2603000,Cat Biasa,Sederhana,15150000
-ORD-00011,10/25/2019,2019,Dewi Rosyidah,Jatinegara,Teralis,Hollow Stainless,2x2,1.2,0,1,21,PER-LUBANG,0,0,750000,3150000,Tanpa Cat,Kompleks,15900000
-ORD-00012,1/16/2024,2024,Mas Riyan Saputra,Dukuhturi,Pintu Gerbang,Hollow Stainless,4x8,1,13.79,1,0,PER-M2,1570000,0,0,2068500,Tanpa Cat,Sederhana,21650000
-ORD-00013,8/1/2022,2022,Rahmat Hidayat,Tarub,Kanopi,Pipa Stainless,1.5inch,1,15.75,2,0,PER-M2,730000,0,0,6300000,Tanpa Cat,Sederhana,23000000
+ORD-00010,9/11/2022,2022,Fajar Nugroho,Suradadi,Pagar,Hollow,4x6,0.8,26,1,0,PER-M2,600000,0,0,2600000,Cat Biasa,Sederhana,15650000
+ORD-00011,10/25/2019,2019,Dewi Rosyidah,Jatinegara,Teralis,Hollow Stainless,2x2,1.2,0,1,21,PER-LUBANG,0,0,800000,3150000,Tanpa Cat,Kompleks,16950000
+ORD-00012,1/16/2024,2024,Mas Riyan Saputra,Dukuhturi,Pintu Gerbang,Hollow Stainless,4x8,1,13.7,1,0,PER-M2,1650000,0,0,2055000,Tanpa Cat,Sederhana,22600000
+ORD-00013,8/1/2022,2022,Rahmat Hidayat,Tarub,Kanopi,Pipa Stainless,1.5inch,1,15,2,0,PER-M2,700000,0,0,6000000,Tanpa Cat,Sederhana,21000000
 ORD-00014,8/23/2020,2020,Siti Rohmalia,Slawi,Teralis,Hollow,1x3,1,0,1,11,PER-LUBANG,0,0,350000,825000,Cat Dasar,Menengah,3950000
-ORD-00015,2/21/2022,2022,Pak Sutopo Widodo,Bumijawa,Kanopi,Hollow Stainless,4x6,0.8,10.65,1,0,PER-M2,830000,0,0,1597500,Tanpa Cat,Sederhana,8850000
-ORD-00016,9/6/2020,2020,Kasmijan Rukmono,Bojong,Railing,Hollow Stainless,4x6,1.2,4.12,2,0,PER-M,0,1200000,0,1236000,Tanpa Cat,Sederhana,9900000
+ORD-00015,2/21/2022,2022,Pak Sutopo Widodo,Bumijawa,Kanopi,Hollow Stainless,4x6,0.8,10,1,0,PER-M2,800000,0,0,1500000,Tanpa Cat,Sederhana,8000000
+ORD-00016,9/6/2020,2020,Kasmijan Rukmono,Bojong,Railing,Hollow Stainless,4x6,1.2,4.12,2,0,PER-M,0,1150000,0,1236000,Tanpa Cat,Sederhana,9500000
 ORD-00017,4/21/2021,2021,Riyan Hartanto,Adiwerna,Teralis,Hollow,2x2,0.8,0,1,6,PER-LUBANG,0,0,300000,450000,Cat Biasa,Sederhana,1850000
-ORD-00018,9/29/2022,2022,Bu Tuginem Sumarni,Tarub,Teralis,Pipa Stainless,1x3,1.2,0,1,20,PER-LUBANG,0,0,760000,3000000,Tanpa Cat,Kompleks,15350000
+ORD-00018,9/29/2022,2022,Bu Tuginem Sumarni,Tarub,Teralis,Pipa Stainless,1x3,1.2,0,1,20,PER-LUBANG,0,0,750000,3000000,Tanpa Cat,Kompleks,15150000
 ORD-00019,3/18/2023,2023,Aulia Putri,Dukuhturi,Teralis,Hollow,2x4,1.2,0,1,12,PER-LUBANG,0,0,450000,900000,Cat Biasa,Menengah,5550000
-ORD-00020,3/9/2025,2025,Fauzan Pradipta,Warureja,Kanopi,Pipa Stainless,1.5inch,1.2,10.06,2,0,PER-M2,800000,0,0,4024000,Tanpa Cat,Sederhana,16100000
-ORD-00021,8/5/2022,2022,Nadya Khairunnisa,Slawi,Pintu Gerbang,Hollow Stainless,4x6,1,12.16,1,0,PER-M2,1350000,0,0,1824000,Tanpa Cat,Sederhana,16400000
+ORD-00020,3/9/2025,2025,Fauzan Pradipta,Warureja,Kanopi,Pipa Stainless,1.5inch,1.2,10,2,0,PER-M2,800000,0,0,4000000,Tanpa Cat,Sederhana,16000000
+ORD-00021,8/5/2022,2022,Nadya Khairunnisa,Slawi,Pintu Gerbang,Hollow Stainless,4x6,1,12.6,1,0,PER-M2,1400000,0,0,1890000,Tanpa Cat,Sederhana,17650000
 ORD-00022,9/12/2024,2024,Pak Parwoto Suyitno,Kramat,Railing,Pipa Stainless,2inch,1.2,3,2,0,PER-M,0,1200000,0,1200000,Tanpa Cat,Sederhana,7200000
-ORD-00023,3/30/2023,2023,Dewi Apriliyani,Lebaksiu,Kanopi,Hollow,4x4,1.2,23.62,2,0,PER-M2,520000,0,0,4724000,Cat Biasa,Menengah,24700000
-ORD-00024,5/29/2022,2022,Rizki Maulana,Jatinegara,Pintu Handerson,Hollow,4x4,1.2,2.93,1,0,PER-M2,900000,0,0,293000,Cat Biasa,Menengah,2800000
+ORD-00023,3/30/2023,2023,Dewi Apriliyani,Lebaksiu,Kanopi,Hollow,4x4,1.2,23,2,0,PER-M2,520000,0,0,4600000,Cat Biasa,Menengah,24050000
+ORD-00024,5/29/2022,2022,Rizki Maulana,Jatinegara,Pintu Handerson,Hollow,4x4,1.2,2.9,1,0,PER-M2,900000,0,0,290000,Cat Biasa,Menengah,2750000
 ORD-00025,4/15/2025,2025,Bu Rukmini Sulastri,Talang,Teralis,Pipa Stainless,1x3,1,0,1,18,PER-LUBANG,0,0,750000,2700000,Tanpa Cat,Menengah,13600000
-ORD-00026,12/18/2020,2020,Aditya Firmansyah,Slawi,Railing,Hollow Stainless,4x4,1.2,7.4,1,0,PER-M,0,1150000,0,1110000,Tanpa Cat,Sederhana,8500000
-ORD-00027,1/8/2021,2021,Bella Rahmawati,Tegal,Kanopi,Pipa Stainless,1.5inch,1,15.85,1,0,PER-M2,710000,0,0,3170000,Tanpa Cat,Menengah,11350000
+ORD-00026,12/18/2020,2020,Aditya Firmansyah,Slawi,Railing,Hollow Stainless,4x4,1.2,7.4,1,0,PER-M,0,1100000,0,1110000,Tanpa Cat,Sederhana,8150000
+ORD-00027,1/8/2021,2021,Bella Rahmawati,Tegal,Kanopi,Pipa Stainless,1.5inch,1,15.85,1,0,PER-M2,650000,0,0,3170000,Tanpa Cat,Menengah,10400000
 ORD-00028,6/18/2023,2023,Rina Lestari,Pagerbarang,Kanopi,Pipa Stainless,1.5inch,1,10.4,1,0,PER-M2,750000,0,0,2080000,Tanpa Cat,Sederhana,7800000
 ORD-00029,1/5/2020,2020,Sutrisno Marwoto,Margasari,Kanopi,Hollow,4x6,0.8,9.15,1,0,PER-M2,400000,0,0,915000,Cat Duco,Sederhana,3800000
-ORD-00030,11/30/2023,2023,Painem Kartikasari,Bojong,Pagar,Pipa Stainless,2inch,1,18.95,1,0,PER-M2,1090000,0,0,3790000,Tanpa Cat,Sederhana,20650000
+ORD-00030,11/30/2023,2023,Painem Kartikasari,Bojong,Pagar,Pipa Stainless,2inch,1,19,1,0,PER-M2,1100000,0,0,3800000,Tanpa Cat,Sederhana,20900000
 ORD-00031,1/14/2019,2019,Kevin Pratama,Slawi,Teralis,Hollow,1x3,1,0,1,17,PER-LUBANG,0,0,350000,1275000,Cat Duco,Menengah,6200000
 ORD-00032,1/24/2020,2020,Dinda Aulia,Adiwerna,Railing,Hollow,4x4,1.2,9.58,3,0,PER-M,0,500000,0,2874000,Cat Biasa,Kompleks,14550000
-ORD-00033,1/13/2023,2023,Tiara Maheswari,Kramat,Teralis,Pipa Stainless,1x3,0.8,0,1,11,PER-LUBANG,0,0,680000,1650000,Tanpa Cat,Menengah,7600000
-ORD-00034,1/17/2023,2023,Mas Fikri Ardian,Tegal,Pintu Gerbang,Hollow Stainless,4x6,1,6.03,1,0,PER-M2,1400000,0,0,904500,Tanpa Cat,Menengah,8550000
-ORD-00035,10/13/2020,2020,Mas Gilang Harisandi,Tarub,Teralis,Pipa Stainless,2x2,0.8,0,1,14,PER-LUBANG,0,0,620000,2100000,Tanpa Cat,Menengah,8800000
+ORD-00033,1/13/2023,2023,Tiara Maheswari,Kramat,Teralis,Pipa Stainless,1x3,0.8,0,1,11,PER-LUBANG,0,0,650000,1650000,Tanpa Cat,Menengah,7250000
+ORD-00034,1/17/2023,2023,Mas Fikri Ardian,Tegal,Pintu Gerbang,Hollow Stainless,4x6,1,6.3,1,0,PER-M2,1400000,0,0,945000,Tanpa Cat,Menengah,8900000
+ORD-00035,10/13/2020,2020,Mas Gilang Harisandi,Tarub,Teralis,Pipa Stainless,2x2,0.8,0,1,14,PER-LUBANG,0,0,600000,2100000,Tanpa Cat,Menengah,8500000
 ORD-00036,4/21/2024,2024,Bu Karsini,Lebaksiu,Pintu Handerson,Hollow Stainless,4x6,1,2.06,1,0,PER-M2,1700000,0,0,309000,Tanpa Cat,Menengah,3600000
 ORD-00037,11/20/2019,2019,Nova Apriliyana,Slawi,Railing,Hollow,4x4,0.8,8.12,1,0,PER-M,0,400000,0,812000,Cat Biasa,Sederhana,3300000
-ORD-00038,5/12/2022,2022,Mahendra Prakoso,Suradadi,Pagar,Hollow,4x6,0.8,24.02,1,0,PER-M2,580000,0,0,2402000,Cat Biasa,Menengah,14100000
+ORD-00038,5/12/2022,2022,Mahendra Prakoso,Suradadi,Pagar,Hollow,4x6,0.8,24,1,0,PER-M2,600000,0,0,2400000,Cat Biasa,Menengah,14550000
 ORD-00039,11/9/2020,2020,Pak Wagiman Triyono,Balapulang,Kanopi,Hollow Stainless,4x6,1.2,23.45,2,0,PER-M2,850000,0,0,7035000,Tanpa Cat,Sederhana,39850000
-ORD-00040,1/17/2022,2022,Suroso Widodo,Tarub,Teralis,Hollow Stainless,1x3,1,0,1,22,PER-LUBANG,0,0,830000,3300000,Tanpa Cat,Kompleks,18400000
+ORD-00040,1/17/2022,2022,Suroso Widodo,Tarub,Teralis,Hollow Stainless,1x3,1,0,1,22,PER-LUBANG,0,0,800000,3300000,Tanpa Cat,Kompleks,17750000
 ORD-00041,2/20/2025,2025,Andriansyah Putro,Jatinegara,Teralis,Hollow,1x3,0.8,0,1,13,PER-LUBANG,0,0,350000,975000,Cat Biasa,Menengah,4700000
-ORD-00042,1/9/2022,2022,Dewi Anggraini,Tegal,Pintu Gerbang,Pipa Stainless,2inch,0.8,10.88,1,0,PER-M2,1200000,0,0,2176000,Tanpa Cat,Menengah,13150000
-ORD-00043,7/3/2024,2024,Anita Karunia,Slawi,Kanopi,Pipa Stainless,2inch,1,23.43,2,0,PER-M2,850000,0,0,9372000,Tanpa Cat,Sederhana,39850000
-ORD-00044,1/19/2019,2019,Pak Rasman Sutaryono,Adiwerna,Kanopi,Hollow Stainless,4x6,0.8,22.43,1,0,PER-M2,700000,0,0,3364500,Tanpa Cat,Menengah,15800000
-ORD-00045,7/6/2022,2022,Mas Dio Prasetya,Slawi,Kanopi,Pipa Stainless,1.5inch,1,10.14,1,0,PER-M2,730000,0,0,2028000,Tanpa Cat,Menengah,7500000
-ORD-00046,3/27/2021,2021,Bu Marwiyah Darmanto,Margasari,Pintu Gerbang,Pipa Stainless,2inch,1.2,13.53,1,0,PER-M2,1250000,0,0,2706000,Tanpa Cat,Menengah,17000000
+ORD-00042,1/9/2022,2022,Dewi Anggraini,Tegal,Pintu Gerbang,Pipa Stainless,2inch,0.8,10.8,1,0,PER-M2,1200000,0,0,2160000,Tanpa Cat,Menengah,13050000
+ORD-00043,7/3/2024,2024,Anita Karunia,Slawi,Kanopi,Pipa Stainless,2inch,1,16,2,0,PER-M2,850000,0,0,6400000,Tanpa Cat,Sederhana,27200000
+ORD-00044,1/19/2019,2019,Pak Rasman Sutaryono,Adiwerna,Kanopi,Hollow Stainless,4x6,0.8,22,1,0,PER-M2,750000,0,0,3300000,Tanpa Cat,Menengah,16600000
+ORD-00045,7/6/2022,2022,Mas Dio Prasetya,Slawi,Kanopi,Pipa Stainless,1.5inch,1,15.5,1,0,PER-M2,700000,0,0,3100000,Tanpa Cat,Menengah,10950000
+ORD-00046,3/27/2021,2021,Bu Marwiyah Darmanto,Margasari,Pintu Gerbang,Pipa Stainless,2inch,1.2,13.53,1,0,PER-M2,1200000,0,0,2706000,Tanpa Cat,Menengah,16350000
 ORD-00047,11/22/2025,2025,Nadia Fitriyani,Talang,Teralis,Pipa Stainless,1x3,0.8,0,1,17,PER-LUBANG,0,0,700000,2550000,Tanpa Cat,Menengah,12000000
-ORD-00048,9/24/2025,2025,Lestari Kusumawati,Kramat,Pintu Handerson,Hollow Stainless,4x6,0.8,4.92,1,0,PER-M2,1750000,0,0,738000,Tanpa Cat,Sederhana,8600000
+ORD-00048,9/24/2025,2025,Lestari Kusumawati,Kramat,Pintu Handerson,Hollow Stainless,4x6,0.8,5,1,0,PER-M2,1750000,0,0,750000,Tanpa Cat,Sederhana,8750000
 ORD-00049,12/15/2024,2024,Pak Sugiyatno,Suradadi,Kanopi,Hollow,4x6,1,11.28,1,0,PER-M2,550000,0,0,1128000,Cat Biasa,Menengah,6350000
-ORD-00050,4/22/2024,2024,Rika Marlina,Tegal,Railing,Hollow Stainless,4x4,1,6,2,0,PER-M,0,1230000,0,1800000,Tanpa Cat,Sederhana,14750000
-ORD-00051,8/14/2022,2022,Rofiudin Sapari,Bojong,Pintu Gerbang,Hollow Stainless,4x4,1.2,13.52,1,0,PER-M2,1350000,0,0,2028000,Tanpa Cat,Sederhana,18250000
-ORD-00052,9/18/2019,2019,Santi Ayu Pramesti,Lebaksiu,Pagar,Pipa Stainless,2inch,1.2,14.59,1,0,PER-M2,1050000,0,0,2918000,Tanpa Cat,Menengah,15400000
-ORD-00053,2/21/2019,2019,Fadhil Ramadhan,Suradadi,Pintu Handerson,Pipa Stainless,2inch,0.8,4.11,1,0,PER-M2,1300000,0,0,822000,Tanpa Cat,Menengah,5450000
-ORD-00054,2/5/2022,2022,Shinta Evalina,Slawi,Railing,Pipa Stainless,2inch,0.8,2.93,3,0,PER-M,0,1020000,0,1758000,Tanpa Cat,Sederhana,8950000
-ORD-00055,3/3/2020,2020,Rina Kurniasari,Kramat,Pagar,Hollow,4x4,0.8,20.83,1,0,PER-M2,500000,0,0,2083000,Cat Dasar,Sederhana,10400000
-ORD-00056,7/7/2021,2021,Mas Yudha Setiawan,Dukuhturi,Railing,Hollow Stainless,4x6,1,5.09,1,0,PER-M,0,1200000,0,763500,Tanpa Cat,Sederhana,6100000
-ORD-00057,10/26/2021,2021,Budi Prasetya,Margasari,Pagar,Hollow,4x6,0.8,24.83,1,0,PER-M2,550000,0,0,2483000,Cat Duco,Sederhana,13800000
-ORD-00058,8/20/2022,2022,Bu Kasmiatun,Pagerbarang,Teralis,Hollow Stainless,1x3,1.2,0,1,5,PER-LUBANG,0,0,880000,750000,Tanpa Cat,Sederhana,4400000
-ORD-00059,5/11/2020,2020,Mas Naufal Rizqi,Talang,Pagar,Pipa Stainless,2inch,0.8,11.82,1,0,PER-M2,980000,0,0,2364000,Tanpa Cat,Sederhana,11600000
-ORD-00060,11/11/2023,2023,Lusi Ramadhanti,Balapulang,Kanopi,Hollow Stainless,4x6,1,11.94,1,0,PER-M2,900000,0,0,1791000,Tanpa Cat,Sederhana,10750000
+ORD-00050,4/22/2024,2024,Rika Marlina,Tegal,Railing,Hollow Stainless,4x4,1,6,2,0,PER-M,0,1250000,0,1800000,Tanpa Cat,Sederhana,15000000
+ORD-00051,8/14/2022,2022,Rofiudin Sapari,Bojong,Pintu Gerbang,Hollow Stainless,4x4,1.2,13.5,1,0,PER-M2,1400000,0,0,2025000,Tanpa Cat,Sederhana,18900000
+ORD-00052,9/18/2019,2019,Santi Ayu Pramesti,Lebaksiu,Pagar,Pipa Stainless,2inch,1.2,14.7,1,0,PER-M2,1050000,0,0,2940000,Tanpa Cat,Menengah,15550000
+ORD-00053,2/21/2019,2019,Fadhil Ramadhan,Suradadi,Pintu Handerson,Pipa Stainless,2inch,0.8,4.2,1,0,PER-M2,1300000,0,0,840000,Tanpa Cat,Menengah,5550000
+ORD-00054,2/5/2022,2022,Shinta Evalina,Slawi,Railing,Pipa Stainless,2inch,0.8,3,3,0,PER-M,0,1050000,0,1800000,Tanpa Cat,Sederhana,9450000
+ORD-00055,3/3/2020,2020,Rina Kurniasari,Kramat,Pagar,Hollow,4x4,0.8,20,1,0,PER-M2,500000,0,0,2000000,Cat Dasar,Sederhana,10000000
+ORD-00056,7/7/2021,2021,Mas Yudha Setiawan,Dukuhturi,Railing,Hollow Stainless,4x6,1,5.2,1,0,PER-M,0,1200000,0,780000,Tanpa Cat,Sederhana,6250000
+ORD-00057,10/26/2021,2021,Budi Prasetya,Margasari,Pagar,Hollow,4x6,0.8,24,1,0,PER-M2,550000,0,0,2400000,Cat Duco,Sederhana,13350000
+ORD-00058,8/20/2022,2022,Bu Kasmiatun,Pagerbarang,Teralis,Hollow Stainless,1x3,1.2,0,1,5,PER-LUBANG,0,0,850000,750000,Tanpa Cat,Sederhana,4250000
+ORD-00059,5/11/2020,2020,Mas Naufal Rizqi,Talang,Pagar,Pipa Stainless,2inch,0.8,11.8,1,0,PER-M2,950000,0,0,2360000,Tanpa Cat,Sederhana,11200000
+ORD-00060,11/11/2023,2023,Lusi Ramadhanti,Balapulang,Kanopi,Hollow Stainless,4x6,1,11,1,0,PER-M2,900000,0,0,1650000,Tanpa Cat,Sederhana,9900000
 ORD-00061,6/28/2025,2025,Tiara Sulistyawati,Slawi,Teralis,Pipa Stainless,1x3,1,0,1,21,PER-LUBANG,0,0,750000,3150000,Tanpa Cat,Kompleks,15900000
-ORD-00062,5/6/2019,2019,Pak Mardijo,Warureja,Pintu Handerson,Pipa Stainless,2inch,1,2.06,1,0,PER-M2,1350000,0,0,412000,Tanpa Cat,Menengah,2900000
-ORD-00063,1/8/2024,2024,Dian Novitasari,Tegal,Pagar,Hollow Stainless,4x6,0.8,8.72,1,0,PER-M2,1230000,0,0,1308000,Tanpa Cat,Menengah,10850000
-ORD-00064,6/19/2019,2019,Paiman Winoto,Adiwerna,Pintu Handerson,Hollow,4x4,1,3.99,2,0,PER-M2,800000,0,0,798000,Cat Biasa,Menengah,6550000
-ORD-00065,8/19/2019,2019,Pak Sukamto,Bumijawa,Kanopi,Hollow Stainless,4x4,1,14.9,1,0,PER-M2,700000,0,0,2235000,Tanpa Cat,Sederhana,10450000
+ORD-00062,5/6/2019,2019,Pak Mardijo,Warureja,Pintu Handerson,Pipa Stainless,2inch,1,2.5,1,0,PER-M2,1350000,0,0,500000,Tanpa Cat,Menengah,3500000
+ORD-00063,1/8/2024,2024,Dian Novitasari,Tegal,Pagar,Hollow Stainless,4x6,0.8,8.72,1,0,PER-M2,1250000,0,0,1308000,Tanpa Cat,Menengah,11000000
+ORD-00064,6/19/2019,2019,Paiman Winoto,Adiwerna,Pintu Handerson,Hollow,4x4,1,4,2,0,PER-M2,800000,0,0,800000,Cat Biasa,Menengah,6550000
+ORD-00065,8/19/2019,2019,Pak Sukamto,Bumijawa,Kanopi,Hollow Stainless,4x4,1,14.9,1,0,PER-M2,750000,0,0,2235000,Tanpa Cat,Sederhana,11200000
 ORD-00066,10/10/2020,2020,Mas Adam Wiratama,Tegal,Pintu Gerbang,Hollow,4x4,1.2,5.4,1,0,PER-M2,700000,0,0,540000,Cat Biasa,Sederhana,3850000
-ORD-00067,4/30/2023,2023,Rahayu Oktavia,Tarub,Teralis,Pipa Stainless,1x3,0.8,0,1,17,PER-LUBANG,0,0,680000,2550000,Tanpa Cat,Menengah,11650000
-ORD-00068,8/24/2023,2023,Fajri Ananda,Slawi,Pagar,Hollow,4x6,1.2,13.67,1,0,PER-M2,700000,0,0,1367000,Cat Biasa,Sederhana,9600000
-ORD-00069,6/9/2025,2025,Bu Tuminah Karwati,Margasari,Pagar,Hollow,4x6,1,8.07,1,0,PER-M2,700000,0,0,807000,Cat Dasar,Menengah,5750000
-ORD-00070,12/16/2022,2022,Sukinem Wati,Bojong,Pintu Gerbang,Pipa Stainless,2inch,1.2,8.19,1,0,PER-M2,1300000,0,0,1638000,Tanpa Cat,Menengah,10750000
-ORD-00071,5/4/2024,2024,Bella Herdiani,Kramat,Railing,Hollow Stainless,4x4,1,3.49,3,0,PER-M,0,1230000,0,1570500,Tanpa Cat,Sederhana,12900000
-ORD-00072,11/1/2023,2023,Santoso Jatmiko,Pagerbarang,Railing,Hollow Stainless,4x6,1,4.55,2,0,PER-M,0,1250000,0,1365000,Tanpa Cat,Menengah,11500000
-ORD-00073,1/30/2022,2022,Gita Salsabila,Lebaksiu,Railing,Pipa Stainless,4x4,1,8.86,1,0,PER-M,0,970000,0,1772000,Tanpa Cat,Menengah,8700000
+ORD-00067,4/30/2023,2023,Rahayu Oktavia,Tarub,Teralis,Pipa Stainless,1x3,0.8,0,1,17,PER-LUBANG,0,0,650000,2550000,Tanpa Cat,Menengah,11150000
+ORD-00068,8/24/2023,2023,Fajri Ananda,Slawi,Pagar,Hollow,4x6,1.2,13.6,1,0,PER-M2,700000,0,0,1360000,Cat Biasa,Sederhana,9550000
+ORD-00069,6/9/2025,2025,Bu Tuminah Karwati,Margasari,Pagar,Hollow,4x6,1,12,1,0,PER-M2,700000,0,0,1200000,Cat Dasar,Menengah,8500000
+ORD-00070,12/16/2022,2022,Sukinem Wati,Bojong,Pintu Gerbang,Pipa Stainless,2inch,1.2,7,1,0,PER-M2,1300000,0,0,1400000,Tanpa Cat,Menengah,9200000
+ORD-00071,5/4/2024,2024,Bella Herdiani,Kramat,Railing,Hollow Stainless,4x4,1,3.5,3,0,PER-M,0,1250000,0,1575000,Tanpa Cat,Sederhana,13150000
+ORD-00072,11/1/2023,2023,Santoso Jatmiko,Pagerbarang,Railing,Hollow Stainless,4x6,1,4,2,0,PER-M,0,1200000,0,1200000,Tanpa Cat,Menengah,9700000
+ORD-00073,1/30/2022,2022,Gita Salsabila,Lebaksiu,Railing,Pipa Stainless,4x4,1,8.86,1,0,PER-M,0,1000000,0,1772000,Tanpa Cat,Menengah,8950000
 ORD-00074,7/16/2020,2020,Mas Arya Saputra,Dukuhturi,Railing,Hollow,4x6,1.2,3,1,0,PER-M,0,550000,0,300000,Cat Biasa,Sederhana,1700000
 ORD-00075,2/22/2022,2022,Rizal Andriansyah,Balapulang,Teralis,Hollow,1x3,0.8,0,1,22,PER-LUBANG,0,0,300000,1650000,Cat Duco,Kompleks,6900000
 ORD-00076,5/15/2021,2021,Pak Suharto,Tarub,Railing,Hollow,4x4,0.8,5.46,1,0,PER-M,0,450000,0,546000,Cat Biasa,Menengah,2600000
 ORD-00077,5/2/2021,2021,Dewi Ayu Prameswari,Adiwerna,Teralis,Hollow,1x3,1.2,0,1,11,PER-LUBANG,0,0,400000,825000,Cat Biasa,Menengah,4550000
-ORD-00078,9/8/2021,2021,Ratna Yuningsih,Slawi,Railing,Hollow Stainless,4x4,1,12.54,3,0,PER-M,0,1150000,0,5643000,Tanpa Cat,Menengah,43350000
+ORD-00078,9/8/2021,2021,Ratna Yuningsih,Slawi,Railing,Hollow Stainless,4x4,1,12.5,3,0,PER-M,0,1150000,0,5625000,Tanpa Cat,Menengah,43250000
 ORD-00079,8/22/2025,2025,Dwi Handayani,Tegal,Kanopi,Hollow Stainless,4x4,1.2,15.49,2,0,PER-M2,900000,0,0,4647000,Tanpa Cat,Menengah,28000000
-ORD-00080,3/19/2023,2023,Febri Anggara,Suradadi,Kanopi,Pipa Stainless,2inch,1.2,20.42,1,0,PER-M2,900000,0,0,4084000,Tanpa Cat,Sederhana,18400000
-ORD-00081,1/12/2022,2022,Siti Zulaikha,Adiwerna,Pintu Handerson,Hollow Stainless,4x4,1.2,4.26,2,0,PER-M2,1560000,0,0,1278000,Tanpa Cat,Sederhana,13300000
+ORD-00080,3/19/2023,2023,Febri Anggara,Suradadi,Kanopi,Pipa Stainless,2inch,1.2,20,1,0,PER-M2,900000,0,0,4000000,Tanpa Cat,Sederhana,18000000
+ORD-00081,1/12/2022,2022,Siti Zulaikha,Adiwerna,Pintu Handerson,Hollow Stainless,4x4,1.2,4.26,2,0,PER-M2,1600000,0,0,1278000,Tanpa Cat,Sederhana,13650000
 ORD-00082,2/21/2023,2023,Eka Maharani,Slawi,Pintu Gerbang,Hollow Stainless,4x6,1,8.81,1,0,PER-M2,1400000,0,0,1321500,Tanpa Cat,Sederhana,12350000
-ORD-00083,10/28/2024,2024,Mulyadi Santoso,Margasari,Pagar,Hollow,4x4,0.8,16.72,1,0,PER-M2,550000,0,0,1672000,Cat Duco,Sederhana,9350000
-ORD-00084,7/2/2024,2024,Joko Purwanto,Tegal,Railing,Pipa Stainless,2inch,1.2,2.29,2,0,PER-M,0,1200000,0,916000,Tanpa Cat,Menengah,5600000
+ORD-00083,10/28/2024,2024,Mulyadi Santoso,Margasari,Pagar,Hollow,4x4,0.8,16,1,0,PER-M2,600000,0,0,1600000,Cat Duco,Sederhana,9750000
+ORD-00084,7/2/2024,2024,Joko Purwanto,Tegal,Railing,Pipa Stainless,2inch,1.2,2.3,2,0,PER-M,0,1200000,0,920000,Tanpa Cat,Menengah,5600000
 ORD-00085,1/17/2020,2020,Pak Warsito,Tarub,Kanopi,Hollow Stainless,4x4,1.2,14.92,2,0,PER-M2,800000,0,0,4476000,Tanpa Cat,Kompleks,24000000
 ORD-00086,4/22/2023,2023,Nur Aini Rahma,Bojong,Pintu Handerson,Hollow Stainless,4x4,1.2,4.49,1,0,PER-M2,1600000,0,0,673500,Tanpa Cat,Sederhana,7200000
-ORD-00087,4/26/2020,2020,Zahra Larasati,Slawi,Kanopi,Hollow,4x6,1,23.98,2,0,PER-M2,450000,0,0,4796000,Cat Dasar,Menengah,21700000
-ORD-00088,2/5/2020,2020,Ilham Prakoso,Lebaksiu,Railing,Hollow Stainless,4x4,1.2,7.66,2,0,PER-M,0,1150000,0,2298000,Tanpa Cat,Sederhana,17600000
+ORD-00087,4/26/2020,2020,Zahra Larasati,Slawi,Kanopi,Hollow,4x6,1,23,2,0,PER-M2,450000,0,0,4600000,Cat Dasar,Menengah,20800000
+ORD-00088,2/5/2020,2020,Ilham Prakoso,Lebaksiu,Railing,Hollow Stainless,4x4,1.2,7,2,0,PER-M,0,1100000,0,2100000,Tanpa Cat,Sederhana,15400000
 ORD-00089,10/4/2022,2022,Dinda Azzahra,Tegal,Kanopi,Hollow,4x6,0.8,15.23,2,0,PER-M2,400000,0,0,3046000,Cat Duco,Menengah,12450000
-ORD-00090,9/5/2022,2022,Satria Bagaskara,Talang,Railing,Pipa Stainless,2inch,1,8.75,2,0,PER-M,0,1070000,0,3500000,Tanpa Cat,Sederhana,18750000
+ORD-00090,9/5/2022,2022,Satria Bagaskara,Talang,Railing,Pipa Stainless,2inch,1,8.75,2,0,PER-M,0,1100000,0,3500000,Tanpa Cat,Sederhana,19250000
 ORD-00091,5/27/2021,2021,Bu Tumini,Dukuhturi,Pintu Handerson,Hollow,4x8,1,3.63,2,0,PER-M2,950000,0,0,726000,Cat Biasa,Sederhana,6950000
-ORD-00092,3/3/2022,2022,Fajar Rashid,Slawi,Pagar,Pipa Stainless,2inch,1.2,20.73,1,0,PER-M2,1120000,0,0,4146000,Tanpa Cat,Sederhana,23200000
+ORD-00092,3/3/2022,2022,Fajar Rashid,Slawi,Pagar,Pipa Stainless,2inch,1.2,21,1,0,PER-M2,1100000,0,0,4200000,Tanpa Cat,Sederhana,23100000
 ORD-00093,4/30/2019,2019,Mirna Wulandari,Slawi,Pintu Handerson,Hollow,4x8,0.8,2.28,1,0,PER-M2,850000,0,0,228000,Cat Biasa,Sederhana,2000000
-ORD-00094,11/24/2020,2020,Rudi Hartanto,Kramat,Pagar,Hollow,4x6,0.8,18.74,1,0,PER-M2,550000,0,0,1874000,Cat Dasar,Menengah,10400000
-ORD-00095,4/15/2019,2019,Mas Aldi Firmansyah,Balapulang,Teralis,Hollow Stainless,1x3,1.2,0,1,20,PER-LUBANG,0,0,750000,3000000,Tanpa Cat,Kompleks,15150000
-ORD-00096,9/21/2019,2019,Tuti Maryani,Tegal,Teralis,Hollow Stainless,1x3,1.2,0,1,15,PER-LUBANG,0,0,750000,2250000,Tanpa Cat,Menengah,11350000
-ORD-00097,1/12/2019,2019,Indah Purnamasari,Jatinegara,Kanopi,Hollow Stainless,4x6,1,17.59,2,0,PER-M2,750000,0,0,5277000,Tanpa Cat,Sederhana,26400000
-ORD-00098,3/31/2025,2025,Anggun Permatasari,Slawi,Kanopi,Hollow,4x4,0.8,20.13,2,0,PER-M2,450000,0,0,4026000,Cat Dasar,Sederhana,18100000
-ORD-00099,2/11/2024,2024,Rizqi Aulia Sari,Dukuhturi,Pagar,Hollow Stainless,4x8,1.2,17.46,1,0,PER-M2,1380000,0,0,2619000,Tanpa Cat,Kompleks,24250000
-ORD-00100,5/3/2021,2021,Yusril Ramadhan,Suradadi,Pagar,Hollow Stainless,4x6,1.2,14.66,1,0,PER-M2,1250000,0,0,2199000,Tanpa Cat,Sederhana,18350000
-ORD-00101,8/10/2024,2024,Putri Maharani,Slawi,Railing,Pipa Stainless,2inch,1.2,2.08,2,0,PER-M,0,1200000,0,832000,Tanpa Cat,Menengah,5100000
-ORD-00102,1/23/2022,2022,Rendra Saputro,Kramat,Railing,Hollow Stainless,4x6,1,11.83,3,0,PER-M,0,1220000,0,5323500,Tanpa Cat,Sederhana,43300000
-ORD-00103,1/24/2022,2022,Bu Nurhayati,Talang,Railing,Hollow,4x6,1,3.01,3,0,PER-M,0,550000,0,903000,Cat Dasar,Menengah,5050000
-ORD-00104,12/22/2020,2020,Pak Wagino,Suradadi,Kanopi,Hollow,4x6,1.2,15.31,1,0,PER-M2,500000,0,0,1531000,Cat Duco,Menengah,7900000
+ORD-00094,11/24/2020,2020,Rudi Hartanto,Kramat,Pagar,Hollow,4x6,0.8,18.5,1,0,PER-M2,550000,0,0,1850000,Cat Dasar,Menengah,10300000
+ORD-00095,4/15/2019,2019,Mas Aldi Firmansyah,Balapulang,Teralis,Hollow Stainless,1x3,1.2,0,1,20,PER-LUBANG,0,0,800000,3000000,Tanpa Cat,Kompleks,16150000
+ORD-00096,9/21/2019,2019,Tuti Maryani,Tegal,Teralis,Hollow Stainless,1x3,1.2,0,1,15,PER-LUBANG,0,0,800000,2250000,Tanpa Cat,Menengah,12100000
+ORD-00097,1/12/2019,2019,Indah Purnamasari,Jatinegara,Kanopi,Hollow Stainless,4x6,1,17.6,2,0,PER-M2,800000,0,0,5280000,Tanpa Cat,Sederhana,28150000
+ORD-00098,3/31/2025,2025,Anggun Permatasari,Slawi,Kanopi,Hollow,4x4,0.8,20,2,0,PER-M2,450000,0,0,4000000,Cat Dasar,Sederhana,18000000
+ORD-00099,2/11/2024,2024,Rizqi Aulia Sari,Dukuhturi,Pagar,Hollow Stainless,4x8,1.2,17,1,0,PER-M2,1400000,0,0,2550000,Tanpa Cat,Kompleks,23950000
+ORD-00100,5/3/2021,2021,Yusril Ramadhan,Suradadi,Pagar,Hollow Stainless,4x6,1.2,14.6,1,0,PER-M2,1150000,0,0,2190000,Tanpa Cat,Sederhana,16800000
+ORD-00101,8/10/2024,2024,Putri Maharani,Slawi,Railing,Pipa Stainless,2inch,1.2,2.8,2,0,PER-M,0,1200000,0,1120000,Tanpa Cat,Menengah,6800000
+ORD-00102,1/23/2022,2022,Rendra Saputro,Kramat,Railing,Hollow Stainless,4x6,1,11.83,3,0,PER-M,0,1200000,0,5323500,Tanpa Cat,Sederhana,42600000
+ORD-00103,1/24/2022,2022,Bu Nurhayati,Talang,Railing,Hollow,4x6,1,3,3,0,PER-M,0,550000,0,900000,Cat Dasar,Menengah,5050000
+ORD-00104,12/22/2020,2020,Pak Wagino,Suradadi,Kanopi,Hollow,4x6,1.2,15,1,0,PER-M2,500000,0,0,1500000,Cat Duco,Menengah,7750000
 ORD-00105,12/3/2021,2021,Aldi Ramdani,Tegal,Railing,Pipa Stainless,2inch,1.2,5.96,3,0,PER-M,0,1100000,0,3576000,Tanpa Cat,Menengah,19750000
-ORD-00106,12/26/2019,2019,Sri Wahyuni,Lebaksiu,Teralis,Hollow Stainless,1x3,1.2,0,1,17,PER-LUBANG,0,0,750000,2550000,Tanpa Cat,Menengah,12850000
-ORD-00107,5/28/2020,2020,Diki Setiawan,Kramat,Kanopi,Hollow,4x6,1.2,21.98,1,0,PER-M2,500000,0,0,2198000,Cat Biasa,Sederhana,11050000
+ORD-00106,12/26/2019,2019,Sri Wahyuni,Lebaksiu,Teralis,Hollow Stainless,1x3,1.2,0,1,17,PER-LUBANG,0,0,800000,2550000,Tanpa Cat,Menengah,13700000
+ORD-00107,5/28/2020,2020,Diki Setiawan,Kramat,Kanopi,Hollow,4x6,1.2,22,1,0,PER-M2,500000,0,0,2200000,Cat Biasa,Sederhana,11050000
 ORD-00108,6/7/2019,2019,Maya Permatasari,Adiwerna,Pintu Handerson,Hollow,4x6,0.8,5.8,1,0,PER-M2,800000,0,0,580000,Cat Biasa,Sederhana,4700000
-ORD-00109,11/12/2025,2025,Mas Rehan Alfath,Slawi,Pintu Handerson,Hollow Stainless,4x6,1.2,3.28,1,0,PER-M2,1850000,0,0,492000,Tanpa Cat,Menengah,6150000
+ORD-00109,11/12/2025,2025,Mas Rehan Alfath,Slawi,Pintu Handerson,Hollow Stainless,4x6,1.2,3,1,0,PER-M2,1850000,0,0,450000,Tanpa Cat,Menengah,5650000
 ORD-00110,3/24/2025,2025,Bu Sumiyati,Balapulang,Railing,Hollow,4x6,0.8,13.67,3,0,PER-M,0,550000,0,4101000,Cat Biasa,Sederhana,22600000
 ORD-00111,5/17/2025,2025,Andika Pratomo,Jatinegara,Pintu Gerbang,Hollow Stainless,4x6,1.2,7.71,1,0,PER-M2,1650000,0,0,1156500,Tanpa Cat,Sederhana,12700000
 ORD-00112,9/1/2021,2021,Laili Maulida,Tarub,Teralis,Hollow Stainless,1x3,1.2,0,1,23,PER-LUBANG,0,0,850000,3450000,Tanpa Cat,Kompleks,19700000
-ORD-00113,9/8/2021,2021,Pak Subagyo,Pagerbarang,Pagar,Hollow,4x4,1,25.87,1,0,PER-M2,550000,0,0,2587000,Cat Duco,Sederhana,14400000
+ORD-00113,9/8/2021,2021,Pak Subagyo,Pagerbarang,Pagar,Hollow,4x4,1,25.8,1,0,PER-M2,550000,0,0,2580000,Cat Duco,Sederhana,14350000
 ORD-00114,11/10/2019,2019,Dina Oktaviani,Bojong,Teralis,Pipa Stainless,1x3,1,0,1,16,PER-LUBANG,0,0,650000,2400000,Tanpa Cat,Menengah,10500000
-ORD-00115,7/3/2021,2021,Rino Prasetya,Slawi,Railing,Hollow Stainless,4x6,1.2,12.38,3,0,PER-M,0,1250000,0,5571000,Tanpa Cat,Sederhana,46450000
+ORD-00115,7/3/2021,2021,Rino Prasetya,Slawi,Railing,Hollow Stainless,4x6,1.2,12,3,0,PER-M,0,1250000,0,5400000,Tanpa Cat,Sederhana,45000000
 ORD-00116,3/13/2023,2023,Toko Barokah,Slawi,Kanopi,Hollow,4x4,0.8,18.45,2,0,PER-M2,420000,0,0,3690000,Cat Biasa,Kompleks,15700000
 ORD-00117,11/11/2023,2023,Warung Makan Bu Tuminah,Balapulang,Pintu Handerson,Hollow,4x6,1,2.91,1,0,PER-M2,950000,0,0,291000,Cat Dasar,Menengah,2850000
-ORD-00118,9/3/2022,2022,Toko Material Maju Lancar,Adiwerna,Pintu Gerbang,Hollow Stainless,4x4,0.8,5.51,1,0,PER-M2,1250000,0,0,826500,Tanpa Cat,Sederhana,6900000
-ORD-00119,10/23/2020,2020,UD Sinar Mandiri,Tegal,Pagar,Hollow Stainless,4x8,0.8,17.34,1,0,PER-M2,1150000,0,0,2601000,Tanpa Cat,Sederhana,19950000
-ORD-00120,7/19/2020,2020,UD Lancar Jaya,Dukuhturi,Railing,Pipa Stainless,2inch,1.2,3.97,1,0,PER-M,0,1080000,0,794000,Tanpa Cat,Kompleks,4450000
+ORD-00118,9/3/2022,2022,Toko Material Maju Lancar,Adiwerna,Pintu Gerbang,Hollow Stainless,4x4,0.8,5,1,0,PER-M2,1300000,0,0,750000,Tanpa Cat,Sederhana,6500000
+ORD-00119,10/23/2020,2020,UD Sinar Mandiri,Tegal,Pagar,Hollow Stainless,4x8,0.8,17.3,1,0,PER-M2,1100000,0,0,2595000,Tanpa Cat,Sederhana,19050000
+ORD-00120,7/19/2020,2020,UD Lancar Jaya,Dukuhturi,Railing,Pipa Stainless,2inch,1.2,7.25,2,0,PER-M,0,1080000,0,2900000,Tanpa Cat,Kompleks,15800000
 ORD-00121,5/1/2022,2022,Bengkel Las Cahaya Teknik,Margasari,Railing,Hollow,4x4,0.8,13.35,1,0,PER-M,0,450000,0,1335000,Cat Biasa,Sederhana,6050000
-ORD-00122,10/10/2020,2020,Puskesmas Jatinegara,Jatinegara,Railing,Hollow Stainless,4x4,1,4.33,1,0,PER-M,0,1100000,0,649500,Tanpa Cat,Kompleks,4900000
-ORD-00123,5/13/2024,2024,SMPN 1 Suradadi,Suradadi,Railing,Hollow Stainless,4x4,1.2,2.39,3,0,PER-M,0,1280000,0,1075500,Tanpa Cat,Menengah,9300000
+ORD-00122,10/10/2020,2020,Puskesmas Jatinegara,Jatinegara,Railing,Hollow Stainless,4x4,1,4,2,0,PER-M,0,1050000,0,1200000,Tanpa Cat,Kompleks,8550000
+ORD-00123,5/13/2024,2024,SMPN 1 Suradadi,Suradadi,Railing,Hollow Stainless,4x4,1.2,2.4,2,0,PER-M,0,1300000,0,720000,Tanpa Cat,Menengah,6350000
 ORD-00124,3/8/2025,2025,SMPN 2 Slawi,Slawi,Pintu Gerbang,Hollow,4x4,1.2,10.15,1,0,PER-M2,850000,0,0,1015000,Cat Biasa,Menengah,8800000
-ORD-00125,12/29/2020,2020,SDN 3 Kramat,Kramat,Railing,Hollow,4x4,0.8,7.57,3,0,PER-M,0,400000,0,2271000,Cat Biasa,Sederhana,9150000
+ORD-00125,12/29/2020,2020,SDN 3 Kramat,Kramat,Railing,Hollow,4x4,0.8,7.53,2,0,PER-M,0,400000,0,1506000,Cat Biasa,Sederhana,6050000
 ORD-00126,4/18/2019,2019,TK Pertiwi Slawi,Slawi,Railing,Hollow Stainless,4x4,1.2,13.16,1,0,PER-M,0,1100000,0,1974000,Tanpa Cat,Sederhana,14500000
-ORD-00127,5/25/2024,2024,PAUD Melati Bojong,Bojong,Railing,Hollow,4x6,0.8,4.09,2,0,PER-M,0,550000,0,818000,Cat Biasa,Sederhana,4550000
-ORD-00128,3/27/2022,2022,Karang Taruna Bojong,Bojong,Teralis,Hollow Stainless,1x3,1,0,1,19,PER-LUBANG,0,0,830000,2850000,Tanpa Cat,Kompleks,15900000
-ORD-00129,3/10/2025,2025,SDN 4 Margasari,Margasari,Pintu Gerbang,Hollow,4x6,1.2,7.96,1,0,PER-M2,900000,0,0,796000,Cat Biasa,Menengah,7300000
-ORD-00130,7/6/2020,2020,Balai Desa Tarub,Tarub,Pintu Gerbang,Hollow,4x6,0.8,11.05,1,0,PER-M2,650000,0,0,1105000,Cat Dasar,Sederhana,7200000
-ORD-00131,5/2/2023,2023,BUMDES Suradadi Sejahtera,Suradadi,Pagar,Hollow,4x6,0.8,28.48,1,0,PER-M2,600000,0,0,2848000,Cat Biasa,Menengah,17250000
-ORD-00132,12/11/2019,2019,Bu Sumirah,Lebaksiu,Kanopi,Hollow Stainless,4x8,0.8,10.97,1,0,PER-M2,750000,0,0,1645500,Tanpa Cat,Sederhana,8250000
+ORD-00127,5/25/2024,2024,PAUD Melati Bojong,Bojong,Railing,Hollow,4x6,0.8,4.2,2,0,PER-M,0,550000,0,840000,Cat Biasa,Sederhana,4650000
+ORD-00128,3/27/2022,2022,Karang Taruna Bojong,Bojong,Teralis,Hollow Stainless,1x3,1,0,1,19,PER-LUBANG,0,0,800000,2850000,Tanpa Cat,Kompleks,15350000
+ORD-00129,3/10/2025,2025,SDN 4 Margasari,Margasari,Pintu Gerbang,Hollow,4x6,1.2,7,1,0,PER-M2,900000,0,0,700000,Cat Biasa,Menengah,6450000
+ORD-00130,7/6/2020,2020,Balai Desa Tarub,Tarub,Pintu Gerbang,Hollow,4x6,0.8,11,1,0,PER-M2,650000,0,0,1100000,Cat Dasar,Sederhana,7150000
+ORD-00131,5/2/2023,2023,BUMDES Suradadi Sejahtera,Suradadi,Pagar,Hollow,4x6,0.8,28.2,1,0,PER-M2,600000,0,0,2820000,Cat Biasa,Menengah,17050000
+ORD-00132,12/11/2019,2019,Bu Sumirah,Lebaksiu,Kanopi,Hollow Stainless,4x8,0.8,10,1,0,PER-M2,800000,0,0,1500000,Tanpa Cat,Sederhana,8000000
 ORD-00133,8/14/2023,2023,Pak Karyadi,Talang,Kanopi,Pipa Stainless,1.5inch,1.2,19.07,2,0,PER-M2,800000,0,0,7628000,Tanpa Cat,Kompleks,30650000
 ORD-00134,4/26/2024,2024,Mas Farel Mahesa,Tegal,Railing,Hollow,4x6,1,3.94,1,0,PER-M,0,600000,0,394000,Cat Duco,Sederhana,2500000
-ORD-00135,4/14/2023,2023,Dewi Utami,Slawi,Railing,Hollow,4x4,1.2,11.62,2,0,PER-M,0,600000,0,2324000,Cat Dasar,Kompleks,14100000
-ORD-00136,1/29/2025,2025,Windi Kristanti,Dukuhturi,Kanopi,Hollow Stainless,4x8,1.2,11.57,2,0,PER-M2,1000000,0,0,3471000,Tanpa Cat,Menengah,23250000
+ORD-00135,4/14/2023,2023,Dewi Utami,Slawi,Railing,Hollow,4x4,1.2,11,2,0,PER-M,0,600000,0,2200000,Cat Dasar,Kompleks,13350000
+ORD-00136,1/29/2025,2025,Windi Kristanti,Dukuhturi,Kanopi,Hollow Stainless,4x8,1.2,11.5,2,0,PER-M2,1000000,0,0,3450000,Tanpa Cat,Menengah,23100000
 ORD-00137,5/16/2025,2025,Ahmad Fauzan,Adiwerna,Teralis,Pipa Stainless,1x3,0.8,0,1,6,PER-LUBANG,0,0,700000,900000,Tanpa Cat,Sederhana,4200000
 ORD-00138,10/8/2019,2019,Beni Prabowo,Kramat,Kanopi,Hollow,4x8,1.2,10.63,2,0,PER-M2,550000,0,0,2126000,Cat Duco,Sederhana,11850000
 ORD-00139,7/30/2023,2023,Bu Tursinah,Margasari,Kanopi,Hollow,4x6,1.2,10.37,1,0,PER-M2,570000,0,0,1037000,Cat Biasa,Sederhana,5950000
-ORD-00140,2/17/2023,2023,Wawan Setiyono,Pagerbarang,Kanopi,Hollow,4x4,1,13.04,2,0,PER-M2,470000,0,0,2608000,Cat Biasa,Sederhana,12300000
-ORD-00141,11/9/2021,2021,Lusi Apriliyani,Tarub,Railing,Hollow,4x6,0.8,6.27,1,0,PER-M,0,500000,0,627000,Cat Biasa,Sederhana,3200000
+ORD-00140,2/17/2023,2023,Wawan Setiyono,Pagerbarang,Kanopi,Hollow,4x4,1,13,2,0,PER-M2,470000,0,0,2600000,Cat Biasa,Sederhana,12250000
+ORD-00141,11/9/2021,2021,Lusi Apriliyani,Tarub,Railing,Hollow,4x6,0.8,6,1,0,PER-M,0,500000,0,600000,Cat Biasa,Sederhana,3050000
 ORD-00142,10/22/2025,2025,Rizky Nur Ikhsan,Tegal,Pintu Handerson,Pipa Stainless,2inch,0.8,4.45,1,0,PER-M2,1600000,0,0,890000,Tanpa Cat,Sederhana,7100000
-ORD-00143,3/21/2019,2019,Mas Dani Firmansyah,Suradadi,Railing,Hollow,4x6,1,9.08,3,0,PER-M,0,500000,0,2724000,Cat Dasar,Sederhana,13600000
+ORD-00143,3/21/2019,2019,Mas Dani Firmansyah,Suradadi,Railing,Hollow,4x6,1,9,3,0,PER-M,0,500000,0,2700000,Cat Dasar,Sederhana,13500000
 ORD-00144,6/21/2019,2019,Rara Ayu Lestari,Slawi,Pintu Handerson,Hollow,4x8,1,5,2,0,PER-M2,900000,0,0,1000000,Cat Biasa,Menengah,9150000
-ORD-00145,10/28/2023,2023,Febby Oktaviani,Lebaksiu,Railing,Hollow Stainless,4x6,1.2,5.83,3,0,PER-M,0,1300000,0,2623500,Tanpa Cat,Sederhana,22750000
-ORD-00146,11/11/2025,2025,Rizal Mulyono,Jatinegara,Pintu Gerbang,Pipa Stainless,1.5inch,0.8,14.57,1,0,PER-M2,1200000,0,0,2914000,Tanpa Cat,Sederhana,17500000
+ORD-00145,10/28/2023,2023,Febby Oktaviani,Lebaksiu,Railing,Hollow Stainless,4x6,1.2,5,3,0,PER-M,0,1250000,0,2250000,Tanpa Cat,Sederhana,18750000
+ORD-00146,11/11/2025,2025,Rizal Mulyono,Jatinegara,Pintu Gerbang,Pipa Stainless,1.5inch,0.8,14.5,1,0,PER-M2,1200000,0,0,2900000,Tanpa Cat,Sederhana,17400000
 ORD-00147,8/9/2025,2025,Pak Purnomo,Warureja,Teralis,Hollow Stainless,1x3,0.8,0,1,11,PER-LUBANG,0,0,800000,1650000,Tanpa Cat,Menengah,8900000
-ORD-00148,1/22/2025,2025,Titis Nuraini,Tegal,Pintu Gerbang,Hollow Stainless,4x6,1,9.98,1,0,PER-M2,1600000,0,0,1497000,Tanpa Cat,Sederhana,15950000
-ORD-00149,8/3/2020,2020,Siti Qomariah,Talang,Railing,Hollow Stainless,4x4,1,10.83,2,0,PER-M,0,1100000,0,3249000,Tanpa Cat,Kompleks,24000000
-ORD-00150,11/6/2022,2022,Aldo Saputra,Slawi,Kanopi,Hollow,4x6,1,19.08,1,0,PER-M2,450000,0,0,1908000,Cat Biasa,Sederhana,8650000
-ORD-00151,5/10/2025,2025,Bagas Nurmansyah,Adiwerna,Kanopi,Pipa Stainless,1.5inch,0.8,8.89,1,0,PER-M2,700000,0,0,1778000,Tanpa Cat,Menengah,6300000
-ORD-00152,3/28/2022,2022,Laila Salsabila,Slawi,Railing,Hollow,4x4,0.8,3.89,2,0,PER-M,0,450000,0,778000,Cat Dasar,Sederhana,3500000
-ORD-00153,11/11/2019,2019,Toko Bangunan Sumber Rejeki,Kramat,Railing,Pipa Stainless,1.5inch,0.8,8.01,2,0,PER-M,0,850000,0,3204000,Tanpa Cat,Sederhana,13600000
-ORD-00154,1/13/2023,2023,UD Makmur Teknik,Slawi,Pagar,Pipa Stainless,2inch,1.2,19.48,1,0,PER-M2,1140000,0,0,3896000,Tanpa Cat,Menengah,22300000
-ORD-00155,12/29/2022,2022,Depo Bangunan Mulya,Adiwerna,Teralis,Pipa Stainless,1x3,1,0,1,11,PER-LUBANG,0,0,710000,1650000,Tanpa Cat,Menengah,7900000
+ORD-00148,1/22/2025,2025,Titis Nuraini,Tegal,Pintu Gerbang,Hollow Stainless,4x6,1,9.9,1,0,PER-M2,1600000,0,0,1485000,Tanpa Cat,Sederhana,15850000
+ORD-00149,8/3/2020,2020,Siti Qomariah,Talang,Railing,Hollow Stainless,4x4,1,10.2,2,0,PER-M,0,1050000,0,3060000,Tanpa Cat,Kompleks,21550000
+ORD-00150,11/6/2022,2022,Aldo Saputra,Slawi,Kanopi,Hollow,4x6,1,19,1,0,PER-M2,450000,0,0,1900000,Cat Biasa,Sederhana,8600000
+ORD-00151,5/10/2025,2025,Bagas Nurmansyah,Adiwerna,Kanopi,Pipa Stainless,1.5inch,0.8,8,1,0,PER-M2,700000,0,0,1600000,Tanpa Cat,Menengah,5700000
+ORD-00152,3/28/2022,2022,Laila Salsabila,Slawi,Railing,Hollow,4x4,0.8,3.8,2,0,PER-M,0,450000,0,760000,Cat Dasar,Sederhana,3400000
+ORD-00153,11/11/2019,2019,Toko Bangunan Sumber Rejeki,Kramat,Railing,Pipa Stainless,1.5inch,0.8,8,2,0,PER-M,0,850000,0,3200000,Tanpa Cat,Sederhana,13600000
+ORD-00154,1/13/2023,2023,UD Makmur Teknik,Slawi,Pagar,Pipa Stainless,2inch,1.2,19.4,1,0,PER-M2,1150000,0,0,3880000,Tanpa Cat,Menengah,22400000
+ORD-00155,12/29/2022,2022,Depo Bangunan Mulya,Adiwerna,Teralis,Pipa Stainless,1x3,1,0,1,11,PER-LUBANG,0,0,700000,1650000,Tanpa Cat,Menengah,7800000
 ORD-00156,4/23/2021,2021,Toko Pipa Baja Jaya,Tegal,Railing,Hollow Stainless,4x4,1.2,5.54,1,0,PER-M,0,1200000,0,831000,Tanpa Cat,Menengah,6750000
-ORD-00157,1/25/2024,2024,Warung Sembako Bu Minah,Slawi,Pintu Gerbang,Pipa Stainless,2inch,1,5.98,1,0,PER-M2,1330000,0,0,1196000,Tanpa Cat,Menengah,8050000
+ORD-00157,1/25/2024,2024,Warung Sembako Bu Minah,Slawi,Pintu Gerbang,Pipa Stainless,2inch,1,5.7,1,0,PER-M2,1350000,0,0,1140000,Tanpa Cat,Menengah,7800000
 ORD-00158,1/24/2021,2021,Fotocopy Mega Jaya,Lebaksiu,Teralis,Hollow,1x3,0.8,0,1,15,PER-LUBANG,0,0,300000,1125000,Cat Biasa,Menengah,4650000
-ORD-00159,8/22/2020,2020,Mas Tobii,Tegal,Pagar,Hollow Stainless,4x4,1,19.09,1,0,PER-M2,1100000,0,0,2863500,Tanpa Cat,Menengah,21100000
-ORD-00160,11/13/2022,2022,Toko Cat Warna Jaya,Jatinegara,Pagar,Pipa Stainless,1x3,1.2,22.51,1,0,PER-M2,1020000,0,0,4502000,Tanpa Cat,Menengah,23050000
+ORD-00159,8/22/2020,2020,Mas Tobii,Tegal,Pagar,Hollow Stainless,4x4,1,19.2,1,0,PER-M2,1050000,0,0,2880000,Tanpa Cat,Menengah,20250000
+ORD-00160,11/13/2022,2022,Toko Cat Warna Jaya,Jatinegara,Pagar,Pipa Stainless,1x3,1.2,22.73,1,0,PER-M2,1000000,0,0,4546000,Tanpa Cat,Menengah,22850000
 ORD-00161,12/1/2023,2023,Bu Rubiyem,Tarub,Pintu Gerbang,Hollow,4x8,0.8,6.52,1,0,PER-M2,800000,0,0,652000,Cat Duco,Menengah,5450000
 ORD-00162,11/4/2022,2022,Suroto Wibisono,Bojong,Pintu Gerbang,Hollow,4x4,1.2,6.4,1,0,PER-M2,750000,0,0,640000,Cat Biasa,Sederhana,4850000
-ORD-00163,1/9/2021,2021,Aldi Supriyadi,Pagerbarang,Railing,Hollow,4x6,0.8,14.41,1,0,PER-M,0,500000,0,1441000,Cat Dasar,Sederhana,7200000
-ORD-00164,10/8/2023,2023,Siti Khotimah,Slawi,Pintu Gerbang,Pipa Stainless,2inch,1,11.97,1,0,PER-M2,1300000,0,0,2394000,Tanpa Cat,Sederhana,15550000
+ORD-00163,1/9/2021,2021,Aldi Supriyadi,Pagerbarang,Railing,Hollow,4x6,0.8,14,1,0,PER-M,0,500000,0,1400000,Cat Dasar,Sederhana,7000000
+ORD-00164,10/8/2023,2023,Siti Khotimah,Slawi,Pintu Gerbang,Pipa Stainless,2inch,1,11,1,0,PER-M2,1250000,0,0,2200000,Tanpa Cat,Sederhana,13750000
 ORD-00165,4/8/2020,2020,Ardi Wijaya,Tegal,Pintu Handerson,Hollow Stainless,4x4,0.8,2.14,2,0,PER-M2,1350000,0,0,642000,Tanpa Cat,Sederhana,5800000
 ORD-00166,1/17/2022,2022,Bagus Riyanto,Lebaksiu,Pintu Gerbang,Hollow,4x4,1.2,14.8,1,0,PER-M2,750000,0,0,1480000,Cat Biasa,Kompleks,11300000
 ORD-00167,1/6/2023,2023,Bu Sutarsih,Balapulang,Railing,Hollow,4x6,1.2,2.11,2,0,PER-M,0,650000,0,422000,Cat Duco,Menengah,3000000
-ORD-00168,4/28/2021,2021,Marisa Yuliana,Slawi,Pintu Handerson,Pipa Stainless,2inch,1.2,3.06,2,0,PER-M2,1500000,0,0,1224000,Tanpa Cat,Sederhana,9200000
-ORD-00169,2/1/2020,2020,Pak Sutarman,Warureja,Kanopi,Hollow,4x8,0.8,23.43,2,0,PER-M2,450000,0,0,4686000,Cat Dasar,Sederhana,21100000
-ORD-00170,12/29/2024,2024,Mas Yogi Firmansyah,Jatinegara,Pagar,Hollow,4x4,1,9.77,1,0,PER-M2,600000,0,0,977000,Cat Dasar,Menengah,5950000
-ORD-00171,4/18/2022,2022,Andin Safitri,Tegal,Teralis,Pipa Stainless,1x3,0.8,0,1,6,PER-LUBANG,0,0,660000,900000,Tanpa Cat,Sederhana,3950000
-ORD-00172,4/26/2022,2022,Ratih Ayuningrum,Kramat,Railing,Pipa Stainless,2inch,0.8,13.11,2,0,PER-M,0,1020000,0,5244000,Tanpa Cat,Kompleks,26900000
+ORD-00168,4/28/2021,2021,Marisa Yuliana,Slawi,Pintu Handerson,Pipa Stainless,2inch,1.2,3.6,2,0,PER-M2,1400000,0,0,1440000,Tanpa Cat,Sederhana,10100000
+ORD-00169,2/1/2020,2020,Pak Sutarman,Warureja,Kanopi,Hollow,4x8,0.8,23,2,0,PER-M2,450000,0,0,4600000,Cat Dasar,Sederhana,20700000
+ORD-00170,12/29/2024,2024,Mas Yogi Firmansyah,Jatinegara,Pagar,Hollow,4x4,1,9.77,1,0,PER-M2,650000,0,0,977000,Cat Dasar,Menengah,6450000
+ORD-00171,4/18/2022,2022,Andin Safitri,Tegal,Teralis,Pipa Stainless,1x3,0.8,0,1,6,PER-LUBANG,0,0,650000,900000,Tanpa Cat,Sederhana,3900000
+ORD-00172,4/26/2022,2022,Ratih Ayuningrum,Kramat,Railing,Pipa Stainless,2inch,0.8,13,1,0,PER-M,0,1050000,0,2600000,Tanpa Cat,Kompleks,13800000
 ORD-00173,3/13/2021,2021,Pak Warsimin,Tarub,Railing,Pipa Stainless,2inch,1,3.88,2,0,PER-M,0,1050000,0,1552000,Tanpa Cat,Menengah,8250000
 ORD-00174,9/20/2023,2023,Dewi Amelia,Bojong,Teralis,Hollow,1x3,0.8,0,1,17,PER-LUBANG,0,0,350000,1275000,Cat Dasar,Menengah,6050000
 ORD-00175,8/13/2024,2024,Mita Lestari,Lebaksiu,Pintu Handerson,Hollow,4x8,1.2,2.72,1,0,PER-M2,1100000,0,0,272000,Cat Biasa,Menengah,3150000
-ORD-00176,4/10/2025,2025,Fathir Putra Ramadhan,Tegal,Railing,Hollow Stainless,4x4,1,12.2,2,0,PER-M,0,1250000,0,3660000,Tanpa Cat,Menengah,30600000
-ORD-00177,1/24/2023,2023,Bu Minarsih,Slawi,Pintu Gerbang,Pipa Stainless,2inch,1.2,13.85,1,0,PER-M2,1350000,0,0,2770000,Tanpa Cat,Menengah,18800000
+ORD-00176,4/10/2025,2025,Fathir Putra Ramadhan,Tegal,Railing,Hollow Stainless,4x4,1,12,2,0,PER-M,0,1250000,0,3600000,Tanpa Cat,Menengah,30100000
+ORD-00177,1/24/2023,2023,Bu Minarsih,Slawi,Pintu Gerbang,Pipa Stainless,2inch,1.2,13.85,1,0,PER-M2,1300000,0,0,2770000,Tanpa Cat,Menengah,18100000
 ORD-00178,9/27/2020,2020,Rendy Wicaksono,Adiwerna,Kanopi,Hollow,4x6,0.8,14.75,2,0,PER-M2,400000,0,0,2950000,Cat Duco,Sederhana,11950000
-ORD-00179,12/31/2024,2024,Aldi Setiawan,Slawi,Pintu Handerson,Pipa Stainless,1.5inch,1,2.15,2,0,PER-M2,1500000,0,0,860000,Tanpa Cat,Sederhana,6450000
-ORD-00180,10/24/2024,2024,Jenny Rosalina,Tegal,Pintu Gerbang,Hollow,4x6,1,7.47,1,0,PER-M2,850000,0,0,747000,Cat Dasar,Menengah,6450000
+ORD-00179,12/31/2024,2024,Aldi Setiawan,Slawi,Pintu Handerson,Pipa Stainless,1.5inch,1,2.15,2,0,PER-M2,1450000,0,0,860000,Tanpa Cat,Sederhana,6250000
+ORD-00180,10/24/2024,2024,Jenny Rosalina,Tegal,Pintu Gerbang,Hollow,4x6,1,7.5,1,0,PER-M2,850000,0,0,750000,Cat Dasar,Menengah,6500000
 ORD-00181,11/6/2025,2025,Rani Dewanti,Kramat,Pintu Gerbang,Pipa Stainless,2inch,0.8,4.17,1,0,PER-M2,1300000,0,0,834000,Tanpa Cat,Menengah,5500000
-ORD-00182,7/30/2025,2025,Pak Karnoto,Suradadi,Pintu Handerson,Hollow,4x8,1,3.4,1,0,PER-M2,1050000,0,0,340000,Cat Duco,Menengah,3800000
+ORD-00182,7/30/2025,2025,Pak Karnoto,Suradadi,Pintu Handerson,Hollow,4x8,1,3,1,0,PER-M2,1050000,0,0,300000,Cat Duco,Menengah,3400000
 ORD-00183,8/14/2023,2023,Febrian Ramdani,Jatinegara,Teralis,Hollow Stainless,1x3,0.8,0,1,21,PER-LUBANG,0,0,800000,3150000,Tanpa Cat,Kompleks,16950000
-ORD-00184,6/28/2019,2019,Mas Rehan Akbar,Talang,Railing,Pipa Stainless,4x6,1.2,10.57,3,0,PER-M,0,1000000,0,6342000,Tanpa Cat,Sederhana,31700000
-ORD-00185,1/9/2019,2019,Lala Khoirunisa,Slawi,Pintu Handerson,Hollow Stainless,4x6,1,3.06,1,0,PER-M2,1400000,0,0,459000,Tanpa Cat,Menengah,4400000
-ORD-00186,12/21/2025,2025,Nada Amelia Putri,Tegal,Kanopi,Hollow,4x4,1.2,18.39,1,0,PER-M2,550000,0,0,1839000,Cat Biasa,Sederhana,10150000
-ORD-00187,4/3/2023,2023,Bu Saripah,Bojong,Pintu Handerson,Hollow,4x6,0.8,5.71,1,0,PER-M2,900000,0,0,571000,Cat Dasar,Menengah,5250000
+ORD-00184,6/28/2019,2019,Mas Rehan Akbar,Talang,Railing,Pipa Stainless,4x6,1.2,10,3,0,PER-M,0,1000000,0,6000000,Tanpa Cat,Sederhana,30000000
+ORD-00185,1/9/2019,2019,Lala Khoirunisa,Slawi,Pintu Handerson,Hollow Stainless,4x6,1,3.3,1,0,PER-M2,1450000,0,0,495000,Tanpa Cat,Menengah,4900000
+ORD-00186,12/21/2025,2025,Nada Amelia Putri,Tegal,Kanopi,Hollow,4x4,1.2,18,1,0,PER-M2,550000,0,0,1800000,Cat Biasa,Sederhana,9950000
+ORD-00187,4/3/2023,2023,Bu Saripah,Bojong,Pintu Handerson,Hollow,4x6,0.8,5.7,1,0,PER-M2,900000,0,0,570000,Cat Dasar,Menengah,5250000
 ORD-00188,1/25/2023,2023,Viko Adi Putra,Kramat,Pintu Gerbang,Hollow,4x8,1.2,9.13,1,0,PER-M2,900000,0,0,913000,Cat Dasar,Menengah,8300000
-ORD-00189,5/15/2019,2019,Mas Anton Saputra,Adiwerna,Pagar,Hollow,4x6,0.8,12.56,1,0,PER-M2,550000,0,0,1256000,Cat Dasar,Sederhana,6900000
-ORD-00190,6/30/2025,2025,Dava Putra Pratama,Slawi,Kanopi,Hollow,4x4,0.8,23.53,1,0,PER-M2,450000,0,0,2353000,Cat Duco,Sederhana,10750000
-ORD-00191,9/25/2019,2019,Keyla Azzahra,Tegal,Railing,Hollow Stainless,4x6,0.8,14.3,1,0,PER-M,0,1050000,0,2145000,Tanpa Cat,Sederhana,15000000
-ORD-00192,5/31/2024,2024,Zaskia Prameswari,Lebaksiu,Pintu Gerbang,Hollow Stainless,4x4,1,5.48,1,0,PER-M2,1470000,0,0,822000,Tanpa Cat,Menengah,8150000
-ORD-00193,11/8/2023,2023,Bu Sulastri,Margasari,Kanopi,Pipa Stainless,1.5inch,1,23.09,1,0,PER-M2,750000,0,0,4618000,Tanpa Cat,Sederhana,17300000
-ORD-00194,7/10/2025,2025,Riki Gautama,Pagerbarang,Pagar,Pipa Stainless,2inch,1.2,14.43,1,0,PER-M2,1200000,0,0,2886000,Tanpa Cat,Sederhana,17300000
+ORD-00189,5/15/2019,2019,Mas Anton Saputra,Adiwerna,Pagar,Hollow,4x6,0.8,12,2,0,PER-M2,550000,0,0,2400000,Cat Dasar,Sederhana,13200000
+ORD-00190,6/30/2025,2025,Dava Putra Pratama,Slawi,Kanopi,Hollow,4x4,0.8,11.2,2,0,PER-M2,450000,0,0,2240000,Cat Duco,Sederhana,10250000
+ORD-00191,9/25/2019,2019,Keyla Azzahra,Tegal,Railing,Hollow Stainless,4x6,0.8,14,1,0,PER-M,0,1050000,0,2100000,Tanpa Cat,Sederhana,14700000
+ORD-00192,5/31/2024,2024,Zaskia Prameswari,Lebaksiu,Pintu Gerbang,Hollow Stainless,4x4,1,5.48,1,0,PER-M2,1550000,0,0,822000,Tanpa Cat,Menengah,8600000
+ORD-00193,11/8/2023,2023,Bu Sulastri,Margasari,Kanopi,Pipa Stainless,1.5inch,1,23,1,0,PER-M2,750000,0,0,4600000,Tanpa Cat,Sederhana,17250000
+ORD-00194,7/10/2025,2025,Riki Gautama,Pagerbarang,Pagar,Pipa Stainless,2inch,1.2,14,1,0,PER-M2,1200000,0,0,2800000,Tanpa Cat,Sederhana,16800000
 ORD-00195,4/8/2020,2020,Didi Suhendi,Talang,Teralis,Hollow Stainless,1x3,1.2,0,1,6,PER-LUBANG,0,0,800000,900000,Tanpa Cat,Sederhana,4800000
-ORD-00196,8/21/2021,2021,Leni Marlina,Slawi,Pintu Handerson,Hollow Stainless,4x6,1,2.51,1,0,PER-M2,1520000,0,0,376500,Tanpa Cat,Menengah,3900000
+ORD-00196,8/21/2021,2021,Leni Marlina,Slawi,Pintu Handerson,Hollow Stainless,4x6,1,2.5,1,0,PER-M2,1450000,0,0,375000,Tanpa Cat,Menengah,3750000
 ORD-00197,1/30/2023,2023,Dito Prabowo,Tegal,Railing,Pipa Stainless,2inch,1.2,3.53,2,0,PER-M,0,1150000,0,1412000,Tanpa Cat,Sederhana,8100000
-ORD-00198,6/25/2025,2025,Agus Nurhuda,Kramat,Pintu Gerbang,Hollow,4x4,1.2,12.35,1,0,PER-M2,850000,0,0,1235000,Cat Dasar,Sederhana,10500000
+ORD-00198,6/25/2025,2025,Agus Nurhuda,Kramat,Pintu Gerbang,Hollow,4x4,1.2,12,1,0,PER-M2,850000,0,0,1200000,Cat Dasar,Sederhana,10200000
 ORD-00199,10/22/2022,2022,Neni Wahyuni,Suradadi,Pintu Gerbang,Hollow,4x8,0.8,4.97,1,0,PER-M2,750000,0,0,497000,Cat Dasar,Sederhana,3750000
-ORD-00200,12/2/2023,2023,Ahmad Sapari,Bojong,Pintu Gerbang,Hollow,4x4,1.2,12.39,1,0,PER-M2,800000,0,0,1239000,Cat Biasa,Kompleks,10100000
+ORD-00200,12/2/2023,2023,Ahmad Sapari,Bojong,Pintu Gerbang,Hollow,4x4,1.2,8.39,1,0,PER-M2,800000,0,0,839000,Cat Biasa,Kompleks,6900000
 ORD-00201,6/7/2024,2024,Pak Mulyadi Saputro,Tarub,Teralis,Hollow Stainless,1x3,1.2,0,1,14,PER-LUBANG,0,0,900000,2100000,Tanpa Cat,Menengah,12700000
 ORD-00202,6/11/2021,2021,Lilis Nuraeni,Slawi,Pintu Gerbang,Hollow Stainless,4x6,0.8,6.64,1,0,PER-M2,1250000,0,0,996000,Tanpa Cat,Sederhana,8300000
-ORD-00203,8/20/2022,2022,Andika Pramana,Talang,Kanopi,Hollow,4x8,0.8,13.96,2,0,PER-M2,450000,0,0,2792000,Cat Dasar,Menengah,12650000
-ORD-00204,1/16/2022,2022,Bu Rubiati,Pagerbarang,Teralis,Hollow Stainless,1x3,0.8,0,1,4,PER-LUBANG,0,0,780000,600000,Tanpa Cat,Sederhana,3100000
-ORD-00205,6/19/2021,2021,Rendra Adi Pratama,Tegal,Pagar,Pipa Stainless,2inch,0.8,11.15,1,0,PER-M2,1000000,0,0,2230000,Tanpa Cat,Sederhana,11150000
+ORD-00203,8/20/2022,2022,Andika Pramana,Talang,Kanopi,Hollow,4x8,0.8,13,2,0,PER-M2,450000,0,0,2600000,Cat Dasar,Menengah,11800000
+ORD-00204,1/16/2022,2022,Bu Rubiati,Pagerbarang,Teralis,Hollow Stainless,1x3,0.8,0,1,4,PER-LUBANG,0,0,750000,600000,Tanpa Cat,Sederhana,3000000
+ORD-00205,6/19/2021,2021,Rendra Adi Pratama,Tegal,Pagar,Pipa Stainless,2inch,0.8,11.2,1,0,PER-M2,950000,0,0,2240000,Tanpa Cat,Sederhana,10650000
 ORD-00206,11/18/2023,2023,Dewi Azzahra Putri,Slawi,Teralis,Hollow,1x3,1.2,0,1,22,PER-LUBANG,0,0,450000,1650000,Cat Duco,Kompleks,10200000
-ORD-00207,11/14/2021,2021,Mas Fadhil Naufal,Margasari,Pintu Handerson,Hollow Stainless,4x6,1,4.61,2,0,PER-M2,1520000,0,0,1383000,Tanpa Cat,Sederhana,14000000
+ORD-00207,11/14/2021,2021,Mas Fadhil Naufal,Margasari,Pintu Handerson,Hollow Stainless,4x6,1,4,2,0,PER-M2,1450000,0,0,1200000,Tanpa Cat,Sederhana,11600000
 ORD-00208,3/24/2020,2020,Riko Hernawan,Bojong,Teralis,Hollow Stainless,1x3,1.2,0,1,4,PER-LUBANG,0,0,800000,600000,Tanpa Cat,Sederhana,3200000
-ORD-00209,10/6/2020,2020,Anggun Wulan Sari,Adiwerna,Pagar,Pipa Stainless,2inch,0.8,18.07,1,0,PER-M2,980000,0,0,3614000,Tanpa Cat,Kompleks,17850000
+ORD-00209,10/6/2020,2020,Anggun Wulan Sari,Adiwerna,Pagar,Pipa Stainless,2inch,0.8,18,1,0,PER-M2,950000,0,0,3600000,Tanpa Cat,Kompleks,17250000
 ORD-00210,6/22/2022,2022,Bu Painem Karsih,Balapulang,Teralis,Hollow,1x3,1.2,0,1,14,PER-LUBANG,0,0,400000,1050000,Cat Duco,Menengah,5850000
-ORD-00211,11/26/2022,2022,Aldi Kurnia Ramadhan,Slawi,Kanopi,Hollow Stainless,4x4,1,13.48,1,0,PER-M2,830000,0,0,2022000,Tanpa Cat,Sederhana,11200000
-ORD-00212,11/11/2019,2019,Lia Anggraini,Lebaksiu,Pintu Gerbang,Pipa Stainless,2inch,0.8,12.85,1,0,PER-M2,1050000,0,0,2570000,Tanpa Cat,Sederhana,13500000
-ORD-00213,3/24/2021,2021,Mas Joko Prasetya,Tarub,Railing,Hollow Stainless,4x6,0.8,7.97,2,0,PER-M,0,1150000,0,2391000,Tanpa Cat,Menengah,18450000
-ORD-00214,6/5/2025,2025,Riko Mardiansyah,Suradadi,Railing,Hollow,4x4,1,10.99,3,0,PER-M,0,550000,0,3297000,Cat Dasar,Sederhana,18150000
+ORD-00211,11/26/2022,2022,Aldi Kurnia Ramadhan,Slawi,Kanopi,Hollow Stainless,4x4,1,13,1,0,PER-M2,800000,0,0,1950000,Tanpa Cat,Sederhana,10400000
+ORD-00212,11/11/2019,2019,Lia Anggraini,Lebaksiu,Pintu Gerbang,Pipa Stainless,2inch,0.8,12,1,0,PER-M2,1100000,0,0,2400000,Tanpa Cat,Sederhana,13200000
+ORD-00213,3/24/2021,2021,Mas Joko Prasetya,Tarub,Railing,Hollow Stainless,4x6,0.8,7.9,2,0,PER-M,0,1150000,0,2370000,Tanpa Cat,Menengah,18250000
+ORD-00214,6/5/2025,2025,Riko Mardiansyah,Suradadi,Railing,Hollow,4x4,1,10,3,0,PER-M,0,550000,0,3000000,Cat Dasar,Sederhana,16500000
 ORD-00215,8/3/2025,2025,Tiwi Ayu Safitri,Jatinegara,Pagar,Hollow Stainless,4x6,0.8,25.2,1,0,PER-M2,1250000,0,0,3780000,Tanpa Cat,Sederhana,31500000
-ORD-00216,11/10/2019,2019,Pak Paiman Sukanto,Bumijawa,Pagar,Hollow,4x6,1,21.53,1,0,PER-M2,600000,0,0,2153000,Cat Biasa,Menengah,13050000
+ORD-00216,11/10/2019,2019,Pak Paiman Sukanto,Bumijawa,Pagar,Hollow,4x6,1,21,1,0,PER-M2,600000,0,0,2100000,Cat Biasa,Menengah,12750000
 ORD-00217,6/9/2019,2019,Susi Marlina,Tegal,Teralis,Pipa Stainless,1x3,1.2,0,1,15,PER-LUBANG,0,0,700000,2250000,Tanpa Cat,Menengah,10600000
 ORD-00218,12/6/2024,2024,Aji Saputro,Pagerbarang,Pintu Handerson,Hollow,4x8,1.2,5.85,2,0,PER-M2,1100000,0,0,1170000,Cat Dasar,Menengah,12950000
 ORD-00219,8/16/2024,2024,Ratna Ayu Dewanti,Slawi,Pintu Handerson,Hollow,4x6,0.8,4.2,1,0,PER-M2,950000,0,0,420000,Cat Biasa,Sederhana,4050000
-ORD-00220,5/16/2023,2023,Reza Mahendra,Bojong,Railing,Pipa Stainless,1x3,1.2,4.85,2,0,PER-M,0,1050000,0,1940000,Tanpa Cat,Sederhana,10200000
+ORD-00220,5/16/2023,2023,Reza Mahendra,Bojong,Railing,Pipa Stainless,1x3,1.2,4,2,0,PER-M,0,1050000,0,1600000,Tanpa Cat,Sederhana,8400000
 ORD-00221,3/29/2023,2023,Putri Yuliana,Lebaksiu,Teralis,Hollow,4x4,0.8,0,1,7,PER-LUBANG,0,0,350000,525000,Cat Dasar,Sederhana,2450000
-ORD-00222,7/14/2021,2021,Bagas Firmansyah,Warureja,Kanopi,Hollow Stainless,4x4,1.2,16.3,2,0,PER-M2,850000,0,0,4890000,Tanpa Cat,Sederhana,27700000
-ORD-00223,7/29/2021,2021,Bu Rukasih,Balapulang,Pintu Gerbang,Pipa Stainless,2inch,1.2,6.69,1,0,PER-M2,1250000,0,0,1338000,Tanpa Cat,Menengah,8450000
-ORD-00224,8/11/2023,2023,Nindi Aprillia,Slawi,Kanopi,Hollow,4x6,1.2,7.58,2,0,PER-M2,570000,0,0,1516000,Cat Biasa,Menengah,8800000
+ORD-00222,7/14/2021,2021,Bagas Firmansyah,Warureja,Kanopi,Hollow Stainless,4x4,1.2,16,2,0,PER-M2,800000,0,0,4800000,Tanpa Cat,Sederhana,25600000
+ORD-00223,7/29/2021,2021,Bu Rukasih,Balapulang,Pintu Gerbang,Pipa Stainless,2inch,1.2,6.69,1,0,PER-M2,1200000,0,0,1338000,Tanpa Cat,Menengah,8150000
+ORD-00224,8/11/2023,2023,Nindi Aprillia,Slawi,Kanopi,Hollow,4x6,1.2,7,2,0,PER-M2,570000,0,0,1400000,Cat Biasa,Menengah,8150000
 ORD-00225,2/10/2020,2020,Davi Nurhidayat,Adiwerna,Pintu Gerbang,Hollow,4x6,1.2,12.32,1,0,PER-M2,750000,0,0,1232000,Cat Dasar,Menengah,9350000
-ORD-00226,10/25/2020,2020,Aldi Muharram,Tegal,Pintu Handerson,Hollow,4x4,1.2,3.06,2,0,PER-M2,900000,0,0,612000,Cat Duco,Menengah,5750000
+ORD-00226,10/25/2020,2020,Aldi Muharram,Tegal,Pintu Handerson,Hollow,4x4,1.2,3,2,0,PER-M2,900000,0,0,600000,Cat Duco,Menengah,5650000
 ORD-00227,11/28/2020,2020,Misbahul Munir,Kramat,Pintu Gerbang,Hollow,4x4,0.8,7.45,1,0,PER-M2,600000,0,0,745000,Cat Biasa,Sederhana,4500000
-ORD-00228,12/2/2019,2019,Natrisha Ayuningtyas,Slawi,Pagar,Pipa Stainless,2inch,1.2,29.74,1,0,PER-M2,1050000,0,0,5948000,Tanpa Cat,Menengah,31350000
+ORD-00228,12/2/2019,2019,Natrisha Ayuningtyas,Slawi,Pagar,Pipa Stainless,2inch,1.2,29,1,0,PER-M2,1050000,0,0,5800000,Tanpa Cat,Menengah,30550000
 ORD-00229,11/12/2024,2024,Pak Sutriman,Tarub,Pintu Handerson,Hollow,4x6,1,3.6,1,0,PER-M2,1000000,0,0,360000,Cat Biasa,Sederhana,3650000
 ORD-00230,6/23/2021,2021,Yogi Prayitno,Lebaksiu,Pintu Gerbang,Hollow Stainless,4x4,1.2,8.85,1,0,PER-M2,1300000,0,0,1327500,Tanpa Cat,Menengah,11600000
-ORD-00231,9/1/2021,2021,Salma Fadila,Talang,Kanopi,Hollow,4x6,1.2,23.49,2,0,PER-M2,500000,0,0,4698000,Cat Biasa,Sederhana,23550000
-ORD-00232,4/2/2024,2024,Dinda Yunita,Bojong,Pagar,Hollow,4x4,0.8,25.38,1,0,PER-M2,550000,0,0,2538000,Cat Duco,Sederhana,14100000
-ORD-00233,8/12/2019,2019,Anwar Fathoni,Pagerbarang,Pagar,Hollow Stainless,4x8,1,26.91,1,0,PER-M2,1150000,0,0,4036500,Tanpa Cat,Menengah,31050000
+ORD-00231,9/1/2021,2021,Salma Fadila,Talang,Kanopi,Hollow,4x6,1.2,23,2,0,PER-M2,500000,0,0,4600000,Cat Biasa,Sederhana,23050000
+ORD-00232,4/2/2024,2024,Dinda Yunita,Bojong,Pagar,Hollow,4x4,0.8,25,1,0,PER-M2,600000,0,0,2500000,Cat Duco,Sederhana,15150000
+ORD-00233,8/12/2019,2019,Anwar Fathoni,Pagerbarang,Pagar,Hollow Stainless,4x8,1,29.72,1,0,PER-M2,1150000,0,0,4458000,Tanpa Cat,Menengah,34300000
 ORD-00234,12/14/2020,2020,Bu Sukini,Margasari,Teralis,Hollow,1x3,1.2,0,1,15,PER-LUBANG,0,0,400000,1125000,Cat Biasa,Menengah,6150000
 ORD-00235,8/17/2025,2025,Raka Dimas Setiaji,Slawi,Pintu Handerson,Hollow Stainless,4x4,1,3.87,2,0,PER-M2,1750000,0,0,1161000,Tanpa Cat,Menengah,13650000
-ORD-00236,2/21/2025,2025,Jihan Nur Afifah,Tegal,Railing,Hollow Stainless,4x4,0.8,4.76,2,0,PER-M,0,1200000,0,1428000,Tanpa Cat,Menengah,11500000
-ORD-00237,7/23/2022,2022,Mas Bagus Wahyudi,Suradadi,Kanopi,Hollow,4x8,0.8,7.25,2,0,PER-M2,450000,0,0,1450000,Cat Dasar,Kompleks,6700000
-ORD-00238,6/16/2022,2022,Putra Pratama,Dukuhturi,Pintu Gerbang,Hollow Stainless,4x6,0.8,4.88,1,0,PER-M2,1300000,0,0,732000,Tanpa Cat,Menengah,6450000
+ORD-00236,2/21/2025,2025,Jihan Nur Afifah,Tegal,Railing,Hollow Stainless,4x4,0.8,4.7,2,0,PER-M,0,1200000,0,1410000,Tanpa Cat,Menengah,11400000
+ORD-00237,7/23/2022,2022,Mas Bagus Wahyudi,Suradadi,Kanopi,Hollow,4x8,0.8,7,2,0,PER-M2,450000,0,0,1400000,Cat Dasar,Kompleks,6450000
+ORD-00238,6/16/2022,2022,Putra Pratama,Dukuhturi,Pintu Gerbang,Hollow Stainless,4x6,0.8,4,1,0,PER-M2,1350000,0,0,600000,Tanpa Cat,Menengah,5500000
 ORD-00239,11/25/2020,2020,Cindy Maheswari,Adiwerna,Railing,Pipa Stainless,2inch,1.2,3.78,3,0,PER-M,0,1080000,0,2268000,Tanpa Cat,Menengah,12350000
 ORD-00240,4/6/2025,2025,Rizki Halim,Slawi,Teralis,Hollow,1x3,0.8,0,1,13,PER-LUBANG,0,0,350000,975000,Cat Duco,Menengah,4800000
-ORD-00241,2/27/2022,2022,Bu Sutarsinah,Jatinegara,Pagar,Hollow,4x6,1,13.93,1,0,PER-M2,630000,0,0,1393000,Cat Duco,Menengah,9050000
+ORD-00241,2/27/2022,2022,Bu Sutarsinah,Jatinegara,Pagar,Hollow,4x6,1,13,1,0,PER-M2,650000,0,0,1300000,Cat Duco,Menengah,8700000
 ORD-00242,2/15/2023,2023,Eko Hartono,Tarub,Teralis,Hollow,2x2,1,0,1,6,PER-LUBANG,0,0,400000,450000,Cat Dasar,Sederhana,2400000
-ORD-00243,7/9/2021,2021,Riska Amelia,Tegal,Teralis,Pipa Stainless,1x3,1.2,0,1,10,PER-LUBANG,0,0,740000,1500000,Tanpa Cat,Menengah,7500000
-ORD-00244,7/25/2019,2019,Aldi Bagaswara,Kramat,Kanopi,Hollow Stainless,4x8,0.8,20.77,1,0,PER-M2,750000,0,0,3115500,Tanpa Cat,Menengah,15700000
-ORD-00245,6/28/2021,2021,Indira Lestari,Slawi,Railing,Hollow,4x6,1.2,4.98,3,0,PER-M,0,600000,0,1494000,Cat Biasa,Sederhana,9000000
-ORD-00246,1/8/2019,2019,Pak Sukirno,Balapulang,Pintu Gerbang,Pipa Stainless,2inch,0.8,8.64,1,0,PER-M2,1050000,0,0,1728000,Tanpa Cat,Menengah,9150000
+ORD-00243,7/9/2021,2021,Riska Amelia,Tegal,Teralis,Pipa Stainless,1x3,1.2,0,1,10,PER-LUBANG,0,0,750000,1500000,Tanpa Cat,Menengah,7600000
+ORD-00244,7/25/2019,2019,Aldi Bagaswara,Kramat,Kanopi,Hollow Stainless,4x8,0.8,20,1,0,PER-M2,800000,0,0,3000000,Tanpa Cat,Menengah,16100000
+ORD-00245,6/28/2021,2021,Indira Lestari,Slawi,Railing,Hollow,4x6,1.2,4.8,3,0,PER-M,0,600000,0,1440000,Cat Biasa,Sederhana,8700000
+ORD-00246,1/8/2019,2019,Pak Sukirno,Balapulang,Pintu Gerbang,Pipa Stainless,2inch,0.8,8,1,0,PER-M2,1100000,0,0,1600000,Tanpa Cat,Menengah,8900000
 ORD-00247,7/9/2023,2023,Andi Mahaputra,Margasari,Railing,Hollow,4x6,0.8,7.96,2,0,PER-M,0,550000,0,1592000,Cat Duco,Sederhana,8900000
-ORD-00248,3/16/2024,2024,Nanda Safrila,Slawi,Pagar,Hollow,4x4,1.2,14.81,1,0,PER-M2,650000,0,0,1481000,Cat Duco,Sederhana,9800000
-ORD-00249,8/5/2019,2019,Bayu Dwi Putra,Lebaksiu,Teralis,Hollow Stainless,1x3,1,0,1,12,PER-LUBANG,0,0,700000,1800000,Tanpa Cat,Menengah,8500000
+ORD-00248,3/16/2024,2024,Nanda Safrila,Slawi,Pagar,Hollow,4x4,1.2,14.81,1,0,PER-M2,700000,0,0,1481000,Cat Duco,Sederhana,10500000
+ORD-00249,8/5/2019,2019,Bayu Dwi Putra,Lebaksiu,Teralis,Hollow Stainless,1x3,1,0,1,12,PER-LUBANG,0,0,750000,1800000,Tanpa Cat,Menengah,9100000
 ORD-00250,3/31/2019,2019,Tari Amelia,Bojong,Pintu Handerson,Hollow,4x6,1.2,2.71,2,0,PER-M2,900000,0,0,542000,Cat Biasa,Sederhana,4950000
 ORD-00251,10/30/2025,2025,Toko Kayu Sejahtera,Slawi,Pintu Handerson,Hollow Stainless,4x4,1,3.07,1,0,PER-M2,1750000,0,0,460500,Tanpa Cat,Sederhana,5350000
-ORD-00252,7/8/2021,2021,Depo Bangunan Mulya,Adiwerna,Kanopi,Pipa Stainless,2inch,0.8,22.19,2,0,PER-M2,760000,0,0,8876000,Tanpa Cat,Sederhana,33750000
+ORD-00252,7/8/2021,2021,Depo Bangunan Mulya,Adiwerna,Kanopi,Pipa Stainless,2inch,0.8,22.19,2,0,PER-M2,700000,0,0,8876000,Tanpa Cat,Sederhana,31050000
 ORD-00253,2/16/2021,2021,UD Makmur Teknik,Tegal,Pintu Handerson,Hollow,4x4,0.8,5.98,2,0,PER-M2,800000,0,0,1196000,Cat Dasar,Sederhana,9550000
-ORD-00254,4/21/2020,2020,Warung Sembako Bu Minah,Slawi,Pagar,Hollow,4x8,1,16.15,1,0,PER-M2,650000,0,0,1615000,Cat Dasar,Sederhana,10500000
+ORD-00254,4/21/2020,2020,Warung Sembako Bu Minah,Slawi,Pagar,Hollow,4x8,1,16,1,0,PER-M2,650000,0,0,1600000,Cat Dasar,Sederhana,10400000
 ORD-00255,3/12/2025,2025,Puskesmas Adiwerna,Adiwerna,Teralis,Hollow Stainless,2x2,1.2,0,1,21,PER-LUBANG,0,0,900000,3150000,Tanpa Cat,Kompleks,19050000
 ORD-00256,11/7/2024,2024,SDN 2 Pagerbarang,Pagerbarang,Railing,Hollow,4x4,1.2,8,2,0,PER-M,0,600000,0,1600000,Cat Biasa,Menengah,9750000
 ORD-00257,4/4/2019,2019,SMPN 3 Talang,Talang,Railing,Hollow Stainless,4x6,1,6.35,3,0,PER-M,0,1100000,0,2857500,Tanpa Cat,Kompleks,21100000
-ORD-00258,3/19/2024,2024,Balai Desa Tarub,Tarub,Pagar,Pipa Stainless,2inch,0.8,16.04,1,0,PER-M2,1060000,0,0,3208000,Tanpa Cat,Sederhana,17000000
+ORD-00258,3/19/2024,2024,Balai Desa Tarub,Tarub,Pagar,Pipa Stainless,2inch,0.8,16.5,1,0,PER-M2,1050000,0,0,3300000,Tanpa Cat,Sederhana,17350000
 ORD-00259,12/24/2024,2024,Karang Taruna Bojong,Bojong,Pintu Handerson,Hollow,4x6,1,4.75,2,0,PER-M2,1000000,0,0,950000,Cat Duco,Sederhana,9650000
-ORD-00260,4/21/2021,2021,Puskesmas Jatinegara,Jatinegara,Pintu Handerson,Hollow Stainless,4x4,1.2,4.94,2,0,PER-M2,1520000,0,0,1482000,Tanpa Cat,Sederhana,15000000
-ORD-00261,2/17/2025,2025,SMPN 2 Slawi,Slawi,Kanopi,Hollow,4x4,1,12.02,2,0,PER-M2,500000,0,0,2404000,Cat Dasar,Kompleks,12150000
+ORD-00260,4/21/2021,2021,Puskesmas Jatinegara,Jatinegara,Pintu Handerson,Hollow Stainless,4x4,1.2,4.94,2,0,PER-M2,1450000,0,0,1482000,Tanpa Cat,Sederhana,14350000
+ORD-00261,2/17/2025,2025,SMPN 2 Slawi,Slawi,Kanopi,Hollow,4x4,1,12,2,0,PER-M2,500000,0,0,2400000,Cat Dasar,Kompleks,12150000
 ORD-00262,5/18/2021,2021,SDN 1 Warureja,Warureja,Teralis,Hollow Stainless,1x3,0.8,0,1,6,PER-LUBANG,0,0,750000,900000,Tanpa Cat,Sederhana,4500000
 ORD-00263,1/30/2025,2025,BUMDES Margasari Maju,Margasari,Pintu Handerson,Pipa Stainless,2inch,1.2,2.58,2,0,PER-M2,1700000,0,0,1032000,Tanpa Cat,Kompleks,8900000
 ORD-00264,2/24/2025,2025,SDN 4 Margasari,Margasari,Pintu Handerson,Hollow,4x4,1.2,4.83,1,0,PER-M2,1000000,0,0,483000,Cat Biasa,Menengah,5000000
-ORD-00265,12/4/2019,2019,BUMDES Kramat Makmur,Kramat,Pintu Gerbang,Hollow Stainless,4x6,1.2,8.83,1,0,PER-M2,1250000,0,0,1324500,Tanpa Cat,Sederhana,11050000
-ORD-00266,7/5/2022,2022,TK Pertiwi Slawi,Slawi,Railing,Pipa Stainless,2inch,1.2,13.91,2,0,PER-M,0,1120000,0,5564000,Tanpa Cat,Menengah,31250000
+ORD-00265,12/4/2019,2019,BUMDES Kramat Makmur,Kramat,Pintu Gerbang,Hollow Stainless,4x6,1.2,8.4,1,0,PER-M2,1350000,0,0,1260000,Tanpa Cat,Sederhana,11350000
+ORD-00266,7/5/2022,2022,TK Pertiwi Slawi,Slawi,Railing,Pipa Stainless,2inch,1.2,13,2,0,PER-M,0,1150000,0,5200000,Tanpa Cat,Menengah,30000000
 ORD-00267,3/1/2023,2023,Pak Rusmanto,Dukuhturi,Railing,Pipa Stainless,2inch,0.8,7.32,3,0,PER-M,0,1050000,0,4392000,Tanpa Cat,Menengah,23150000
-ORD-00268,7/3/2020,2020,Laila Oktaviani,Tegal,Pagar,Pipa Stainless,2inch,0.8,8.61,1,0,PER-M2,980000,0,0,1722000,Tanpa Cat,Menengah,8550000
-ORD-00269,2/12/2024,2024,Bagus Aryanto,Kramat,Pintu Gerbang,Hollow Stainless,4x4,0.8,11.99,1,0,PER-M2,1420000,0,0,1798500,Tanpa Cat,Sederhana,17050000
-ORD-00270,8/21/2020,2020,Azmi Maulidah,Slawi,Pintu Handerson,Hollow Stainless,4x8,1,5.94,2,0,PER-M2,1500000,0,0,1782000,Tanpa Cat,Sederhana,17800000
-ORD-00271,12/11/2023,2023,Arif Prasetyo,Lebaksiu,Railing,Hollow,4x6,0.8,8.06,3,0,PER-M,0,550000,0,2418000,Cat Dasar,Menengah,13400000
-ORD-00272,10/7/2020,2020,Lina Wulandari,Suradadi,Railing,Hollow Stainless,4x6,1.2,14.38,1,0,PER-M,0,1200000,0,2157000,Tanpa Cat,Sederhana,17250000
-ORD-00273,12/24/2019,2019,Bu Ratini,Margasari,Kanopi,Hollow,4x8,0.8,9.09,2,0,PER-M2,450000,0,0,1818000,Cat Biasa,Sederhana,8250000
-ORD-00274,3/29/2021,2021,Aldi Sapto Aji,Talang,Kanopi,Hollow Stainless,4x8,1,10.04,2,0,PER-M2,900000,0,0,3012000,Tanpa Cat,Sederhana,18050000
+ORD-00268,7/3/2020,2020,Laila Oktaviani,Tegal,Pagar,Pipa Stainless,2inch,0.8,8.6,1,0,PER-M2,950000,0,0,1720000,Tanpa Cat,Menengah,8250000
+ORD-00269,2/12/2024,2024,Bagus Aryanto,Kramat,Pintu Gerbang,Hollow Stainless,4x4,0.8,12,1,0,PER-M2,1500000,0,0,1800000,Tanpa Cat,Sederhana,18000000
+ORD-00270,8/21/2020,2020,Azmi Maulidah,Slawi,Pintu Handerson,Hollow Stainless,4x8,1,5.7,2,0,PER-M2,1500000,0,0,1710000,Tanpa Cat,Sederhana,17100000
+ORD-00271,12/11/2023,2023,Arif Prasetyo,Lebaksiu,Railing,Hollow,4x6,0.8,8.2,3,0,PER-M,0,550000,0,2460000,Cat Dasar,Menengah,13650000
+ORD-00272,10/7/2020,2020,Lina Wulandari,Suradadi,Railing,Hollow Stainless,4x6,1.2,14,1,0,PER-M,0,1150000,0,2100000,Tanpa Cat,Sederhana,16100000
+ORD-00273,12/24/2019,2019,Bu Ratini,Margasari,Kanopi,Hollow,4x8,0.8,9,2,0,PER-M2,450000,0,0,1800000,Cat Biasa,Sederhana,8150000
+ORD-00274,3/29/2021,2021,Aldi Sapto Aji,Talang,Kanopi,Hollow Stainless,4x8,1,10,2,0,PER-M2,850000,0,0,3000000,Tanpa Cat,Sederhana,17000000
 ORD-00275,3/1/2019,2019,Pak Sandi Wijaya,Slawi,Railing,Pipa Stainless,2inch,1,6.44,1,0,PER-M,0,1000000,0,1288000,Tanpa Cat,Sederhana,6450000
 ORD-00276,3/27/2023,2023,Putri Selaras,Adiwerna,Teralis,Hollow,1x3,0.8,0,1,22,PER-LUBANG,0,0,350000,1650000,Cat Duco,Kompleks,8000000
-ORD-00277,7/18/2022,2022,Dion Prakoso,Bojong,Pintu Handerson,Hollow Stainless,4x6,1,3.62,2,0,PER-M2,1560000,0,0,1086000,Tanpa Cat,Sederhana,11300000
+ORD-00277,7/18/2022,2022,Dion Prakoso,Bojong,Pintu Handerson,Hollow Stainless,4x6,1,3.62,2,0,PER-M2,1600000,0,0,1086000,Tanpa Cat,Sederhana,11600000
 ORD-00278,9/19/2022,2022,Rizka Utami,Pagerbarang,Pintu Handerson,Pipa Stainless,2inch,1.2,5.6,1,0,PER-M2,1550000,0,0,1120000,Tanpa Cat,Sederhana,8700000
 ORD-00279,8/12/2023,2023,Mas Farhan Firdaus,Tegal,Pintu Handerson,Hollow,4x8,0.8,5.89,2,0,PER-M2,950000,0,0,1178000,Cat Duco,Sederhana,11350000
-ORD-00280,3/27/2020,2020,Dinda Sulistyo,Kramat,Pagar,Hollow,4x8,0.8,19.22,1,0,PER-M2,600000,0,0,1922000,Cat Biasa,Menengah,11700000
+ORD-00280,3/27/2020,2020,Dinda Sulistyo,Kramat,Pagar,Hollow,4x8,0.8,19.2,1,0,PER-M2,600000,0,0,1920000,Cat Biasa,Menengah,11650000
 ORD-00281,3/19/2023,2023,Rizal Hartanto,Slawi,Pintu Handerson,Hollow,4x8,0.8,4.79,2,0,PER-M2,950000,0,0,958000,Cat Biasa,Kompleks,9300000
-ORD-00282,1/8/2025,2025,Meli Maharani,Balapulang,Pintu Handerson,Hollow Stainless,4x8,1,4.51,1,0,PER-M2,1850000,0,0,676500,Tanpa Cat,Sederhana,8350000
+ORD-00282,1/8/2025,2025,Meli Maharani,Balapulang,Pintu Handerson,Hollow Stainless,4x8,1,7.51,1,0,PER-M2,1850000,0,0,1126500,Tanpa Cat,Sederhana,13900000
 ORD-00283,4/19/2022,2022,Nina Rosdiana,Jatinegara,Pintu Handerson,Pipa Stainless,2inch,1,5.44,1,0,PER-M2,1500000,0,0,1088000,Tanpa Cat,Sederhana,8150000
-ORD-00284,1/28/2019,2019,Wahyu Indarto,Tarub,Pintu Handerson,Hollow Stainless,4x8,0.8,2.43,1,0,PER-M2,1400000,0,0,364500,Tanpa Cat,Sederhana,3400000
+ORD-00284,1/28/2019,2019,Wahyu Indarto,Tarub,Pintu Handerson,Hollow Stainless,4x8,0.8,2.43,1,0,PER-M2,1450000,0,0,364500,Tanpa Cat,Sederhana,3500000
 ORD-00285,7/7/2023,2023,Santi Marlina,Talang,Pintu Handerson,Hollow,4x6,0.8,4.25,1,0,PER-M2,900000,0,0,425000,Cat Dasar,Sederhana,3850000
-ORD-00286,6/19/2019,2019,Pak Ali Hidayat,Tegal,Pagar,Hollow,4x6,1.2,25.78,1,0,PER-M2,650000,0,0,2578000,Cat Biasa,Sederhana,16800000
-ORD-00287,9/3/2023,2023,Restu Firmansyah,Slawi,Kanopi,Pipa Stainless,2inch,0.8,20.71,2,0,PER-M2,800000,0,0,8284000,Tanpa Cat,Kompleks,33300000
-ORD-00288,6/6/2019,2019,Mas Angga Wijaya,Lebaksiu,Pintu Gerbang,Pipa Stainless,1.5inch,0.8,12.44,1,0,PER-M2,950000,0,0,2488000,Tanpa Cat,Menengah,11900000
-ORD-00289,1/24/2021,2021,Devi Wulandari,Suradadi,Pintu Gerbang,Hollow Stainless,4x8,0.8,14.79,1,0,PER-M2,1300000,0,0,2218500,Tanpa Cat,Menengah,19350000
+ORD-00286,6/19/2019,2019,Pak Ali Hidayat,Tegal,Pagar,Hollow,4x6,1.2,25,1,0,PER-M2,650000,0,0,2500000,Cat Biasa,Sederhana,16300000
+ORD-00287,9/3/2023,2023,Restu Firmansyah,Slawi,Kanopi,Pipa Stainless,2inch,0.8,20.5,2,0,PER-M2,800000,0,0,8200000,Tanpa Cat,Kompleks,32950000
+ORD-00288,6/6/2019,2019,Mas Angga Wijaya,Lebaksiu,Pintu Gerbang,Pipa Stainless,1.5inch,0.8,12,1,0,PER-M2,1000000,0,0,2400000,Tanpa Cat,Menengah,12100000
+ORD-00289,1/24/2021,2021,Devi Wulandari,Suradadi,Pintu Gerbang,Hollow Stainless,4x8,0.8,14.7,1,0,PER-M2,1300000,0,0,2205000,Tanpa Cat,Menengah,19200000
 ORD-00290,5/8/2025,2025,Sari Oktaviani,Adiwerna,Pagar,Pipa Stainless,2inch,0.8,8.62,1,0,PER-M2,1100000,0,0,1724000,Tanpa Cat,Sederhana,9500000
-ORD-00291,10/18/2024,2024,Bu Ningsih Samiyem,Bojong,Pintu Handerson,Pipa Stainless,2inch,1.2,2.42,1,0,PER-M2,1650000,0,0,484000,Tanpa Cat,Sederhana,4000000
-ORD-00292,8/12/2023,2023,Mukhlis Andri,Margasari,Teralis,Pipa Stainless,1x3,1.2,0,1,22,PER-LUBANG,0,0,780000,3300000,Tanpa Cat,Kompleks,17300000
-ORD-00293,9/26/2023,2023,Rizky Pangestu,Kramat,Railing,Hollow Stainless,4x4,0.8,3.99,1,0,PER-M,0,1150000,0,598500,Tanpa Cat,Menengah,4700000
-ORD-00294,5/20/2025,2025,Ferry Rusdianto,Warureja,Pagar,Hollow,4x4,1,20.78,1,0,PER-M2,650000,0,0,2078000,Cat Biasa,Menengah,13650000
-ORD-00295,2/28/2020,2020,Rima Rahmawati,Slawi,Kanopi,Pipa Stainless,2inch,1,14.19,2,0,PER-M2,780000,0,0,5676000,Tanpa Cat,Kompleks,22300000
+ORD-00291,10/18/2024,2024,Bu Ningsih Samiyem,Bojong,Pintu Handerson,Pipa Stainless,2inch,1.2,2.42,1,0,PER-M2,1600000,0,0,484000,Tanpa Cat,Sederhana,3850000
+ORD-00292,8/12/2023,2023,Mukhlis Andri,Margasari,Teralis,Pipa Stainless,1x3,1.2,0,1,22,PER-LUBANG,0,0,750000,3300000,Tanpa Cat,Kompleks,16650000
+ORD-00293,9/26/2023,2023,Rizky Pangestu,Kramat,Railing,Hollow Stainless,4x4,0.8,3.99,1,0,PER-M,0,1100000,0,598500,Tanpa Cat,Menengah,4500000
+ORD-00294,5/20/2025,2025,Ferry Rusdianto,Warureja,Pagar,Hollow,4x4,1,20.2,1,0,PER-M2,650000,0,0,2020000,Cat Biasa,Menengah,13300000
+ORD-00295,2/28/2020,2020,Rima Rahmawati,Slawi,Kanopi,Pipa Stainless,2inch,1,14.19,2,0,PER-M2,750000,0,0,5676000,Tanpa Cat,Kompleks,21450000
 ORD-00296,5/13/2025,2025,Pak Larto Widodo,Tarub,Pagar,Hollow Stainless,4x6,0.8,9.41,1,0,PER-M2,1250000,0,0,1411500,Tanpa Cat,Sederhana,11750000
-ORD-00297,8/4/2022,2022,Wahyu Nur Ramadhan,Tegal,Pintu Gerbang,Hollow,4x4,1,7.07,1,0,PER-M2,700000,0,0,707000,Cat Dasar,Kompleks,5100000
-ORD-00298,7/19/2024,2024,Talita Andini,Lebaksiu,Pagar,Hollow,4x6,0.8,16.6,1,0,PER-M2,600000,0,0,1660000,Cat Biasa,Kompleks,10150000
-ORD-00299,11/20/2023,2023,Roni Setiawan,Suradadi,Railing,Hollow Stainless,4x4,1.2,8.58,3,0,PER-M,0,1250000,0,3861000,Tanpa Cat,Sederhana,32200000
+ORD-00297,8/4/2022,2022,Wahyu Nur Ramadhan,Tegal,Pintu Gerbang,Hollow,4x4,1,7,1,0,PER-M2,700000,0,0,700000,Cat Dasar,Kompleks,5050000
+ORD-00298,7/19/2024,2024,Talita Andini,Lebaksiu,Pagar,Hollow,4x6,0.8,16,1,0,PER-M2,650000,0,0,1600000,Cat Biasa,Kompleks,10600000
+ORD-00299,11/20/2023,2023,Roni Setiawan,Suradadi,Railing,Hollow Stainless,4x4,1.2,8.58,3,0,PER-M,0,1200000,0,3861000,Tanpa Cat,Sederhana,30900000
 ORD-00300,9/25/2024,2024,Dwi Cahya Permana,Slawi,Kanopi,Hollow Stainless,4x4,0.8,20.36,2,0,PER-M2,800000,0,0,6108000,Tanpa Cat,Sederhana,32600000
-ORD-00301,12/10/2023,2023,Putu Rahmadi,Talang,Kanopi,Hollow,4x8,1,15.29,1,0,PER-M2,570000,0,0,1529000,Cat Dasar,Kompleks,8850000
-ORD-00302,5/25/2021,2021,Siska Nur Aisyah,Slawi,Teralis,Pipa Stainless,1x3,0.8,0,1,14,PER-LUBANG,0,0,640000,2100000,Tanpa Cat,Menengah,9050000
-ORD-00303,7/1/2025,2025,Bagas Septianto,Tegal,Pintu Gerbang,Hollow,4x8,1.2,13.08,1,0,PER-M2,950000,0,0,1308000,Cat Biasa,Sederhana,12500000
-ORD-00304,10/29/2020,2020,Bu Kartinah,Margasari,Railing,Pipa Stainless,1.5inch,1.2,9.03,1,0,PER-M,0,980000,0,1806000,Tanpa Cat,Sederhana,8850000
-ORD-00305,8/30/2022,2022,Randi Maulana,Bojong,Railing,Pipa Stainless,2inch,1,6.64,3,0,PER-M,0,1070000,0,3984000,Tanpa Cat,Sederhana,21300000
-ORD-00306,12/11/2024,2024,Cici Novita Sari,Lebaksiu,Kanopi,Pipa Stainless,2inch,0.8,21.31,2,0,PER-M2,800000,0,0,8524000,Tanpa Cat,Sederhana,34100000
+ORD-00301,12/10/2023,2023,Putu Rahmadi,Talang,Kanopi,Hollow,4x8,1,15,1,0,PER-M2,570000,0,0,1500000,Cat Dasar,Kompleks,8700000
+ORD-00302,5/25/2021,2021,Siska Nur Aisyah,Slawi,Teralis,Pipa Stainless,1x3,0.8,0,1,14,PER-LUBANG,0,0,650000,2100000,Tanpa Cat,Menengah,9200000
+ORD-00303,7/1/2025,2025,Bagas Septianto,Tegal,Pintu Gerbang,Hollow,4x8,1.2,13,1,0,PER-M2,950000,0,0,1300000,Cat Biasa,Sederhana,12400000
+ORD-00304,10/29/2020,2020,Bu Kartinah,Margasari,Railing,Pipa Stainless,1.5inch,1.2,9,1,0,PER-M,0,980000,0,1800000,Tanpa Cat,Sederhana,8800000
+ORD-00305,8/30/2022,2022,Randi Maulana,Bojong,Railing,Pipa Stainless,2inch,1,6.64,3,0,PER-M,0,1100000,0,3984000,Tanpa Cat,Sederhana,21900000
+ORD-00306,12/11/2024,2024,Cici Novita Sari,Lebaksiu,Kanopi,Pipa Stainless,2inch,0.8,21,2,0,PER-M2,800000,0,0,8400000,Tanpa Cat,Sederhana,33600000
 ORD-00307,1/20/2023,2023,Pak Sukarmin,Pagerbarang,Pintu Handerson,Hollow Stainless,4x8,1.2,2.75,2,0,PER-M2,1700000,0,0,825000,Tanpa Cat,Sederhana,9350000
-ORD-00308,3/1/2023,2023,Dina Apriliani,Slawi,Pagar,Hollow,4x6,1.2,27.56,1,0,PER-M2,700000,0,0,2756000,Cat Biasa,Sederhana,19350000
+ORD-00308,3/1/2023,2023,Dina Apriliani,Slawi,Pagar,Hollow,4x6,1.2,27,1,0,PER-M2,700000,0,0,2700000,Cat Biasa,Sederhana,18950000
 ORD-00309,8/23/2023,2023,Fikri Pratama,Dukuhturi,Pintu Handerson,Hollow,4x4,0.8,4.69,1,0,PER-M2,850000,0,0,469000,Cat Duco,Sederhana,4150000
-ORD-00310,11/9/2021,2021,Mega Rosanti,Adiwerna,Kanopi,Hollow,4x6,1.2,24.11,1,0,PER-M2,500000,0,0,2411000,Cat Biasa,Menengah,12200000
+ORD-00310,11/9/2021,2021,Mega Rosanti,Adiwerna,Kanopi,Hollow,4x6,1.2,24,1,0,PER-M2,500000,0,0,2400000,Cat Biasa,Menengah,12150000
 ORD-00311,9/24/2021,2021,Intan Maharani,Slawi,Pintu Gerbang,Hollow,4x4,1.2,6.31,1,0,PER-M2,700000,0,0,631000,Cat Biasa,Sederhana,4450000
 ORD-00312,4/22/2024,2024,Pak Warsito Susanto,Balapulang,Teralis,Pipa Stainless,1x3,1.2,0,1,4,PER-LUBANG,0,0,800000,600000,Tanpa Cat,Sederhana,3200000
-ORD-00313,1/12/2019,2019,Rionanda Putra,Tarub,Pintu Gerbang,Hollow,4x6,1,6.56,1,0,PER-M2,650000,0,0,656000,Cat Dasar,Sederhana,4250000
-ORD-00314,6/27/2024,2024,Putra Alamsyah,Slawi,Railing,Hollow,4x4,1.2,7.94,3,0,PER-M,0,600000,0,2382000,Cat Biasa,Menengah,14450000
-ORD-00315,6/29/2022,2022,Siti Nurmala,Margasari,Pintu Gerbang,Pipa Stainless,2inch,1.2,5.64,1,0,PER-M2,1300000,0,0,1128000,Tanpa Cat,Sederhana,7350000
+ORD-00313,1/12/2019,2019,Rionanda Putra,Tarub,Pintu Gerbang,Hollow,4x6,1,6.56,1,0,PER-M2,700000,0,0,656000,Cat Dasar,Sederhana,4600000
+ORD-00314,6/27/2024,2024,Putra Alamsyah,Slawi,Railing,Hollow,4x4,1.2,17.4,1,0,PER-M,0,600000,0,1740000,Cat Biasa,Menengah,10600000
+ORD-00315,6/29/2022,2022,Siti Nurmala,Margasari,Pintu Gerbang,Pipa Stainless,2inch,1.2,5,1,0,PER-M2,1300000,0,0,1000000,Tanpa Cat,Sederhana,6500000
 ORD-00316,5/6/2025,2025,Bu Marwoto Rahayu,Bojong,Railing,Hollow,4x6,1,2.52,3,0,PER-M,0,600000,0,756000,Cat Biasa,Sederhana,4600000
 ORD-00317,10/9/2024,2024,Jeni Prameswari,Slawi,Railing,Hollow,4x4,1,6.57,2,0,PER-M,0,550000,0,1314000,Cat Biasa,Menengah,7400000
-ORD-00318,8/4/2020,2020,Aldi Saputra,Tegal,Teralis,Pipa Stainless,1x3,0.8,0,1,17,PER-LUBANG,0,0,620000,2550000,Tanpa Cat,Menengah,10650000
-ORD-00319,12/25/2024,2024,Yayan Firmansyah,Dukuhturi,Kanopi,Hollow,2inch,0.8,20.27,1,0,PER-M2,550000,0,0,2027000,Cat Dasar,Menengah,11250000
-ORD-00320,7/19/2024,2024,Vita Anggraini,Slawi,Railing,Hollow Stainless,4x6,1.2,13.56,3,0,PER-M,0,1330000,0,6102000,Tanpa Cat,Sederhana,54100000
+ORD-00318,8/4/2020,2020,Aldi Saputra,Tegal,Teralis,Pipa Stainless,1x3,0.8,0,1,17,PER-LUBANG,0,0,600000,2550000,Tanpa Cat,Menengah,10300000
+ORD-00319,12/25/2024,2024,Yayan Firmansyah,Dukuhturi,Kanopi,Hollow,2inch,0.8,20.2,1,0,PER-M2,550000,0,0,2020000,Cat Dasar,Menengah,11200000
+ORD-00320,7/19/2024,2024,Vita Anggraini,Slawi,Railing,Hollow Stainless,4x6,1.2,13.5,1,0,PER-M,0,1350000,0,2025000,Tanpa Cat,Sederhana,18250000
 ORD-00321,12/7/2023,2023,Dwi Apriyani,Adiwerna,Kanopi,Pipa Stainless,2inch,1.2,10.43,1,0,PER-M2,900000,0,0,2086000,Tanpa Cat,Menengah,9500000
-ORD-00322,2/27/2025,2025,Bayu Handoko,Talang,Kanopi,Hollow,4x6,0.8,23.94,2,0,PER-M2,500000,0,0,4788000,Cat Dasar,Sederhana,23950000
-ORD-00323,1/19/2025,2025,Rara Amelia Putri,Slawi,Pagar,Hollow,4x6,1,9.74,1,0,PER-M2,700000,0,0,974000,Cat Duco,Menengah,7050000
-ORD-00324,6/26/2025,2025,Mamat Riyadi,Margasari,Kanopi,Pipa Stainless,2inch,0.8,7.49,1,0,PER-M2,800000,0,0,1498000,Cat Dasar,Sederhana,6000000
+ORD-00322,2/27/2025,2025,Bayu Handoko,Talang,Kanopi,Hollow,4x6,0.8,23,2,0,PER-M2,500000,0,0,4600000,Cat Dasar,Sederhana,23000000
+ORD-00323,1/19/2025,2025,Rara Amelia Putri,Slawi,Pagar,Hollow,4x6,1,9.73,1,0,PER-M2,700000,0,0,973000,Cat Duco,Menengah,7050000
+ORD-00324,6/26/2025,2025,Mamat Riyadi,Margasari,Kanopi,Pipa Stainless,2inch,0.8,7.4,1,0,PER-M2,800000,0,0,1480000,Cat Dasar,Sederhana,5900000
 ORD-00325,12/12/2021,2021,Tiwi Anggun Sari,Bojong,Pintu Handerson,Hollow,4x8,1.2,4.82,2,0,PER-M2,1000000,0,0,964000,Cat Biasa,Sederhana,9700000
 ORD-00326,6/2/2020,2020,Rizqi Hasanah,Slawi,Pagar,Hollow,4x6,0.8,9.49,1,0,PER-M2,550000,0,0,949000,Cat Duco,Sederhana,5350000
-ORD-00327,10/18/2024,2024,Pak Sutarman,Suradadi,Kanopi,Hollow,4x4,0.8,24.44,2,0,PER-M2,450000,0,0,4888000,Cat Duco,Menengah,22250000
+ORD-00327,10/18/2024,2024,Pak Sutarman,Suradadi,Kanopi,Hollow,4x4,0.8,24.2,2,0,PER-M2,450000,0,0,4840000,Cat Duco,Menengah,22050000
 ORD-00328,5/18/2022,2022,Debby Lestari,Lebaksiu,Teralis,Hollow,2x2,1.2,0,1,15,PER-LUBANG,0,0,400000,1125000,Cat Dasar,Menengah,6100000
-ORD-00329,4/1/2024,2024,Aldi Mahendra,Tegal,Pagar,Pipa Stainless,2inch,0.8,14.03,1,0,PER-M2,1060000,0,0,2806000,Tanpa Cat,Menengah,14950000
+ORD-00329,4/1/2024,2024,Aldi Mahendra,Tegal,Pagar,Pipa Stainless,2inch,0.8,14,1,0,PER-M2,1050000,0,0,2800000,Tanpa Cat,Menengah,14800000
 ORD-00330,3/8/2025,2025,Mas Lukman Sulistyo,Tarub,Teralis,Hollow,1x3,0.8,0,1,14,PER-LUBANG,0,0,350000,1050000,Cat Duco,Menengah,5150000
 ORD-00331,2/17/2025,2025,Nida Fadlilah,Slawi,Teralis,Hollow Stainless,1x3,1.2,0,1,4,PER-LUBANG,0,0,900000,600000,Tanpa Cat,Sederhana,3600000
 ORD-00332,6/13/2024,2024,Joko Cahyono,Balapulang,Pintu Handerson,Hollow,4x4,1.2,2.51,1,0,PER-M2,1000000,0,0,251000,Cat Dasar,Menengah,2600000
-ORD-00333,3/5/2020,2020,Siti Maryani,Pagerbarang,Pintu Handerson,Hollow,4x6,0.8,5.07,1,0,PER-M2,850000,0,0,507000,Cat Dasar,Sederhana,4300000
+ORD-00333,3/5/2020,2020,Siti Maryani,Pagerbarang,Pintu Handerson,Hollow,4x6,0.8,5,1,0,PER-M2,850000,0,0,500000,Cat Dasar,Sederhana,4250000
 ORD-00334,3/4/2024,2024,Desi Wulansari,Slawi,Pintu Gerbang,Hollow,4x4,1.2,8.65,1,0,PER-M2,850000,0,0,865000,Cat Biasa,Sederhana,7400000
-ORD-00335,8/25/2025,2025,Sandy Ramadan,Bojong,Railing,Pipa Stainless,2inch,1.2,13.7,3,0,PER-M,0,1200000,0,8220000,Tanpa Cat,Sederhana,49300000
+ORD-00335,8/25/2025,2025,Sandy Ramadan,Bojong,Railing,Pipa Stainless,2inch,1.2,13,3,0,PER-M,0,1200000,0,7800000,Tanpa Cat,Sederhana,46800000
 ORD-00336,6/22/2023,2023,Pak Suwondo,Kramat,Teralis,Hollow Stainless,1x3,1.2,0,1,13,PER-LUBANG,0,0,900000,1950000,Tanpa Cat,Menengah,11800000
-ORD-00337,9/4/2024,2024,Lely Aprilia,Suradadi,Pintu Gerbang,Hollow,4x8,1,9.42,1,0,PER-M2,900000,0,0,942000,Cat Dasar,Sederhana,8500000
+ORD-00337,9/4/2024,2024,Lely Aprilia,Suradadi,Pintu Gerbang,Hollow,4x8,1,10,1,0,PER-M2,900000,0,0,1000000,Cat Dasar,Sederhana,9000000
 ORD-00338,5/23/2021,2021,Bagus Wicaksono,Tegal,Teralis,Hollow,1x3,1.2,0,1,10,PER-LUBANG,0,0,400000,750000,Cat Dasar,Menengah,4100000
 ORD-00339,7/21/2021,2021,Nurul Khasanah,Talang,Railing,Pipa Stainless,2inch,0.8,2.1,3,0,PER-M,0,1000000,0,1260000,Tanpa Cat,Menengah,6400000
 ORD-00340,2/12/2020,2020,Fatur Rizqillah,Slawi,Teralis,Hollow,1x3,1.2,0,1,13,PER-LUBANG,0,0,400000,975000,Cat Dasar,Menengah,5300000
 ORD-00341,8/14/2023,2023,Rani Puspita Sari,Adiwerna,Railing,Pipa Stainless,2inch,1,4.12,1,0,PER-M,0,1100000,0,824000,Cat Dasar,Sederhana,4550000
 ORD-00342,11/8/2020,2020,Pak Sukardi,Margasari,Pintu Gerbang,Hollow,4x6,1,5.09,1,0,PER-M2,700000,0,0,509000,Cat Biasa,Menengah,3700000
-ORD-00343,1/14/2025,2025,Jihan Atika,Slawi,Pagar,Hollow,4x4,1.2,11.99,1,0,PER-M2,700000,0,0,1199000,Cat Biasa,Sederhana,8450000
+ORD-00343,1/14/2025,2025,Jihan Atika,Slawi,Pagar,Hollow,4x4,1.2,12,1,0,PER-M2,700000,0,0,1200000,Cat Biasa,Sederhana,8450000
 ORD-00344,5/22/2021,2021,M. Fahmi Hidayat,Kramat,Railing,Pipa Stainless,2inch,0.8,5.52,1,0,PER-M,0,1000000,0,1104000,Tanpa Cat,Menengah,5600000
-ORD-00345,6/29/2019,2019,Melati Yuliana,Bojong,Pintu Gerbang,Pipa Stainless,2inch,1.2,4.83,1,0,PER-M2,1150000,0,0,966000,Tanpa Cat,Menengah,5650000
+ORD-00345,6/29/2019,2019,Melati Yuliana,Bojong,Pintu Gerbang,Pipa Stainless,2inch,1.2,4.83,1,0,PER-M2,1200000,0,0,966000,Tanpa Cat,Menengah,5900000
 ORD-00346,7/9/2025,2025,Davi Marcellino,Slawi,Kanopi,Pipa Stainless,2inch,0.8,22.7,1,0,PER-M2,800000,0,0,4540000,Tanpa Cat,Menengah,18250000
 ORD-00347,4/15/2022,2022,Pak Samijan,Tarub,Railing,Hollow,4x4,1,10.75,3,0,PER-M,0,500000,0,3225000,Cat Dasar,Sederhana,16150000
 ORD-00348,7/14/2024,2024,Nur Hikmah,Lebaksiu,Railing,Pipa Stainless,2inch,0.8,7.77,1,0,PER-M,0,1100000,0,1554000,Tanpa Cat,Menengah,8650000
-ORD-00349,7/8/2022,2022,Putri Anjani,Dukuhturi,Pintu Handerson,Hollow Stainless,4x8,1,5.59,1,0,PER-M2,1610000,0,0,838500,Tanpa Cat,Menengah,9100000
-ORD-00350,2/27/2022,2022,Rudi Ismail,Tegal,Kanopi,Hollow Stainless,4x6,1.2,17.62,1,0,PER-M2,930000,0,0,2643000,Tanpa Cat,Menengah,16500000
+ORD-00349,7/8/2022,2022,Putri Anjani,Dukuhturi,Pintu Handerson,Hollow Stainless,4x8,1,5.5,1,0,PER-M2,1650000,0,0,825000,Tanpa Cat,Menengah,9200000
+ORD-00350,2/27/2022,2022,Rudi Ismail,Tegal,Kanopi,Hollow Stainless,4x6,1.2,17.6,1,0,PER-M2,900000,0,0,2640000,Tanpa Cat,Menengah,15950000
 ORD-00351,6/18/2019,2019,Maya Pritandari,Slawi,Pagar,Hollow Stainless,4x6,1.2,23,1,0,PER-M2,1150000,0,0,3450000,Tanpa Cat,Sederhana,26450000
 ORD-00352,10/4/2023,2023,Riyan Prakasa,Adiwerna,Pintu Handerson,Hollow,4x6,0.8,4.85,2,0,PER-M2,900000,0,0,970000,Cat Duco,Menengah,9000000
 ORD-00353,4/1/2022,2022,Deni Haryanto,Suradadi,Pintu Handerson,Hollow,4x4,1.2,3.76,1,0,PER-M2,900000,0,0,376000,Cat Biasa,Sederhana,3450000
-ORD-00354,5/21/2022,2022,Yunita Dewi Lestari,Slawi,Teralis,Hollow Stainless,1x3,1.2,0,1,6,PER-LUBANG,0,0,880000,900000,Tanpa Cat,Sederhana,5300000
+ORD-00354,5/21/2022,2022,Yunita Dewi Lestari,Slawi,Teralis,Hollow Stainless,1x3,1.2,0,1,6,PER-LUBANG,0,0,850000,900000,Tanpa Cat,Sederhana,5100000
 ORD-00355,10/7/2021,2021,Ahmad Sulthon,Jatinegara,Kanopi,Hollow,4x6,0.8,11.57,2,0,PER-M2,400000,0,0,2314000,Cat Duco,Sederhana,9400000
 ORD-00356,3/27/2019,2019,Bu Martina,Warureja,Pintu Handerson,Hollow,4x4,0.8,5.55,1,0,PER-M2,750000,0,0,555000,Cat Biasa,Sederhana,4200000
 ORD-00357,1/13/2024,2024,Mas Reza Abiyyu,Slawi,Teralis,Hollow Stainless,1x3,1.2,0,1,6,PER-LUBANG,0,0,900000,900000,Tanpa Cat,Sederhana,5400000
 ORD-00358,6/4/2021,2021,Anggun Widyarini,Kramat,Pagar,Hollow,4x6,0.8,16.12,1,0,PER-M2,550000,0,0,1612000,Cat Duco,Menengah,9100000
-ORD-00359,2/5/2023,2023,Fira Karunia Putri,Tegal,Pagar,Pipa Stainless,2inch,1,17.61,1,0,PER-M2,1090000,0,0,3522000,Tanpa Cat,Menengah,19300000
-ORD-00360,2/18/2019,2019,Budi Aryanto,Talang,Pintu Handerson,Hollow Stainless,4x8,1.2,3.11,2,0,PER-M2,1500000,0,0,933000,Tanpa Cat,Sederhana,9350000
+ORD-00359,2/5/2023,2023,Fira Karunia Putri,Tegal,Pagar,Pipa Stainless,2inch,1,17.61,1,0,PER-M2,1100000,0,0,3522000,Tanpa Cat,Menengah,19450000
+ORD-00360,2/18/2019,2019,Budi Aryanto,Talang,Pintu Handerson,Hollow Stainless,4x8,1.2,3.11,2,0,PER-M2,1550000,0,0,933000,Tanpa Cat,Sederhana,9650000
 ORD-00361,7/26/2025,2025,Siti Masruroh,Slawi,Teralis,Hollow Stainless,2x2,0.8,0,1,12,PER-LUBANG,0,0,800000,1800000,Tanpa Cat,Menengah,9700000
-ORD-00362,10/1/2021,2021,Pak Paino,Balapulang,Pintu Gerbang,Hollow,4x4,1,10.09,1,0,PER-M2,650000,0,0,1009000,Cat Biasa,Sederhana,6600000
-ORD-00363,12/17/2022,2022,Rendy Setia Putra,Pagerbarang,Pagar,Hollow Stainless,4x4,0.8,19.84,1,0,PER-M2,1130000,0,0,2976000,Tanpa Cat,Menengah,22500000
-ORD-00364,6/12/2024,2024,Lusia Yohana,Bojong,Pagar,Pipa Stainless,2inch,0.8,17.5,1,0,PER-M2,1060000,0,0,3500000,Tanpa Cat,Menengah,18650000
-ORD-00365,2/6/2020,2020,Zidan Pramudya,Margasari,Pagar,Pipa Stainless,2inch,0.8,15.77,1,0,PER-M2,980000,0,0,3154000,Tanpa Cat,Sederhana,15450000
+ORD-00362,10/1/2021,2021,Pak Paino,Balapulang,Pintu Gerbang,Hollow,4x4,1,10,1,0,PER-M2,650000,0,0,1000000,Cat Biasa,Sederhana,6550000
+ORD-00363,12/17/2022,2022,Rendy Setia Putra,Pagerbarang,Pagar,Hollow Stainless,4x4,0.8,19,1,0,PER-M2,1100000,0,0,2850000,Tanpa Cat,Menengah,21000000
+ORD-00364,6/12/2024,2024,Lusia Yohana,Bojong,Pagar,Pipa Stainless,2inch,0.8,17.5,1,0,PER-M2,1050000,0,0,3500000,Tanpa Cat,Menengah,18500000
+ORD-00365,2/6/2020,2020,Zidan Pramudya,Margasari,Pagar,Pipa Stainless,2inch,0.8,15.77,1,0,PER-M2,950000,0,0,3154000,Tanpa Cat,Sederhana,15000000
 ORD-00366,1/2/2025,2025,Andin Maharani,Slawi,Teralis,Hollow,1x3,1.2,0,1,7,PER-LUBANG,0,0,450000,525000,Cat Dasar,Sederhana,3150000
-ORD-00367,12/23/2020,2020,Denis Ramli,Tarub,Pintu Handerson,Pipa Stainless,2inch,0.8,4.17,2,0,PER-M2,1350000,0,0,1668000,Tanpa Cat,Menengah,11350000
-ORD-00368,6/4/2021,2021,Tiwi Ambarwati,Dukuhturi,Pagar,Pipa Stainless,2inch,0.8,16.41,1,0,PER-M2,1000000,0,0,3282000,Tanpa Cat,Sederhana,16400000
+ORD-00367,12/23/2020,2020,Denis Ramli,Tarub,Pintu Handerson,Pipa Stainless,2inch,0.8,4.17,2,0,PER-M2,1300000,0,0,1668000,Tanpa Cat,Menengah,10950000
+ORD-00368,6/4/2021,2021,Tiwi Ambarwati,Dukuhturi,Pagar,Pipa Stainless,2inch,0.8,16.41,1,0,PER-M2,950000,0,0,3282000,Tanpa Cat,Sederhana,15600000
 ORD-00369,12/18/2025,2025,Bagus Prayogo,Kramat,Teralis,Hollow Stainless,1x3,1.2,0,1,10,PER-LUBANG,0,0,900000,1500000,Tanpa Cat,Menengah,9100000
-ORD-00370,2/12/2024,2024,Lilis Purwaningsih,Slawi,Pintu Handerson,Pipa Stainless,2inch,1.2,5.12,2,0,PER-M2,1650000,0,0,2048000,Tanpa Cat,Kompleks,17050000
-ORD-00371,4/30/2019,2019,Rano Fathurrahman,Suradadi,Pintu Gerbang,Hollow,4x4,1,5.69,1,0,PER-M2,600000,0,0,569000,Cat Biasa,Menengah,3550000
+ORD-00370,2/12/2024,2024,Lilis Purwaningsih,Slawi,Pintu Handerson,Pipa Stainless,2inch,1.2,5.12,2,0,PER-M2,1600000,0,0,2048000,Tanpa Cat,Kompleks,16550000
+ORD-00371,4/30/2019,2019,Rano Fathurrahman,Suradadi,Pintu Gerbang,Hollow,4x4,1,5.69,1,0,PER-M2,650000,0,0,569000,Cat Biasa,Menengah,3850000
 ORD-00372,6/18/2021,2021,Maya Nur Azizah,Adiwerna,Pintu Gerbang,Hollow,4x4,1.2,11.93,1,0,PER-M2,700000,0,0,1193000,Cat Biasa,Sederhana,8400000
 ORD-00373,3/17/2022,2022,Satrio Nugraha,Jatinegara,Pintu Handerson,Hollow,4x8,0.8,2.83,1,0,PER-M2,900000,0,0,283000,Cat Biasa,Sederhana,2600000
 ORD-00374,4/18/2025,2025,Bu Jumiyem,Balapulang,Kanopi,Hollow,4x4,0.8,23.71,1,0,PER-M2,450000,0,0,2371000,Cat Duco,Sederhana,10800000
 ORD-00375,1/1/2023,2023,Fanny Yuliani,Slawi,Pintu Gerbang,Hollow,4x4,0.8,8.23,1,0,PER-M2,700000,0,0,823000,Cat Biasa,Menengah,5900000
-ORD-00376,8/23/2022,2022,Doni Saputro,Lebaksiu,Teralis,Hollow Stainless,1x3,1,0,1,8,PER-LUBANG,0,0,830000,1200000,Tanpa Cat,Sederhana,6650000
+ORD-00376,8/23/2022,2022,Doni Saputro,Lebaksiu,Teralis,Hollow Stainless,1x3,1,0,1,8,PER-LUBANG,0,0,800000,1200000,Tanpa Cat,Sederhana,6400000
 ORD-00377,8/24/2025,2025,Renny Wahyuni,Pagerbarang,Teralis,Hollow Stainless,1x3,1.2,0,1,17,PER-LUBANG,0,0,900000,2550000,Tanpa Cat,Menengah,15400000
 ORD-00378,1/9/2019,2019,Ahmad Rifqi,Tegal,Railing,Hollow,4x4,0.8,6.21,3,0,PER-M,0,400000,0,1863000,Cat Biasa,Sederhana,7500000
-ORD-00379,8/16/2025,2025,Nanda Putra Setiawan,Kramat,Kanopi,Hollow,4x6,1.2,23.12,1,0,PER-M2,600000,0,0,2312000,Cat Biasa,Sederhana,13900000
+ORD-00379,8/16/2025,2025,Nanda Putra Setiawan,Kramat,Kanopi,Hollow,4x6,1.2,23,1,0,PER-M2,600000,0,0,2300000,Cat Biasa,Sederhana,13850000
 ORD-00380,9/30/2024,2024,Gina Marlina,Slawi,Pintu Gerbang,Hollow,4x4,1,4.52,1,0,PER-M2,800000,0,0,452000,Cat Dasar,Sederhana,3600000
-ORD-00381,8/11/2019,2019,Ardiansah Fadhil,Margasari,Railing,Hollow,4x6,0.8,14.71,2,0,PER-M,0,450000,0,2942000,Cat Dasar,Menengah,13350000
+ORD-00381,8/11/2019,2019,Ardiansah Fadhil,Margasari,Railing,Hollow,4x6,0.8,14,2,0,PER-M,0,450000,0,2800000,Cat Dasar,Menengah,12700000
 ORD-00382,8/30/2025,2025,Pak Kurniadi,Bojong,Pagar,Pipa Stainless,2inch,1.2,28.43,1,0,PER-M2,1200000,0,0,5686000,Tanpa Cat,Menengah,34200000
 ORD-00383,5/8/2023,2023,Lala Kurniasari,Tegal,Railing,Pipa Stainless,2inch,1,10.64,1,0,PER-M,0,1100000,0,2128000,Tanpa Cat,Sederhana,11700000
-ORD-00384,3/13/2024,2024,Rizka Ayu Pramesti,Tarub,Pintu Handerson,Pipa Stainless,1.5inch,1.2,4.28,2,0,PER-M2,1550000,0,0,1712000,Tanpa Cat,Menengah,13350000
+ORD-00384,3/13/2024,2024,Rizka Ayu Pramesti,Tarub,Pintu Handerson,Pipa Stainless,1.5inch,1.2,4.28,2,0,PER-M2,1500000,0,0,1712000,Tanpa Cat,Menengah,12950000
 ORD-00385,2/21/2019,2019,Rendi Agustian,Slawi,Pintu Handerson,Pipa Stainless,2inch,1,4.1,1,0,PER-M2,1350000,0,0,820000,Tanpa Cat,Sederhana,5550000
 ORD-00386,1/17/2022,2022,Elsa Maharani,Dukuhturi,Pintu Gerbang,Hollow,2inch,0.8,4.92,1,0,PER-M2,750000,0,0,492000,Cat Biasa,Menengah,3850000
-ORD-00387,4/10/2023,2023,Taufik Ramadhan,Adiwerna,Teralis,Pipa Stainless,1x3,1,0,1,16,PER-LUBANG,0,0,730000,2400000,Tanpa Cat,Menengah,11800000
-ORD-00388,2/2/2022,2022,Bu Suminem,Balapulang,Pagar,Hollow Stainless,4x8,1.2,10,1,0,PER-M2,1330000,0,0,1500000,Tanpa Cat,Menengah,13400000
-ORD-00389,7/2/2020,2020,Ria Puspitasari,Slawi,Pagar,Pipa Stainless,2inch,0.8,23.19,1,0,PER-M2,980000,0,0,4638000,Tanpa Cat,Sederhana,22750000
+ORD-00387,4/10/2023,2023,Taufik Ramadhan,Adiwerna,Teralis,Pipa Stainless,1x3,1,0,1,16,PER-LUBANG,0,0,700000,2400000,Tanpa Cat,Menengah,11300000
+ORD-00388,2/2/2022,2022,Bu Suminem,Balapulang,Pagar,Hollow Stainless,4x8,1.2,10,1,0,PER-M2,1300000,0,0,1500000,Tanpa Cat,Menengah,13100000
+ORD-00389,7/2/2020,2020,Ria Puspitasari,Slawi,Pagar,Pipa Stainless,2inch,0.8,23.19,1,0,PER-M2,950000,0,0,4638000,Tanpa Cat,Sederhana,22050000
 ORD-00390,10/2/2024,2024,Aditya Nugroho,Margasari,Teralis,Hollow,1x3,1,0,1,28,PER-LUBANG,0,0,400000,2100000,Cat Dasar,Kompleks,11350000
 ORD-00391,7/24/2024,2024,Donny Fitrah,Talang,Pintu Gerbang,Hollow,4x4,0.8,14.54,1,0,PER-M2,750000,0,0,1454000,Cat Duco,Menengah,11150000
 ORD-00392,7/11/2024,2024,Wulan Ayu Lestari,Slawi,Teralis,Hollow,1x3,1.2,0,1,13,PER-LUBANG,0,0,450000,975000,Cat Dasar,Menengah,5950000
 ORD-00393,1/30/2023,2023,Aldi Rizqullah,Suradadi,Pintu Handerson,Hollow,4x4,1,19.23,1,0,PER-M2,900000,0,0,1923000,Cat Biasa,Menengah,17450000
 ORD-00394,2/5/2025,2025,Riko Pratama,Bojong,Railing,Hollow,4x4,1,2,2,0,PER-M,0,550000,0,400000,Tanpa Cat,Kompleks,2350000
-ORD-00395,11/23/2023,2023,Febrina Sari,Lebaksiu,Pagar,Hollow Stainless,4x8,0.8,22,1,8,PER-M2,1250000,0,0,3300000,Tanpa Cat,Sederhana,27500000
-ORD-00396,10/26/2020,2020,Pak Margo Wiyono,Pagerbarang,Pintu Gerbang,Hollow Stainless,4x4,1.2,26.23,1,0,PER-M2,1250000,0,0,3934500,Tanpa Cat,Menengah,32900000
+ORD-00395,11/23/2023,2023,Febrina Sari,Lebaksiu,Pagar,Hollow Stainless,4x8,0.8,22,1,8,PER-M2,1200000,0,0,3300000,Tanpa Cat,Sederhana,26400000
+ORD-00396,10/26/2020,2020,Pak Margo Wiyono,Pagerbarang,Pintu Gerbang,Hollow Stainless,4x4,1.2,26,1,0,PER-M2,1300000,0,0,3900000,Tanpa Cat,Menengah,33900000
 ORD-00397,4/14/2019,2019,Riska Nurlela,Slawi,Pintu Handerson,Hollow,4x8,0.8,13.14,1,0,PER-M2,850000,0,0,1314000,Tanpa Cat,Sederhana,11150000
-ORD-00398,8/12/2019,2019,Guntur Wibisono,Tegal,Pintu Gerbang,Hollow Stainless,4x8,1.2,12.39,1,0,PER-M2,1300000,0,0,1858500,Tanpa Cat,Sederhana,16100000
-ORD-00399,1/17/2020,2020,Rani Oktavia,Adiwerna,Railing,Hollow Stainless,4x6,1.2,22.96,1,0,PER-M,0,1200000,0,3444000,Tanpa Cat,Menengah,27650000
-ORD-00400,11/11/2025,2025,Dede Prasetyo,Slawi,Railing,Hollow,4x6,1.2,5.56,1,0,PER-M,0,650000,0,556000,Cat Duco,Menengah,3850000
-ORD-00401,2/3/2022,2022,Siti Kurniati,Tarub,Teralis,Pipa Stainless,1x4,1.2,0,1,14,PER-LUBANG,0,0,760000,2100000,Cat Biasa,Menengah,10800000
+ORD-00398,8/12/2019,2019,Guntur Wibisono,Tegal,Pintu Gerbang,Hollow Stainless,4x8,1.2,12.39,1,0,PER-M2,1400000,0,0,1858500,Tanpa Cat,Sederhana,17350000
+ORD-00399,1/17/2020,2020,Rani Oktavia,Adiwerna,Railing,Hollow Stainless,4x6,1.2,22.96,1,0,PER-M,0,1150000,0,3444000,Tanpa Cat,Menengah,26500000
+ORD-00400,11/11/2025,2025,Dede Prasetyo,Slawi,Railing,Hollow,4x6,1.2,5.56,2,0,PER-M,0,650000,0,1112000,Cat Duco,Menengah,7500000
+ORD-00401,2/3/2022,2022,Siti Kurniati,Tarub,Teralis,Pipa Stainless,1x4,1.2,0,1,14,PER-LUBANG,0,0,750000,2100000,Cat Biasa,Menengah,10650000
 ORD-00402,1/3/2020,2020,Adi Suwito,Slawi,Pagar,Hollow,4x7,1.2,5.8,1,0,PER-M2,600000,0,0,580000,Cat Biasa,Menengah,3650000
 ORD-00403,3/30/2020,2020,Rino Pradipta,Margasari,Teralis,Hollow Stainless,2x3,1,0,1,10,PER-LUBANG,0,0,750000,1500000,Cat Biasa,Menengah,7650000
-ORD-00404,11/23/2024,2024,Bu Sarmiyati,Bojong,Pintu Gerbang,Hollow Stainless,4x9,1.2,4.85,1,0,PER-M2,1520000,0,0,727500,Cat Dasar,Menengah,7450000
+ORD-00404,11/23/2024,2024,Bu Sarmiyati,Bojong,Pintu Gerbang,Hollow Stainless,4x9,1.2,4.85,1,0,PER-M2,1600000,0,0,727500,Cat Dasar,Menengah,7850000
 ORD-00405,8/14/2024,2024,Indra Wahyudi,Tegal,Kanopi,Pipa Stainless,1.5inch,0.8,19.22,1,0,PER-M2,700000,0,0,3844000,Tanpa Cat,Menengah,13550000
 ORD-00406,6/17/2023,2023,Dita Amelia Putri,Lebaksiu,Teralis,Hollow,1x4,1.2,0,2,12,PER-LUBANG,0,0,450000,1800000,Cat Dasar,Menengah,10900000
 ORD-00407,10/6/2020,2020,Bagas Wibowo,Suradadi,Kanopi,Hollow Stainless,4x6,0.8,9.76,1,0,PER-M2,750000,0,0,1464000,Tanpa Cat,Sederhana,7300000
-ORD-00408,2/18/2022,2022,Meli Anjani,Slawi,Railing,Hollow Stainless,4x6,1.2,14.35,1,0,PER-M,0,1270000,0,2152500,Cat Biasa,Sederhana,18250000
+ORD-00408,2/18/2022,2022,Meli Anjani,Slawi,Railing,Hollow Stainless,4x6,1.2,14.35,1,0,PER-M,0,1250000,0,2152500,Cat Biasa,Sederhana,18000000
 ORD-00409,12/18/2020,2020,Mas Danu Prasetya,Adiwerna,Teralis,Hollow,2x3,0.8,0,2,4,PER-LUBANG,0,0,300000,600000,Cat Biasa,Sederhana,2450000
-ORD-00410,6/5/2021,2021,Rahman Fathur,Talang,Teralis,Pipa Stainless,1x4,1.2,0,2,8,PER-LUBANG,0,0,740000,2400000,Cat Biasa,Sederhana,11900000
+ORD-00410,6/5/2021,2021,Rahman Fathur,Talang,Teralis,Pipa Stainless,1x4,1.2,0,2,8,PER-LUBANG,0,0,750000,2400000,Cat Biasa,Sederhana,12050000
 ORD-00411,7/6/2022,2022,Arini Yuliana,Kramat,Teralis,Hollow,2x5,0.8,3.17,2,14,PER-LUBANG,0,0,300000,2100000,Tanpa Cat,Menengah,8500000
-ORD-00412,5/21/2020,2020,Pak Rudi Sopandi,Warureja,Kanopi,Pipa Stainless,1.5inch,0.8,24.61,1,0,PER-M2,630000,0,0,4922000,Tanpa Cat,Kompleks,15650000
-ORD-00413,3/8/2023,2023,Sari Maharani,Slawi,Pintu Gerbang,Hollow Stainless,4x7,1.2,26.01,1,0,PER-M2,1400000,0,0,3901500,Tanpa Cat,Menengah,36500000
-ORD-00414,9/11/2021,2021,Andi Permadi,Balapulang,Railing,Pipa Stainless,2inch,1.2,5.1,1,0,PER-M,0,1100000,0,1020000,Tanpa Cat,Sederhana,5600000
+ORD-00412,5/21/2020,2020,Pak Rudi Sopandi,Warureja,Kanopi,Pipa Stainless,1.5inch,0.8,24.61,1,0,PER-M2,600000,0,0,4922000,Tanpa Cat,Kompleks,14900000
+ORD-00413,3/8/2023,2023,Sari Maharani,Slawi,Pintu Gerbang,Hollow Stainless,4x7,1.2,26,1,0,PER-M2,1400000,0,0,3900000,Tanpa Cat,Menengah,36500000
+ORD-00414,9/11/2021,2021,Andi Permadi,Balapulang,Railing,Pipa Stainless,2inch,1.2,5.2,1,0,PER-M,0,1100000,0,1040000,Tanpa Cat,Sederhana,5700000
 ORD-00415,4/26/2022,2022,Tuti Karomah,Dukuhturi,Kanopi,Hollow,4x4,1.2,3.13,1,0,PER-M2,450000,0,0,313000,Tanpa Cat,Menengah,1500000
-ORD-00416,8/22/2022,2022,Seno Widodo,Tegal,Pagar,Hollow Stainless,4x6,1.2,12.21,1,0,PER-M2,1280000,0,0,1831500,Tanpa Cat,Sederhana,15650000
+ORD-00416,8/22/2022,2022,Seno Widodo,Tegal,Pagar,Hollow Stainless,4x6,1.2,12,1,0,PER-M2,1250000,0,0,1800000,Tanpa Cat,Sederhana,15000000
 ORD-00417,7/12/2023,2023,Bu Nami Sulastri,Suradadi,Pintu Gerbang,Hollow,4x6,0.8,7.7,1,0,PER-M2,750000,0,0,770000,Cat Biasa,Menengah,5950000
 ORD-00418,8/22/2021,2021,Hanif Abdillah,Jatinegara,Railing,Pipa Stainless,2inch,1.2,4.85,2,0,PER-M,0,1100000,0,1940000,Tanpa Cat,Menengah,10750000
-ORD-00419,4/12/2021,2021,Putra Aprilio,Slawi,Railing,Hollow,4x6,0.8,2.67,3,0,PER-M,0,500000,0,801000,Cat Dasar,Menengah,4100000
-ORD-00420,7/31/2024,2024,Zakia Nurfitri,Lebaksiu,Railing,Pipa Stainless,2inch,1.2,7.79,3,0,PER-M,0,1200000,0,4674000,Tanpa Cat,Sederhana,28050000
+ORD-00419,4/12/2021,2021,Putra Aprilio,Slawi,Railing,Hollow,4x6,0.8,2.67,2,0,PER-M,0,500000,0,534000,Cat Dasar,Menengah,2750000
+ORD-00420,7/31/2024,2024,Zakia Nurfitri,Lebaksiu,Railing,Pipa Stainless,2inch,1.2,7.6,3,0,PER-M,0,1200000,0,4560000,Tanpa Cat,Sederhana,27350000
 ORD-00421,7/19/2020,2020,Fikri Husaini,Tarub,Pintu Gerbang,Hollow,4x6,1.2,6.89,1,0,PER-M2,750000,0,0,689000,Cat Biasa,Menengah,5300000
 ORD-00422,8/18/2019,2019,Laily Zahrani,Slawi,Teralis,Pipa Stainless,1x3,1,0,1,27,PER-LUBANG,0,0,650000,4050000,Tanpa Cat,Kompleks,17700000
 ORD-00423,2/1/2023,2023,Mirna Deviana,Adiwerna,Pintu Handerson,Hollow,4x4,1.2,3.85,1,0,PER-M2,950000,0,0,385000,Cat Biasa,Menengah,3800000
 ORD-00424,2/9/2019,2019,Pak Sugondo,Margasari,Pintu Handerson,Hollow,4x6,1.2,5.13,1,0,PER-M2,900000,0,0,513000,Cat Dasar,Menengah,4700000
-ORD-00425,10/9/2021,2021,Dian Riskiana,Bojong,Pintu Gerbang,Hollow,4x8,1,7.54,1,0,PER-M2,750000,0,0,754000,Cat Biasa,Sederhana,5700000
-ORD-00426,8/7/2020,2020,Rafiansyah Putra,Tegal,Teralis,Pipa Stainless,1x3,0.8,0,1,6,PER-LUBANG,0,0,620000,900000,Tanpa Cat,Sederhana,3700000
+ORD-00425,10/9/2021,2021,Dian Riskiana,Bojong,Pintu Gerbang,Hollow,4x8,1,7,1,0,PER-M2,750000,0,0,700000,Cat Biasa,Sederhana,5300000
+ORD-00426,8/7/2020,2020,Rafiansyah Putra,Tegal,Teralis,Pipa Stainless,1x3,0.8,0,1,6,PER-LUBANG,0,0,600000,900000,Tanpa Cat,Sederhana,3600000
 ORD-00427,3/16/2022,2022,Lely Kristiyani,Slawi,Railing,Hollow,4x4,0.8,2.52,1,0,PER-M,0,450000,0,252000,Cat Biasa,Sederhana,1200000
-ORD-00428,8/20/2024,2024,Hendra Wiratmoko,Talang,Pintu Gerbang,Hollow,4x6,1,13.18,1,0,PER-M2,850000,0,0,1318000,Cat Biasa,Sederhana,11250000
+ORD-00428,8/20/2024,2024,Hendra Wiratmoko,Talang,Pintu Gerbang,Hollow,4x6,1,13,1,0,PER-M2,850000,0,0,1300000,Cat Biasa,Sederhana,11100000
 ORD-00429,10/18/2025,2025,Bu Sukirah,Pagerbarang,Teralis,Pipa Stainless,1x3,1.2,0,1,10,PER-LUBANG,0,0,800000,1500000,Tanpa Cat,Menengah,8100000
-ORD-00430,8/25/2020,2020,Anggi Rahayu Sari,Slawi,Pintu Handerson,Pipa Stainless,2inch,0.8,3.96,1,0,PER-M2,1350000,0,0,792000,Tanpa Cat,Sederhana,5350000
+ORD-00430,8/25/2020,2020,Anggi Rahayu Sari,Slawi,Pintu Handerson,Pipa Stainless,2inch,0.8,3.96,1,0,PER-M2,1300000,0,0,792000,Tanpa Cat,Sederhana,5150000
 ORD-00431,3/1/2025,2025,Rizki Ananda,Kramat,Teralis,Hollow,1x3,1.2,0,1,8,PER-LUBANG,0,0,450000,600000,Cat Biasa,Sederhana,3650000
 ORD-00432,12/14/2022,2022,Budi Santoro,Suradadi,Pintu Handerson,Hollow,4x4,1,2.98,1,0,PER-M2,850000,0,0,298000,Cat Biasa,Sederhana,2600000
-ORD-00433,11/24/2020,2020,Melinda Ayu,Balapulang,Kanopi,Hollow,4x4,0.8,23.64,2,0,PER-M2,350000,0,0,4728000,Cat Duco,Menengah,16800000
-ORD-00434,6/2/2022,2022,Aldi Firmansyah,Jatinegara,Pintu Handerson,Hollow,4x8,1.2,4.94,1,0,PER-M2,1000000,0,0,494000,Cat Dasar,Sederhana,4950000
-ORD-00435,5/4/2021,2021,Bu Poniyem,Bojong,Kanopi,Pipa Stainless,2inch,1,14.01,2,0,PER-M2,810000,0,0,5604000,Tanpa Cat,Sederhana,22700000
+ORD-00433,11/24/2020,2020,Melinda Ayu,Balapulang,Kanopi,Hollow,4x4,0.8,22,2,0,PER-M2,350000,0,0,4400000,Cat Duco,Menengah,15650000
+ORD-00434,6/2/2022,2022,Aldi Firmansyah,Jatinegara,Pintu Handerson,Hollow,4x8,1.2,4.4,1,0,PER-M2,1000000,0,0,440000,Cat Dasar,Sederhana,4400000
+ORD-00435,5/4/2021,2021,Bu Poniyem,Bojong,Kanopi,Pipa Stainless,2inch,1,14,2,0,PER-M2,750000,0,0,5600000,Tanpa Cat,Sederhana,21000000
 ORD-00436,6/12/2020,2020,Wawan Ardiansyah,Tegal,Kanopi,Hollow,4x6,1.2,12.6,1,0,PER-M2,500000,0,0,1260000,Cat Biasa,Sederhana,6350000
-ORD-00437,5/10/2021,2021,Cindy Oktavia,Slawi,Pintu Gerbang,Pipa Stainless,1.5inch,1.2,4.78,1,0,PER-M2,1150000,0,0,956000,Tanpa Cat,Sederhana,5500000
+ORD-00437,5/10/2021,2021,Cindy Oktavia,Slawi,Pintu Gerbang,Pipa Stainless,1.5inch,1.2,4.78,1,0,PER-M2,1100000,0,0,956000,Tanpa Cat,Sederhana,5250000
 ORD-00438,9/1/2019,2019,Pak Kasturi,Tarub,Pagar,Hollow,4x6,1.2,14.28,1,0,PER-M2,650000,0,0,1428000,Cat Duco,Menengah,9550000
-ORD-00439,11/1/2023,2023,Rian Fajar Nugraha,Margasari,Pintu Gerbang,Pipa Stainless,2inch,0.8,11.87,1,0,PER-M2,1250000,0,0,2374000,Tanpa Cat,Menengah,14950000
+ORD-00439,11/1/2023,2023,Rian Fajar Nugraha,Margasari,Pintu Gerbang,Pipa Stainless,2inch,0.8,11.87,1,0,PER-M2,1200000,0,0,2374000,Tanpa Cat,Menengah,14350000
 ORD-00440,1/7/2022,2022,Sella Maharani,Adiwerna,Pintu Handerson,Pipa Stainless,2inch,0.8,2.3,1,0,PER-M2,1450000,0,0,460000,Tanpa Cat,Sederhana,3350000
-ORD-00441,10/5/2021,2021,Givari Ramadhan,Tegal,Pagar,Pipa Stainless,1.5inch,1,16.28,1,0,PER-M2,950000,0,0,3256000,Tanpa Cat,Sederhana,15450000
+ORD-00441,10/5/2021,2021,Givari Ramadhan,Tegal,Pagar,Pipa Stainless,1.5inch,1,16.28,1,0,PER-M2,900000,0,0,3256000,Tanpa Cat,Sederhana,14650000
 ORD-00442,8/10/2025,2025,Nurul Istiqomah,Lebaksiu,Pintu Handerson,Hollow,4x6,1,4.37,2,0,PER-M2,1000000,0,0,874000,Cat Dasar,Sederhana,8750000
-ORD-00443,12/16/2021,2021,Pak Wito Slamet,Suradadi,Kanopi,Hollow,4x6,1,20.06,1,0,PER-M2,450000,0,0,2006000,Cat Biasa,Sederhana,9100000
-ORD-00444,7/23/2022,2022,Fikri Julian,Talang,Pintu Gerbang,Hollow,4x4,0.8,12.17,1,0,PER-M2,650000,0,0,1217000,Cat Biasa,Sederhana,7950000
-ORD-00445,12/26/2024,2024,Sinta Marlina,Slawi,Pagar,Pipa Stainless,2inch,1.2,14.44,1,0,PER-M2,1160000,0,0,2888000,Tanpa Cat,Sederhana,16750000
+ORD-00443,12/16/2021,2021,Pak Wito Slamet,Suradadi,Kanopi,Hollow,4x6,1,20,1,0,PER-M2,450000,0,0,2000000,Cat Biasa,Sederhana,9050000
+ORD-00444,7/23/2022,2022,Fikri Julian,Talang,Pintu Gerbang,Hollow,4x4,0.8,12,1,0,PER-M2,650000,0,0,1200000,Cat Biasa,Sederhana,7850000
+ORD-00445,12/26/2024,2024,Sinta Marlina,Slawi,Pagar,Pipa Stainless,2inch,1.2,14.44,1,0,PER-M2,1150000,0,0,2888000,Tanpa Cat,Sederhana,16600000
 ORD-00446,12/5/2023,2023,Randi Prasetyo,Kramat,Kanopi,Hollow,4x8,1,12.26,1,0,PER-M2,570000,0,0,1226000,Cat Biasa,Kompleks,7200000
-ORD-00447,12/9/2022,2022,Dina Rakhmawati,Tegal,Pagar,Hollow,4x8,0.8,11.46,1,0,PER-M2,630000,0,0,1146000,Cat Dasar,Sederhana,7200000
+ORD-00447,12/9/2022,2022,Dina Rakhmawati,Tegal,Pagar,Hollow,4x8,0.8,28,1,0,PER-M2,650000,0,0,2800000,Cat Dasar,Sederhana,18200000
 ORD-00448,2/19/2020,2020,Bu Sukarni,Bojong,Teralis,Hollow Stainless,1x3,1.2,0,1,17,PER-LUBANG,0,0,800000,2550000,Tanpa Cat,Menengah,13700000
 ORD-00449,3/26/2025,2025,Andhika Prayoga,Balapulang,Pintu Handerson,Hollow,4x6,1.2,4.92,2,0,PER-M2,1050000,0,0,984000,Cat Biasa,Kompleks,10550000
-ORD-00450,2/8/2023,2023,Lusi Kumalasari,Pagerbarang,Kanopi,Pipa Stainless,2inch,1,11.04,2,0,PER-M2,850000,0,0,4416000,Tanpa Cat,Menengah,18850000
-ORD-00451,2/9/2022,2022,Kevin Nurhadi,Slawi,Pagar,Hollow,4x6,1,18.57,1,0,PER-M2,630000,0,0,1857000,Cat Dasar,Kompleks,11850000
-ORD-00452,1/8/2022,2022,Anggun Intan Pertiwi,Adiwerna,Teralis,Hollow Stainless,2x2,1,0,1,11,PER-LUBANG,0,0,830000,1650000,Cat Duco,Sederhana,9300000
-ORD-00453,12/26/2021,2021,Mas Rezki Wahyu,Dukuhturi,Pagar,Hollow,4x4,1,27.79,1,0,PER-M2,550000,0,0,2779000,Cat Duco,Sederhana,15450000
+ORD-00450,2/8/2023,2023,Lusi Kumalasari,Pagerbarang,Kanopi,Pipa Stainless,2inch,1,11,2,0,PER-M2,850000,0,0,4400000,Tanpa Cat,Menengah,18800000
+ORD-00451,2/9/2022,2022,Kevin Nurhadi,Slawi,Pagar,Hollow,4x6,1,19,1,0,PER-M2,650000,0,0,1900000,Cat Dasar,Kompleks,12500000
+ORD-00452,1/8/2022,2022,Anggun Intan Pertiwi,Adiwerna,Teralis,Hollow Stainless,2x2,1,0,1,11,PER-LUBANG,0,0,800000,1650000,Cat Duco,Sederhana,8950000
+ORD-00453,12/26/2021,2021,Mas Rezki Wahyu,Dukuhturi,Pagar,Hollow,4x4,1,27.2,1,0,PER-M2,550000,0,0,2720000,Cat Duco,Sederhana,15100000
 ORD-00454,11/12/2019,2019,Taufan Kurniawan,Tegal,Kanopi,Pipa Stainless,2inch,1,6.12,1,0,PER-M2,750000,0,0,1224000,Tanpa Cat,Sederhana,4600000
-ORD-00455,10/31/2022,2022,Melati Anggraini,Slawi,Pintu Handerson,Hollow Stainless,4x4,0.8,5.43,1,0,PER-M2,1460000,0,0,814500,Tanpa Cat,Menengah,8050000
-ORD-00456,4/1/2023,2023,Ramdani Prakasa,Talang,Pintu Gerbang,Hollow,4x8,1.2,12.14,1,0,PER-M2,900000,0,0,1214000,Cat Biasa,Menengah,11100000
-ORD-00457,8/23/2022,2022,Pak Suroso Handoyo,Tarub,Pintu Gerbang,Hollow,4x8,1.2,11.1,1,0,PER-M2,850000,0,0,1110000,Cat Duco,Sederhana,9600000
-ORD-00458,3/2/2023,2023,Endang Sulistyawati,Lebaksiu,Pintu Gerbang,Pipa Stainless,2inch,1.2,8.48,1,0,PER-M2,1350000,0,0,1696000,Tanpa Cat,Kompleks,11600000
+ORD-00455,10/31/2022,2022,Melati Anggraini,Slawi,Pintu Handerson,Hollow Stainless,4x4,0.8,5.43,1,0,PER-M2,1500000,0,0,814500,Tanpa Cat,Menengah,8250000
+ORD-00456,4/1/2023,2023,Ramdani Prakasa,Talang,Pintu Gerbang,Hollow,4x8,1.2,12.5,1,0,PER-M2,900000,0,0,1250000,Cat Biasa,Menengah,11400000
+ORD-00457,8/23/2022,2022,Pak Suroso Handoyo,Tarub,Pintu Gerbang,Hollow,4x8,1.2,11,1,0,PER-M2,850000,0,0,1100000,Cat Duco,Sederhana,9500000
+ORD-00458,3/2/2023,2023,Endang Sulistyawati,Lebaksiu,Pintu Gerbang,Pipa Stainless,2inch,1.2,8.48,1,0,PER-M2,1300000,0,0,1696000,Tanpa Cat,Kompleks,11150000
 ORD-00459,1/21/2019,2019,Wira Saputro,Slawi,Pagar,Pipa Stainless,2inch,0.8,21.73,1,0,PER-M2,950000,0,0,4346000,Tanpa Cat,Sederhana,20650000
-ORD-00460,12/27/2023,2023,Hani Amelia,Margasari,Pagar,Hollow,4x4,1.2,28.87,1,0,PER-M2,650000,0,0,2887000,Cat Biasa,Menengah,18900000
+ORD-00460,12/27/2023,2023,Hani Amelia,Margasari,Pagar,Hollow,4x4,1.2,30,1,0,PER-M2,650000,0,0,3000000,Cat Biasa,Menengah,19650000
 ORD-00461,11/15/2023,2023,Irsyad Fathan,Suradadi,Kanopi,Hollow,4x6,0.8,7.81,2,0,PER-M2,470000,0,0,1562000,Cat Dasar,Menengah,7450000
 ORD-00462,6/6/2024,2024,Novia Delima,Bojong,Teralis,Hollow,1x3,1.2,0,1,19,PER-LUBANG,0,0,450000,1425000,Cat Biasa,Sederhana,8600000
 ORD-00463,5/11/2021,2021,Roni Saputra,Tegal,Pagar,Hollow,4x6,1.2,9.49,1,0,PER-M2,650000,0,0,949000,Cat Duco,Menengah,6400000
-ORD-00464,4/19/2022,2022,Rida Nurhidayati,Slawi,Teralis,Hollow Stainless,4x4,0.8,0,1,8,PER-LUBANG,0,0,780000,1200000,Tanpa Cat,Sederhana,6250000
+ORD-00464,4/19/2022,2022,Rida Nurhidayati,Slawi,Teralis,Hollow Stainless,4x4,0.8,0,1,8,PER-LUBANG,0,0,750000,1200000,Tanpa Cat,Sederhana,6000000
 ORD-00465,6/16/2025,2025,Bayu Maheswara,Adiwerna,Teralis,Pipa Stainless,1x3,1.2,0,1,17,PER-LUBANG,0,0,800000,2550000,Tanpa Cat,Menengah,13700000
-ORD-00466,7/21/2024,2024,Pak Raskamto,Balapulang,Pagar,Hollow,4x6,1.2,15.49,1,0,PER-M2,700000,0,0,1549000,Cat Biasa,Sederhana,10900000
+ORD-00466,7/21/2024,2024,Pak Raskamto,Balapulang,Pagar,Hollow,4x6,1.2,15.49,1,0,PER-M2,750000,0,0,1549000,Cat Biasa,Sederhana,11650000
 ORD-00467,12/26/2024,2024,Leni Masruroh,Dukuhturi,Teralis,Hollow,4x4,0.8,0,1,17,PER-LUBANG,0,0,350000,1275000,Cat Biasa,Menengah,6100000
-ORD-00468,8/10/2021,2021,Arfan Nurdiansyah,Slawi,Pagar,Pipa Stainless,2inch,0.8,10.27,1,0,PER-M2,1000000,0,0,2054000,Tanpa Cat,Sederhana,10250000
+ORD-00468,8/10/2021,2021,Arfan Nurdiansyah,Slawi,Pagar,Pipa Stainless,2inch,0.8,10.27,1,0,PER-M2,950000,0,0,2054000,Tanpa Cat,Sederhana,9750000
 ORD-00469,10/11/2025,2025,Bagus Wira Pranata,Talang,Pintu Handerson,Hollow,4x4,1.2,5.67,2,0,PER-M2,1000000,0,0,1134000,Cat Dasar,Sederhana,11350000
-ORD-00470,4/2/2022,2022,Siti Rahayu,Lebaksiu,Pintu Handerson,Hollow,4x4,1,5.15,2,0,PER-M2,850000,0,0,1030000,Cat Biasa,Sederhana,8800000
+ORD-00470,4/2/2022,2022,Siti Rahayu,Lebaksiu,Pintu Handerson,Hollow,4x4,1,5,2,0,PER-M2,850000,0,0,1000000,Cat Biasa,Sederhana,8550000
 ORD-00471,8/13/2019,2019,Wisnu Prayitno,Suradadi,Kanopi,Hollow,4x4,0.8,9.01,2,0,PER-M2,350000,0,0,1802000,Cat Biasa,Sederhana,6350000
-ORD-00472,3/26/2021,2021,Dian Nurfadilah,Tarub,Pintu Gerbang,Pipa Stainless,1.5inch,0.8,8.11,1,0,PER-M2,1050000,0,0,1622000,Tanpa Cat,Sederhana,8500000
-ORD-00473,8/31/2024,2024,Dedy Apriana,Slawi,Pintu Handerson,Pipa Stainless,2inch,0.8,3.66,2,0,PER-M2,1550000,0,0,1464000,Tanpa Cat,Sederhana,11350000
+ORD-00472,3/26/2021,2021,Dian Nurfadilah,Tarub,Pintu Gerbang,Pipa Stainless,1.5inch,0.8,8,1,0,PER-M2,1000000,0,0,1600000,Tanpa Cat,Sederhana,8000000
+ORD-00473,8/31/2024,2024,Dedy Apriana,Slawi,Pintu Handerson,Pipa Stainless,2inch,0.8,3.66,2,0,PER-M2,1500000,0,0,1464000,Tanpa Cat,Sederhana,11000000
 ORD-00474,6/17/2023,2023,Putra Yulianto,Margasari,Railing,Hollow,4x4,1,14.41,1,0,PER-M,0,550000,0,1441000,Cat Dasar,Menengah,8050000
 ORD-00475,10/12/2024,2024,Zahra Afifah,Tegal,Kanopi,Hollow,4x8,1,12.26,1,0,PER-M2,600000,0,0,1226000,Cat Dasar,Menengah,7450000
-ORD-00476,9/26/2020,2020,Fadli Nurjaman,Bojong,Teralis,Pipa Stainless,1x3,1.2,0,1,6,PER-LUBANG,0,0,720000,900000,Tanpa Cat,Sederhana,4300000
+ORD-00476,9/26/2020,2020,Fadli Nurjaman,Bojong,Teralis,Pipa Stainless,1x3,1.2,0,1,6,PER-LUBANG,0,0,700000,900000,Tanpa Cat,Sederhana,4200000
 ORD-00477,11/5/2023,2023,Pak Tukiman,Talang,Pintu Handerson,Hollow Stainless,4x4,0.8,3.92,2,0,PER-M2,1500000,0,0,1176000,Tanpa Cat,Menengah,11850000
-ORD-00478,12/21/2019,2019,Pak Warno,Margasari,Kanopi,Hollow Stainless,4x4,0.8,16.05,1,0,PER-M2,650000,0,0,2407500,Tanpa Cat,Kompleks,10600000
+ORD-00478,12/21/2019,2019,Pak Warno,Margasari,Kanopi,Hollow Stainless,4x4,0.8,16,1,0,PER-M2,700000,0,0,2400000,Tanpa Cat,Kompleks,11350000
 ORD-00479,7/9/2020,2020,SMPN 2 Bojong,Danasari,Pintu Gerbang,Pipa Stainless,2inch,0.8,12.6,1,0,PER-M2,1100000,0,0,2520000,Tanpa Cat,Sederhana,13850000
 ORD-00480,7/18/2022,2022,Kantor Desa Lengkong,Lengkong,Pintu Gerbang,Hollow,4x4,1,13.55,1,0,PER-M2,700000,0,0,1355000,Cat Dasar,Menengah,9600000
 ORD-00481,12/28/2019,2019,PT Karya Sentosa,Slawi,Railing,Hollow,4x4,1.2,10.72,1,0,PER-M,0,500000,0,1072000,Cat Biasa,Kompleks,5550000
 ORD-00482,11/19/2021,2021,Pak Jarwo,Talang,Pintu Handerson,Hollow,4x6,1.2,3.45,1,0,PER-M2,950000,0,0,345000,Cat Duco,Kompleks,3600000
-ORD-00483,3/4/2022,2022,Bu Wati,Lengkong,Pagar,Pipa Stainless,2inch,0.8,13.04,1,0,PER-M2,1020000,0,0,2608000,Tanpa Cat,Sederhana,13300000
+ORD-00483,3/4/2022,2022,Bu Wati,Lengkong,Pagar,Pipa Stainless,2inch,0.8,13.04,1,0,PER-M2,1000000,0,0,2608000,Tanpa Cat,Sederhana,13050000
 ORD-00484,10/4/2019,2019,Pak Karso Bengkel,Tuwel,Pagar,Hollow,4x6,1,16.76,1,0,PER-M2,600000,0,0,1676000,Cat Biasa,Kompleks,10250000
-ORD-00485,2/15/2021,2021,Konter HP Mandiri,Margasari,Kanopi,Pipa Stainless,4x8,1.2,16.94,1,0,PER-M2,860000,0,0,3388000,Tanpa Cat,Sederhana,14550000
-ORD-00486,10/21/2024,2024,Pak Slamet,Jatinegara,Pagar,Pipa Stainless,2inch,0.8,24.87,1,0,PER-M2,1060000,0,0,4974000,Tanpa Cat,Sederhana,26350000
+ORD-00485,2/15/2021,2021,Konter HP Mandiri,Margasari,Kanopi,Pipa Stainless,4x8,1.2,16.94,1,0,PER-M2,800000,0,0,3388000,Tanpa Cat,Sederhana,13550000
+ORD-00486,10/21/2024,2024,Pak Slamet,Jatinegara,Pagar,Pipa Stainless,2inch,0.8,24.87,1,0,PER-M2,1050000,0,0,4974000,Tanpa Cat,Sederhana,26100000
 ORD-00487,12/20/2020,2020,Bu Ningsih,Kramat,Pintu Handerson,Hollow Stainless,4x4,0.8,5.84,2,0,PER-M2,1350000,0,0,1752000,Tanpa Cat,Menengah,15850000
-ORD-00488,4/23/2023,2023,Bu Puji,Warureja,Pagar,Pipa Stainless,2inch,1.2,27.21,1,0,PER-M2,1140000,0,0,5442000,Tanpa Cat,Menengah,31100000
+ORD-00488,4/23/2023,2023,Bu Puji,Warureja,Pagar,Pipa Stainless,2inch,1.2,29.5,1,0,PER-M2,1150000,0,0,5900000,Tanpa Cat,Menengah,34050000
 ORD-00489,4/14/2025,2025,Pak Slamet,Lebaksiu,Teralis,Hollow,1x3,1.2,0,1,19,PER-LUBANG,0,0,450000,1425000,Cat Biasa,Menengah,8700000
 ORD-00490,4/24/2025,2025,Pak Warno,Jatinegara,Railing,Hollow Stainless,4x6,1.2,12.24,2,0,PER-M,0,1350000,0,3672000,Tanpa Cat,Sederhana,33050000
 ORD-00491,1/14/2024,2024,TPQ Annur,Bojong,Pintu Gerbang,Hollow,4x4,1.2,13.91,1,0,PER-M2,850000,0,0,1391000,Cat Dasar,Menengah,11900000
@@ -495,8 +495,107 @@ ORD-00493,5/20/2024,2024,SMPN 1 Bojong,Tuwel,Pintu Gerbang,Hollow,4x8,1.2,14.4,1
 ORD-00494,3/1/2020,2020,Pak Hadi,Bojong,Kanopi,Hollow Stainless,4x6,1,15.76,2,0,PER-M2,800000,0,0,4728000,Tanpa Cat,Sederhana,25200000
 ORD-00495,3/10/2022,2022,CV Griya Mandiri,Dukuhturi,Pintu Gerbang,Pipa Stainless,2inch,0.8,5,1,0,PER-M2,1200000,0,0,1000000,Tanpa Cat,Menengah,6100000
 ORD-00496,2/2/2025,2025,Bu Puji,Bojong,Pintu Handerson,Hollow Stainless,4x8,0.8,4.92,2,0,PER-M2,1800000,0,0,1476000,Tanpa Cat,Menengah,17800000
-ORD-00497,11/15/2021,2021,Riko Firmansyah,Tarub,Pintu Handerson,Pipa Stainless,2inch,0.8,5.79,2,0,PER-M2,1400000,0,0,2316000,Tanpa Cat,Menengah,16300000
+ORD-00497,11/15/2021,2021,Riko Firmansyah,Tarub,Pintu Handerson,Pipa Stainless,2inch,0.8,5.79,2,0,PER-M2,1300000,0,0,2316000,Tanpa Cat,Menengah,15150000
 ORD-00498,7/9/2025,2025,Pak Kasno,Bojong,Pintu Handerson,Hollow,4x8,1.2,2.12,2,0,PER-M2,1100000,0,0,424000,Cat Duco,Menengah,4900000
-ORD-00499,9/6/2020,2020,Mas Agus,Jatinegara,Pagar,Hollow Stainless,4x4,0.8,21.69,1,0,PER-M2,1050000,0,0,3253500,Tanpa Cat,Kompleks,22900000
+ORD-00499,9/6/2020,2020,Mas Agus,Jatinegara,Pagar,Hollow Stainless,4x4,0.8,21.5,1,0,PER-M2,1000000,0,0,3225000,Tanpa Cat,Kompleks,21650000
 ORD-00500,7/23/2019,2019,Torikin,Adiwerna,Kanopi,Hollow,4x4,0.8,15,1,0,PER-M2,350000,0,0,1500000,Tanpa Cat,Sederhana,5250000
 ORD-00501,11/12/2019,2019,BUMDES Bojong,Bojong,Pagar,Hollow,4x4,0.8,27,1,0,PER-M2,500000,0,0,2700000,Tanpa Cat,Sederhana,13500000
+ORD-00502,9/28/2025,2025,Bagas Wibowo,Tarub,Teralis,Hollow,1x3,1.2,0,1,12,PER-LUBANG,0,0,450000,900000,Cat Biasa,Menengah,5550000
+ORD-00503,11/24/2025,2025,Neni Wahyuni,Kramat,Pagar,Pipa Stainless,1.5inch,1.2,17.4,2,0,PER-M2,1100000,0,0,6960000,Tanpa Cat,Menengah,38400000
+ORD-00504,6/19/2022,2022,Mirna Wulandari,Danasari,Pintu Gerbang,Pipa Stainless,2inch,1.2,9.4,1,0,PER-M2,1300000,0,0,1880000,Tanpa Cat,Menengah,12300000
+ORD-00505,10/12/2024,2024,Puskesmas Adiwerna,Lebaksiu,Pagar,Hollow,4x6,1.2,19,1,0,PER-M2,750000,0,0,1900000,Cat Biasa,Sederhana,14300000
+ORD-00506,5/14/2022,2022,Lusia Yohana,Lebaksiu,Railing,Pipa Stainless,2inch,1.2,1,4,0,PER-M,0,1150000,0,800000,Tanpa Cat,Menengah,4700000
+ORD-00507,8/8/2023,2023,Pak Raskamto,Tegal,Pintu Handerson,Hollow,4x4,1,6.2,1,0,PER-M2,900000,0,0,620000,Cat Biasa,Sederhana,5650000
+ORD-00508,4/21/2025,2025,Siti Qomariah,Lebaksiu,Pintu Gerbang,Hollow,4x6,1.2,9,1,0,PER-M2,900000,0,0,900000,Cat Biasa,Menengah,8250000
+ORD-00509,4/18/2022,2022,Dinda Sulistyo,Margasari,Teralis,Hollow Stainless,1x3,0.8,0,1,6,PER-LUBANG,0,0,750000,900000,Tanpa Cat,Kompleks,4650000
+ORD-00510,8/10/2022,2022,Rendy Wicaksono,Kramat,Railing,Pipa Stainless,2inch,1,1,7,0,PER-M,0,1100000,0,1400000,Tanpa Cat,Sederhana,7700000
+ORD-00511,9/5/2022,2022,Pak Suwondo,Tarub,Pagar,Hollow,4x4,1,19.5,1,0,PER-M2,600000,0,0,1950000,Cat Biasa,Menengah,11850000
+ORD-00512,8/1/2020,2020,Mahendra Prakoso,Dukuhturi,Railing,Hollow,4x6,1.2,1.4,7,0,PER-M,0,550000,0,980000,Cat Duco,Menengah,5650000
+ORD-00513,6/5/2022,2022,Randi Maulana,Balapulang,Pintu Gerbang,Pipa Stainless,2inch,1.2,9,1,0,PER-M2,1300000,0,0,1800000,Tanpa Cat,Menengah,11800000
+ORD-00514,3/13/2021,2021,Anggun Wulan Sari,Margasari,Railing,Pipa Stainless,2inch,1.2,3,6,0,PER-M,0,1100000,0,3600000,Tanpa Cat,Sederhana,19800000
+ORD-00515,3/25/2025,2025,Siti Khotimah,Lengkong,Kanopi,Pipa Stainless,1.5inch,1.2,11,1,0,PER-M2,800000,0,0,2200000,Tanpa Cat,Sederhana,8800000
+ORD-00516,5/14/2023,2023,Bu Marni Sulastri,Balapulang,Kanopi,Hollow,4x8,0.8,19,1,0,PER-M2,520000,0,0,1900000,Cat Biasa,Sederhana,9950000
+ORD-00517,1/1/2019,2019,Rendy Wicaksono,Pagerbarang,Teralis,Hollow Stainless,1x3,1,0,1,28,PER-LUBANG,0,0,750000,4200000,Tanpa Cat,Kompleks,21150000
+ORD-00518,12/21/2022,2022,Bu Saripah,Bojong,Pintu Handerson,Pipa Stainless,2inch,1,6.2,1,0,PER-M2,1500000,0,0,1240000,Tanpa Cat,Menengah,9400000
+ORD-00519,9/29/2025,2025,Dewi Apriliyani,Adiwerna,Teralis,Pipa Stainless,1x3,1.2,0,1,13,PER-LUBANG,0,0,800000,1950000,Tanpa Cat,Menengah,10500000
+ORD-00520,7/24/2021,2021,SMPN 2 Bojong,Slawi,Pagar,Hollow,4x6,1.2,17,1,0,PER-M2,650000,0,0,1700000,Cat Biasa,Sederhana,11100000
+ORD-00521,12/8/2021,2021,Jenny Rosalina,Slawi,Teralis,Hollow,1x3,1.2,0,1,27,PER-LUBANG,0,0,400000,2025000,Cat Biasa,Menengah,10950000
+ORD-00522,8/12/2020,2020,Mas Fadhil Naufal,Margasari,Pintu Gerbang,Hollow Stainless,4x4,1.2,8,1,0,PER-M2,1300000,0,0,1200000,Tanpa Cat,Menengah,10500000
+ORD-00523,1/15/2023,2023,Mukhlis Andri,Danasari,Pagar,Pipa Stainless,2inch,0.8,10,1,0,PER-M2,1050000,0,0,2000000,Tanpa Cat,Sederhana,10500000
+ORD-00524,3/13/2023,2023,Dian Novitasari,Dukuhturi,Pagar,Hollow,4x6,1,17.1,1,0,PER-M2,650000,0,0,1710000,Cat Dasar,Menengah,11200000
+ORD-00525,7/15/2020,2020,Puskesmas Jatinegara,Lengkong,Railing,Pipa Stainless,2inch,1.2,1.7,4,0,PER-M,0,1080000,0,1360000,Tanpa Cat,Sederhana,7350000
+ORD-00526,9/26/2022,2022,Zidan Pramudya,Adiwerna,Teralis,Pipa Stainless,1x3,0.8,0,1,17,PER-LUBANG,0,0,650000,2550000,Tanpa Cat,Menengah,11150000
+ORD-00527,2/24/2022,2022,Rizka Utami,Lebaksiu,Pintu Handerson,Hollow,4x6,1,6,1,0,PER-M2,900000,0,0,600000,Cat Dasar,Menengah,5500000
+ORD-00528,1/11/2019,2019,Sukinem Wati,Pagerbarang,Kanopi,Hollow Stainless,4x4,0.8,21,1,0,PER-M2,700000,0,0,3150000,Tanpa Cat,Sederhana,14700000
+ORD-00529,11/1/2021,2021,Cindy Maheswari,Kramat,Pintu Handerson,Hollow,4x6,1.2,7,1,0,PER-M2,950000,0,0,700000,Cat Duco,Kompleks,6950000
+ORD-00530,9/18/2020,2020,SMPN 3 Talang,Lebaksiu,Pintu Gerbang,Pipa Stainless,2inch,0.8,13,1,0,PER-M2,1100000,0,0,2600000,Tanpa Cat,Menengah,14400000
+ORD-00531,12/8/2024,2024,Pak Rasman Sutaryono,Pagerbarang,Pintu Handerson,Hollow,4x6,0.8,7,2,0,PER-M2,950000,0,0,1400000,Cat Dasar,Sederhana,13300000
+ORD-00532,10/2/2020,2020,Andhika Prayoga,Bojong,Kanopi,Hollow,4x4,0.8,18,1,0,PER-M2,350000,0,0,1800000,Cat Duco,Sederhana,6450000
+ORD-00533,12/29/2023,2023,Kantor Desa Lengkong,Talang,Pagar,Pipa Stainless,2inch,1,13,1,0,PER-M2,1100000,0,0,2600000,Tanpa Cat,Sederhana,14300000
+ORD-00534,5/17/2022,2022,Andi Prasetyo,Danasari,Teralis,Pipa Stainless,1x3,1,0,1,11,PER-LUBANG,0,0,700000,1650000,Tanpa Cat,Menengah,7800000
+ORD-00535,3/31/2022,2022,Fauzan Pradipta,Jatinegara,Railing,Pipa Stainless,2inch,1,4.1,2,0,PER-M,0,1100000,0,1640000,Tanpa Cat,Sederhana,9000000
+ORD-00536,3/18/2024,2024,Rizky Nur Ikhsan,Pagerbarang,Teralis,Hollow,1x3,1.2,0,1,14,PER-LUBANG,0,0,450000,1050000,Cat Biasa,Menengah,6450000
+ORD-00537,11/16/2020,2020,Dina Apriliani,Adiwerna,Pagar,Pipa Stainless,2inch,1.2,13.5,1,0,PER-M2,1050000,0,0,2700000,Tanpa Cat,Menengah,14300000
+ORD-00538,9/12/2024,2024,Andhika Prayoga,Bumijawa,Railing,Hollow,4x4,1,2,4,0,PER-M,0,550000,0,800000,Cat Dasar,Sederhana,4400000
+ORD-00539,10/18/2023,2023,Puskesmas Adiwerna,Balapulang,Railing,Hollow Stainless,4x6,1.2,2,4,0,PER-M,0,1250000,0,1200000,Tanpa Cat,Sederhana,10000000
+ORD-00540,5/31/2021,2021,Fajri Ananda,Suradadi,Kanopi,Pipa Stainless,4x8,1.2,17,1,0,PER-M2,800000,0,0,3400000,Tanpa Cat,Sederhana,13600000
+ORD-00541,9/29/2024,2024,Rizqi Hasanah,Adiwerna,Pagar,Pipa Stainless,2inch,0.8,12.1,1,0,PER-M2,1050000,0,0,2420000,Tanpa Cat,Sederhana,12700000
+ORD-00542,11/26/2019,2019,Pak Paino,Tarub,Pagar,Pipa Stainless,2inch,1.2,13,1,0,PER-M2,1050000,0,0,2600000,Tanpa Cat,Menengah,13750000
+ORD-00543,11/24/2025,2025,Andin Maharani,Kramat,Pintu Handerson,Hollow Stainless,4x4,1.2,5.4,2,0,PER-M2,1800000,0,0,1620000,Tanpa Cat,Sederhana,19450000
+ORD-00544,11/11/2024,2024,Rizal Hartanto,Bojong,Kanopi,Hollow Stainless,4x4,0.8,15,1,0,PER-M2,800000,0,0,2250000,Tanpa Cat,Sederhana,12000000
+ORD-00545,12/15/2021,2021,Joko Cahyono,Danasari,Pagar,Hollow,4x6,0.8,6,1,0,PER-M2,550000,0,0,600000,Cat Biasa,Menengah,3450000
+ORD-00546,8/29/2021,2021,Yusril Ramadhan,Balapulang,Pintu Gerbang,Hollow Stainless,4x6,1.2,8.9,1,0,PER-M2,1350000,0,0,1335000,Tanpa Cat,Sederhana,12000000
+ORD-00547,6/21/2024,2024,Pak Kasturi,Bojong,Pagar,Hollow,4x4,0.8,15,2,0,PER-M2,600000,0,0,3000000,Cat Duco,Sederhana,18150000
+ORD-00548,12/1/2022,2022,Pak Sukardi,Pagerbarang,Pintu Gerbang,Hollow Stainless,4x4,0.8,14,1,0,PER-M2,1300000,0,0,2100000,Tanpa Cat,Sederhana,18200000
+ORD-00549,8/15/2025,2025,Meli Anjani,Margasari,Pagar,Hollow,4x6,1.2,8,2,0,PER-M2,750000,0,0,1600000,Cat Biasa,Sederhana,12050000
+ORD-00550,4/20/2021,2021,Riko Hernawan,Lebaksiu,Pintu Handerson,Hollow,4x6,0.8,5,1,0,PER-M2,850000,0,0,500000,Cat Dasar,Sederhana,4250000
+ORD-00551,4/30/2023,2023,Pak Paiman Sukanto,Pagerbarang,Pagar,Hollow,4x8,1,19.5,1,0,PER-M2,700000,0,0,1950000,Cat Dasar,Sederhana,13650000
+ORD-00552,2/10/2020,2020,Siti Zulaikha,Danasari,Pintu Gerbang,Hollow,4x8,1.2,10.2,1,0,PER-M2,800000,0,0,1020000,Cat Dasar,Menengah,8250000
+ORD-00553,3/22/2025,2025,Rudi Hartanto,Tarub,Pagar,Hollow,4x6,1,18,1,0,PER-M2,700000,0,0,1800000,Cat Dasar,Menengah,12700000
+ORD-00554,1/11/2021,2021,Dewi Ayu Prameswari,Kramat,Teralis,Hollow Stainless,1x3,1.2,0,1,6,PER-LUBANG,0,0,850000,900000,Tanpa Cat,Menengah,5200000
+ORD-00555,4/10/2020,2020,Desi Wulansari,Suradadi,Railing,Hollow,4x4,0.8,4.8,4,0,PER-M,0,400000,0,1920000,Cat Dasar,Sederhana,7700000
+ORD-00556,1/22/2023,2023,Melati Anggraini,Jatinegara,Railing,Hollow Stainless,4x4,1,3,2,0,PER-M,0,1150000,0,900000,Tanpa Cat,Menengah,7000000
+ORD-00557,7/10/2020,2020,Wawan Setiyono,Tuwel,Teralis,Pipa Stainless,1x3,1.2,0,1,4,PER-LUBANG,0,0,700000,600000,Tanpa Cat,Sederhana,2800000
+ORD-00558,4/26/2023,2023,Nindi Aprillia,Dukuhturi,Pintu Gerbang,Hollow,4x4,1.2,7,1,0,PER-M2,800000,0,0,700000,Cat Biasa,Kompleks,5800000
+ORD-00559,4/29/2023,2023,Maya Permatasari,Warureja,Railing,Hollow,4x6,1,20,1,0,PER-M,0,600000,0,2000000,Cat Biasa,Sederhana,12050000
+ORD-00560,5/4/2023,2023,Febri Anggara,Kramat,Teralis,Hollow,2x2,1.2,0,1,12,PER-LUBANG,0,0,450000,900000,Cat Dasar,Menengah,5500000
+ORD-00561,1/2/2019,2019,Andin Safitri,Bojong,Kanopi,Hollow,4x6,1.2,12,2,0,PER-M2,500000,0,0,2400000,Cat Biasa,Menengah,12150000
+ORD-00562,1/31/2022,2022,Rionanda Putra,Tuwel,Railing,Hollow,4x4,1,12.7,1,0,PER-M,0,500000,0,1270000,Cat Dasar,Menengah,6450000
+ORD-00563,8/3/2024,2024,Pak Subagyo,Dukuhturi,Railing,Hollow,4x4,1.2,10,1,0,PER-M,0,600000,0,1000000,Cat Biasa,Menengah,6150000
+ORD-00564,3/16/2024,2024,Dian Nurfadilah,Lengkong,Kanopi,Pipa Stainless,1.5inch,1,20.4,1,0,PER-M2,750000,0,0,4080000,Tanpa Cat,Menengah,15400000
+ORD-00565,1/18/2022,2022,Rendi Agustian,Talang,Teralis,Hollow,1x3,1.2,0,1,11,PER-LUBANG,0,0,400000,825000,Cat Duco,Menengah,4650000
+ORD-00566,12/11/2025,2025,Rizal Andriansyah,Bojong,Pintu Gerbang,Hollow,4x6,1,12,1,0,PER-M2,850000,0,0,1200000,Cat Biasa,Sederhana,10250000
+ORD-00567,12/25/2020,2020,Mahendra Prakoso,Kramat,Pintu Handerson,Hollow,4x6,1,3.7,1,0,PER-M2,900000,0,0,370000,Cat Biasa,Sederhana,3400000
+ORD-00568,2/17/2022,2022,Mas Rezki Wahyu,Tarub,Railing,Pipa Stainless,2inch,1.2,6.5,3,0,PER-M,0,1150000,0,3900000,Tanpa Cat,Sederhana,22450000
+ORD-00569,5/21/2021,2021,Wisnu Prayitno,Jatinegara,Kanopi,Pipa Stainless,2inch,1,15.2,1,0,PER-M2,750000,0,0,3040000,Tanpa Cat,Sederhana,11400000
+ORD-00570,5/4/2022,2022,Vita Anggraini,Tarub,Pagar,Pipa Stainless,2inch,0.8,12.7,1,0,PER-M2,1000000,0,0,2540000,Tanpa Cat,Menengah,12800000
+ORD-00571,8/2/2021,2021,Taufan Kurniawan,Tarub,Pintu Gerbang,Hollow,4x6,1,7.4,1,0,PER-M2,700000,0,0,740000,Cat Dasar,Menengah,5300000
+ORD-00572,3/5/2024,2024,Yusril Ramadhan,Jatinegara,Pagar,Hollow,4x4,1.2,17,1,0,PER-M2,700000,0,0,1700000,Cat Duco,Sederhana,12050000
+ORD-00573,3/20/2024,2024,Suroso Widodo,Adiwerna,Teralis,Hollow Stainless,1x3,1.2,0,1,19,PER-LUBANG,0,0,900000,2850000,Tanpa Cat,Menengah,17200000
+ORD-00574,1/24/2023,2023,Mas Tobii,Lebaksiu,Kanopi,Hollow,4x6,1.2,16.9,1,0,PER-M2,570000,0,0,1690000,Cat Biasa,Sederhana,9700000
+ORD-00575,5/7/2019,2019,Randi Prasetyo,Jatinegara,Pintu Gerbang,Hollow,4x4,1,13,1,0,PER-M2,650000,0,0,1300000,Cat Dasar,Menengah,8550000
+ORD-00576,4/14/2021,2021,Toko Kayu Sejahtera,Tuwel,Teralis,Pipa Stainless,1x3,0.8,0,1,17,PER-LUBANG,0,0,650000,2550000,Tanpa Cat,Sederhana,11050000
+ORD-00577,3/7/2023,2023,Pak Kasno,Tegal,Teralis,Hollow Stainless,1x3,1,0,1,6,PER-LUBANG,0,0,850000,900000,Tanpa Cat,Menengah,5200000
+ORD-00578,10/15/2020,2020,Nurul Istiqomah,Tegal,Kanopi,Pipa Stainless,1.5inch,1,22,1,0,PER-M2,650000,0,0,4400000,Tanpa Cat,Menengah,14400000
+ORD-00579,5/22/2019,2019,Fira Karunia Putri,Lebaksiu,Railing,Hollow Stainless,4x4,1.2,12.2,1,0,PER-M,0,1100000,0,1830000,Tanpa Cat,Sederhana,13400000
+ORD-00580,3/13/2025,2025,Budi Prasetya,Dukuhturi,Pagar,Pipa Stainless,2inch,1.2,13.5,2,0,PER-M2,1200000,0,0,5400000,Tanpa Cat,Menengah,32500000
+ORD-00581,3/23/2024,2024,Meli Anjani,Bojong,Railing,Hollow Stainless,4x6,1.2,14,1,0,PER-M,0,1350000,0,2100000,Tanpa Cat,Sederhana,18900000
+ORD-00582,3/27/2021,2021,Tuti Karomah,Danasari,Railing,Pipa Stainless,1.5inch,1,9.8,2,0,PER-M,0,950000,0,3920000,Tanpa Cat,Menengah,18700000
+ORD-00583,5/17/2021,2021,Pak Paiman Sukanto,Lebaksiu,Teralis,Pipa Stainless,1x3,1.2,0,1,11,PER-LUBANG,0,0,750000,1650000,Tanpa Cat,Menengah,8350000
+ORD-00584,3/9/2022,2022,Bu Saripah,Warureja,Teralis,Hollow,2x2,1.2,0,1,11,PER-LUBANG,0,0,400000,825000,Cat Dasar,Menengah,4500000
+ORD-00585,2/24/2021,2021,Febri Anggara,Adiwerna,Railing,Hollow Stainless,4x4,0.8,3,4,0,PER-M,0,1100000,0,1800000,Tanpa Cat,Menengah,13300000
+ORD-00586,5/20/2021,2021,Nada Amelia Putri,Warureja,Teralis,Hollow Stainless,1x3,1.2,0,1,11,PER-LUBANG,0,0,850000,1650000,Tanpa Cat,Sederhana,9350000
+ORD-00587,8/24/2025,2025,Mas Bagus Wahyudi,Pagerbarang,Kanopi,Hollow,4x8,1,15.3,2,0,PER-M2,600000,0,0,3060000,Cat Dasar,Menengah,18450000
+ORD-00588,5/27/2020,2020,Bu Martina,Lebaksiu,Pintu Handerson,Pipa Stainless,2inch,1.2,5,1,0,PER-M2,1400000,0,0,1000000,Tanpa Cat,Sederhana,7000000
+ORD-00589,1/11/2019,2019,Wisnu Prayitno,Tegal,Pagar,Hollow,4x4,1,10.7,1,0,PER-M2,550000,0,0,1070000,Cat Duco,Sederhana,6050000
+ORD-00590,1/20/2021,2021,Rara Amelia Putri,Danasari,Pintu Gerbang,Hollow Stainless,4x8,0.8,13,1,0,PER-M2,1300000,0,0,1950000,Tanpa Cat,Menengah,17000000
+ORD-00591,7/8/2023,2023,Rahmat Hidayat,Margasari,Teralis,Hollow,1x3,1.2,0,1,13,PER-LUBANG,0,0,450000,975000,Cat Duco,Menengah,6100000
+ORD-00592,5/4/2025,2025,Viko Adi Putra,Talang,Teralis,Pipa Stainless,1x3,1.2,0,1,16,PER-LUBANG,0,0,800000,2400000,Tanpa Cat,Sederhana,12800000
+ORD-00593,12/14/2021,2021,Siska Nur Aisyah,Danasari,Pintu Gerbang,Hollow Stainless,4x6,1.2,10,1,0,PER-M2,1350000,0,0,1500000,Tanpa Cat,Menengah,13600000
+ORD-00594,8/23/2019,2019,Davi Marcellino,Kramat,Pagar,Hollow Stainless,4x6,0.8,18,1,0,PER-M2,1050000,0,0,2700000,Tanpa Cat,Sederhana,18900000
+ORD-00595,6/13/2023,2023,TK Pertiwi Slawi,Lengkong,Teralis,Hollow,1x3,1.2,0,1,15,PER-LUBANG,0,0,450000,1125000,Cat Biasa,Menengah,6900000
+ORD-00596,6/22/2025,2025,Zidan Pramudya,Bumijawa,Railing,Hollow Stainless,4x4,1,4.8,4,0,PER-M,0,1250000,0,2880000,Tanpa Cat,Sederhana,24000000
+ORD-00597,1/2/2025,2025,Puskesmas Jatinegara,Bojong,Teralis,Hollow Stainless,1x3,0.8,0,1,12,PER-LUBANG,0,0,800000,1800000,Tanpa Cat,Sederhana,9600000
+ORD-00598,6/18/2023,2023,Siti Maryani,Kramat,Pintu Handerson,Hollow Stainless,4x4,0.8,7,1,0,PER-M2,1500000,0,0,1050000,Tanpa Cat,Menengah,10600000
+ORD-00599,8/1/2020,2020,Talita Andini,Jatinegara,Teralis,Hollow Stainless,2x2,0.8,0,1,8,PER-LUBANG,0,0,700000,1200000,Tanpa Cat,Menengah,5700000
+ORD-00600,8/9/2019,2019,Wulan Ayu Lestari,Lebaksiu,Pintu Handerson,Hollow,4x4,0.8,4.4,1,0,PER-M2,750000,0,0,440000,Cat Duco,Sederhana,3450000

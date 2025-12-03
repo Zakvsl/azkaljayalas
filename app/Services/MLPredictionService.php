@@ -37,7 +37,7 @@ class MLPredictionService
             'produk' => $data['produk'] ?? '',
             'jumlah_unit' => (int)($data['jumlah_unit'] ?? 1),
             'jumlah_lubang' => (float)($data['jumlah_lubang'] ?? 0),
-            'ukuran_m2' => (float)($data['ukuran'] ?? 0),  // Use ukuran (already calculated in PriceEstimationService)
+            'ukuran_m2' => (float)($data['ukuran_m2'] ?? 0),  // Already mapped in PriceEstimationService
             'jenis_material' => $data['jenis_material'] ?? '',
             'ketebalan_mm' => (float)($data['ketebalan_mm'] ?? 0),
             'finishing' => $data['finishing'] ?? '',

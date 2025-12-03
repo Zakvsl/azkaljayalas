@@ -2,63 +2,152 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 
 class Order extends Model
 {
+    use HasFactory;
+
     protected $fillable = [
-        'customer_name',
-        'phone',
-        'address',
-        'project_type',
-        'material_type',
-        'dimensions',
-        'description',
-        'estimated_price',
-        'actual_price',
+        'order_number',
+        'survey_booking_id',
+        'user_id',
+        'survey_result_id',
+        'total_price',
+        'dp_paid',
+        'remaining_paid',
         'status',
-        'notes',
-        'order_date',
-        'completion_date',
+        'progress_percentage',
+        'current_stage',
+        'progress_updates',
+        'started_at',
+        'completed_at',
+        'cancelled_at',
+        'cancellation_reason',
     ];
 
     protected $casts = [
-        'dimensions' => 'array',
-        'estimated_price' => 'decimal:2',
-        'actual_price' => 'decimal:2',
-        'order_date' => 'date',
-        'completion_date' => 'date',
+        'total_price' => 'decimal:2',
+        'dp_paid' => 'decimal:2',
+        'remaining_paid' => 'decimal:2',
+        'progress_percentage' => 'integer',
+        'progress_updates' => 'array',
+        'started_at' => 'datetime',
+        'completed_at' => 'datetime',
+        'cancelled_at' => 'datetime',
     ];
 
-    // Accessor for formatted estimated price
-    public function getFormattedEstimatedPriceAttribute()
+    // Relationships
+    public function surveyBooking()
     {
-        return $this->estimated_price ? 'Rp ' . number_format($this->estimated_price, 0, ',', '.') : '-';
+        return $this->belongsTo(SurveyBooking::class);
     }
 
-    // Accessor for formatted actual price
-    public function getFormattedActualPriceAttribute()
+    public function user()
     {
-        return $this->actual_price ? 'Rp ' . number_format($this->actual_price, 0, ',', '.') : '-';
+        return $this->belongsTo(User::class);
     }
 
-    // Status badges
+    public function surveyResult()
+    {
+        return $this->belongsTo(SurveyResult::class);
+    }
+
+    public function payments()
+    {
+        return $this->hasMany(Payment::class, 'survey_booking_id', 'survey_booking_id');
+    }
+
+    // Scopes
+    public function scopePendingDp($query)
+    {
+        return $query->where('status', 'pending_dp');
+    }
+
+    public function scopeInProgress($query)
+    {
+        return $query->where('status', 'in_progress');
+    }
+
+    public function scopeCompleted($query)
+    {
+        return $query->where('status', 'completed');
+    }
+
+    // Boot method to auto-generate order number
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::creating(function ($order) {
+            if (empty($order->order_number)) {
+                $order->order_number = static::generateOrderNumber();
+            }
+        });
+    }
+
+    public static function generateOrderNumber()
+    {
+        $date = now()->format('Ymd');
+        $count = static::whereDate('created_at', now())->count() + 1;
+        return 'ORD-' . $date . '-' . str_pad($count, 4, '0', STR_PAD_LEFT);
+    }
+
+    // Helper methods
+    public function getFormattedTotalPriceAttribute()
+    {
+        return $this->total_price ? 'Rp ' . number_format($this->total_price, 0, ',', '.') : '-';
+    }
+
+    public function getFormattedDpPaidAttribute()
+    {
+        return $this->dp_paid ? 'Rp ' . number_format($this->dp_paid, 0, ',', '.') : '-';
+    }
+
+    public function isFullyPaid()
+    {
+        return ($this->dp_paid + $this->remaining_paid) >= $this->total_price;
+    }
+
+    public function addProgressUpdate($stage, $description, $percentage = null)
+    {
+        $updates = $this->progress_updates ?? [];
+        $updates[] = [
+            'stage' => $stage,
+            'description' => $description,
+            'percentage' => $percentage ?? $this->progress_percentage,
+            'updated_at' => now()->toDateTimeString(),
+        ];
+
+        $this->update([
+            'progress_updates' => $updates,
+            'current_stage' => $stage,
+            'progress_percentage' => $percentage ?? $this->progress_percentage,
+        ]);
+    }
+
     public function getStatusBadgeAttribute()
     {
         return match($this->status) {
-            'pending' => 'bg-yellow-100 text-yellow-800',
-            'in_progress' => 'bg-blue-100 text-blue-800',
-            'completed' => 'bg-green-100 text-green-800',
-            'cancelled' => 'bg-red-100 text-red-800',
-            default => 'bg-gray-100 text-gray-800',
+            'pending_dp' => ['class' => 'badge-warning', 'text' => 'Menunggu DP'],
+            'dp_pending_confirm' => ['class' => 'badge-info', 'text' => 'DP Menunggu Konfirmasi'],
+            'in_progress' => ['class' => 'badge-primary', 'text' => 'Dalam Pengerjaan'],
+            'ready_for_pickup' => ['class' => 'badge-success', 'text' => 'Siap Diambil'],
+            'completed' => ['class' => 'badge-success', 'text' => 'Selesai'],
+            'cancelled' => ['class' => 'badge-danger', 'text' => 'Dibatalkan'],
+            default => ['class' => 'badge-secondary', 'text' => 'Unknown'],
         };
     }
 
     public function getStatusLabelAttribute()
     {
         return match($this->status) {
-            'pending' => 'Pending',
-            'in_progress' => 'Dalam Proses',
+            'pending_dp' => 'Menunggu DP',
+            'dp_pending_confirm' => 'DP Menunggu Konfirmasi',
+            'in_progress' => 'Dalam Pengerjaan',
+            'ready_for_pickup' => 'Siap Diambil',
             'completed' => 'Selesai',
             'cancelled' => 'Dibatalkan',
             default => ucfirst($this->status),

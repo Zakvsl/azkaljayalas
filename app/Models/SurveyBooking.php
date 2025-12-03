@@ -15,9 +15,14 @@ class SurveyBooking extends Model
         'project_type',
         'project_description',
         'location',
+        'whatsapp_number',
+        'latitude',
+        'longitude',
         'preferred_date',
+        'preferred_time',
         'status',
         'notes',
+        'cancel_reason',
     ];
 
     protected $casts = [
@@ -32,5 +37,20 @@ class SurveyBooking extends Model
     public function priceEstimate()
     {
         return $this->belongsTo(PriceEstimate::class);
+    }
+
+    public function surveyResult()
+    {
+        return $this->hasOne(SurveyResult::class);
+    }
+
+    public function order()
+    {
+        return $this->hasOne(Order::class);
+    }
+
+    public function payment()
+    {
+        return $this->hasOne(Payment::class);
     }
 }

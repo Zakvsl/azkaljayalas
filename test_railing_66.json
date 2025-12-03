@@ -1,0 +1,13 @@
+﻿{
+    "ketebalan_mm":  0.8,
+    "jumlah_unit":  1,
+    "metode_hitung":  "PER-M",
+    "produk":  "Railing",
+    "finishing":  "Cat Biasa",
+    "upah_tenaga_ahli":  6600000,
+    "ukuran_m2":  66,
+    "jumlah_lubang":  0,
+    "kerumitan_desain":  "Sederhana",
+    "profile_size":  "4x4",
+    "jenis_material":  "Hollow"
+}

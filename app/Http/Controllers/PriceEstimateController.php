@@ -17,6 +17,7 @@ use Illuminate\View\View;
 use Illuminate\Http\Request;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
+use Illuminate\Validation\Rule;
 
 class PriceEstimateController extends BaseController
 {
@@ -71,11 +72,23 @@ class PriceEstimateController extends BaseController
                 'jenis_produk' => ['required', 'string', 'in:Pagar,Kanopi,Railing,Teralis,Pintu Handerson,Pintu Gerbang'],
                 'jumlah_unit' => ['required', 'integer', 'min:1'],
                 'jenis_material' => ['required', 'string', 'in:Hollow,Hollow Stainless,Pipa Stainless'],
-                'profile_size' => ['required', 'string', 'in:4x4,4x6,4x8'],
+                'profile_size' => ['required','string',
+                                    \Illuminate\Validation\Rule::in([
+                                    '4x4', '4x6', '4x8',      // Hollow
+                                    '1x3', '2x2',            // Teralis
+                                    '1.5 inch', '2 inch',    // Stainless
+                                ]),
+                ],
+
                 'ketebalan_mm' => ['required', 'numeric', 'min:0.1'],
-                'finishing' => ['required', 'string', 'in:Tanpa Cat,Cat Dasar,Cat Biasa,Cat Duco'],
+                'finishing' => ['nullable', 'string', 'in:Tanpa Cat,Cat Dasar,Cat Biasa,Cat Duco'],
                 'kerumitan_desain' => ['required', 'string', 'in:Sederhana,Menengah,Kompleks'],
             ];
+            
+            // Auto-set finishing untuk material Stainless
+            if (in_array($request->input('jenis_material'), ['Hollow Stainless', 'Pipa Stainless'])) {
+                $request->merge(['finishing' => 'Tanpa Cat']);
+            }
             
             // Conditional validation based on product type
             if ($jenisProduk === 'Teralis') {
@@ -95,17 +108,26 @@ class PriceEstimateController extends BaseController
             
             $validated = $request->validate($rules);
 
-            $estimatedPrice = $this->estimationService->predictPrice($validated);
+            $prediction = $this->estimationService->predictPrice($validated);
+            $estimatedPrice = is_array($prediction) ? $prediction['price'] : $prediction;
+            $predictionMethod = is_array($prediction) ? $prediction['method'] : 'unknown';
+            $modelAccuracy = is_array($prediction) ? $prediction['model_accuracy'] : null;
 
             Log::info('Price estimate generated', [
                 'input' => $validated,
-                'estimated_price' => $estimatedPrice
+                'estimated_price' => $estimatedPrice,
+                'prediction_method' => $predictionMethod
             ]);
 
             return response()->json([
                 'success' => true,
                 'harga_akhir' => $estimatedPrice,
                 'formatted_price' => 'Rp ' . number_format($estimatedPrice, 0, ',', '.'),
+                'prediction_method' => $predictionMethod,
+                'model_accuracy' => $modelAccuracy,
+                'message' => $predictionMethod === 'ml' 
+                    ? 'Prediksi menggunakan Machine Learning (akurasi 97.3%)' 
+                    : 'Prediksi menggunakan formula standar'
             ]);
         } catch (\Exception $e) {
             Log::error('Price estimation failed', [
@@ -127,62 +149,94 @@ class PriceEstimateController extends BaseController
     public function store(Request $request): JsonResponse
     {
         try {
-            // Validate input - accept lowercase format from form
+            // Validate input - accept format dari form (Hollow, Pipa Stainless, Cat Biasa, Sederhana, dll)
             $validated = $request->validate([
-                'jenis_produk' => 'required|in:Pagar,Kanopi,Railing,Teralis,Pintu,Tangga',
-                'produk' => 'nullable|in:Pagar,Kanopi,Railing,Teralis,Pintu,Tangga', // Alias
+                'jenis_produk' => 'required|in:Pagar,Kanopi,Railing,Teralis,Pintu Handerson,Pintu Gerbang',
                 'jumlah_unit' => 'required|integer|min:1',
                 'jumlah_lubang' => 'nullable|numeric|min:0',
                 'ukuran_m2' => 'nullable|numeric|min:0',
-                'jenis_material' => 'required|in:hollow,besi_siku,aluminium,stainless,plat',
+                'ukuran_m' => 'nullable|numeric|min:0',
+                'jenis_material' => 'required|in:Hollow,Hollow Stainless,Pipa Stainless',
                 'profile_size' => 'nullable|string',
                 'ketebalan_mm' => 'required|numeric|min:0',
-                'finishing' => 'required|in:cat_biasa,cat_epoxy,powder_coating,galvanis',
-                'kerumitan_desain' => 'required|integer|in:1,2,3',
-                'metode_hitung' => 'nullable|in:Per m²,Per Lubang',
+                'finishing' => 'nullable|in:Tanpa Cat,Cat Dasar,Cat Biasa,Cat Duco',
+                'kerumitan_desain' => 'required|in:Sederhana,Menengah,Kompleks',
                 'harga_akhir' => 'required|numeric|min:0',
                 'notes' => 'nullable|string'
             ]);
             
-            // Use produk field if jenis_produk not provided (backward compat)
-            $produk = $validated['jenis_produk'] ?? $validated['produk'] ?? null;
+            // Auto-set finishing untuk material Stainless
+            if (in_array($validated['jenis_material'], ['Hollow Stainless', 'Pipa Stainless']) && empty($validated['finishing'])) {
+                $validated['finishing'] = 'Tanpa Cat';
+            }
             
-            // Map form data to ML format for storage
-            $mlData = $this->estimationService->mapFormDataToMLFormat($validated);
-            $metodeHitung = $validated['metode_hitung'] ?? $mlData['metode_hitung'];
+            // Convert form values to database format
+            $finishingMap = [
+                'Tanpa Cat' => 'cat_biasa',  // Default jika tanpa cat
+                'Cat Dasar' => 'cat_biasa',
+                'Cat Biasa' => 'cat_biasa',
+                'Cat Duco' => 'cat_epoxy',
+                'Powder Coating' => 'powder_coating',
+                'Galvanis' => 'galvanis'
+            ];
+            
+            $kerumitanMap = [
+                'Sederhana' => 1,
+                'Menengah' => 2,
+                'Kompleks' => 3
+            ];
+            
+            $materialMap = [
+                'Hollow' => 'hollow',
+                'Hollow Stainless' => 'stainless',
+                'Pipa Stainless' => 'stainless'
+            ];
+            
+            $finishing = $finishingMap[$validated['finishing'] ?? 'Tanpa Cat'] ?? 'cat_biasa';
+            $kerumitan = $kerumitanMap[$validated['kerumitan_desain']] ?? 1;
+            $material = $materialMap[$validated['jenis_material']] ?? 'hollow';
+            
+            // Determine metode_hitung based on jenis_produk
+            if ($validated['jenis_produk'] === 'Teralis') {
+                $metodeHitung = 'PER-LUBANG';
+            } elseif ($validated['jenis_produk'] === 'Railing') {
+                $metodeHitung = 'PER-M';
+            } else {
+                $metodeHitung = 'PER-M2';
+            }
             
             // Use harga_akhir from request (already calculated by estimate endpoint)
             $estimatedPrice = $validated['harga_akhir'];
 
-            // Store estimate using ML format
+            // Store estimate
             $estimate = PriceEstimate::create([
                 'user_id' => Auth::id(),
-                'produk' => $produk,
-                'jenis_produk' => $produk, // Legacy field
-                'jumlah_unit' => $mlData['jumlah_unit'],
-                'jumlah_lubang' => $mlData['jumlah_lubang'],
-                'ukuran_m2' => $mlData['ukuran_m2'],
-                'jenis_material' => $mlData['jenis_material'], // ML format: Hollow, Besi, etc
+                'produk' => $validated['jenis_produk'],
+                'jenis_produk' => $validated['jenis_produk'],
+                'jumlah_unit' => $validated['jumlah_unit'],
+                'jumlah_lubang' => $validated['jumlah_lubang'] ?? 0,
+                'ukuran_m2' => $validated['ukuran_m2'] ?? 0,
+                'jenis_material' => $material,
                 'profile_size' => $validated['profile_size'] ?? null,
-                'ketebalan_mm' => $mlData['ketebalan_mm'],
-                'finishing' => $mlData['finishing'], // ML format: Cat, Powder Coating, etc
-                'kerumitan_desain' => $mlData['kerumitan_desain'], // ML format: Sederhana, Menengah, etc
+                'ketebalan_mm' => $validated['ketebalan_mm'],
+                'finishing' => $finishing,
+                'kerumitan_desain' => $kerumitan,
                 'metode_hitung' => $metodeHitung,
                 'harga_akhir' => $estimatedPrice,
-                'estimated_price' => $estimatedPrice,
                 'status' => 'pending',
                 'notes' => $validated['notes'] ?? null,
             ]);
 
             Log::info('Price estimate stored with ML prediction', [
                 'user_id' => Auth::id(),
-                'estimate_id' => $estimate->id(),
+                'estimate_id' => $estimate->id,
                 'predicted_price' => $estimatedPrice
             ]);
 
             return response()->json([
                 'success' => true,
                 'message' => 'Estimasi berhasil disimpan.',
+                'estimate_id' => $estimate->id,
                 'estimate' => $estimate,
                 'predicted_price' => number_format($estimatedPrice, 0, ',', '.'),
             ], 201);

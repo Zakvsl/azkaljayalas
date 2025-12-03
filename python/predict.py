@@ -62,7 +62,8 @@ def prepare_input(data):
         # Determine ukuran based on product type
         if produk == 'Railing':
             # Railing uses ukuran_m (length in meters)
-            area = data.get('ukuran_m', data.get('ukuran', 0))
+            # Accept both ukuran_m and ukuran_m2 for Laravel compatibility
+            area = data.get('ukuran_m', data.get('ukuran_m2', data.get('ukuran', 0)))
         else:
             # Others use ukuran_m2 (area in square meters)
             area = data.get('ukuran_m2', data.get('ukuran', 0))

@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+@include('components.navbar')
 @section('content')
 <div class="min-h-screen py-12 bg-gray-50">
     <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
@@ -83,8 +83,39 @@
                     </div>
                 </div>
 
+                <!-- Alert Konfirmasi -->
+                <div class="mt-8 bg-blue-50 border-l-4 border-blue-500 p-6 rounded-lg">
+                    <div class="flex items-start">
+                        <svg class="w-6 h-6 text-blue-500 mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                        <div class="flex-1">
+                            <h4 class="text-lg font-semibold text-blue-900 mb-2">Estimasi Harga Sudah Didapatkan!</h4>
+                            <p class="text-blue-800 mb-4">
+                                Untuk mendapatkan perhitungan harga yang lebih akurat dan detail, kami perlu melakukan survei lokasi langsung. 
+                                Apakah Anda ingin melanjutkan ke booking survei?
+                            </p>
+                            <div class="flex gap-3">
+                                <a href="{{ route('survey-booking.create', ['estimate_id' => $estimate->id]) }}" 
+                                    class="inline-flex items-center px-6 py-3 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 transition-colors shadow-lg">
+                                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                    </svg>
+                                    Ya, Lanjut ke Booking Survey
+                                </a>
+                                <a href="{{ route('home') }}" 
+                                    class="inline-flex items-center px-6 py-3 bg-gray-200 text-gray-700 font-semibold rounded-lg hover:bg-gray-300 transition-colors">
+                                    Nanti Saja
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Action Buttons -->
                 <div class="mt-8 flex justify-end space-x-4">
+                    
                     @if($estimate->status === 'pending')
                         <form action="{{ route('estimates.update', $estimate) }}" method="POST" class="inline">
                             @csrf
@@ -92,10 +123,6 @@
                             <button type="submit" name="status" value="cancelled" 
                                 class="inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
                                 Cancel Estimate
-                            </button>
-                            <button type="submit" name="status" value="confirmed" 
-                                class="ml-3 inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
-                                Confirm Estimate
                             </button>
                         </form>
                     @endif

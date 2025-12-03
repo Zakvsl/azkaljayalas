@@ -11,6 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
+        // Disable foreign key checks
+        Schema::disableForeignKeyConstraints();
+        
         // Drop old table and recreate with correct attributes
         Schema::dropIfExists('price_estimates');
         
@@ -74,6 +77,9 @@ return new class extends Migration
             $table->index(['jenis_produk', 'jenis_material']);
             $table->index('status');
         });
+        
+        // Re-enable foreign key checks
+        Schema::enableForeignKeyConstraints();
     }
 
     /**
@@ -81,6 +87,8 @@ return new class extends Migration
      */
     public function down(): void
     {
+        Schema::disableForeignKeyConstraints();
         Schema::dropIfExists('price_estimates');
+        Schema::enableForeignKeyConstraints();
     }
 };

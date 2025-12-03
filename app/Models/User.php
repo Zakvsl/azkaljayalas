@@ -68,6 +68,38 @@ class User extends Authenticatable implements MustVerifyEmail
     }
 
     /**
+     * Get all notifications for the user.
+     */
+    public function notifications()
+    {
+        return $this->hasMany(Notification::class)->orderBy('created_at', 'desc');
+    }
+
+    /**
+     * Get unread notifications count.
+     */
+    public function unreadNotificationsCount()
+    {
+        return $this->notifications()->where('is_read', false)->count();
+    }
+
+    /**
+     * Get all payments for the user.
+     */
+    public function payments()
+    {
+        return $this->hasMany(Payment::class);
+    }
+
+    /**
+     * Get all orders for the user.
+     */
+    public function orders()
+    {
+        return $this->hasMany(Order::class);
+    }
+
+    /**
      * Check if the user is an admin.
      *
      * @return bool

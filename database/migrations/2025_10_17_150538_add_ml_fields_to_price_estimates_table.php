@@ -12,16 +12,34 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('price_estimates', function (Blueprint $table) {
-            // Rename and add columns to match ML model
-            $table->string('produk')->nullable()->after('user_id'); // Produk (Pagar, Kanopi, etc)
-            $table->integer('jumlah_unit')->default(1)->after('produk');
-            $table->float('jumlah_lubang')->nullable()->after('jumlah_unit');
-            $table->float('ukuran_m2')->nullable()->after('jumlah_lubang');
-            $table->string('jenis_material')->nullable()->after('ukuran_m2');
-            $table->float('ketebalan_mm')->nullable()->after('jenis_material');
-            $table->string('finishing')->nullable()->after('ketebalan_mm');
-            $table->string('kerumitan_desain')->nullable()->after('finishing'); // Sederhana, Menengah, Kompleks
-            $table->string('metode_hitung')->nullable()->after('kerumitan_desain'); // Per m² or Per Lubang
+            // Rename and add columns to match ML model - check if exists first
+            if (!Schema::hasColumn('price_estimates', 'produk')) {
+                $table->string('produk')->nullable()->after('user_id');
+            }
+            if (!Schema::hasColumn('price_estimates', 'jumlah_unit')) {
+                $table->integer('jumlah_unit')->default(1)->after('produk');
+            }
+            if (!Schema::hasColumn('price_estimates', 'jumlah_lubang')) {
+                $table->float('jumlah_lubang')->nullable()->after('jumlah_unit');
+            }
+            if (!Schema::hasColumn('price_estimates', 'ukuran_m2')) {
+                $table->float('ukuran_m2')->nullable()->after('jumlah_lubang');
+            }
+            if (!Schema::hasColumn('price_estimates', 'jenis_material')) {
+                $table->string('jenis_material')->nullable()->after('ukuran_m2');
+            }
+            if (!Schema::hasColumn('price_estimates', 'ketebalan_mm')) {
+                $table->float('ketebalan_mm')->nullable()->after('jenis_material');
+            }
+            if (!Schema::hasColumn('price_estimates', 'finishing')) {
+                $table->string('finishing')->nullable()->after('ketebalan_mm');
+            }
+            if (!Schema::hasColumn('price_estimates', 'kerumitan_desain')) {
+                $table->string('kerumitan_desain')->nullable()->after('finishing');
+            }
+            if (!Schema::hasColumn('price_estimates', 'metode_hitung')) {
+                $table->string('metode_hitung')->nullable()->after('kerumitan_desain');
+            }
             
             // Keep original columns for backward compatibility
             // estimated_price will be the ML prediction

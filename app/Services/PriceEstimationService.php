@@ -23,7 +23,11 @@ class PriceEstimationService
             if ($this->mlService->isModelTrained()) {
                 try {
                     $prediction = $this->mlService->predict($mlData);
-                    return $prediction['predicted_price'];
+                    return [
+                        'price' => $prediction['predicted_price'],
+                        'method' => 'ml',
+                        'model_accuracy' => 0.973 // R² score dari metrics.json
+                    ];
                 } catch (\Exception $e) {
                     Log::warning('ML prediction failed, using fallback calculation', [
                         'error' => $e->getMessage(),
@@ -33,7 +37,11 @@ class PriceEstimationService
             }
             
             // Fallback ke formula sederhana jika ML gagal
-            return $this->calculateFallbackPrice($data);
+            return [
+                'price' => $this->calculateFallbackPrice($data),
+                'method' => 'fallback',
+                'model_accuracy' => null
+            ];
 
         } catch (\Exception $e) {
             Log::error('Price prediction failed', [
@@ -67,31 +75,32 @@ class PriceEstimationService
         // Support both jenis_produk and produk (backward compat)
         $produk = $data['jenis_produk'] ?? $data['produk'] ?? 'Pagar';
         
-        // Determine ukuran based on product type
+        // Determine ukuran_m2 value based on product type
+        // Python model always expects Ukuran_m2 field, but value depends on metode_hitung
         if ($produk === 'Railing') {
-            // Railing uses ukuran_m (PER-M)
-            $ukuran = (float)($data['ukuran_m'] ?? 0);
+            // Railing uses ukuran_m, send it as ukuran_m2 for ML model
+            $ukuranM2 = (float)($data['ukuran_m'] ?? 0);
             $metodeHitung = 'PER-M';
         } elseif ($produk === 'Teralis') {
-            // Teralis uses jumlah_lubang (PER-LUBANG)
-            $ukuran = 0;
+            // Teralis uses jumlah_lubang, ukuran_m2 not needed
+            $ukuranM2 = 0;
             $metodeHitung = 'PER-LUBANG';
         } else {
-            // Others use ukuran_m2 (PER-M2)
-            $ukuran = (float)($data['ukuran_m2'] ?? 0);
+            // Others use ukuran_m2 directly
+            $ukuranM2 = (float)($data['ukuran_m2'] ?? 0);
             $metodeHitung = 'PER-M2';
         }
 
-        // Calculate upah_tenaga_ahli (Stainless = 200k/m2, Hollow = 100k/m2)
+        // Calculate upah_tenaga_ahli based on ukuran_m2
         $material = $data['jenis_material'];
         $upahRate = (str_contains($material, 'Stainless')) ? 200000 : 100000;
-        $upahTenagaAhli = $upahRate * $ukuran;
+        $upahTenagaAhli = $upahRate * $ukuranM2;
 
         return [
             'produk' => $produk,
             'jumlah_unit' => (int)$data['jumlah_unit'],
             'jumlah_lubang' => (float)($data['jumlah_lubang'] ?? 0),
-            'ukuran' => $ukuran,
+            'ukuran_m2' => $ukuranM2,  // Always use this field for ML
             'jenis_material' => $materialMap[$data['jenis_material']] ?? 'Hollow',
             'ketebalan_mm' => (float)$data['ketebalan_mm'],
             'finishing' => $finishingMap[$data['finishing']] ?? 'Cat Biasa',
