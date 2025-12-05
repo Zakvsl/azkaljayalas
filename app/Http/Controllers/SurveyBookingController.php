@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\SurveyBooking;
 use App\Models\PriceEstimate;
 use App\Models\Notification;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Http;
@@ -84,6 +85,18 @@ class SurveyBookingController extends Controller
             'title' => 'Booking Survei Berhasil',
             'message' => "Booking survei Anda untuk {$booking->project_type} telah berhasil dibuat. Menunggu konfirmasi admin.",
         ]);
+
+        // Create notification for all admins
+        $admins = User::where('role', 'admin')->get();
+        foreach ($admins as $admin) {
+            Notification::create([
+                'user_id' => $admin->id,
+                'type' => 'booking',
+                'survey_booking_id' => $booking->id,
+                'title' => 'Booking Survei Baru',
+                'message' => "Customer " . Auth::user()->name . " mengajukan booking survei {$booking->project_type}. Jadwal: " . $booking->preferred_date->format('d M Y') . " pukul " . \Carbon\Carbon::parse($booking->preferred_time)->format('H:i') . ". Lokasi: {$booking->location}. Segera tinjau dan konfirmasi!",
+            ]);
+        }
 
         // Send WhatsApp notification to admin
         $this->sendWhatsAppToAdmin($booking);

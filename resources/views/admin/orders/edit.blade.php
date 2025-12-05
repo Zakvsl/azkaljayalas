@@ -215,8 +215,10 @@
                                 id="status" 
                                 required
                                 class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
-                            <option value="pending" {{ old('status', $order->status) == 'pending' ? 'selected' : '' }}>Pending</option>
+                            <option value="pending_dp" {{ old('status', $order->status) == 'pending_dp' ? 'selected' : '' }}>Menunggu DP</option>
+                            <option value="dp_pending_confirm" {{ old('status', $order->status) == 'dp_pending_confirm' ? 'selected' : '' }}>DP Menunggu Konfirmasi</option>
                             <option value="in_progress" {{ old('status', $order->status) == 'in_progress' ? 'selected' : '' }}>Dalam Proses</option>
+                            <option value="ready_for_pickup" {{ old('status', $order->status) == 'ready_for_pickup' ? 'selected' : '' }}>Siap Diambil</option>
                             <option value="completed" {{ old('status', $order->status) == 'completed' ? 'selected' : '' }}>Selesai</option>
                             <option value="cancelled" {{ old('status', $order->status) == 'cancelled' ? 'selected' : '' }}>Dibatalkan</option>
                         </select>
@@ -229,7 +231,7 @@
                         <input type="date" 
                                name="order_date" 
                                id="order_date" 
-                               value="{{ old('order_date', $order->order_date->format('Y-m-d')) }}"
+                               value="{{ old('order_date', $order->order_date ? $order->order_date->format('Y-m-d') : date('Y-m-d')) }}"
                                required
                                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
                     </div>

@@ -15,25 +15,42 @@ class Order extends Model
         'survey_booking_id',
         'user_id',
         'survey_result_id',
+        'customer_name',
+        'phone',
+        'address',
+        'project_type',
+        'material_type',
+        'dimensions',
+        'description',
         'total_price',
+        'estimated_price',
+        'actual_price',
         'dp_paid',
         'remaining_paid',
         'status',
         'progress_percentage',
         'current_stage',
         'progress_updates',
+        'order_date',
+        'completion_date',
         'started_at',
         'completed_at',
         'cancelled_at',
         'cancellation_reason',
+        'notes',
     ];
 
     protected $casts = [
+        'dimensions' => 'array',
+        'progress_updates' => 'array',
         'total_price' => 'decimal:2',
+        'estimated_price' => 'decimal:2',
+        'actual_price' => 'decimal:2',
         'dp_paid' => 'decimal:2',
         'remaining_paid' => 'decimal:2',
         'progress_percentage' => 'integer',
-        'progress_updates' => 'array',
+        'order_date' => 'date',
+        'completion_date' => 'date',
         'started_at' => 'datetime',
         'completed_at' => 'datetime',
         'cancelled_at' => 'datetime',
@@ -99,6 +116,16 @@ class Order extends Model
     public function getFormattedTotalPriceAttribute()
     {
         return $this->total_price ? 'Rp ' . number_format($this->total_price, 0, ',', '.') : '-';
+    }
+
+    public function getFormattedEstimatedPriceAttribute()
+    {
+        return $this->estimated_price ? 'Rp ' . number_format($this->estimated_price, 0, ',', '.') : '-';
+    }
+
+    public function getFormattedActualPriceAttribute()
+    {
+        return $this->actual_price ? 'Rp ' . number_format($this->actual_price, 0, ',', '.') : '-';
     }
 
     public function getFormattedDpPaidAttribute()

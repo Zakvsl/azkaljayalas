@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 from sklearn.ensemble import RandomForestRegressor
-from sklearn.model_selection import train_test_split, cross_val_score
+from sklearn.model_selection import train_test_split, cross_val_score, cross_validate
 from sklearn.preprocessing import OneHotEncoder, OrdinalEncoder
 from sklearn.compose import ColumnTransformer
 from sklearn.pipeline import Pipeline
@@ -10,8 +10,17 @@ from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 import joblib
 import json
 import sys
+import random
+import os
 import warnings
 warnings.filterwarnings('ignore')
+
+# Set ALL random seeds for reproducibility
+RANDOM_SEED = 42
+random.seed(RANDOM_SEED)
+np.random.seed(RANDOM_SEED)
+os.environ['PYTHONHASHSEED'] = str(RANDOM_SEED)
+print(f"Random seed set to {RANDOM_SEED}")
 
 # Get dataset path from command line argument or use default
 if len(sys.argv) > 1:
@@ -353,7 +362,15 @@ preprocessor = ColumnTransformer(transformers=transformers, remainder='passthrou
 
 # Create full pipeline with model
 print("Creating model pipeline...")
-model = RandomForestRegressor(n_estimators=200, random_state=42, n_jobs=-1)
+model = RandomForestRegressor(
+    n_estimators=200, 
+    random_state=42, 
+    n_jobs=-1,
+    max_depth=None,
+    min_samples_split=2,
+    min_samples_leaf=1,
+    bootstrap=True
+)
 pipeline = Pipeline(steps=[
     ('preprocessor', preprocessor),
     ('model', model)
@@ -361,7 +378,12 @@ pipeline = Pipeline(steps=[
 
 # Split the data (500 training, 100 testing)
 print("Splitting data...")
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=100, random_state=42)
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, 
+    test_size=100, 
+    random_state=42,
+    shuffle=True
+)
 
 print(f"Training set: {X_train.shape[0]} samples")
 print(f"Testing set: {X_test.shape[0]} samples")
@@ -372,8 +394,15 @@ pipeline.fit(X_train, y_train)
 
 # Cross-validation
 print("Performing cross-validation...")
-cv_mae_scores = cross_val_score(pipeline, X_train, y_train, cv=5, scoring='neg_mean_absolute_error')
-cv_r2_scores = cross_val_score(pipeline, X_train, y_train, cv=5, scoring='r2')
+cv_results = cross_validate(
+    pipeline, X_train, y_train,
+    cv=5,
+    scoring=['neg_mean_absolute_error', 'r2'],
+    return_train_score=True,
+    n_jobs=-1
+)
+cv_mae_scores = cv_results['test_neg_mean_absolute_error']
+cv_r2_scores = cv_results['test_r2']
 
 # Predictions on test set
 print("Evaluating model...")

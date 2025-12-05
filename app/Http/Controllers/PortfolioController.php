@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class PortfolioController extends Controller
 {
-    public function index($category = null)
+    public function index(Request $request, $category = null)
     {
         // Sample portfolio data - nanti bisa diganti dengan database
         $portfolios = [
@@ -101,6 +101,21 @@ class PortfolioController extends Controller
                 'size' => '8 m'
             ],
         ];
+
+        // Get search query
+        $search = $request->input('search');
+
+        // Filter by search if provided
+        if ($search) {
+            $portfolios = array_filter($portfolios, function($item) use ($search) {
+                $searchLower = strtolower($search);
+                return 
+                    str_contains(strtolower($item['title']), $searchLower) ||
+                    str_contains(strtolower($item['category']), $searchLower) ||
+                    str_contains(strtolower($item['location']), $searchLower) ||
+                    str_contains(strtolower($item['material']), $searchLower);
+            });
+        }
 
         // Filter by category if provided
         if ($category && $category !== 'semua') {

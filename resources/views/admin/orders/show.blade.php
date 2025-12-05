@@ -52,12 +52,14 @@
                 </div>
                 <div>
                     <dt class="text-xs font-medium text-gray-600 uppercase">Alamat</dt>
-                    <dd class="mt-1 text-sm text-gray-900">{{ $order->address }}</dd>
+                    <dd class="mt-1 text-sm text-gray-900">{{ $order->address ?: '-' }}</dd>
                 </div>
+                @if($order->order_date)
                 <div>
                     <dt class="text-xs font-medium text-gray-600 uppercase">Tanggal Pesan</dt>
                     <dd class="mt-1 text-sm text-gray-900">{{ $order->order_date->format('d F Y') }}</dd>
                 </div>
+                @endif
                 @if($order->completion_date)
                 <div>
                     <dt class="text-xs font-medium text-gray-600 uppercase">Tanggal Selesai</dt>
@@ -74,14 +76,18 @@
                 Detail Proyek
             </h3>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                @if($order->project_type)
                 <div>
                     <dt class="text-xs font-medium text-gray-600 uppercase">Jenis Proyek</dt>
                     <dd class="mt-1 text-sm text-gray-900 font-semibold">{{ ucfirst(str_replace('_', ' ', $order->project_type)) }}</dd>
                 </div>
+                @endif
+                @if($order->material_type)
                 <div>
                     <dt class="text-xs font-medium text-gray-600 uppercase">Material</dt>
                     <dd class="mt-1 text-sm text-gray-900">{{ ucfirst(str_replace('_', ' ', $order->material_type)) }}</dd>
                 </div>
+                @endif
 
                 @if($order->dimensions)
                     <div class="md:col-span-2">
@@ -135,7 +141,7 @@
         </div>
         <div class="bg-gradient-to-br from-indigo-50 to-indigo-100 rounded-lg shadow-sm p-6">
             <h3 class="text-sm font-medium text-gray-600 uppercase mb-2">Status</h3>
-            <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium {{ $order->status_badge }}">
+            <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-{{ $order->status === 'completed' ? 'green' : ($order->status === 'cancelled' ? 'red' : ($order->status === 'in_progress' ? 'blue' : 'yellow')) }}-100 text-{{ $order->status === 'completed' ? 'green' : ($order->status === 'cancelled' ? 'red' : ($order->status === 'in_progress' ? 'blue' : 'yellow')) }}-800">
                 {{ $order->status_label }}
             </span>
         </div>

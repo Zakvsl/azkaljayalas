@@ -82,12 +82,12 @@
                                     </div>
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap">
-                                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full {{ $order->status_badge }}">
+                                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-{{ $order->status === 'completed' ? 'green' : ($order->status === 'cancelled' ? 'red' : ($order->status === 'in_progress' ? 'blue' : 'yellow')) }}-100 text-{{ $order->status === 'completed' ? 'green' : ($order->status === 'cancelled' ? 'red' : ($order->status === 'in_progress' ? 'blue' : 'yellow')) }}-800">
                                         {{ $order->status_label }}
                                     </span>
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                                    {{ $order->order_date->format('d M Y') }}
+                                    {{ $order->order_date ? $order->order_date->format('d M Y') : '-' }}
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                                     <a href="{{ route('admin.orders.show', $order) }}" 

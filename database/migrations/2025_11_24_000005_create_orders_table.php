@@ -15,12 +15,25 @@ return new class extends Migration
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
             $table->string('order_number')->unique(); // Format: ORD-YYYYMMDD-XXXX
-            $table->foreignId('survey_booking_id')->constrained()->onDelete('cascade');
-            $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->foreignId('survey_booking_id')->nullable()->constrained()->onDelete('cascade');
+            $table->foreignId('user_id')->nullable()->constrained()->onDelete('cascade');
             $table->foreignId('survey_result_id')->nullable()->constrained()->onDelete('set null');
             
+            // Customer Information
+            $table->string('customer_name')->nullable();
+            $table->string('phone', 20)->nullable();
+            $table->text('address')->nullable();
+            
+            // Project Details
+            $table->string('project_type')->nullable();
+            $table->string('material_type')->nullable();
+            $table->json('dimensions')->nullable(); // length, width, height, thickness
+            $table->text('description')->nullable();
+            
             // Order details
-            $table->decimal('total_price', 15, 2);
+            $table->decimal('total_price', 15, 2)->default(0);
+            $table->decimal('estimated_price', 15, 2)->nullable();
+            $table->decimal('actual_price', 15, 2)->nullable();
             $table->decimal('dp_paid', 15, 2)->default(0);
             $table->decimal('remaining_paid', 15, 2)->default(0);
             
@@ -39,11 +52,16 @@ return new class extends Migration
             $table->text('current_stage')->nullable(); // Tahap pengerjaan saat ini
             $table->json('progress_updates')->nullable(); // Array of progress updates
             
-            // Completion
+            // Dates
+            $table->date('order_date')->nullable();
+            $table->date('completion_date')->nullable();
             $table->dateTime('started_at')->nullable();
             $table->dateTime('completed_at')->nullable();
             $table->dateTime('cancelled_at')->nullable();
             $table->text('cancellation_reason')->nullable();
+            
+            // Notes
+            $table->text('notes')->nullable();
             
             $table->timestamps();
             

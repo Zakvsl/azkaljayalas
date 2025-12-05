@@ -214,8 +214,10 @@
                                 id="status" 
                                 required
                                 class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
-                            <option value="pending" {{ old('status') == 'pending' ? 'selected' : '' }}>Pending</option>
+                            <option value="pending_dp" {{ old('status') == 'pending_dp' ? 'selected' : '' }}>Menunggu DP</option>
+                            <option value="dp_pending_confirm" {{ old('status') == 'dp_pending_confirm' ? 'selected' : '' }}>DP Menunggu Konfirmasi</option>
                             <option value="in_progress" {{ old('status') == 'in_progress' ? 'selected' : '' }}>Dalam Proses</option>
+                            <option value="ready_for_pickup" {{ old('status') == 'ready_for_pickup' ? 'selected' : '' }}>Siap Diambil</option>
                             <option value="completed" {{ old('status') == 'completed' ? 'selected' : '' }}>Selesai</option>
                             <option value="cancelled" {{ old('status') == 'cancelled' ? 'selected' : '' }}>Dibatalkan</option>
                         </select>
